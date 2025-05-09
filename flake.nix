@@ -13,7 +13,8 @@
   outputs = {
     self,
     nixpkgs,
-    home-manager
+    home-manager,
+    ...
   } @inputs: let
     inherit (self) outputs;
     lib = nixpkgs.lib // home-manager.lib;
