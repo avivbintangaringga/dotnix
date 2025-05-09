@@ -21,10 +21,14 @@
   in {
     inherit lib;
     nixosConfigurations = {
-      asus-a15 = nixosSystem {
+      asus-a15 = lib.nixosSystem {
         modules = [ ./hosts/asus-a15 ];
         specialArgs = {
-          inherit inputs outputs;
+          inherit inputs;
+          pkgs = import nixpkgs {
+            system =  "x86_64-linux";
+            config.allowUnfree = true;
+          };
         };
       };
     };
