@@ -65,7 +65,6 @@
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       tree
-      git
     ];
   };
 
@@ -107,6 +106,8 @@
     fastfetch
     brightnessctl
     kdePackages.dolphin
+    git
+    gh
   ];
 
   environment.shells = with pkgs; [
