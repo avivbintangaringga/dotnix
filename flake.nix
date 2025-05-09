@@ -21,7 +21,7 @@
   in {
     inherit lib;
     nixosConfigurations = {
-      asus-a15 = lib.nixosSystem {
+      asus-a15 = nixosSystem {
         modules = [ ./hosts/asus-a15 ];
         specialArgs = {
           inherit inputs outputs;
