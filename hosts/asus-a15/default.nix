@@ -108,7 +108,8 @@
     kdePackages.dolphin
     git
     gh
-    vscode
+    rofi
+    wofi
   ];
 
   environment.shells = with pkgs; [
