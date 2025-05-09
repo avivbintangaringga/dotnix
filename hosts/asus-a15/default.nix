@@ -108,6 +108,7 @@
     kdePackages.dolphin
     git
     gh
+    vscode
   ];
 
   environment.shells = with pkgs; [
