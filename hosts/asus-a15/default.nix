@@ -1,9 +1,8 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, userdata, ... }:
 {
  imports =
     [ 
       ./hardware-configuration.nix
-      ../../users/r7fx
     ];
 
   boot = {
@@ -15,6 +14,29 @@
         canTouchEfiVariables = true;
       };
     };
+  };
+
+  programs.zsh.enable = true;
+  users = {
+    users.${userdata.username} = {
+      isNormalUser = true;
+      initialPassword = "123";
+      extraGroups = [ "wheel" ]; 
+      packages = with pkgs; [
+        tree
+      ];
+      shell = pkgs.zsh;
+    };
+  };
+
+  environment = {
+    systemPackages = with pkgs; [
+      home-manager
+    ];
+
+    shells = with pkgs; [
+       zsh
+    ];
   };
 
   networking = {

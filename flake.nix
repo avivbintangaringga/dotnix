@@ -18,6 +18,12 @@
   }@inputs: let
     inherit (self) outputs;
     lib = nixpkgs.lib // home-manager.lib;
+    userdata = rec {
+       username = "r7fx";
+       userpath = "/home/" + username;
+       fullname = "R7FX";
+       email = "avivbintangaringga90@gmail.com";
+    };
   in {
     nixosConfigurations = {
       asus-a15 = lib.nixosSystem {
@@ -26,14 +32,22 @@
         ];
         specialArgs = {
            inherit lib;
+	   inherit userdata;
         };
       };
     };
-    homeConfigurations.r7fx = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      modules = [
-        ./users/r7fx/home.nix
-      ];
+
+    homeConfigurations = {
+      asus-a15 = lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        modules = [
+          ./home-manager/asus-a15.nix
+        ];
+	extraSpecialArgs = {
+	  inherit lib;
+	  inherit userdata;
+	};
+      };
     };
   };
 }
