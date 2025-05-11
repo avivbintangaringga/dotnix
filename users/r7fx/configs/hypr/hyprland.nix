@@ -38,6 +38,10 @@ in
        "${mainMod}, S, togglespecialworkspace, magic"
        "${mainMod} SHIFT, S, movetoworkspace, special:magic"
 
+       "${mainMod}, h, movefocus, l"
+       "${mainMod}, j, movefocus, d"
+       "${mainMod}, k, movefocus, u"
+       "${mainMod}, l, movefocus, r"
      ]
      ++
      (map (n: "${mainMod}, ${n}, workspace, ${n}") workspaces)

@@ -15,7 +15,8 @@
     nixpkgs,
     home-manager,
     ...
-  }: let
+  }@inputs: let
+    inherit (self) outputs;
     lib = nixpkgs.lib // home-manager.lib;
   in {
     nixosConfigurations = {

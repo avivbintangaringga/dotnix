@@ -20,11 +20,8 @@ in
       packages = with pkgs; [
         tree
       ];
+      shell = pkgs.zsh;
     };
-  };
-
-  services = {
-    cliphist.enable = true;
   };
 
   programs = {
@@ -57,7 +54,7 @@ in
   environment = {
     systemPackages = with pkgs; [
       kitty
-      vim 
+      neovim 
       wget
       brightnessctl
       kdePackages.dolphin
