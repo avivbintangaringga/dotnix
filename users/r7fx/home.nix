@@ -9,7 +9,7 @@ let
 in
 {
   imports = [
-    ./configs/hypr/hyprland.nix
+    ./configs
   ];
 
   home = {
@@ -18,6 +18,7 @@ in
     stateVersion = "24.11";
     packages = with pkgs; [
       gh
+      git
       rofi
       wofi
       fastfetch

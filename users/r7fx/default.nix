@@ -23,14 +23,13 @@ in
     };
   };
 
-  programs = {
-    git.enable = true;
-    firefox.enable = true;
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
+  services = {
+    cliphist.enable = true;
+  };
 
+  programs = {
+    firefox.enable = true;
+    
     zsh = {
       enable = true;
       enableCompletion = true;
