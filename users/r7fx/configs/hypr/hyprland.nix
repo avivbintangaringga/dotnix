@@ -15,7 +15,14 @@ in
        gaps_in = 5;
        gaps_out = 10;
      };
-     
+     input = {
+       kb_layout = "us";
+       follow_mouse = "1";
+       sensitivity = "0";
+       touchpad = {
+         natural_scroll = true;
+       };
+     };
      bind = let
        workspaces = [
          "0"

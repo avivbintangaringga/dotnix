@@ -29,6 +29,22 @@ in
     cliphist.enable = true;
   };
 
+  programs.git = {
+    enable = true;
+    userName = userdata.username;
+    userEmail = userdata.email;
+  };
+
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      window = {
+        opacity = 0.5;
+	blur = true;
+      };
+    };
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.hyprland;

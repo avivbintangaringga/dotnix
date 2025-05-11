@@ -25,6 +25,7 @@ in
   };
 
   programs = {
+    hyprland.enable = true;
     firefox.enable = true;
     
     zsh = {
