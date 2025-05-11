@@ -16,6 +16,7 @@
     };
   };
 
+  programs.hyprland.enable = true;
   programs.zsh.enable = true;
   users = {
     users.${userdata.username} = {
@@ -32,6 +33,7 @@
   environment = {
     systemPackages = with pkgs; [
       home-manager
+      neovim
     ];
 
     shells = with pkgs; [

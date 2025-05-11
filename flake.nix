@@ -44,7 +44,6 @@
           ./home-manager/asus-a15.nix
         ];
 	extraSpecialArgs = {
-	  inherit lib;
 	  inherit userdata;
 	};
       };
