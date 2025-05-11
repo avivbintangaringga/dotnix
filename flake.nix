@@ -20,11 +20,19 @@
   in {
     nixosConfigurations = {
       asus-a15 = lib.nixosSystem {
-        modules = [ ./hosts/asus-a15 ];
+        modules = [ 
+          ./hosts/asus-a15
+        ];
         specialArgs = {
            inherit lib;
         };
       };
+    };
+    homeConfigurations.r7fx = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      modules = [
+        ./users/r7fx/home.nix
+      ];
     };
   };
 }

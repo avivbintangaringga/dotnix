@@ -1,7 +1,19 @@
 { pkgs, ... }:
+let
+  userdata = rec {
+     username = "r7fx";
+     userpath = "/home/" + username;
+     fullname = "R7FX";
+     email = "avivbintangaringga90@gmail.com";
+  };
+in
 {
+  imports = [
+    #./configs
+  ];
+
   users = {
-    users.r7fx = {
+    users.${userdata.username} = {
       isNormalUser = true;
       initialPassword = "123";
       extraGroups = [ "wheel" ]; 
@@ -9,13 +21,15 @@
         tree
       ];
     };
-
-    defaultUserShell = pkgs.zsh;
   };
 
   programs = {
+    git.enable = true;
     firefox.enable = true;
-    hyprland.enable = true;
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
 
     zsh = {
       enable = true;
@@ -46,13 +60,9 @@
       kitty
       vim 
       wget
-      fastfetch
       brightnessctl
       kdePackages.dolphin
-      git
-      gh
-      rofi
-      wofi
+      home-manager
     ];
 
     shells = with pkgs; [
