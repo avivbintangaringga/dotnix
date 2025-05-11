@@ -15,16 +15,14 @@
     nixpkgs,
     home-manager,
     ...
-  } @inputs: let
-    inherit (self) outputs;
+  }: let
     lib = nixpkgs.lib // home-manager.lib;
   in {
-    inherit lib;
     nixosConfigurations = {
       asus-a15 = lib.nixosSystem {
         modules = [ ./hosts/asus-a15 ];
         specialArgs = {
-          inherit inputs outputs;
+           inherit lib;
         };
       };
     };
