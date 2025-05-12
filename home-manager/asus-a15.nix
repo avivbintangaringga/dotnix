@@ -4,6 +4,7 @@
     ./apps/firefox
     ./apps/git
     ./apps/hyprland
+    ./apps/rofi
     ./apps/waybar
     ./apps/zsh
     ./services/cliphist
@@ -16,14 +17,13 @@
     stateVersion = "24.11";
     packages = with pkgs; [
       gh
-      rofi
-      wofi
       fastfetch
       kitty
       neovim 
       wget
       brightnessctl
       kdePackages.dolphin
+      vesktop
     ];
   };
 }
