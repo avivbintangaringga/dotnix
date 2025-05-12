@@ -2,6 +2,7 @@
 {
   imports = [
     ./apps/firefox
+    ./apps/aagl
     ./apps/git
     ./apps/hyprland
     ./apps/rofi
@@ -23,6 +24,15 @@
       brightnessctl
       kdePackages.dolphin
       vesktop
+      discord
+      lutris
     ];
+  };
+
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
+    };
   };
 }

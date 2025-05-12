@@ -18,6 +18,13 @@
 
   programs.hyprland.enable = true;
   programs.zsh.enable = true;
+  programs.steam.enable = true;
+
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+  };
 
   users = {
     users.${userdata.username} = {
@@ -38,6 +45,8 @@
       neovim
 
       killall
+      nvtopPackages.nvidia
+      nvtopPackages.amd
     ];
 
     shells = with pkgs; [
@@ -63,6 +72,5 @@
 
   system.stateVersion = "24.11"; # Did you read the comment?
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
 }
 
