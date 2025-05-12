@@ -1,9 +1,12 @@
-{ lib, pkgs, ... }: 
+{ lib, pkgs, userdata, ... }: 
 let
   mainMod = "SUPER";
   terminal = "kitty";
   fileManager = "dolphin";
   menu = "rofi -show drun";
+  screenshotDir = "${userdata.userpath}/Screenshots";
+  screenshotFull = "mkdir -p ${screenshotDir} && grimblast copysave screen \"${screenshotDir}/Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png\"";
+  screenshotPartial = "mkdir -p ${screenshotDir} && grimblast copysave area \"${screenshotDir}/Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png\"";
 in
 {
    wayland.windowManager.hyprland = {
@@ -55,6 +58,9 @@ in
          "${mainMod}, j, movefocus, d"
          "${mainMod}, k, movefocus, u"
          "${mainMod}, l, movefocus, r"
+
+         "${mainMod}, Print, exec, ${screenshotFull}"
+         ", Print, exec, ${screenshotPartial}"
        ]
        ++
        (map (n: "${mainMod}, ${n}, workspace, ${n}") workspaces)

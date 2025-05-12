@@ -13,8 +13,8 @@
     shellAliases = {
       vim = "nvim";
       edit = "vim /home/${userdata.username}/dotnix";
-      update-nx = "sudo nixos-rebuild switch --flake";
-      update-hm = "home-manager switch --flake";
+      update = "sudo nixos-rebuild switch --flake";
+      hm-update = "home-manager switch --flake";
     };
 
     oh-my-zsh = {

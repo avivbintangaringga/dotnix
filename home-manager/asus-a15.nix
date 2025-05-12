@@ -4,10 +4,12 @@
     ./apps/firefox
     ./apps/git
     ./apps/hyprland
+    ./apps/spicetify
     ./apps/rofi
     ./apps/waybar
     ./apps/zsh
     ./services/cliphist
+    ./service/mako
     ./services/playerctld
   ];
 
@@ -24,7 +26,21 @@
       kdePackages.dolphin
       vesktop
       discord
+
       lutris
+      protonup-qt
+      umu-launcher
+      wine
+      bottles
+      mangohud
+      heroic
+
+      btop
+      htop
+
+      bitwarden
+
+      grimblast
     ];
   };
 

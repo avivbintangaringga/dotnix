@@ -17,6 +17,13 @@
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
+    hyprland-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -25,6 +32,8 @@
     home-manager,
     hardware,
     aagl,
+    spicetify-nix,
+    hyprland-contrib,
     ...
   }@inputs: let
     inherit (self) outputs;
@@ -57,13 +66,18 @@
     };
 
     homeConfigurations = {
-      asus-a15 = lib.homeManagerConfiguration {
+      asus-a15 = let
+	spicePkgs = spicetify-nix.legacyPackages.x86_64-linux;
+      in lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         modules = [
           ./home-manager/asus-a15.nix
+	  spicetify-nix.homeManagerModules.spicetify
         ];
 	extraSpecialArgs = {
 	  inherit userdata;
+	  inherit spicePkgs;
+	  inherit hyprland-contrib;
 	};
       };
     };

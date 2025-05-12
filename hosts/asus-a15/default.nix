@@ -1,6 +1,6 @@
 { config, lib, pkgs, userdata, ... }:
 {
- imports =
+  imports =
     [ 
       ./hardware-configuration.nix
     ];
@@ -45,6 +45,10 @@
       gh
       neovim
 
+      pavucontrol
+
+      greetd.tuigreet
+
       killall
       nvtopPackages.nvidia
       nvtopPackages.amd
@@ -69,6 +73,31 @@
     };
 
     libinput.enable = true;
+
+    tlp = {
+      enable = true;
+      settings = {
+        CPU_BOOST_ON_AC = 0;
+	CPU_BOOST_ON_BAT = 0;
+      };
+    };
+
+    greetd = let
+      session = "${pkgs.hyprland}/bin/Hyprland";
+      tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
+    in {
+      enable = true;
+      settings = {
+        initial_session = {
+           command = "${session}";
+	   user = userdata.username;
+	};
+	default_session = {
+           command = "${tuigreet} --greeting 'Welcome to NixOS!' --asterisks --remember --remember-user-session --time --cmd ${session}";
+	   user = "greeter";
+	};
+      };
+    };
   };
 
   fileSystems."/media/DATA" = {
