@@ -2,7 +2,6 @@
 {
   imports = [
     ./apps/firefox
-    ./apps/aagl
     ./apps/git
     ./apps/hyprland
     ./apps/rofi

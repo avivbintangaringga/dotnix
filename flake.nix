@@ -24,6 +24,7 @@
     nixpkgs,
     home-manager,
     hardware,
+    aagl,
     ...
   }@inputs: let
     inherit (self) outputs;
@@ -43,12 +44,14 @@
       asus-a15 = lib.nixosSystem {
         modules = [ 
           ./hosts/asus-a15
+	  ./modules/nixos/aagl
 	  home-manager.nixosModules.home-manager
 	  hardware.nixosModules.asus-fa506ic
         ];
         specialArgs = {
            inherit lib;
 	   inherit userdata;
+	   inherit aagl;
         };
       };
     };
