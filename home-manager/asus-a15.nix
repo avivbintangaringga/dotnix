@@ -16,7 +16,6 @@
     homeDirectory = userdata.userpath;
     stateVersion = "24.11";
     packages = with pkgs; [
-      gh
       fastfetch
       kitty
       neovim 

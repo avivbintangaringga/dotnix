@@ -23,6 +23,10 @@
        userpath = "/home/" + username;
        fullname = "R7FX";
        email = "avivbintangaringga90@gmail.com";
+       git = {
+         username = "avivbintangaringga";
+	 inherit email;
+       };
     };
   in {
     nixosConfigurations = {

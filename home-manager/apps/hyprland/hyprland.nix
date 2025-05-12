@@ -3,6 +3,7 @@ let
   mainMod = "SUPER";
   terminal = "kitty";
   fileManager = "dolphin";
+  menu = "rofi -show drun";
 in
 {
    wayland.windowManager.hyprland = {
@@ -45,6 +46,7 @@ in
          "${mainMod}, C, killactive"
          "${mainMod}, M, exit"
          "${mainMod}, E, exec, ${fileManager}"
+	 "${mainMod}, SPACE, exec, ${menu}"
 
          "${mainMod}, S, togglespecialworkspace, magic"
          "${mainMod} SHIFT, S, movetoworkspace, special:magic"
