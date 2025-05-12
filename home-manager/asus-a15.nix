@@ -9,7 +9,7 @@
     ./apps/waybar
     ./apps/zsh
     ./services/cliphist
-    ./service/mako
+    ./services/mako
     ./services/playerctld
   ];
 
