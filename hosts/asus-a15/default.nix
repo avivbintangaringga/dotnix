@@ -34,6 +34,7 @@
   environment = {
     systemPackages = with pkgs; [
       home-manager
+      gh
       neovim
 
       killall
