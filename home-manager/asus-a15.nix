@@ -4,8 +4,10 @@
     ./apps/firefox
     ./apps/git
     ./apps/hyprland
+    ./apps/waybar
     ./apps/zsh
     ./services/cliphist
+    ./services/playerctld
   ];
 
   home = {

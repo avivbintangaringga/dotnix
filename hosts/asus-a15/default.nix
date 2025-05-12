@@ -18,6 +18,7 @@
 
   programs.hyprland.enable = true;
   programs.zsh.enable = true;
+
   users = {
     users.${userdata.username} = {
       isNormalUser = true;
@@ -34,6 +35,8 @@
     systemPackages = with pkgs; [
       home-manager
       neovim
+
+      killall
     ];
 
     shells = with pkgs; [
