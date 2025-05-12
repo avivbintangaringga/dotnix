@@ -14,6 +14,7 @@
         canTouchEfiVariables = true;
       };
     };
+    supportedFilesystems = [ "ntfs" ];
   };
 
   programs.hyprland.enable = true;
@@ -68,6 +69,18 @@
     };
 
     libinput.enable = true;
+  };
+
+  fileSystems."/media/DATA" = {
+    device = "/dev/disk/by-uuid/9EF2F582F2F55F49";
+    fsType = "ntfs-3g";
+    options = [ "defaults" ];
+  };
+
+  fileSystems."/media/WINDOWS" = {
+    device = "/dev/disk/by-uuid/567C114B7C112771";
+    fsType = "ntfs-3g";
+    options = [ "defaults" ];
   };
 
   system.stateVersion = "24.11"; # Did you read the comment?
