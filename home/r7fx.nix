@@ -6,6 +6,7 @@
     ./apps/hyprland
     ./apps/kitty
     ./apps/neovim
+    ./apps/obs-studio
     ./apps/spicetify
     ./apps/rofi
     ./apps/waybar
@@ -31,11 +32,9 @@
       vesktop
       discord
 
-      lutris
       protonup-qt
-      umu-launcher
-      wine
-      bottles
+      wineWowPackages.stable
+      winetricks
       mangohud
       heroic
 

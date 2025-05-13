@@ -3,7 +3,7 @@ let
   screenshotDir = "${userdata.userpath}/Screenshots";
 in
 {
-  "$browser" = "zen-browser";
+  "$browser" = "zen-beta";
   "$terminal" = "kitty";
   "$fileManager" = "nemo";
   "$menu" = "rofi -show drun";
