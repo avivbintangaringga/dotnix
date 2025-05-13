@@ -3,8 +3,10 @@
   programs.yazi = {
     enable = true;
     enableZshIntegration = true;
-    plugins = with pkgs.yaziPlugins; {
+    flavors = with pkgs.yaziPlugins; {
       yatline-catppuccin = yatline-catppuccin;
+    };
+    plugins = with pkgs.yaziPlugins; {
       toggle-pane        = toggle-pane;
       time-travel        = time-travel;
       sudo               = sudo;

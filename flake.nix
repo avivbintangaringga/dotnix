@@ -66,7 +66,7 @@
     };
 
     homeConfigurations = {
-      asus-a15 = let
+      ${userdata.username} = let
 	spicePkgs = spicetify-nix.legacyPackages.x86_64-linux;
       in lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
