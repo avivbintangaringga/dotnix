@@ -3,9 +3,9 @@
     rounding = 8;
     rounding_power = 2;
     active_opacity = 1;
-    inactive_opacity = 0.9;
-    dim_inactive = true;
-    dim_strength = 0.5;
+    #inactive_opacity = 0.9;
+    #dim_inactive = true;
+    #dim_strength = 0.5;
 
     blur = {
       enabled = true;

@@ -27,6 +27,10 @@
     "$mainMod, j, movefocus, d"
     "$mainMod, k, movefocus, u"
     "$mainMod, l, movefocus, r"
+    "$mainMod, left, movefocus, l"
+    "$mainMod, down, movefocus, d"
+    "$mainMod, up, movefocus, u"
+    "$mainMod, right, movefocus, r"
 
     "$mainMod, Print, exec, $screenshotFull"
     ", Print, exec, $screenshotPartial"
