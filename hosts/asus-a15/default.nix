@@ -61,7 +61,7 @@
   };
 
   networking = {
-    hostName = "nixos"; 
+    hostName = "asus-a15"; 
     networkmanager.enable = true;  
   };
 

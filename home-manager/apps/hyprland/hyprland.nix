@@ -2,8 +2,10 @@
 let
   mainMod = "SUPER";
   terminal = "kitty";
-  fileManager = "dolphin";
+  fileManager = "nemo";
   menu = "rofi -show drun";
+  emojiPicker = "rofi -modi emoji -show emoji";
+
   screenshotDir = "${userdata.userpath}/Screenshots";
   screenshotFull = "mkdir -p ${screenshotDir} && grimblast copysave screen \"${screenshotDir}/Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png\"";
   screenshotPartial = "mkdir -p ${screenshotDir} && grimblast copysave area \"${screenshotDir}/Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png\"";
@@ -50,6 +52,7 @@ in
          "${mainMod}, M, exit"
          "${mainMod}, E, exec, ${fileManager}"
 	 "${mainMod}, SPACE, exec, ${menu}"
+	 "${mainMod}, period, exec, ${emojiPicker}"
 
          "${mainMod}, S, togglespecialworkspace, magic"
          "${mainMod} SHIFT, S, movetoworkspace, special:magic"

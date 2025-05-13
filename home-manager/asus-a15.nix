@@ -4,9 +4,12 @@
     ./apps/firefox
     ./apps/git
     ./apps/hyprland
+    ./apps/kitty
+    ./apps/neovim
     ./apps/spicetify
     ./apps/rofi
     ./apps/waybar
+    ./apps/yazi
     ./apps/zsh
     ./services/cliphist
     ./services/notification
@@ -19,8 +22,6 @@
     stateVersion = "24.11";
     packages = with pkgs; [
       fastfetch
-      kitty
-      neovim 
       wget
       brightnessctl
       vesktop
@@ -47,8 +48,7 @@
       p7zip
       unrar
 
-      kdePackages.dolphin
-      kdePackages.kio-admin
+      nemo
     ];
   };
 
