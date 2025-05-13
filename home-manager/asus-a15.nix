@@ -23,7 +23,6 @@
       neovim 
       wget
       brightnessctl
-      kdePackages.dolphin
       vesktop
       discord
 
@@ -41,6 +40,15 @@
       bitwarden
 
       grimblast
+      oculante
+
+      zip
+      unzip
+      p7zip
+      unrar
+
+      kdePackages.dolphin
+      kdePackages.kio-admin
     ];
   };
 
