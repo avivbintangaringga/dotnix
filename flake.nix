@@ -24,6 +24,11 @@
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -34,6 +39,7 @@
     aagl,
     spicetify-nix,
     hyprland-contrib,
+    zen-browser,
     ...
   }@inputs: let
     inherit (self) outputs;
@@ -73,6 +79,7 @@
         modules = [
           ./home-manager/asus-a15.nix
 	  spicetify-nix.homeManagerModules.spicetify
+	  zen-browser.homeModules.beta
         ];
 	extraSpecialArgs = {
 	  inherit userdata;

@@ -10,6 +10,7 @@
     ./apps/rofi
     ./apps/waybar
     ./apps/yazi
+    ./apps/zen-browser
     ./apps/zsh
     ./services/cliphist
     ./services/notification
