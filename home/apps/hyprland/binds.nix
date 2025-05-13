@@ -14,6 +14,8 @@
     ];
   in [
     "$mainMod, Q, exec, $terminal"
+    "$mainMod, B, exec, $browser"
+    "$mainMod, W, exec, $restartBar"
     "$mainMod, C, killactive"
     "$mainMod, M, exit"
     "$mainMod, E, exec, $fileManager"

@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix.url = "github:danth/stylix";
+    #stylix.url = "github:danth/stylix";
 
     hardware.url = "github:NixOS/nixos-hardware/master";
 
@@ -77,11 +77,10 @@
       in lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         modules = [
-          ./home-manager/asus-a15.nix
-	  spicetify-nix.homeManagerModules.spicetify
-	  zen-browser.homeModules.beta
+          ./home/${userdata.username}.nix
         ];
 	extraSpecialArgs = {
+	  inherit inputs;
 	  inherit userdata;
 	  inherit spicePkgs;
 	  inherit hyprland-contrib;

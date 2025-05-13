@@ -1,4 +1,4 @@
-{ pkgs, userdata, ... }:
+{ inputs, pkgs, userdata, ... }:
 {
   imports = [
     ./apps/firefox
@@ -15,6 +15,9 @@
     ./services/cliphist
     ./services/notification
     ./services/playerctld
+
+    inputs.spicetify-nix.homeManagerModules.spicetify
+    inputs.zen-browser.homeModules.beta
   ];
 
   home = {
@@ -43,12 +46,14 @@
 
       grimblast
       oculante
+      libnotify
 
       zip
       unzip
       p7zip
       unrar
 
+      vlc
       nemo
     ];
   };
