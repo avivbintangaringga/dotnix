@@ -13,6 +13,6 @@ in
 
   "$restartBar" = "systemctl --user restart waybar";
 
-  "$screenshotFull" = "mkdir -p ${screenshotDir} && grimblast copysave screen \"${screenshotDir}/Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png\"";
-  "$screenshotPartial" = "mkdir -p ${screenshotDir} && grimblast copysave area \"${screenshotDir}/Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png\"";
+  "$screenshotFull" = "mkdir -p ${screenshotDir} && grimblast --notify copysave screen \"${screenshotDir}/Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png\"";
+  "$screenshotPartial" = "mkdir -p ${screenshotDir} && grimblast --notify copysave area \"${screenshotDir}/Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png\"";
 }
