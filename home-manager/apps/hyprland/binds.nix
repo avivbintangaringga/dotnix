@@ -33,7 +33,6 @@
     "$mainMod, right, movefocus, r"
 
     "$mainMod, Print, exec, $screenshotFull"
-    "$mainMod SHIFT, Print, exec, $screenShotWindow"
     ", Print, exec, $screenshotPartial"
   ]
   ++
