@@ -14,6 +14,7 @@
     ./apps/zen-browser
     ./apps/zsh
     ./services/cliphist
+    ./services/hyprpolkitagent
     ./services/notification
     ./services/playerctld
 
@@ -56,6 +57,8 @@
       nemo
 
       wev
+      qt5-wayland
+      qt6-wayland
     ];
   };
 

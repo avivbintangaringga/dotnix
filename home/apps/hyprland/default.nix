@@ -11,6 +11,7 @@
        (import ./vars.nix args)
        (import ./env.nix)
        (import ./general.nix)
+       (import ./layout.nix)
        (import ./decoration.nix)
        (import ./binds.nix)
        (import ./input.nix)
