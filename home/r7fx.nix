@@ -5,7 +5,8 @@
     ./apps/git
     ./apps/hyprland
     ./apps/kitty
-    ./apps/neovim
+    #./apps/neovim
+    ./apps/nixvim
     ./apps/obs-studio
     ./apps/spicetify
     ./apps/rofi
@@ -21,6 +22,7 @@
 
     inputs.spicetify-nix.homeManagerModules.spicetify
     inputs.zen-browser.homeModules.beta
+    inputs.nixvim.homeManagerModules.nixvim
   ];
 
   home = {
@@ -55,7 +57,7 @@
       unrar
 
       vlc
-      nemo
+      nemo-with-extensions
 
       speedtest-cli
       wev

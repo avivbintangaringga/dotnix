@@ -91,10 +91,8 @@
     systemPackages = with pkgs; [
       home-manager
       gh
-      neovim
 
       pavucontrol
-
       greetd.tuigreet
 
       killall
@@ -128,6 +126,10 @@
         CPU_BOOST_ON_AC = 0;
 	CPU_BOOST_ON_BAT = 0;
       };
+    };
+
+    gvfs = {
+      enable = true;
     };
 
     greetd = let

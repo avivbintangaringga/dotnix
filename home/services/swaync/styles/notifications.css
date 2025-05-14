@@ -76,7 +76,7 @@
   .notification
   > *:last-child
   > * {
-  min-height: 3.4em;
+  min-height: 2.4em;
 }
 
 .floating-notifications.background
@@ -115,7 +115,7 @@
 }
 
 .image {
-  margin: 10px 20px 10px 0px;
+  margin: 4px 12px 4px 4px;
 }
 
 .summary {
@@ -132,7 +132,7 @@
   .notification-background
   .close-button {
   background: transparent;
-  border-radius: 20px;
+  border-radius: 8px;
   color: @text;
   background-color: alpha(#fff, 0.1);
   margin: 0px;

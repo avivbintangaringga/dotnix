@@ -17,8 +17,8 @@
   
       notification-window-width = 400;
       notification-icon-size = 48;
-      notification-body-image-height = 160;
-      notification-body-image-width = 200;
+      notification-body-image-height = 100;
+      notification-body-image-width = 100;
  
       timeout = 4;
       timeout-low = 2;
@@ -69,15 +69,14 @@
         backlight = {
           label = "󰃟 ";
           subsystem = "backlight";
-          device = "amdgpu_bl0";
         };
         volume = {
           label = " ";
           expand-button-label = "";
           collapse-button-label = "";
           show-per-app = true;
-          show-per-app-icon = true;
-          show-per-app-label = false;
+          show-per-app-icon = false;
+          show-per-app-label = true;
         };
         buttons-grid = {
           actions = [
@@ -116,6 +115,7 @@
     "swaync/styles" = {
        source = ./styles;
        recursive = true;
+       force = true;
     };
   };
 }
