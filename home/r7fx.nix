@@ -21,14 +21,7 @@
 
     inputs.spicetify-nix.homeManagerModules.spicetify
     inputs.zen-browser.homeModules.beta
-    inputs.stylix.homeManagerModules.stylix
   ];
-
-  stylix = {
-    enable = true;
-    polarity = "dark";
-    image = ./wallpapers/default.jpg;
-  };
 
   home = {
     username = userdata.username;
