@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    #stylix.url = "github:danth/stylix";
+    stylix.url = "github:danth/stylix";
 
     hardware.url = "github:NixOS/nixos-hardware/master";
 
@@ -39,6 +39,7 @@
     aagl,
     spicetify-nix,
     hyprland-contrib,
+    stylix,
     zen-browser,
     ...
   }@inputs: let

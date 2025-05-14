@@ -39,6 +39,7 @@
     "$mainMod SHIFT, f, togglefloating"
     "$mainMod SHIFT, p, pseudo"
     "$mainMod SHIFT, s, movetoworkspace, special:magic"
+    "$mainMod SHIFT, w, exec, $randomizeWallpaper"
     "$mainMod SHIFT, Tab, cyclenext, prev hist visible"
 
     "$mainMod, space, exec, $menu"

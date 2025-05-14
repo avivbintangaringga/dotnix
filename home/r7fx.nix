@@ -14,13 +14,21 @@
     ./apps/zen-browser
     ./apps/zsh
     ./services/cliphist
+    ./services/hyprpaper
     ./services/hyprpolkitagent
     ./services/notification
     ./services/playerctld
 
     inputs.spicetify-nix.homeManagerModules.spicetify
     inputs.zen-browser.homeModules.beta
+    inputs.stylix.homeManagerModules.stylix
   ];
+
+  stylix = {
+    enable = true;
+    polarity = "dark";
+    image = ./wallpapers/default.jpg;
+  };
 
   home = {
     username = userdata.username;
@@ -57,9 +65,20 @@
       nemo
 
       wev
-      qt5-wayland
-      qt6-wayland
     ];
+
+    file = {
+      "${userdata.userpath}/.wallpapers" = {
+        source = ./wallpapers;
+	recursive = true;
+      };
+
+      "${userdata.userpath}/.scripts" = {
+        source = ./scripts;
+	executable = true;
+	recursive = true;
+      };
+    };
   };
 
   nixpkgs = {
