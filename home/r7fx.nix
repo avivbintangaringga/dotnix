@@ -54,6 +54,8 @@
 
       vlc
       nemo
+
+      wev
     ];
   };
 

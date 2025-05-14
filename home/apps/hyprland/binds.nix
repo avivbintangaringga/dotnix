@@ -13,13 +13,13 @@
       "9"
     ];
   in [
-    "$mainMod, Q, exec, $terminal"
-    "$mainMod, B, exec, $browser"
-    "$mainMod, W, exec, $restartBar"
-    "$mainMod, C, killactive"
-    "$mainMod, M, exit"
-    "$mainMod, E, exec, $fileManager"
-    "$mainMod, SPACE, exec, $menu"
+    "$mainMod, q, exec, $terminal"
+    "$mainMod, b, exec, $browser"
+    "$mainMod, w, exec, $restartBar"
+    "$mainMod, c, killactive"
+    "$mainMod, Delete, exit"
+    "$mainMod, e, exec, $fileManager"
+    "$mainMod, space, exec, $menu"
     "$mainMod, period, exec, $emojiPicker"
 
     "$mainMod, S, togglespecialworkspace, magic"
@@ -49,6 +49,11 @@
   ];
 
   bindel = [
-
+    ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+    ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+    ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+    ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
+    ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
   ];
 }
