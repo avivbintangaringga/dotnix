@@ -11,6 +11,7 @@ in
 
   "$mainMod" = "SUPER";
 
+  "$toggleNotification" = "swaync-client -t -sw";
   "$restartBar" = "systemctl --user restart waybar";
   "$randomizeWallpaper" = "sh ${userdata.userpath}/.scripts/randomize-wallpaper.sh";
 

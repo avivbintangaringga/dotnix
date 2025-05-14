@@ -29,6 +29,7 @@
     "$mainMod, c, killactive"
     "$mainMod, e, exec, $fileManager"
     "$mainMod, f, fullscreen, 0"
+    "$mainMod, n, exec, $toggleNotification"
     "$mainMod, p, pin, active"
     "$mainMod, q, exec, $terminal"
     "$mainMod, s, togglespecialworkspace, magic"

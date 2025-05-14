@@ -16,7 +16,7 @@
     ./services/cliphist
     ./services/hyprpaper
     ./services/hyprpolkitagent
-    ./services/notification
+    ./services/swaync
     ./services/playerctld
 
     inputs.spicetify-nix.homeManagerModules.spicetify
@@ -57,6 +57,7 @@
       vlc
       nemo
 
+      speedtest-cli
       wev
     ];
 
@@ -73,6 +74,13 @@
       };
     };
   };
+
+  #fonts.fontconfig = {
+  #  enable = true;
+  #  defaultFonts = with pkgs; {
+  #    serif = 
+  #  };
+  #};
 
   nixpkgs = {
     config = {

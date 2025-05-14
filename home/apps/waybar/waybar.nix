@@ -32,7 +32,7 @@
 
 	network = {
 	  interval = 1;
-          format = "{ipaddr} {bandwidthUpBytes} {bandwidthDownBytes}";
+          format = "{ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}";
 	};
 
 	"wlr/taskbar" = {

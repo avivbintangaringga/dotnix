@@ -16,6 +16,7 @@
        (import ./binds.nix)
        (import ./input.nix)
        (import ./misc.nix)
+       (import ./rules.nix)
      ];
    };
 }

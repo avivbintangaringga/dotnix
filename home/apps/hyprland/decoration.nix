@@ -10,9 +10,11 @@
     blur = {
       enabled = true;
       size = 3;
-      passes = 1;
+      passes = 2;
+      noise = 0;
+      brightness = 0.8;
       new_optimizations = true;
-      xray = true;
+      xray = false;
       popups = true;
     };
   };
