@@ -19,6 +19,8 @@
     "$mainMod, c, killactive"
     "$mainMod, Delete, exit"
     "$mainMod, e, exec, $fileManager"
+    "$mainMod, f, togglefloating"
+    "$mainMod, t, togglesplit"
     "$mainMod, space, exec, $menu"
     "$mainMod, period, exec, $emojiPicker"
 

@@ -7,6 +7,7 @@
     repeat_delay = 300;
     touchpad = {
       natural_scroll = true;
+      scroll_factor = 0.5;
     };
   };
 }
