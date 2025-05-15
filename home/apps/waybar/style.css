@@ -18,7 +18,7 @@ window#waybar {
 
 #workspaces button {
   color: @text;
-  padding: 0 4px;
+  padding: 0 8px;
   margin: 4px;
   border-radius: 100px;
 }
@@ -28,13 +28,13 @@ window#waybar {
 }
 
 #workspaces button:hover {
-  color: @text;
   background-color: @secondary;
+  color: @background;
 }
 
 #workspaces button.active {
   background-color: @primary;
-  color: @text;
+  color: @background;
 }
 
 #taskbar button {

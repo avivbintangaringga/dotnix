@@ -35,7 +35,6 @@
       fastfetch
       wget
       brightnessctl
-      vesktop
       discord
 
       protonup-qt

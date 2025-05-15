@@ -25,15 +25,15 @@
 	})
       ];
     };
-    #consoleLogLevel = 3;
-    #initrd.verbose = false;
-    #kernelParams = [
-    #  "quite"
-    #  "splash"
-    #  "boot.shell_on_fail"
-    #  "udev.log_priority=3"
-    #  "rd.systemd.show_status=auto"
-    #];
+    consoleLogLevel = 3;
+    initrd.verbose = false;
+    kernelParams = [
+      "quite"
+      "splash"
+      "boot.shell_on_fail"
+      "udev.log_priority=3"
+      "rd.systemd.show_status=auto"
+    ];
   };
 
   fonts.packages = with pkgs; [
