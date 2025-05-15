@@ -6,6 +6,7 @@
     repeat_rate = 35;
     repeat_delay = 300;
     touchpad = {
+      disable_while_typing = true;
       natural_scroll = true;
       scroll_factor = 0.5;
     };

@@ -3,7 +3,7 @@
   programs.waybar = {
     enable = true;
     systemd.enable = true;
-    style = ./style.css;
+    #style = ./style.css;
     settings = {
       topBar = {
         layer = "top";
@@ -11,53 +11,93 @@
 	reload_style_on_change = true;
 
 	modules-left = [
-          "hyprland/workspaces"
-	  "wlr/taskbar"
+	  "group/groupleft"
+	  "custom/revborder-left"
 	  "hyprland/window"
 	];
 
 	modules-center = [
-	  #"cava"
-          "clock#date"
-          "clock#clock"
+	  "custom/revborder-mid-left"
+          "group/groupclock"
+	  "custom/revborder-mid-right"
 	];
 	
 	modules-right = [
 	  "mpris"
-          "cpu"
-	  "memory"
-	  "network"
-          "backlight"
-	  "wireplumber"
-	  "battery"
+	  "custom/revborder-right"
+	  "group/groupright"
 	];
+          
+	"group/groupclock" = {
+           orientation = "horizontal";
+	   modules = [
+             "clock#date"
+             "clock#clock"
+	   ];
+	};
+
+	"group/groupleft" = {
+           orientation = "horizontal";
+	   modules = [
+             "hyprland/workspaces"
+	     "wlr/taskbar"
+	   ];
+	};
+	
+	"group/groupright" = {
+           orientation = "horizontal";
+	   modules = [
+             "cpu"
+	     "memory"
+	     "network"
+             "backlight"
+	     "wireplumber"
+	     "battery"
+	   ];
+	};
+        
+	"custom/revborder-mid-left" = {
+           format = " ";
+	};
+
+	"custom/revborder-mid-right" = {
+           format = " ";
+	};
+
+	"custom/revborder-left" = {
+           format = " ";
+	};
+
+	"custom/revborder-right" = {
+           format = " ";
+	};
 
 	cpu = {
           interval = 1;
-	  format = "    {usage}%";
+	  format = "   {usage}%";
 	};
 
 	memory = {
           interval = 1;
-	  format = "    {percentage}%";
+	  format = "   {percentage}%";
 	};
 
         battery = {
           interval = 1;
 	  tooltip-format = "{time}";
-	  format = "{icon}    {capacity}%";
+	  format = "{icon}   {capacity}%";
 	  format-icons = ["" "" "" "" ""];
-	  format-plugged = "    {capacity}%";
+	  format-plugged = "   {capacity}%";
 	};
 
 	backlight = {
           format-icons = [ "󰃞" "󰃟" "󰃝" "󰃠" ];
-	  format = "{icon}    {percent}%";
+	  format = "{icon}   {percent}%";
 	};
 
 	wireplumber = {
           format-icons = [ "" "" "" ];
-	  format = "{icon}    {volume}%";
+	  format = "{icon}   {volume}%";
           format-muted = "    {volume}%";
           on-click = "pavucontrol";
 	};
@@ -78,7 +118,8 @@
 
 	network = {
 	  interval = 1;
-          format = "{ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}";
+          format = "  {bandwidthUpBytes}    {bandwidthDownBytes}";
+	  tooltip-format = "{ipaddr}";
 	};
 
 	"wlr/taskbar" = {
@@ -88,8 +129,10 @@
 
         mpris = {
 	  interval = 1;
-	  format = "{player_icon} {title} - {artist}";
-	  format-paused = "{status_icon} {title} - {artist}";
+	  format = "{title} - {artist} {player_icon}";
+	  format-paused = "{title} - {artist} {status_icon}";
+	  title-len = 30;
+	  artist-len = 20;
 	  player-icons = {
             default = "▶";
             mpv = "🎵";
