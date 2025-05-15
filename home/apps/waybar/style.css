@@ -1,0 +1,139 @@
+@import url("../../.cache/hellwal/waybar-colors.conf");
+
+@define-color primary @color4;
+@define-color secondary @color12;
+@define-color text @foreground;
+
+* {
+  all: unset;
+  font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 13px;
+}
+
+window#waybar {
+  background-image: linear-gradient(180deg, @background 0%, rgba(0, 0, 0, 0) 100%);
+  color: @text;
+}
+
+#workspaces button {
+  color: @text;
+  padding: 0 4px;
+  margin: 4px;
+  border-radius: 100px;
+}
+
+#workspaces button.empty {
+  color: #777777;
+}
+
+#workspaces button:hover {
+  color: @text;
+  background-color: @secondary;
+}
+
+#workspaces button.active {
+  background-color: @primary;
+  color: @text;
+}
+
+#taskbar button {
+  color: @text;
+  padding: 0 4px;
+  margin: 4px;
+  border-radius: 100px;
+}
+
+#taskbar button.active {
+  border-color: @primary;
+  border-width: 2px;
+}
+
+#groupclock {
+  background-color: @background; 
+  background-origin: border-box; 
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+#clock.clock {
+  min-width: 5.5em;
+  background-image: linear-gradient(90deg, @primary 0%, @secondary  100%);
+  border-radius: 20px;
+  border-top-right-radius: 0px;
+  font-weight: bold;
+  color: @background;
+}
+
+#clock.date {
+  margin: 0px 20px 0px 20px;
+}
+
+#custom-revborder-mid-left {
+  background-color: rgba(0, 0, 0, 0); 
+  box-shadow: 0 -20px 0 0 @background; 
+  min-width: 20px;
+  border-top-right-radius: 20px;
+  margin-right: -1px
+}
+
+#custom-revborder-mid-right {
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: 0 -20px 0 0 @secondary; 
+  min-width: 20px;
+  border-top-left-radius: 20px;
+  margin-left: -1px;
+}
+
+#groupleftbg {
+  padding: 2px;
+  background-image: linear-gradient(90deg, @primary 0%, @secondary  100%);
+  border-radius: 100px;
+  margin: 6px 0 0 6px
+}
+
+#groupleft {
+  padding: 0px 0px 0px 0px;
+  background-color: @background;
+  border-radius: 100px;
+}
+
+#grouprightbg {
+  padding: 2px;
+  background-image: linear-gradient(90deg, @primary 0%, @secondary  100%);
+  border-radius: 100px;
+  margin: 6px 6px 0 0;
+}
+
+#groupright {
+  padding: 0px 8px 0 0;
+  background-color: @background;
+  border-radius: 100px;
+}
+
+#network {
+  min-width: 11em;
+}
+
+#cpu,
+#memory,
+#backlight,
+#wireplumber {
+  min-width: 4em;
+}
+
+#window,
+#mpris {
+  margin: 6px 6px 0 6px;
+}
+
+tooltip {
+  color: white;
+  background-color: @background;
+  border-radius: 8px;
+}
+
+tooltip * {
+  color: white;
+  text-shadow: none;
+}
