@@ -1,4 +1,4 @@
-{ userdata, ... }:
+{ userdata, lib, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -23,5 +23,10 @@
         "git"
       ];
     };
+
+    initContent = lib.mkBefore ''
+      chmod +x ~/.cache/hellwal/terminal-colors.sh
+      sh ~/.cache/hellwal/terminal-colors.sh
+    '';
   }; 
 }

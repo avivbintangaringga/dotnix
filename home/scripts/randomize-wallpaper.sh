@@ -1,10 +1,20 @@
 #!/bin/sh
 
-WALLPAPER_DIR="$HOME/.wallpapers/"
-CURRENT_WALL=$(hyprctl hyprpaper listloaded)
+echo $HOME
 
-# Get a random wallpaper that is not the current one
-WALLPAPER=$(find "$WALLPAPER_DIR" -type f ! -name "$(basename "$CURRENT_WALL")" | shuf -n 1)
+WALLPAPER_DIR="$HOME/.wallpapers/"
+CURRENT_FILE="${WALLPAPER_DIR}/.current"
+CURRENT_WALLPAPER=$(cat $CURRENT_FILE)
+
+echo "Current wallpaper: $CURRENT_WALLPAPER"
+
+WALLPAPER=$(find "$WALLPAPER_DIR" \( -type f -o -type l \) -regex ".*/.*\.\(jpg\|jpeg\|png\|gif\)" ! -name "$CURRENT_WALLPAPER" | shuf -n 1)
+
+echo "Selected wallpaper: $WALLPAPER"
+echo $(basename $WALLPAPER) > $CURRENT_FILE
 
 # Apply the selected wallpaper
-hyprctl hyprpaper reload ,"$WALLPAPER"
+swww img "$WALLPAPER" --transition-type grow --transition-fps 60 --transition-step 2 --transition-duration 1 --transition-pos top-right
+hellwal -i "$WALLPAPER"
+notify-send -i "$WALLPAPER" "Wallpaper changed"
+

@@ -3,7 +3,7 @@
   programs.waybar = {
     enable = true;
     systemd.enable = true;
-    style = ./style.css;
+    #style = ./style.css;
     settings = {
       topBar = {
         layer = "top";
@@ -11,7 +11,7 @@
 	reload_style_on_change = true;
 
 	modules-left = [
-	  "group/groupleft"
+	  "group/groupleftbg"
 	  "custom/revborder-left"
 	  "hyprland/window"
 	];
@@ -25,7 +25,7 @@
 	modules-right = [
 	  "mpris"
 	  "custom/revborder-right"
-	  "group/groupright"
+	  "group/grouprightbg"
 	];
           
 	"group/groupclock" = {
@@ -43,6 +43,13 @@
 	     "wlr/taskbar"
 	   ];
 	};
+
+	"group/groupleftbg" = {
+           orientation = "horizontal";
+	   modules = [
+	     "group/groupleft"
+	   ];
+	};
 	
 	"group/groupright" = {
            orientation = "horizontal";
@@ -56,6 +63,13 @@
 	   ];
 	};
         
+	"group/grouprightbg" = {
+           orientation = "horizontal";
+	   modules = [
+	     "group/groupright"
+	   ];
+	};
+
 	"custom/revborder-mid-left" = {
            format = " ";
 	};

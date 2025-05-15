@@ -12,7 +12,7 @@
       size = 3;
       passes = 2;
       noise = 0;
-      brightness = 0.8;
+      brightness = 0.9;
       new_optimizations = true;
       xray = false;
       popups = true;

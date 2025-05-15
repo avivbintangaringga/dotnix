@@ -3,6 +3,7 @@
   imports = [
     ./apps/firefox
     ./apps/git
+    ./apps/hellwall
     ./apps/hyprland
     ./apps/kitty
     #./apps/neovim
@@ -18,6 +19,7 @@
     ./services/hyprpaper
     ./services/hyprpolkitagent
     ./services/swaync
+    ./services/swww
     ./services/playerctld
 
     inputs.spicetify-nix.homeManagerModules.spicetify
@@ -61,6 +63,7 @@
 
       speedtest-cli
       wev
+      hellwal
     ];
 
     file = {
@@ -74,6 +77,14 @@
 	executable = true;
 	recursive = true;
       };
+    };
+  };
+
+  xdg = {
+    configFile = {
+      #"hellwal/templates/waybar.css" = {
+      #  source = ./hellwal/waybar.css;
+      #};
     };
   };
 
