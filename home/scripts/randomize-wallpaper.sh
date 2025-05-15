@@ -18,6 +18,8 @@ swww img "$WALLPAPER" --transition-type grow --transition-fps 60 --transition-st
 
 hellwal -i "$WALLPAPER" --bright-offset 0.1 --neon-mode
 
-notify-send -i "$WALLPAPER" "Wallpaper changed"
-
+if [[ $1 != "--quiet" ]]
+then
+  notify-send -i "$WALLPAPER" "Wallpaper changed"
+fi
 

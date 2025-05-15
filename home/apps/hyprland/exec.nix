@@ -5,6 +5,6 @@
   ];
 
   exec-once = [
-    "sh ~/.scripts/randomize-wallpaper.sh"
+    "sh ~/.scripts/randomize-wallpaper.sh --quiet"
   ];
 }
