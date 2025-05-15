@@ -96,7 +96,7 @@
   ++
   (builtins.attrValues 
     (builtins.mapAttrs 
-      (key: rp: "$mainMod ALT, ${key}, resizeactive, ${rp}") resizeparams
+      (key: rp: "$mainMod Control, ${key}, resizeactive, ${rp}") resizeparams
     )
   )
   ++
