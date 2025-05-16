@@ -1,0 +1,4 @@
+@define-color primary @color4;
+@define-color secondary @color12;
+@define-color background-alt lighter(@background);
+@define-color hover @color6;

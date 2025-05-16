@@ -1,0 +1,53 @@
+* {
+  all: unset;
+  font-size: 14px;
+  font-family: "JetBrains Mono Nerd Font 10";
+  transition: 50ms;
+}
+
+.floating-notifications .notification-row {
+  margin: 4px;
+}
+
+.floating-notifications .notification-background {
+  border-radius: 16px;
+  border: 2px solid alpha(@primary, 0.5);
+  padding: 12px;
+  background: alpha(@background, 0.5);
+}
+
+.floating-notifications .notification-content .app-icon {
+  min-width: 10px;
+  min-height: 10px;
+}
+
+.floating-notifications .notification-content .image {
+  margin-right: 8px;
+}
+
+.floating-notifications .notification-content .summary {
+  margin-left: 8px;
+}
+
+.floating-notifications .notification-content .body {
+  margin-left: 8px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.floating-notifications .notification-background scrolledwindow {
+  min-height: 30px;
+}
+
+.floating-notifications .notification-background scrolledwindow button {
+  border-radius: 16px;
+  border: 2px solid @primary;
+  color: @primary;
+  margin: 0 4px;
+}
+
+.floating-notifications .notification-background scrolledwindow button:hover {
+  background: @primary;
+  color: @background;
+}
+
