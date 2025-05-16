@@ -34,13 +34,13 @@
     "$mainMod, q, exec, $terminal"
     "$mainMod, s, togglespecialworkspace, magic"
     "$mainMod, t, togglesplit"
-    "$mainMod, w, exec, $restartBar"
+    "$mainMod, w, exec, $randomizeWallpaper"
     
     "$mainMod SHIFT, c, forcekillactive"
     "$mainMod SHIFT, f, togglefloating"
     "$mainMod SHIFT, p, pseudo"
     "$mainMod SHIFT, s, movetoworkspace, special:magic"
-    "$mainMod SHIFT, w, exec, $randomizeWallpaper"
+    "$mainMod SHIFT, w, exec, $restartBar"
     "$mainMod SHIFT, Tab, cyclenext, prev hist visible"
 
     "$mainMod, space, exec, $menu"

@@ -110,6 +110,11 @@
     networkmanager.enable = true;  
   };
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
   time.timeZone = "Asia/Jakarta";
 
   services = {
@@ -119,6 +124,10 @@
     };
 
     libinput.enable = true;
+
+    blueman = {
+      enable = true;
+    };
 
     tlp = {
       enable = true;

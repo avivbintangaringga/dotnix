@@ -15,6 +15,7 @@
     ./apps/yazi
     ./apps/zen-browser
     ./apps/zsh
+    ./services/blueman
     ./services/cliphist
     ./services/hyprpaper
     ./services/hyprpolkitagent
@@ -63,6 +64,7 @@
       speedtest-cli
       wev
       hellwal
+      networkmanagerapplet
     ];
 
     file = {

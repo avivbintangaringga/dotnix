@@ -1,121 +1,112 @@
 {
   services.swaync = {
     enable = true;
-    style = ./style.css;
+    #style = ./style.css;
     settings = {
-      positionX = "right";
+      positionX = "center";
       positionY = "top";
       layer = "overlay";
       cssPriority = "user";
-  
-      control-center-width = 360;
-      control-center-height = 860;
-      control-center-margin-top = 8;
-      control-center-margin-bottom = 8;
-      control-center-margin-right = 8;
-      control-center-margin-left = 0;
-  
-      notification-window-width = 400;
-      notification-icon-size = 48;
-      notification-body-image-height = 100;
-      notification-body-image-width = 100;
- 
-      timeout = 4;
-      timeout-low = 2;
-      timeout-critical = 6;
-  
-      fit-to-screen = false;
+      control-center-margin-top = 20;
+      control-center-margin-bottom = 20;
+      control-center-layer = "top";
+      control-center-exclusive-zone = false;
+      notification-2fa-action = true;
+      timeout = 5;
+      timeout-low = 5;
+      timeout-critical = 0;
+      notification-window-width = 500;
       keyboard-shortcuts = true;
       image-visibility = "when-available";
-      transition-time = 200;
+      transition-time = 100;
       hide-on-clear = false;
-      hide-on-action = false;
-      script-fail-notify = true;
-      scripts = {};
-      notification-visibility = {
-        example-name = {
-          state = "muted";
-          urgency = "Normal";
-          app-name = "Spotify";
-        };
-      };
+      hide-on-action = true;
+      text-empty = "No notifications.";
       widgets = [
-        "label"
         "buttons-grid"
-        "backlight"
-        "volume"
-        "mpris"
-        "dnd"
+	"mpris"
+	"backlight"
+	"volume"
+	"dnd"
         "title"
-        "notifications"
+	"notifications"
       ];
       widget-config = {
-        title = {
-          text = "Notifications";
-          clear-all-button = true;
-          button-text = "󰎟";
-        };
-        dnd = {
-          text = "DND";
-        };
-        label = {
-          max-lines = 0;
-          text = " ";
-        };
-        mpris = {
-          image-size = 96;
-          image-radius = 20;
-        };
-        backlight = {
-          label = "󰃟 ";
-          subsystem = "backlight";
-        };
-        volume = {
-          label = " ";
-          expand-button-label = "";
-          collapse-button-label = "";
-          show-per-app = true;
-          show-per-app-icon = false;
-          show-per-app-label = true;
-        };
-        buttons-grid = {
-          actions = [
-            {
-              label = " ";
-              type = "toggle";
-              active = true;
-              command = "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'";
-              update-command = "sh -c '[[ $(nmcli r wifi) == \"enabled\" ]] && echo true || echo false'";
-            }
-            {
-              label = "";
-              type = "toggle";
-              active = true;
-              command = "";
-              update-command = "";
-            }
-            {
-              label = " ";
-              type = "toggle";
-              active = true;
-              command = "amixer set Capture toggle";
-              update-command = "";
-            }
-            {
-              label = "";
-              command = "wlogout -b 4";
-            }
-          ];
-        }; 
+         title = {
+           text = "  Notifications";
+	   clear-all-button = true;
+	   button-text = " Clear";
+	 };
+	 mpris = {
+           image-size = 50;
+	   image-radius = 8;
+	 };
+	 dnd = {
+           text = "  Do not disturb";
+	 };
+	 buttons-grid = {
+	   actions = [
+	     {
+	       label = "   Network";
+	       type = "normal";
+	     }
+	     {
+	       label = "󰂯 Bluetooth";
+	       type = "normal";
+	     }
+	     {
+	       label = "󰝟  Mute";
+	       type = "toggle";
+	     }
+	     {
+	       label = "   Mic";
+	       type = "toggle";
+	     }
+	     {
+	       label = "⏻  Shutdown";
+	       type = "normal";
+	     }
+	     {
+	       label = "  Reboot";
+	       type = "normal";
+	     }
+	     {
+	       label = "󰍃  Logout";
+	       type = "normal";
+	     }
+	     {
+	       label = "  Lock";
+	       type = "normal";
+	     }
+	   ];
+	 };
+	 
+	 volume = {
+           label = "";
+	   show-per-app = true;
+	   show-per-app-icon = true;
+	   show-per-app-label = true;
+	   empty-list-label = "No application is sending audio";
+	   animation-type = "slide_down";
+	   animation-duration = 100;
+	   collapse-button-label = "";
+	   expand-button-label = "";
+	 };
+
+         backlight = {
+           label = "";
+	   device = "amdgpu_bl1";
+	 };
+
       };
     };
   };
 
   xdg.configFile = {
-    "swaync/styles" = {
-       source = ./styles;
-       recursive = true;
-       force = true;
-    };
+    #"swaync/styles" = {
+    #   source = ./styles;
+    #   recursive = true;
+    #   force = true;
+    #};
   };
 }

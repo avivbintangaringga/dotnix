@@ -132,8 +132,15 @@
 
 	network = {
 	  interval = 1;
-          format = "  {bandwidthUpBytes}    {bandwidthDownBytes}";
-	  tooltip-format = "{ipaddr}";
+          format = "  {bandwidthTotalBytes}";
+          format-ethernet = "   {bandwidthTotalBytes}";
+          format-wifi = "{icon}   {bandwidthTotalBytes}";
+	  format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
+          format-disconnected = "󰀦  Disconnected";
+          format-linked = "󰪎  No Internet";
+	  tooltip-format = "{ifname}: {ipaddr}";
+	  on-click = "kitty -e nmtui-connect";
+	  on-click-right = "nm-connection-editor";
 	};
 
 	"wlr/taskbar" = {

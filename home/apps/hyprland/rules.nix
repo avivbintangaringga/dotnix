@@ -7,4 +7,7 @@
     "ignorealpha, swaync-control-center"
     "ignorealpha, swaync-notification-window"
   ];
+
+  windowrule = [
+  ];
 }
