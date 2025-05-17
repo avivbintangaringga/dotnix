@@ -14,7 +14,7 @@
       control-center-exclusive-zone = false;
       notification-2fa-action = true;
       timeout = 5;
-      timeout-low = 3;
+      timeout-low = 5;
       timeout-critical = 0;
       notification-window-width = 500;
       keyboard-shortcuts = true;
@@ -105,6 +105,7 @@
 
   xdg.configFile = {
     "swaync/styles" = {
+       enable = true;
        source = ./styles;
        recursive = true;
        force = true;
