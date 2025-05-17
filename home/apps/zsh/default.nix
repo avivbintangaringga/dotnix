@@ -16,13 +16,34 @@
       hm-update = "home-manager switch --flake";
     };
 
-    oh-my-zsh = {
+    prezto = {
       enable = true;
-      theme = "fino-time";
-      plugins = [
-        "git"
+      pmodules = [
+        "environment"
+        "terminal"
+        "editor"
+        "history"
+        "directory"
+        "spectrum"
+        "utility"
+        "completion"
+        "prompt"
+	"git"
+	"docker"
+	"archive"
+	"autosuggestions"
+	"syntax-highlighting"
       ];
     };
+
+
+    #oh-my-zsh = {
+    #  enable = true;
+    #  theme = "fino-time";
+    #  plugins = [
+    #    "git"
+    #  ];
+    #};
 
     #initContent = lib.mkBefore ''
     #  chmod +x ~/.cache/hellwal/terminal-colors.sh

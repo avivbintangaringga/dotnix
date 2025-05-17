@@ -66,6 +66,7 @@
       hellwal
       networkmanagerapplet
       pywal16
+      imagemagick
       wallust
     ];
 
