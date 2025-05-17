@@ -1,5 +1,5 @@
-
-@import "../../.cache/hellwal/waybar-colors.conf";
+/*@import "../../.cache/hellwal/waybar-colors.conf";*/
+@import "../../.cache/wal/colors-waybar.css";
 @import "./styles/colors.css";
 @import "./styles/floating.css";
 @import "./styles/notification-center.css";

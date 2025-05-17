@@ -60,6 +60,7 @@
              "backlight"
 	     "wireplumber"
 	     "battery"
+	     "custom/notification"
 	   ];
 	};
         
@@ -85,6 +86,27 @@
 	"custom/revborder-right" = {
            format = " ";
 	};
+
+        "custom/notification" = {
+          tooltip = false;
+          format = "{icon}";
+          format-icons = {
+            notification = "<span foreground='red'><sub></sub></span>";
+            none = "";
+            dnd-notification = "<span foreground='red'><sub></sub></span>";
+            dnd-none = "";
+            inhibited-notification = "<span foreground='red'><sub></sub></span>";
+            inhibited-none = "";
+            dnd-inhibited-notification = "<span foreground='red'><sub></sub></span>";
+            dnd-inhibited-none = "";
+          };
+          return-type = "json";
+          exec-if = "which swaync-client";
+          exec = "swaync-client -swb";
+          on-click = "swaync-client -t -sw";
+          on-click-right = "swaync-client -d -sw";
+          escape = true;
+        };
 
 	cpu = {
           interval = 1;

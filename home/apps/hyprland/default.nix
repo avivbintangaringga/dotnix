@@ -7,7 +7,8 @@
      settings = lib.mkMerge [
        {
          monitor = ",1920x1080@144,auto,1";
-	 source = "~/.cache/hellwal/hyprland-colors.conf";
+	 #source = "~/.cache/hellwal/hyprland-colors.conf";
+	 source = "~/.cache/wal/colors-hyprland.conf";
        }
        (import ./vars.nix args)
        (import ./env.nix)

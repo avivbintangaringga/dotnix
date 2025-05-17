@@ -1,4 +1,4 @@
-@import url("../../.cache/hellwal/waybar-colors.conf");
+@import url("../../.cache/wal/colors-waybar.css");
 
 @define-color primary @color4;
 @define-color secondary @color12;
@@ -112,7 +112,7 @@ window#waybar {
 }
 
 #network {
-  min-width: 11em;
+  min-width: 9em;
 }
 
 #cpu,
@@ -120,6 +120,10 @@ window#waybar {
 #backlight,
 #wireplumber {
   min-width: 4em;
+}
+
+#custom-notification {
+  min-width: 2.5em;
 }
 
 #window,

@@ -65,7 +65,23 @@
       wev
       hellwal
       networkmanagerapplet
+      pywal16
+      wallust
     ];
+
+    pointerCursor = {
+      enable = true;
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+      size = 24;
+      gtk  = {
+        enable = true;
+      };
+      hyprcursor = {
+        enable = true;
+        size = 24;
+      };
+    };
 
     file = {
       "${userdata.userpath}/.wallpapers" = {
@@ -107,6 +123,7 @@
       package = pkgs.gnome-themes-extra;
     };
   };
+
 
   nixpkgs = {
     config = {

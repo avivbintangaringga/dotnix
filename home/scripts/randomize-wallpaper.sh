@@ -13,11 +13,12 @@ WALLPAPER=$(find "$WALLPAPER_DIR" \( -type f -o -type l \) -regex ".*/.*\.\(jpg\
 echo "Selected wallpaper: $WALLPAPER"
 echo $(basename $WALLPAPER) > $CURRENT_FILE
 
+# Regenerate colors
+# hellwal -i "$WALLPAPER" --bright-offset 0.1 --neon-mode
+wal -n -i "$WALLPAPER"
+
 # Apply the selected wallpaper
 swww img "$WALLPAPER" --transition-type grow --transition-fps 60 --transition-step 2 --transition-duration 1 --transition-pos top-right
-
-# Regenerate colors
-hellwal -i "$WALLPAPER" --bright-offset 0.1 --neon-mode
 
 # Reload swaync css
 swaync-client -rs

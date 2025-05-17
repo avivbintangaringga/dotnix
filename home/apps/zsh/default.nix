@@ -24,9 +24,14 @@
       ];
     };
 
+    #initContent = lib.mkBefore ''
+    #  chmod +x ~/.cache/hellwal/terminal-colors.sh
+    #  sh ~/.cache/hellwal/terminal-colors.sh
+    #'';
+
     initContent = lib.mkBefore ''
-      chmod +x ~/.cache/hellwal/terminal-colors.sh
-      sh ~/.cache/hellwal/terminal-colors.sh
+      cat ~/.cache/wal/sequences
+      source ~/.cache/wal/colors-tty.sh
     '';
   }; 
 }
