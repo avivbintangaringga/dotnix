@@ -10,7 +10,7 @@
       control-center-margin-top = 20;
       control-center-margin-bottom = 20;
       control-center-margin-right = 20;
-      control-center-layer = "top";
+      control-center-layer = "overlay";
       control-center-exclusive-zone = false;
       notification-2fa-action = true;
       timeout = 5;
@@ -50,30 +50,39 @@
              {
                label = " ";
                type = "normal";
+	       command = "kitty -e nmtui-connect";
              }
              {
                label = "󰂯";
                type = "normal";
+	       command = "blueman-manager";
              }
              {
                label = "󰝟";
                type = "toggle";
+	       command = "sh -c '[[ $SWAYNC_TOGGLE_STATE = true ]] && wpctl set-mute @DEFAULT_AUDIO_SINK@ 1 || wpctl set-mute @DEFAULT_AUDIO_SINK@ 0'";
+	       update-command = "sh -c '[[ $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -i mute) ]] && echo true || echo false'";
              }
              {
                label = "";
                type = "toggle";
+	       command = "sh -c '[[ $SWAYNC_TOGGLE_STATE = true ]] && wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 1 || wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 0'";
+	       update-command = "sh -c '[[ $(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -i mute) ]] && echo true || echo false'";
              }
              {
                label = "⏻";
                type = "normal";
+	       command = "poweroff";
              }
              {
                label = "";
                type = "normal";
+	       command = "reboot";
              }
              {
                label = "󰍃";
                type = "normal";
+	       command = "hyprctl dispatch exit";
              }
              {
                label = "";

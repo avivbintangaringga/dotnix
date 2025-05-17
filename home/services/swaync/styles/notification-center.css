@@ -14,7 +14,6 @@
   border-radius: 24px;
   border: 2px solid alpha(@primary, 0.7);
   color: @foreground;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,.6);
 }
 
 /* Notification row */
