@@ -118,9 +118,20 @@
     networkmanager.enable = true;  
   };
 
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
+  hardware = {
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
+
+    graphics.enable = true;
+    nvidia = {
+      modesetting.enable = true;
+      prime = {
+	nvidiaBusId = lib.mkForce "PCI:1:0:0";
+	amdgpuBusId = lib.mkForce "PCI:6:0:0";
+      };
+    };
   };
 
   time.timeZone = "Asia/Jakarta";
@@ -141,11 +152,30 @@
       enable = true;
     };
 
-    tlp = {
+    #tlp = {
+    #  enable = true;
+    #  settings = {
+    #    CPU_BOOST_ON_AC = 0;
+    #    CPU_BOOST_ON_BAT = 0;
+    #  };
+    #};
+
+    auto-cpufreq = let
+      turbo = "never";
+    in {
       enable = true;
       settings = {
-        CPU_BOOST_ON_AC = 0;
-	CPU_BOOST_ON_BAT = 0;
+        charger = {
+          inherit turbo;
+          gorvernor = "performance";
+        };
+        battery = {
+          inherit turbo;
+          governor = "powersave";
+          scaling_max_freq = 1500000;
+          platform_profile = "quiet";
+          energy_per_bias = "balance_power";
+        };
       };
     };
 
