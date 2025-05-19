@@ -7,6 +7,7 @@
     ./apps/hyprland
     ./apps/kitty
     #./apps/neovim
+    ./apps/nh
     ./apps/nixvim
     ./apps/obs-studio
     ./apps/spicetify
@@ -46,6 +47,7 @@
 
       btop
       htop
+      btdu
 
       bitwarden
 
@@ -68,6 +70,9 @@
       pywal16
       imagemagick
       wallust
+
+      scrcpy
+      qtscrcpy
     ];
 
     pointerCursor = {

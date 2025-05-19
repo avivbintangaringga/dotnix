@@ -49,6 +49,12 @@
     inter
   ];
 
+  programs.adb.enable = true;
+  programs.winbox = {
+    enable = true;
+    openFirewall = true;
+    package = pkgs.winbox4;
+  };
   programs.hyprland.enable = true;
   programs.zsh.enable = true;
   programs.steam.enable = true;
@@ -79,7 +85,7 @@
     users.${userdata.username} = {
       isNormalUser = true;
       initialPassword = "123";
-      extraGroups = [ "wheel" ]; 
+      extraGroups = [ "wheel" "adbusers" ]; 
       packages = with pkgs; [
         tree
       ];
@@ -98,6 +104,8 @@
       killall
       nvtopPackages.nvidia
       nvtopPackages.amd
+
+      powertop
     ];
 
     shells = with pkgs; [
@@ -124,6 +132,10 @@
     };
 
     libinput.enable = true;
+
+    upower = {
+      enable = true;
+    };
 
     blueman = {
       enable = true;

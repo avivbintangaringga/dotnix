@@ -1,4 +1,8 @@
 {
+  binds = {
+    hide_special_on_workspace_change = true;
+  };
+
   bind = let
     workspaces = [
       "0"
