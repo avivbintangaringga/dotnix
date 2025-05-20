@@ -58,6 +58,7 @@
       grimblast
       oculante
       libnotify
+      font-manager
 
       zip
       unzip
@@ -115,12 +116,13 @@
     };
   };
 
-  #fonts.fontconfig = {
-  #  enable = true;
-  #  defaultFonts = with pkgs; {
-  #    serif = 
-  #  };
-  #};
+  fonts.fontconfig = {
+    enable = true;
+    defaultFonts = {
+      monospace = [ "Fira Mono" ];
+      emoji = [ "Noto Color Emoji" ];
+    };
+  };
 
   gtk = {
     enable = true;

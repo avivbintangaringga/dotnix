@@ -6,7 +6,7 @@
 
 * {
   all: unset;
-  font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+  font-family: Roboto, 'Font Awesome 6 Free', sans-serif;
   font-weight: normal;
   font-size: 13px;
 }

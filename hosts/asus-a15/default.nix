@@ -37,18 +37,20 @@
   };
 
   fonts.packages = with pkgs; [
-    corefonts
-    vistafonts
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-emoji
     noto-fonts-color-emoji
-    nerd-fonts.jetbrains-mono
     font-awesome
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-mono
+    nerd-fonts.fira-code
     lato
     open-sans
     roboto
     inter
+    corefonts
+    vistafonts
   ];
 
   programs.adb.enable = true;
