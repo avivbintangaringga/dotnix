@@ -30,6 +30,12 @@
     inputs.nixvim.homeManagerModules.nixvim
   ];
 
+  setup = {
+    apps = {
+      firefox.enable = true;
+    };
+  };
+
   home = {
     username = userdata.username;
     homeDirectory = userdata.userpath;

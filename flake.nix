@@ -40,6 +40,7 @@
     home-manager,
     hardware,
     aagl,
+    nixvim,
     spicetify-nix,
     hyprland-contrib,
     zen-browser,
