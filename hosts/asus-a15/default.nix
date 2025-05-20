@@ -37,6 +37,8 @@
   };
 
   fonts.packages = with pkgs; [
+    corefonts
+    vistafonts
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-emoji
@@ -228,6 +230,19 @@
     device = "/dev/disk/by-uuid/a7b2e66e-5fd3-47df-97fc-468b710c0beb";
     fsType = "btrfs";
     options = [ "subvol=@home" ];
+  };
+
+  system.userActivationScripts = {
+    copy-fonts-local-share = {
+      text = ''
+        rm -rf ~/.local/share/fonts
+        mkdir -p ~/.local/share/fonts
+        cp ${pkgs.corefonts}/share/fonts/truetype/* ~/.local/share/fonts/
+        cp ${pkgs.vistafonts}/share/fonts/truetype/* ~/.local/share/fonts/
+        chmod 544 ~/.local/share/fonts
+        chmod 444 ~/.local/share/fonts/*
+      '';
+    };
   };
 
   system.stateVersion = "24.11"; # Did you read the comment?
