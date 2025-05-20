@@ -11,6 +11,7 @@
     ./apps/nixvim
     ./apps/obs-studio
     ./apps/spicetify
+    ./apps/onlyoffice
     ./apps/rofi
     ./apps/waybar
     ./apps/yazi
