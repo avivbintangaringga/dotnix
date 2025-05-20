@@ -51,6 +51,9 @@
 
       bitwarden
 
+      zotero
+      wpsoffice
+
       grimblast
       oculante
       libnotify

@@ -12,8 +12,10 @@
 
     shellAliases = {
       edit = "vim /home/${userdata.username}/dotnix";
-      update = "sudo nixos-rebuild switch --flake";
-      hm-update = "home-manager switch --flake";
+      #update = "sudo nixos-rebuild switch --flake";
+      #hm-update = "home-manager switch --flake";
+      update = "nh os switch ~/dotnix";
+      hm-update = "nh home switch ~/dotnix";
     };
 
     prezto = {

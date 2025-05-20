@@ -199,6 +199,11 @@
 	};
       };
     };
+
+    logind = {
+      powerKey = "suspend";
+      lidSwitch = "suspend";
+    };
   };
 
   fileSystems."/media/DATA" = {
