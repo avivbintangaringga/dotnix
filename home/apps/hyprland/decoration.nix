@@ -15,7 +15,7 @@
       brightness = 0.9;
       new_optimizations = true;
       xray = false;
-      popups = true;
+      popups = false;
     };
   };
 }

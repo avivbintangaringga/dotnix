@@ -52,6 +52,8 @@
 
       bitwarden
 
+      temurin-jre-bin-17
+      libreoffice
       zotero
       wpsoffice
 
