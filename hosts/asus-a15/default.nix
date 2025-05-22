@@ -164,6 +164,8 @@
     #  };
     #};
 
+    preload.enable = true;
+
     auto-cpufreq = let
       turbo = "never";
     in {
