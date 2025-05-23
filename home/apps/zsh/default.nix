@@ -14,8 +14,8 @@
       edit = "vim /home/${userdata.username}/dotnix";
       #update = "sudo nixos-rebuild switch --flake";
       #hm-update = "home-manager switch --flake";
-      update = "nh os switch ~/dotnix";
-      hm-update = "nh home switch ~/dotnix";
+      update = "nh os switch ~/dotnix --no-nom";
+      hm-update = "nh home switch ~/dotnix --no-nom";
     };
 
     prezto = {
