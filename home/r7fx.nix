@@ -16,6 +16,7 @@
     ./apps/rofi
     ./apps/waybar
     ./apps/yazi
+    ./apps/zed
     ./apps/zen-browser
     ./apps/zsh
     ./services/blueman
