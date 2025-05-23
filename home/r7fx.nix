@@ -78,6 +78,8 @@
 
       scrcpy
       qtscrcpy
+
+      android-studio
     ];
 
     pointerCursor = {
