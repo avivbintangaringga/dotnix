@@ -1,6 +1,7 @@
 { inputs, pkgs, userdata, ... }:
 {
   imports = [
+    ./apps/bun
     ./apps/firefox
     ./apps/git
     ./apps/hellwall
