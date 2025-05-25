@@ -110,6 +110,7 @@
       nvtopPackages.amd
 
       powertop
+      nixd
     ];
 
     shells = with pkgs; [
