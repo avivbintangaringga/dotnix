@@ -1,4 +1,4 @@
-{ lib, pkgs, userdata, ... }:
+{ ... }:
 {
   imports =
     [
@@ -15,15 +15,6 @@
         canTouchEfiVariables = true;
       };
       timeout = 1;
-    };
-  };
-
-  users = {
-    users.${userdata.username} = {
-      isNormalUser = true;
-      initialPassword = "123";
-      extraGroups = [ "wheel" "adbusers" ];
-      shell = pkgs.zsh;
     };
   };
 

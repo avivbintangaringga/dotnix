@@ -9,6 +9,10 @@
     };
   };
 
+  users.${userdata.username} = {
+    shell = pkgs.zsh;
+  };
+
   environment.shells = with pkgs; [
     zsh
   ];
