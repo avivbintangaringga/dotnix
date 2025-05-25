@@ -1,4 +1,4 @@
-{ userdata, lib, config, ... }:
+{ lib, config, ... }:
 {
   options = {
     setup.cli-apps.zsh.enable = lib.mkEnableOption "ZSH";
@@ -15,13 +15,6 @@
 
       history.size = 10000;
 
-      shellAliases = {
-        edit = "vim /home/${userdata.username}/dotnix";
-        #update = "sudo nixos-rebuild switch --flake";
-        #hm-update = "home-manager switch --flake";
-        update = "nh os switch ~/dotnix";
-        hm-update = "nh home switch ~/dotnix";
-      };
 
       prezto = {
         enable = true;

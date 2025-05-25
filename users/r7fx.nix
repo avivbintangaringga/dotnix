@@ -1,4 +1,4 @@
-{ pkgs, userdata, ... }:
+{ userdata, ... }:
 {
   imports = [
     ./common.nix
@@ -17,12 +17,6 @@
     username = userdata.username;
     homeDirectory = userdata.userpath;
     stateVersion = "24.11";
-    packages = with pkgs; [
-      fastfetch
-      wget
-      curl
-      speedtest-cli
-    ];
   };
 
   fonts.fontconfig = {
@@ -33,10 +27,4 @@
     };
   };
 
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-      allowUnfreePredicate = (_: true);
-    };
-  };
 }

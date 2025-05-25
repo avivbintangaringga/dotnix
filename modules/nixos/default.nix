@@ -29,5 +29,8 @@ let
 
 in
 {
-  imports = getDefaultNix ./.;
+  imports = [
+    ./../common
+  ]
+  ++ getDefaultNix ./.;
 }
