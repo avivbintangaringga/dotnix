@@ -111,6 +111,7 @@
 
       powertop
       nixd
+      nil
     ];
 
     shells = with pkgs; [
