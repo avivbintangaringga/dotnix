@@ -64,7 +64,6 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         modules = [
           ./users/${userdata.username}.nix
-          inputs.nixvim.homeManagerModules.nixvim
         ];
 	      extraSpecialArgs = {
 	        inherit inputs;
