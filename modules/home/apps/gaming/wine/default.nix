@@ -6,7 +6,6 @@
 
   config = lib.mkIf config.setup.apps.gaming.wine.enable {
     home.packages = with pkgs; [
-      wine
       wineWowPackages.stable
       winetricks
     ];
