@@ -1,23 +1,24 @@
-{ lib, config, options, spicePkgs, ... }:
-let
-  inherit (lib) mkEnableOption mkIf;
-  cfg = config.setup.apps.spicetify;
-in
+{ lib, config, inputs, ... }:
 {
-  options.setup.apps.spicetify.enable = mkEnableOption "Enable Spicetify";
-  programs.spicetify = {
-    enable = cfg.enable;
-    enabledExtensions = with spicePkgs.extensions; [
-      adblock
-      hidePodcasts
-      shuffle
-      betterGenres
-      sectionMarker
-      fullAppDisplay
-      powerBar
-      songStats
-    ];
-    theme = spicePkgs.themes.catppuccin;
-    colorScheme = "mocha";
+  options = {
+    setup.apps.spicetify.enable = lib.mkEnableOption "Spicetify";
+  };
+
+  config = lib.mkIf config.setup.apps.spicetify.enable {
+    programs.spicetify = {
+      enable = true;
+      enabledExtensions = with inputs.spicePkgs.extensions; [
+        adblock
+        hidePodcasts
+        shuffle
+        betterGenres
+        sectionMarker
+        fullAppDisplay
+        powerBar
+        songStats
+      ];
+      theme = inputs.spicePkgs.themes.catppuccin;
+      colorScheme = "mocha";
+    };
   };
 }

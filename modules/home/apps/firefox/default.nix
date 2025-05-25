@@ -1,9 +1,10 @@
-{ lib, config, options, ... }:
-let
-  inherit (lib) mkEnableOption mkIf;
-  cfg = config.setup.apps.firefox;
-in
+{ lib, config, ... }:
 {
-  options.setup.apps.firefox.enable = mkEnableOption "Enable Firefox";
-  programs.firefox.enable = cfg.enable;
+  options = {
+    setup.apps.firefox.enable = lib.mkEnableOption "Firefox";
+  };
+
+  config = lib.mkIf config.setup.apps.firefox.enable {
+    programs.firefox.enable = true;
+  };
 }

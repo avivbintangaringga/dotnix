@@ -1,21 +1,20 @@
-{ lib, config, options, ... }:
-let
-  inherit (lib) mkEnableOption mkIf;
-  cfg = config.setup.apps.kitty;
-in
+{ lib, config, ... }:
 {
-  options.setup.apps.kitty.enable = mkEnableOption "Enable Kitty";
-  programs.kitty = {
-    enable = cfg.enable;
-    shellIntegration = {
-      enableZshIntegration = true;
+  options = {
+    setup.apps.kitty.enable = lib.mkEnableOption "Kitty";
+  };
+
+  config = lib.mkIf config.setup.apps.kitty.enable {
+    programs.kitty = {
+      enable = true;
+      shellIntegration = {
+        enableZshIntegration = true;
+      };
+      settings = {
+        background_opacity = 0.8;
+        confirm_os_window_close = 0;
+        enable_audio_bell = "no";
+      };
     };
-    settings = {
-      background_opacity = 0.8;
-      confirm_os_window_close = 0;
-      #window_padding_width = 4;
-      enable_audio_bell = "no";
-    };
-    #themeFile = "Catppuccin-Mocha";
   };
 }

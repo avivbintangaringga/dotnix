@@ -1,23 +1,24 @@
-{ lib, config, options, ... }:
-let
-  inherit (lib) mkEnableOption mkIf;
-  cfg = config.setup.apps.zen-browser;
-in
+{ lib, config, ... }:
 {
-  options.setup.apps.zen-browser.enable = mkEnableOption "Enable Zen Browser";
-  programs.zen-browser = {
-    enable = cfg.enable;
-    policies = {
-      AutofillAddressEnabled = true;
-      AutofillCreditCardEnabled = false;
-      DisableAppUpdate = true;
-      DisableFeedbackCommands = true;
-      DisableFirefoxStudies = true;
-      DisablePocket = true;
-      DisableTelemetry = true;
-      DontCheckDefaultBrowser = true;
-      NoDefaultBookmarks = true;
-      OfferToSaveLogins = false;
+  options = {
+    setup.apps.zen-browser.enable = lib.mkEnableOption "Zen Browser";
+  };
+
+  config = lib.mkIf config.setup.apps.zen-browser.enable {
+    programs.zen-browser = {
+      enable = true;
+      policies = {
+        AutofillAddressEnabled = true;
+        AutofillCreditCardEnabled = false;
+        DisableAppUpdate = true;
+        DisableFeedbackCommands = true;
+        DisableFirefoxStudies = true;
+        DisablePocket = true;
+        DisableTelemetry = true;
+        DontCheckDefaultBrowser = true;
+        NoDefaultBookmarks = true;
+        OfferToSaveLogins = false;
+      };
     };
   };
 }

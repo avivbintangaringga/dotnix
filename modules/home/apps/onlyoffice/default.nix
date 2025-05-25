@@ -1,11 +1,12 @@
 { lib, config, options, ... }:
-let
-  inherit (lib) mkEnableOption mkIf;
-  cfg = config.setup.apps.onlyoffice;
-in
 {
-  options.setup.apps.onlyoffice.enable = mkEnableOption "Enable OnlyOffice";
-  programs.onlyoffice = {
-    enable = cfg.enable;
+  options = {
+    setup.apps.onlyoffice.enable = lib.mkEnableOption "OnlyOffice";
+  };
+
+  config = lib.mkIf config.setup.apps.onlyoffice.enable {
+    programs.onlyoffice = {
+      enable = true;
+    };
   };
 }
