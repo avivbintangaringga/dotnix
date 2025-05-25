@@ -1,9 +1,10 @@
-{ ... }:
+{ inputs, ... }:
 {
   imports =
     [
       ./hardware-configuration.nix
-      ./../../modules/nixos
+      ./../../modules/nixos/import.nix
+      inputs.hardware.nixosModules.asus-fa506ic
     ];
 
   boot = {

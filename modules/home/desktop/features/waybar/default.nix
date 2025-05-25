@@ -4,7 +4,7 @@
     setup.desktop.features.waybar.enable = lib.mkEnableOption "Waybar";
   };
 
-  config = lib.mkIf config.setup.desktop.deatures.waybar.enable {
+  config = lib.mkIf config.setup.desktop.features.waybar.enable {
     home.packages = with pkgs; [
       brightnessctld
       networkmanagerapplet

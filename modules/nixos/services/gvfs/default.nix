@@ -5,8 +5,10 @@
   };
 
   config = lib.mkIf config.setup.services.gvfs.enable {
-    gvfs = {
-      enable = true;
+    services = {
+      gvfs = {
+        enable = true;
+      };
     };
   };
 }

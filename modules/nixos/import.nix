@@ -30,7 +30,7 @@ let
 in
 {
   imports = [
-    ./../common
+    ./../common/import.nix
   ]
   ++ getDefaultNix ./.;
 }

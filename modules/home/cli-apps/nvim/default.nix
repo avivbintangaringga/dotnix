@@ -1,47 +1,51 @@
-{ lib, config, ... }:
+{ lib, config, inputs, ... }:
 {
-  options = {
-    setup.cli-apps.nvim.enable = lib.mkEnableOption "NVim";
-  };
+  imports = [
+  #  inputs.nixvim.homeManagerModules.nixvim
+  ];
 
-  config = lib.mkIf config.setup.cli-apps.nvim.enable {
-    programs.nixvim = {
-      enable = true;
-      defaultEditor = true;
-      viAlias = true;
-      vimAlias = true;
+  #options = {
+  #  setup.cli-apps.nvim.enable = lib.mkEnableOption "NVim";
+  #};
 
-      colorschemes = {
-        catppuccin.enable = true;
-      };
+  #config = lib.mkIf config.setup.cli-apps.nvim.enable {
+  #  programs.nixvim = {
+  #    enable = true;
+  #    defaultEditor = true;
+  #    viAlias = true;
+  #    vimAlias = true;
 
-      plugins = {
-        lualine = {
-          enable = true;
-        };
+  #    colorschemes = {
+  #      catppuccin.enable = true;
+  #    };
 
-        treesitter = {
-          enable = true;
-        };
+  #    plugins = {
+  #      lualine = {
+  #        enable = true;
+  #      };
 
-        telescope = {
-          enable = true;
-        };
+  #      treesitter = {
+  #        enable = true;
+  #      };
 
-        lsp = {
-          servers = {
-            cssls = {
-	            enable = true;
-	          };
-	          nixd = {
-              enable = true;
-	          };
-	          gopls = {
-	            enable = true;
-	          };
-	        };
-        };
-      };
-    };
-  };
+  #      telescope = {
+  #        enable = true;
+  #      };
+
+  #      lsp = {
+  #        servers = {
+  #          cssls = {
+	#            enable = true;
+	#          };
+	#          nixd = {
+  #            enable = true;
+	#          };
+	#          gopls = {
+	#            enable = true;
+	#          };
+	#        };
+  #      };
+  #    };
+  #  };
+  #};
 }

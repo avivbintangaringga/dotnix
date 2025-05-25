@@ -5,8 +5,10 @@
   };
 
   config = lib.mkIf config.setup.services.upower.enable {
-    upower = {
-      enable = true;
+    services = {
+      upower = {
+        enable = true;
+      };
     };
   };
 }

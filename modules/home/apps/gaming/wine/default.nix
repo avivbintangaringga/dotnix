@@ -1,11 +1,10 @@
 { pkgs, lib, config, ... }:
 {
   options = {
-    setup.apps.gaming.wine = lib.mkEnableOption "Wine";
+    setup.apps.gaming.wine.enable = lib.mkEnableOption "Wine";
   };
 
-  config = lib.mkIf config.setup.apps.gaming.wine
-  || config.setup.apps.gaming.all {
+  config = lib.mkIf config.setup.apps.gaming.wine.enable {
     home.packages = with pkgs; [
       wine
       wineWowPackages.stable

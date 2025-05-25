@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }:
 {
   options = {
-    setup.clip-apps.yazi.enable = lib.mkEnableOption "Yazi";
+    setup.cli-apps.yazi.enable = lib.mkEnableOption "Yazi";
   };
 
   config = lib.mkIf config.setup.cli-apps.yazi.enable {

@@ -2,7 +2,7 @@
 {
   imports = [
     ./common.nix
-    ./../modules/home
+    ./../modules/home/import.nix
   ];
 
   setup = {

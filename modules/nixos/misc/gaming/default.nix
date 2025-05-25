@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }:
 {
   options = {
-    setup.misc.gaming.enable = lib.mkEnableConfig "Gaming tools";
+    setup.misc.gaming.enable = lib.mkEnableOption "Gaming tools";
   };
 
   config = lib.mkIf config.setup.misc.gaming.enable {

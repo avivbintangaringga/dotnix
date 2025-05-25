@@ -5,9 +5,11 @@
   };
 
   config = lib.mkIf config.setup.services.pipewire.enable {
-    pipewire = {
-      enable = true;
-      pulse.enable = true;
+    services = {
+      pipewire = {
+        enable = true;
+        pulse.enable = true;
+      };
     };
   };
 }

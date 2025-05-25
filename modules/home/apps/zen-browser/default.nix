@@ -1,5 +1,9 @@
-{ lib, config, ... }:
+{ lib, config, inputs, ... }:
 {
+  imports = [
+    inputs.zen-browser.homeModules.beta
+  ];
+
   options = {
     setup.apps.zen-browser.enable = lib.mkEnableOption "Zen Browser";
   };

@@ -9,7 +9,7 @@
     };
   };
 
-  users.${userdata.username} = {
+  users.users.${userdata.username} = {
     shell = pkgs.zsh;
   };
 
