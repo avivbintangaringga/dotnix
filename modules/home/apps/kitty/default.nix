@@ -1,6 +1,12 @@
+{ lib, config, options, ... }:
+let
+  inherit (lib) mkEnableOption mkIf;
+  cfg = config.setup.apps.kitty;
+in
 {
+  options.setup.apps.kitty.enable = mkEnableOption "Enable Kitty";
   programs.kitty = {
-    enable = true;
+    enable = cfg.enable;
     shellIntegration = {
       enableZshIntegration = true;
     };

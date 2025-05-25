@@ -1,6 +1,12 @@
+{ lib, config, options, ... }:
+let
+  inherit (lib) mkEnableOption mkIf;
+  cfg = config.setup.apps.zen-browser;
+in
 {
+  options.setup.apps.zen-browser.enable = mkEnableOption "Enable Zen Browser";
   programs.zen-browser = {
-    enable = true;
+    enable = cfg.enable;
     policies = {
       AutofillAddressEnabled = true;
       AutofillCreditCardEnabled = false;
