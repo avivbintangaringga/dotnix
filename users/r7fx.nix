@@ -1,4 +1,7 @@
-{ userdata, ... }:
+{ userdata, lib, ... }:
+let
+  inherit (lib) enabled disabled;
+in
 {
   imports = [
     ./common.nix
@@ -7,9 +10,39 @@
 
   setup = {
     apps = {
+      bitwarden = enabled;
+      discord = enabled;
+      firefox = enabled;
       gaming = {
-        all.enable = true;
+        all = enabled;
       };
+      kitty = enabled;
+      mediaplayer = enabled;
+      misc = enabled;
+      nemo = enabled;
+      obs-studio = enabled;
+      onlyoffice = enabled;
+      spicetify = enabled;
+      zen-browser = enabled;
+      zotero = enabled;
+    };
+
+    cli-apps = {
+      git = enabled;
+      nvim = enabled;
+      scrcpy = disabled;
+      yazi = enabled;
+      zsh = enabled;
+    };
+
+    desktop = {
+      hyprland = enabled;
+    };
+
+    services = {
+      blueman = enabled;
+      cliphist = enabled;
+      playerctld = enabled;
     };
   };
 

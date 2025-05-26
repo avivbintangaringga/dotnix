@@ -1,11 +1,66 @@
-{ inputs, ... }:
+{ lib, inputs, ... }:
+let
+  inherit (lib) enabled disabled;
+in
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./../../modules/nixos/import.nix
-      inputs.hardware.nixosModules.asus-fa506ic
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ./../../modules/nixos/import.nix
+    inputs.hardware.nixosModules.asus-fa506ic
+  ];
+
+  #TODO: SETUP!
+
+  setup = {
+    apps = {
+      aagl = disabled;
+      steam = enabled;
+      winbox = enabled;
+    };
+
+    cli-apps = {
+      adb = enabled;
+      archive-tools = enabled;
+      git = enabled;
+      home-manager = enabled;
+      misc = enabled;
+      monitoring = enabled;
+      nh = enabled;
+    };
+
+    desktop = {
+      hyprland = enabled;
+    };
+
+    fonts = {
+      basic = enabled;
+      ms = enabled;
+      nerd = enabled;
+    };
+
+    hardware = {
+      bluetooth = enabled;
+      nvidia = enabled;
+    };
+
+    misc = {
+      gaming = enabled;
+      plymouth = enabled;
+    };
+
+    services = {
+      auto-cpufreq = {
+        enable = true;
+        turbo = false;
+      };
+
+      gvfs = enabled;
+      logind = enabled;
+      pipewire = enabled;
+      tuigreet = enabled;
+      upower = enabled;
+    };
+  };
 
   boot = {
     loader = {

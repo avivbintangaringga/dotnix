@@ -35,7 +35,8 @@
     home-manager,
     ...
   }@inputs: let
-    lib = nixpkgs.lib // home-manager.lib;
+    mylib = (import ./lib);
+    lib = nixpkgs.lib // home-manager.lib // mylib;
     userdata = rec {
       username = "r7fx";
       userpath = "/home/" + username;
@@ -55,6 +56,7 @@
         specialArgs = {
           inherit inputs;
 	        inherit userdata;
+					inherit lib;
         };
       };
     };
@@ -68,6 +70,7 @@
 	      extraSpecialArgs = {
 	        inherit inputs;
 	        inherit userdata;
+					inherit lib;
 	      };
       };
     };
