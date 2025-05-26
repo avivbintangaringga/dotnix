@@ -31,6 +31,5 @@ in
 {
   imports = [
     ./../common/import.nix
-  ]
-  ++ getDefaultNix ./.;
+  ] ++ getDefaultNix ./.;
 }

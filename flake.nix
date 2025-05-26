@@ -29,50 +29,53 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    ...
-  }@inputs: let
-    mylib = (import ./lib);
-    lib = nixpkgs.lib // home-manager.lib;
-    userdata = rec {
-      username = "r7fx";
-      userpath = "/home/" + username;
-      fullname = "R7FX";
-      email = "avivbintangaringga90@gmail.com";
-      git = {
-        username = "avivbintangaringga";
-	inherit email;
-      };
-    };
-  in {
-    nixosConfigurations = {
-      asus-a15 = lib.nixosSystem {
-        modules = [
-          ./hosts/asus-a15
-        ];
-        specialArgs = {
-          inherit inputs;
-	  inherit userdata;
-	  inherit mylib;
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
+    let
+      mylib = (import ./lib);
+      lib = nixpkgs.lib // home-manager.lib;
+      userdata = rec {
+        username = "r7fx";
+        userpath = "/home/" + username;
+        fullname = "R7FX";
+        email = "avivbintangaringga90@gmail.com";
+        git = {
+          username = "avivbintangaringga";
+          inherit email;
         };
       };
-    };
+    in
+    {
+      nixosConfigurations = {
+        asus-a15 = lib.nixosSystem {
+          modules = [
+            ./hosts/asus-a15
+          ];
+          specialArgs = {
+            inherit inputs;
+            inherit userdata;
+            inherit mylib;
+          };
+        };
+      };
 
-    homeConfigurations = {
-      ${userdata.username} = lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; };
-        modules = [
-          ./users/${userdata.username}.nix
-        ];
-	extraSpecialArgs = {
-	  inherit inputs;
-	  inherit userdata;
-          inherit mylib;
+      homeConfigurations = {
+        ${userdata.username} = lib.homeManagerConfiguration {
+          pkgs = import nixpkgs { system = "x86_64-linux"; };
+          modules = [
+            ./users/${userdata.username}.nix
+          ];
+          extraSpecialArgs = {
+            inherit inputs;
+            inherit userdata;
+            inherit mylib;
+          };
         };
       };
     };
-  };
 }

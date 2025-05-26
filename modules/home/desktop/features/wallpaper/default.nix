@@ -1,4 +1,10 @@
-{ pkgs, lib, config, userdata, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  userdata,
+  ...
+}:
 {
   options = {
     setup.desktop.features.wallpaper.enable = lib.mkEnableOption "Wallpaper";
@@ -18,13 +24,13 @@
       file = {
         "${userdata.userpath}/.wallpapers" = {
           source = ./wallpapers;
-	        recursive = true;
+          recursive = true;
         };
 
         "${userdata.userpath}/.scripts" = {
           source = ./scripts;
-	        executable = true;
-	        recursive = true;
+          executable = true;
+          recursive = true;
         };
       };
     };

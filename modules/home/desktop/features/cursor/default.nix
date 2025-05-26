@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   options = {
     setup.desktop.features.cursor.enable = lib.mkEnableOption "Cursor";
@@ -11,7 +16,7 @@
         package = pkgs.bibata-cursors;
         name = "Bibata-Modern-Classic";
         size = 24;
-        gtk  = {
+        gtk = {
           enable = true;
         };
         hyprcursor = {

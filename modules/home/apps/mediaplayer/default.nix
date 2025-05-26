@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   options = {
     setup.apps.mediaplayer.enable = lib.mkEnableOption "Media Player";

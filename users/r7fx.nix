@@ -1,4 +1,9 @@
-{ userdata, lib, mylib, ... }:
+{
+  userdata,
+  lib,
+  mylib,
+  ...
+}:
 let
   inherit (mylib) enabled disabled;
 in

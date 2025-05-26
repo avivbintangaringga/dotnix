@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }@args:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}@args:
 {
   options = {
     setup.desktop.hyprland.enable = lib.mkEnableOption "Hyprland WM";
@@ -22,26 +27,26 @@
     };
 
     wayland.windowManager.hyprland = {
-       enable = true;
-       xwayland.enable = true;
+      enable = true;
+      xwayland.enable = true;
 
-       settings = lib.mkMerge [
-         {
-           monitor = ",1920x1080@144,auto,1";
-	         #source = "~/.cache/hellwal/hyprland-colors.conf";
-	         source = "~/.cache/wal/colors-hyprland.conf";
-         }
-         (import ./vars.nix args)
-         (import ./env.nix)
-         (import ./exec.nix)
-         (import ./general.nix)
-         (import ./layout.nix)
-         (import ./decoration.nix)
-         (import ./binds.nix)
-         (import ./input.nix)
-         (import ./misc.nix)
-         (import ./rules.nix)
-       ];
-     };
+      settings = lib.mkMerge [
+        {
+          monitor = ",1920x1080@144,auto,1";
+          #source = "~/.cache/hellwal/hyprland-colors.conf";
+          source = "~/.cache/wal/colors-hyprland.conf";
+        }
+        (import ./vars.nix args)
+        (import ./env.nix)
+        (import ./exec.nix)
+        (import ./general.nix)
+        (import ./layout.nix)
+        (import ./decoration.nix)
+        (import ./binds.nix)
+        (import ./input.nix)
+        (import ./misc.nix)
+        (import ./rules.nix)
+      ];
+    };
   };
 }

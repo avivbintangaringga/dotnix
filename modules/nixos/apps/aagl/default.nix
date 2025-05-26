@@ -1,4 +1,9 @@
-{ inputs, lib, config, ... }:
+{
+  inputs,
+  lib,
+  config,
+  ...
+}:
 let
   aagl = inputs.aagl;
 in

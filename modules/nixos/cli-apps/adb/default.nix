@@ -1,4 +1,9 @@
-{ lib, config, userdata, ... }:
+{
+  lib,
+  config,
+  userdata,
+  ...
+}:
 {
   options = {
     setup.cli-apps.adb.enable = lib.mkEnableOption "ADB";

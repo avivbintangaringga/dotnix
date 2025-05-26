@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   options = {
     setup.apps.gaming.protonup-qt.enable = lib.mkEnableOption "ProtonUp-QT";

@@ -1,4 +1,10 @@
-{ lib, config, inputs, mylib, ... }:
+{
+  lib,
+  config,
+  inputs,
+  mylib,
+  ...
+}:
 let
   inherit (mylib) enabled;
 in
@@ -31,9 +37,9 @@ in
         lsp = {
           servers = {
             cssls = enabled;
-	          nixd = enabled;
-	          gopls = enabled;
-	        };
+            nixd = enabled;
+            gopls = enabled;
+          };
         };
       };
     };

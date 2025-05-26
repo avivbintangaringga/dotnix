@@ -15,7 +15,6 @@
 
       history.size = 10000;
 
-
       prezto = {
         enable = true;
         pmodules = [
@@ -28,11 +27,11 @@
           "utility"
           "completion"
           "prompt"
-	        "git"
-	        "docker"
-	        "archive"
-	        "autosuggestions"
-	        "syntax-highlighting"
+          "git"
+          "docker"
+          "archive"
+          "autosuggestions"
+          "syntax-highlighting"
         ];
       };
 

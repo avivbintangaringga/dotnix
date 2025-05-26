@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 {
   options = {
     setup.cli-apps.home-manager.enable = lib.mkEnableOption "Home Manager";

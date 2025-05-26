@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 {
   options = {
     setup.misc.plymouth.enable = lib.mkEnableOption "Plymouth";
@@ -12,7 +17,7 @@
         themePackages = with pkgs; [
           (adi1090x-plymouth-themes.override {
             selected_themes = [ "circle_hud" ];
-	        })
+          })
         ];
       };
       consoleLogLevel = 3;

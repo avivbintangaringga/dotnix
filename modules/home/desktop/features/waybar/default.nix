@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 {
   options = {
     setup.desktop.features.waybar.enable = lib.mkEnableOption "Waybar";
@@ -32,85 +37,85 @@
       settings = {
         topBar = {
           layer = "top";
-	        position = "top";
-	        reload_style_on_change = true;
+          position = "top";
+          reload_style_on_change = true;
 
-	        modules-left = [
-	          "group/groupleftbg"
-	          "custom/revborder-left"
-	          "hyprland/window"
-	        ];
+          modules-left = [
+            "group/groupleftbg"
+            "custom/revborder-left"
+            "hyprland/window"
+          ];
 
-	        modules-center = [
-	          "custom/revborder-mid-left"
+          modules-center = [
+            "custom/revborder-mid-left"
             "group/groupclock"
-	          "custom/revborder-mid-right"
-	        ];
+            "custom/revborder-mid-right"
+          ];
 
-	        modules-right = [
-	          "mpris"
-	          "custom/revborder-right"
-	          "group/grouprightbg"
-	        ];
+          modules-right = [
+            "mpris"
+            "custom/revborder-right"
+            "group/grouprightbg"
+          ];
 
-	        "group/groupclock" = {
+          "group/groupclock" = {
             orientation = "horizontal";
-	          modules = [
+            modules = [
               "clock#date"
               "clock#clock"
-	          ];
-	        };
+            ];
+          };
 
-	        "group/groupleft" = {
+          "group/groupleft" = {
             orientation = "horizontal";
-	          modules = [
+            modules = [
               "hyprland/workspaces"
-	            "wlr/taskbar"
-	          ];
-	        };
+              "wlr/taskbar"
+            ];
+          };
 
-	        "group/groupleftbg" = {
+          "group/groupleftbg" = {
             orientation = "horizontal";
-	          modules = [
-	            "group/groupleft"
-	          ];
-	        };
+            modules = [
+              "group/groupleft"
+            ];
+          };
 
-	        "group/groupright" = {
+          "group/groupright" = {
             orientation = "horizontal";
-	          modules = [
+            modules = [
               "cpu"
-	            "memory"
-	            "network"
+              "memory"
+              "network"
               "backlight"
-	            "wireplumber"
-	            "battery"
-	            "custom/notification"
-	          ];
-	        };
+              "wireplumber"
+              "battery"
+              "custom/notification"
+            ];
+          };
 
-	        "group/grouprightbg" = {
+          "group/grouprightbg" = {
             orientation = "horizontal";
-	          modules = [
-	           "group/groupright"
-	          ];
-	        };
+            modules = [
+              "group/groupright"
+            ];
+          };
 
-	        "custom/revborder-mid-left" = {
+          "custom/revborder-mid-left" = {
             format = " ";
-	        };
+          };
 
-	        "custom/revborder-mid-right" = {
+          "custom/revborder-mid-right" = {
             format = " ";
-	        };
+          };
 
-	        "custom/revborder-left" = {
+          "custom/revborder-left" = {
             format = " ";
-	        };
+          };
 
-	        "custom/revborder-right" = {
+          "custom/revborder-right" = {
             format = " ";
-	        };
+          };
 
           "custom/notification" = {
             tooltip = false;
@@ -133,86 +138,113 @@
             escape = true;
           };
 
-	        cpu = {
+          cpu = {
             interval = 1;
-	          format = "   {usage}%";
-	        };
+            format = "   {usage}%";
+          };
 
-	        memory = {
+          memory = {
             interval = 1;
-	          format = "   {percentage}%";
-	        };
+            format = "   {percentage}%";
+          };
 
           battery = {
             interval = 1;
-	          tooltip-format = "{time}";
-	          format = "{icon}   {capacity}%";
-	          format-icons = ["" "" "" "" ""];
-	          format-plugged = "   {capacity}%";
-	        };
+            tooltip-format = "{time}";
+            format = "{icon}   {capacity}%";
+            format-icons = [
+              ""
+              ""
+              ""
+              ""
+              ""
+            ];
+            format-plugged = "   {capacity}%";
+          };
 
-	        backlight = {
-            format-icons = [ "󰃞" "󰃟" "󰃝" "󰃠" ];
-	          format = "{icon}   {percent}%";
-	        };
+          backlight = {
+            format-icons = [
+              "󰃞"
+              "󰃟"
+              "󰃝"
+              "󰃠"
+            ];
+            format = "{icon}   {percent}%";
+          };
 
-	        wireplumber = {
-            format-icons = [ "" "" "" ];
-	          format = "{icon}   {volume}%";
+          wireplumber = {
+            format-icons = [
+              ""
+              ""
+              ""
+            ];
+            format = "{icon}   {volume}%";
             format-muted = "    {volume}%";
             on-click = "pavucontrol";
-	        };
+          };
 
-	        "clock#date" = {
+          "clock#date" = {
             tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-	          format = "{:%A, %d %b %Y}";
-	          timezone = "Asia/Jakarta";
-	          interval = 1;
-	        };
+            format = "{:%A, %d %b %Y}";
+            timezone = "Asia/Jakarta";
+            interval = 1;
+          };
 
-	        "clock#clock" = {
+          "clock#clock" = {
             tooltip-format = "{:%T}";
-	          format = "{:%T}";
-	          timezone = "Asia/Jakarta";
-	          interval = 1;
-	        };
+            format = "{:%T}";
+            timezone = "Asia/Jakarta";
+            interval = 1;
+          };
 
-	        network = {
-	          interval = 1;
+          network = {
+            interval = 1;
             format = "  {bandwidthTotalBytes}";
             format-ethernet = "   {bandwidthTotalBytes}";
             format-wifi = "{icon}   {bandwidthTotalBytes}";
-	          format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
+            format-icons = [
+              "󰤯"
+              "󰤟"
+              "󰤢"
+              "󰤥"
+              "󰤨"
+            ];
             format-disconnected = "󰀦  Disconnected";
             format-linked = "󰪎  No Internet";
-	          tooltip-format = "{ifname}: {ipaddr}";
-	          on-click = "kitty -e nmtui-connect";
-	          on-click-right = "nm-connection-editor";
-	        };
+            tooltip-format = "{ifname}: {ipaddr}";
+            on-click = "kitty -e nmtui-connect";
+            on-click-right = "nm-connection-editor";
+          };
 
-	        "wlr/taskbar" = {
+          "wlr/taskbar" = {
             on-click = "activate";
-	           tooltop = "{title}";
-	        };
+            tooltop = "{title}";
+          };
 
           mpris = {
-	          interval = 1;
-	          format = "{title} - {artist} {player_icon}";
-	          format-paused = "{title} - {artist} {status_icon}";
-	          title-len = 30;
-	          artist-len = 20;
-	          player-icons = {
+            interval = 1;
+            format = "{title} - {artist} {player_icon}";
+            format-paused = "{title} - {artist} {status_icon}";
+            title-len = 30;
+            artist-len = 20;
+            player-icons = {
               default = "▶";
               mpv = "🎵";
-	          };
-	          status-icons = {
-	            paused = "⏸";
-	          };
-	        };
+            };
+            status-icons = {
+              paused = "⏸";
+            };
+          };
 
-	        "hyprland/workspaces" = {
+          "hyprland/workspaces" = {
             persistent-workspaces = {
-              "*" = [ 1 2 3 4 5 ];
+              "*" = [
+                1
+                2
+                3
+                4
+                5
+              ];
             };
           };
         };

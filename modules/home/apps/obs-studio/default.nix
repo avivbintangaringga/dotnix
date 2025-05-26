@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 {
   options.setup.apps.obs-studio.enable = lib.mkEnableOption "OBS Studio";
   config = lib.mkIf config.setup.apps.obs-studio.enable {

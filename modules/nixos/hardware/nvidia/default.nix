@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 {
   options = {
     setup.hardware.nvidia.enable = lib.mkEnableOption "Nvidia Drivers";
@@ -15,8 +20,8 @@
       nvidia = {
         modesetting.enable = true;
         prime = {
-	        nvidiaBusId = lib.mkForce "PCI:1:0:0";
-	        amdgpuBusId = lib.mkForce "PCI:6:0:0";
+          nvidiaBusId = lib.mkForce "PCI:1:0:0";
+          amdgpuBusId = lib.mkForce "PCI:6:0:0";
         };
       };
     };

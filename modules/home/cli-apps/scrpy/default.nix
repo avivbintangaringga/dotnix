@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   options = {
     setup.cli-apps.scrcpy.enable = lib.mkEnableOption "Scrcpy";

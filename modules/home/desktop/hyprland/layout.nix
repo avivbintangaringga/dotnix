@@ -1,10 +1,10 @@
 {
-   dwindle = {
-     pseudotile = true;
-     preserve_split = true;
-   };
+  dwindle = {
+    pseudotile = true;
+    preserve_split = true;
+  };
 
-   master = {
-     new_status = "master";
-   };
+  master = {
+    new_status = "master";
+  };
 }

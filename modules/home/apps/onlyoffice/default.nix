@@ -1,4 +1,9 @@
-{ lib, config, options, ... }:
+{
+  lib,
+  config,
+  options,
+  ...
+}:
 {
   options = {
     setup.apps.onlyoffice.enable = lib.mkEnableOption "OnlyOffice";

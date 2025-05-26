@@ -1,4 +1,10 @@
-{ lib, config, pkgs, userdata, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  userdata,
+  ...
+}:
 {
   options = {
     setup.services.tuigreet.enable = lib.mkEnableOption "TUI Greet";
@@ -10,22 +16,24 @@
     ];
 
     services = {
-      greetd = let
-        session = "${pkgs.hyprland}/bin/Hyprland";
-        tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
-      in {
-        enable = true;
-        settings = {
-          initial_session = {
-            command = "${session}";
-	          user = userdata.username;
-	        };
-	        default_session = {
-            command = "${tuigreet} --greeting 'Welcome to NixOS!' --asterisks --remember --remember-user-session --time --cmd ${session}";
-	          user = "greeter";
-	        };
+      greetd =
+        let
+          session = "${pkgs.hyprland}/bin/Hyprland";
+          tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
+        in
+        {
+          enable = true;
+          settings = {
+            initial_session = {
+              command = "${session}";
+              user = userdata.username;
+            };
+            default_session = {
+              command = "${tuigreet} --greeting 'Welcome to NixOS!' --asterisks --remember --remember-user-session --time --cmd ${session}";
+              user = "greeter";
+            };
+          };
         };
-      };
     };
   };
 }
