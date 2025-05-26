@@ -1,5 +1,4 @@
 {
-  lib,
   mylib,
   inputs,
   ...
@@ -13,8 +12,6 @@ in
     ./../../modules/nixos/import.nix
     inputs.hardware.nixosModules.asus-fa506ic
   ];
-
-  #TODO: SETUP!
 
   setup = {
     apps = {
@@ -31,6 +28,7 @@ in
       misc = enabled;
       monitoring = enabled;
       nh = enabled;
+      nvim = enabled;
     };
 
     desktop = {

@@ -3,6 +3,7 @@
   config,
   inputs,
   mylib,
+  pkgs,
   ...
 }:
 let
@@ -18,30 +19,51 @@ in
   };
 
   config = lib.mkIf config.setup.cli-apps.nvim.enable {
-    programs.nixvim = {
-      enable = true;
-      defaultEditor = true;
-      viAlias = true;
-      vimAlias = true;
+    home.packages = [
+      inputs.nvix.packages.${pkgs.system}.default
+    ];
 
-      colorschemes = {
-        catppuccin.enable = true;
-      };
+    #programs.nixvim = {
+    #  enable = true;
+    #  defaultEditor = true;
+    #  viAlias = true;
+    #  vimAlias = true;
 
-      plugins = {
-        lualine = enabled;
-        treesitter = enabled;
-        telescope = enabled;
-        web-devicons = enabled;
+    #  colorschemes = {
+    #    catppuccin.enable = true;
+    #  };
 
-        lsp = {
-          servers = {
-            cssls = enabled;
-            nixd = enabled;
-            gopls = enabled;
-          };
-        };
-      };
-    };
+    #  keymaps = [
+    #    {
+    #      key = ";";
+    #      action = ":";
+    #    }
+    #  ];
+
+    #  globals = {
+    #    mapleader = " ";
+    #  };
+
+    #  opts = {
+    #    tabstop = 2;
+    #    tabwidth = 2;
+    #    expandtab = true;
+    #  };
+
+    #  plugins = {
+    #    lualine = enabled;
+    #    treesitter = enabled;
+    #    telescope = enabled;
+    #    web-devicons = enabled;
+
+    #    lsp = {
+    #      servers = {
+    #        cssls = enabled;
+    #        nixd = enabled;
+    #        gopls = enabled;
+    #      };
+    #    };
+    #  };
+    #};
   };
 }
