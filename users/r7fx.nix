@@ -28,6 +28,7 @@ in
       obs-studio = enabled;
       onlyoffice = enabled;
       spicetify = enabled;
+      zed-editor = enabled;
       zen-browser = enabled;
       zotero = enabled;
     };
