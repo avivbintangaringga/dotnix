@@ -33,6 +33,7 @@ in
       scrcpy = disabled;
       yazi = enabled;
       zsh = enabled;
+      lsp = enabled;
     };
 
     desktop = {
