@@ -34,6 +34,7 @@ in
     };
 
     cli-apps = {
+      bun = enabled;
       git = enabled;
       nvim = enabled;
       scrcpy = disabled;
