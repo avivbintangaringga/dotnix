@@ -1,6 +1,6 @@
-{ userdata, lib, ... }:
+{ userdata, lib, mylib, ... }:
 let
-  inherit (lib) enabled disabled;
+  inherit (mylib) enabled disabled;
 in
 {
   imports = [

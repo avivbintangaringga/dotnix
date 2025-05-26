@@ -36,7 +36,7 @@
     ...
   }@inputs: let
     mylib = (import ./lib);
-    lib = nixpkgs.lib // home-manager.lib // mylib;
+    lib = nixpkgs.lib // home-manager.lib;
     userdata = rec {
       username = "r7fx";
       userpath = "/home/" + username;
@@ -56,21 +56,21 @@
         specialArgs = {
           inherit inputs;
 	        inherit userdata;
-					inherit lib;
+					inherit mylib;
         };
       };
     };
 
     homeConfigurations = {
       ${userdata.username} = lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
         modules = [
           ./users/${userdata.username}.nix
         ];
 	      extraSpecialArgs = {
 	        inherit inputs;
 	        inherit userdata;
-					inherit lib;
+                inherit mylib;
 	      };
       };
     };
