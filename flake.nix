@@ -18,11 +18,6 @@
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
-    hyprland-contrib = {
-      url = "github:hyprwm/contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,61 +29,53 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    hardware,
-    aagl,
-    spicetify-nix,
-    hyprland-contrib,
-    zen-browser,
-    ...
-  }@inputs: let
-    inherit (self) outputs;
-    lib = nixpkgs.lib // home-manager.lib;
-    userdata = rec {
-       username = "r7fx";
-       userpath = "/home/" + username;
-       fullname = "R7FX";
-       email = "avivbintangaringga90@gmail.com";
-       git = {
-         username = "avivbintangaringga";
-	 inherit email;
-       };
-    };
-  in {
-    nixosConfigurations = {
-      asus-a15 = lib.nixosSystem {
-        modules = [ 
-          ./hosts/asus-a15
-	  ./modules/nixos/aagl
-	  home-manager.nixosModules.home-manager
-	  hardware.nixosModules.asus-fa506ic
-        ];
-        specialArgs = {
-           inherit lib;
-	   inherit userdata;
-	   inherit aagl;
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
+    let
+      mylib = (import ./lib);
+      lib = nixpkgs.lib // home-manager.lib;
+      userdata = rec {
+        username = "r7fx";
+        userpath = "/home/" + username;
+        fullname = "R7FX";
+        email = "avivbintangaringga90@gmail.com";
+        git = {
+          username = "avivbintangaringga";
+          inherit email;
+        };
+      };
+    in
+    {
+      nixosConfigurations = {
+        asus-a15 = lib.nixosSystem {
+          modules = [
+            ./hosts/asus-a15
+          ];
+          specialArgs = {
+            inherit inputs;
+            inherit userdata;
+            inherit mylib;
+          };
+        };
+      };
+
+      homeConfigurations = {
+        ${userdata.username} = lib.homeManagerConfiguration {
+          pkgs = import nixpkgs { system = "x86_64-linux"; };
+          modules = [
+            ./users/${userdata.username}.nix
+          ];
+          extraSpecialArgs = {
+            inherit inputs;
+            inherit userdata;
+            inherit mylib;
+          };
         };
       };
     };
-
-    homeConfigurations = {
-      ${userdata.username} = let
-	spicePkgs = spicetify-nix.legacyPackages.x86_64-linux;
-      in lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        modules = [
-          ./home/${userdata.username}.nix
-        ];
-	extraSpecialArgs = {
-	  inherit inputs;
-	  inherit userdata;
-	  inherit spicePkgs;
-	  inherit hyprland-contrib;
-	};
-      };
-    };
-  };
 }
