@@ -44,7 +44,7 @@
       email = "avivbintangaringga90@gmail.com";
       git = {
         username = "avivbintangaringga";
-	      inherit email;
+	inherit email;
       };
     };
   in {
@@ -55,8 +55,8 @@
         ];
         specialArgs = {
           inherit inputs;
-	        inherit userdata;
-					inherit mylib;
+	  inherit userdata;
+	  inherit mylib;
         };
       };
     };
@@ -67,11 +67,11 @@
         modules = [
           ./users/${userdata.username}.nix
         ];
-	      extraSpecialArgs = {
-	        inherit inputs;
-	        inherit userdata;
-                inherit mylib;
-	      };
+	extraSpecialArgs = {
+	  inherit inputs;
+	  inherit userdata;
+          inherit mylib;
+        };
       };
     };
   };
