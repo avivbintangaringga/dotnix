@@ -6,7 +6,7 @@
 
   config = lib.mkIf config.setup.desktop.features.waybar.enable {
     home.packages = with pkgs; [
-      brightnessctld
+      brightnessctl
       networkmanagerapplet
       pavucontrol
     ];

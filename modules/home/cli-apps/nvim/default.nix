@@ -1,4 +1,7 @@
 { lib, config, inputs, ... }:
+let
+  inherit (lib) enabled;
+in
 {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
@@ -20,29 +23,16 @@
       };
 
       plugins = {
-        lualine = {
-          enable = true;
-        };
-
-        treesitter = {
-          enable = true;
-        };
-
-        telescope = {
-          enable = true;
-        };
+        lualine = enabled;
+        treesitter = enabled;
+        telescope = enabled;
+        web-devicons = enabled;
 
         lsp = {
           servers = {
-            cssls = {
-	            enable = true;
-	          };
-	          nixd = {
-              enable = true;
-	          };
-	          gopls = {
-	            enable = true;
-	          };
+            cssls = enabled;
+	          nixd = enabled;
+	          gopls = enabled;
 	        };
         };
       };
