@@ -16,7 +16,7 @@ in
   "$randomizeWallpaper" = "sh ${userdata.userpath}/.scripts/randomize-wallpaper.sh";
 
   "$screenshotFull" =
-    "mkdir -p ${screenshotDir} && grimblast --notify copysave screen \"${screenshotDir}/Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png\"";
+    "mkdir -p ${screenshotDir} && grimblast --notify --freeze copysave screen \"${screenshotDir}/Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png\"";
   "$screenshotPartial" =
-    "mkdir -p ${screenshotDir} && grimblast --notify copysave area \"${screenshotDir}/Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png\"";
+    "mkdir -p ${screenshotDir} && grimblast --notify --freeze copysave area \"${screenshotDir}/Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png\"";
 }
