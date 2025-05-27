@@ -16,6 +16,7 @@
       curl
       killall
       tree
+      xxd
     ];
   };
 }
