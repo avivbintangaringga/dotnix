@@ -12,6 +12,7 @@
   config = lib.mkIf config.setup.cli-apps.python.enable {
     home.packages = with pkgs; [
       python3Full
+      ninja
     ];
 
     programs.uv.enable = true;
