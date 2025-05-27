@@ -13,5 +13,7 @@
     home.packages = with pkgs; [
       python3Full
     ];
+
+    programs.uv.enable = true;
   };
 }
