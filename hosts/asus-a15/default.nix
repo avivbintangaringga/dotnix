@@ -49,7 +49,7 @@ in
     misc = {
       gaming = enabled;
       plymouth = enabled;
-      waydroid = disabled;
+      waydroid = enabled;
     };
 
     services = {
