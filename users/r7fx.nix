@@ -39,6 +39,7 @@ in
       nvim = enabled;
       scrcpy = disabled;
       yazi = enabled;
+      python = enabled;
       zsh = enabled;
       lsp = enabled;
     };
