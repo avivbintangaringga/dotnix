@@ -14,6 +14,7 @@
       wineWowPackages.stable
       winetricks
       umu-launcher
+      protonplus
     ];
   };
 }
