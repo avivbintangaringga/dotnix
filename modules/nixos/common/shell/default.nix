@@ -15,7 +15,7 @@
         update &&
         hm-update &&
         git commit -am "after upgrade" &&
-        git push
+        git push &&
         echo "DONE!"
       '';
     };
