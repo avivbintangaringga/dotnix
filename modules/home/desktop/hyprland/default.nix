@@ -41,6 +41,7 @@
         (import ./env.nix)
         (import ./exec.nix)
         (import ./general.nix)
+        (import ./animation.nix)
         (import ./layout.nix)
         (import ./decoration.nix)
         (import ./binds.nix)
