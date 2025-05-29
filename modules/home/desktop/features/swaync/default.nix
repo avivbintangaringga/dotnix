@@ -63,7 +63,7 @@
           buttons-grid = {
             actions = [
               {
-                label = " ";
+                label = "";
                 type = "normal";
                 command = "ghostty -e nmtui-connect";
               }
@@ -100,14 +100,14 @@
                 command = "hyprctl dispatch exit";
               }
               {
-                label = "";
+                label = "󰌾";
                 type = "normal";
               }
             ];
           };
 
           volume = {
-            label = "";
+            label = "󰕾";
             show-per-app = true;
             show-per-app-icon = true;
             show-per-app-label = true;

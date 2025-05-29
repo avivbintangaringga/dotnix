@@ -174,7 +174,7 @@
 
           wireplumber = {
             format-icons = [
-              ""
+              ""
               ""
               ""
             ];
