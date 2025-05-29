@@ -9,6 +9,12 @@
   };
 
   config = lib.mkIf config.setup.desktop.features.swayosd.enable {
+    setup = {
+      services = {
+        playerctld.enable = true;
+      };
+    };
+
     services.swayosd = {
       enable = true;
     };

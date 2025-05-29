@@ -54,8 +54,19 @@
       "$mainMod, Tab, cyclenext, visible"
       "$mainMod, Delete, exit"
 
+      # Screenshot
       "$mainMod, Print, exec, $screenshotFull"
       ", Print, exec, $screenshotPartial"
+
+      # Audio related
+      ",XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
+      ",XF86AudioMicMute, exec, swayosd-client --input-volume mute-toggle"
+
+      # Playerctl
+      "$mainMod ALT, left, exec, swayosd-client --playerctl prev"
+      "$mainMod ALT, right, exec, swayosd-client --playerctl next"
+      "$mainMod ALT, up, exec, swayosd-client --playerctl play-pause"
+      "$mainMod ALT, down, exec, swayosd-client --playerctl play-pause"
     ]
     ++ (builtins.attrValues (
       builtins.mapAttrs (key: dir: "$mainMod, ${key}, movefocus, ${dir}") directions
@@ -85,12 +96,17 @@
       };
     in
     [
-      ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
-      ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-      ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-      ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-      ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
-      ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+      # ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+      # ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      # ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      # ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+      # ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
+      # ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+
+      ",XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
+      ",XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
+      ",XF86MonBrightnessUp, exec, swayosd-client --brightness raise"
+      ",XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
     ]
     ++ (builtins.attrValues (
       builtins.mapAttrs (key: rp: "$mainMod Control, ${key}, resizeactive, ${rp}") resizeparams
@@ -98,4 +114,8 @@
     ++ (builtins.attrValues (
       builtins.mapAttrs (key: rp: "$mainMod SHIFT, ${key}, moveactive, ${rp}") resizeparams
     ));
+
+  bindr = [
+    "CAPS, Caps_Lock, exec, swayosd-client --caps-lock"
+  ];
 }
