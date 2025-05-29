@@ -4,7 +4,7 @@ let
 in
 {
   "$browser" = "zen-beta";
-  "$terminal" = "kitty";
+  "$terminal" = "ghostty";
   "$fileManager" = "nemo";
   "$menu" = "rofi -show drun";
   "$emojiPicker" = "rofi -modi emoji -show emoji";

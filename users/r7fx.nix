@@ -21,6 +21,7 @@ in
       gaming = {
         all = enabled;
       };
+      ghostty = enabled;
       kitty = enabled;
       mediaplayer = enabled;
       misc = enabled;

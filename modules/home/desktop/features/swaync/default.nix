@@ -65,7 +65,7 @@
               {
                 label = " ";
                 type = "normal";
-                command = "kitty -e nmtui-connect";
+                command = "ghostty -e nmtui-connect";
               }
               {
                 label = "󰂯";
