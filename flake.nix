@@ -31,6 +31,8 @@
     nvix.url = "github:niksingh710/nvix";
 
     nix-alien.url = "github:thiagokokada/nix-alien";
+
+    apple-fonts.url= "github:Lyndeno/apple-fonts.nix";
   };
 
   outputs =

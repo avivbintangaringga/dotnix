@@ -6,7 +6,8 @@
 
 * {
   all: unset;
-  font-family: Roboto, 'Font Awesome 6 Free', sans-serif;
+  /* font-family: Roboto, 'Font Awesome 6 Free', sans-serif; */
+  font-family: "Roboto", "JetBrainsMono Nerd Font", sans-serif;
   font-weight: normal;
   font-size: 13px;
 }
@@ -50,8 +51,8 @@ window#waybar {
 }
 
 #groupclock {
-  background-color: @background; 
-  background-origin: border-box; 
+  background-color: @background;
+  background-origin: border-box;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
@@ -70,8 +71,8 @@ window#waybar {
 }
 
 #custom-revborder-mid-left {
-  background-color: rgba(0, 0, 0, 0); 
-  box-shadow: 0 -20px 0 0 @background; 
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: 0 -20px 0 0 @background;
   min-width: 20px;
   border-top-right-radius: 20px;
   margin-right: -1px
@@ -79,7 +80,7 @@ window#waybar {
 
 #custom-revborder-mid-right {
   background-color: rgba(0, 0, 0, 0);
-  box-shadow: 0 -20px 0 0 @secondary; 
+  box-shadow: 0 -20px 0 0 @secondary;
   min-width: 20px;
   border-top-left-radius: 20px;
   margin-left: -1px;

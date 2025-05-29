@@ -58,7 +58,7 @@
             image-radius = 8;
           };
           dnd = {
-            text = "  Do not disturb";
+            text = "     Do not disturb";
           };
           buttons-grid = {
             actions = [

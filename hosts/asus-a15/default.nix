@@ -39,6 +39,7 @@ in
     fonts = {
       basic = enabled;
       ms = enabled;
+      apple = enabled;
       nerd = enabled;
     };
 
