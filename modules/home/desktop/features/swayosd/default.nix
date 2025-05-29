@@ -17,6 +17,15 @@
 
     services.swayosd = {
       enable = true;
+      topMargin = 0.9;
+    };
+
+    xdg.configFile = {
+      "swayosd/style.css" = {
+        enable = true;
+        source = ./style.css;
+        force = true;
+      };
     };
   };
 }

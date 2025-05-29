@@ -23,8 +23,10 @@ swww img "$WALLPAPER" --transition-type grow --transition-fps 60 --transition-st
 # Reload swaync css
 swaync-client -rs
 
+# Restart swayosd
+systemctl --user restart swayosd
+
 if [[ $1 != "--quiet" ]]
 then
   notify-send -i "$WALLPAPER" "Wallpaper changed"
 fi
-
