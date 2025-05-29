@@ -17,6 +17,7 @@
       killall
       tree
       xxd
+      usbutils
     ];
   };
 }
