@@ -29,6 +29,7 @@ in
       monitoring = enabled;
       nh = enabled;
       nvim = enabled;
+      nix-alien = enabled;
     };
 
     desktop = {

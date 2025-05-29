@@ -1,6 +1,6 @@
 * {
   font-size: 14px;
-  font-family: "JetBrains Mono Nerd Font 10";
+  font-family: FontAwesome, "JetBrains Mono Nerd Font 10";
   transition: 50ms;
 }
 
@@ -89,7 +89,7 @@
 .control-center .notification-group-close-all-button {
   background: transparent;
   color: @foreground;
-  margin: 4px; 
+  margin: 4px;
   border-radius: 6px;
   padding: 4px;
 }

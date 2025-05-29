@@ -29,6 +29,8 @@
     };
 
     nvix.url = "github:niksingh710/nvix";
+
+    nix-alien.url = "github:thiagokokada/nix-alien";
   };
 
   outputs =
