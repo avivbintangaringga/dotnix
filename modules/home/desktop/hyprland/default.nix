@@ -20,6 +20,7 @@
         gtk.enable = lib.mkDefault true;
         hyprpolkitagent.enable = lib.mkDefault true;
         rofi.enable = lib.mkDefault true;
+        swayosd.enable = lib.mkDefault true;
         swaync.enable = lib.mkDefault true;
         wallpaper.enable = lib.mkDefault true;
         waybar.enable = lib.mkDefault true;
