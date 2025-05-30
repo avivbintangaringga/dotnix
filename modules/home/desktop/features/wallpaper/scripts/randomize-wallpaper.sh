@@ -15,7 +15,7 @@ echo $(basename $WALLPAPER) > $CURRENT_FILE
 
 # Regenerate colors
 # hellwal -i "$WALLPAPER" --bright-offset 0.1 --neon-mode
-wal -n -i "$WALLPAPER"
+wal -n -i "$WALLPAPER" --contrast 3
 
 # Apply the selected wallpaper
 swww img "$WALLPAPER" --transition-type grow --transition-fps 60 --transition-step 2 --transition-duration 1 --transition-pos top-right

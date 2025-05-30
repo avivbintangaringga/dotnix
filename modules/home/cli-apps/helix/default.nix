@@ -52,7 +52,7 @@
           };
           inline-diagnostics = {
             cursor-line = "warning";
-            other-lines = "warning";
+            other-lines = "error";
           };
           soft-wrap = {
             enable = true;
