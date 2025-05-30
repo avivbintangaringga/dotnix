@@ -24,6 +24,7 @@ in
       adb = enabled;
       archive-tools = enabled;
       git = enabled;
+      helix = enabled;
       home-manager = enabled;
       misc = enabled;
       monitoring = enabled;
