@@ -3,7 +3,7 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
-      edit = "vim /home/${userdata.username}/dotnix";
+      edit = "hx /home/${userdata.username}/dotnix";
       update = "nh os switch /home/${userdata.username}/dotnix --no-nom";
       hm-update = "nh home switch /home/${userdata.username}/dotnix --no-nom";
       upgrade = ''
