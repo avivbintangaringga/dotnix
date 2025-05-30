@@ -37,6 +37,7 @@ in
     cli-apps = {
       bun = enabled;
       git = enabled;
+      helix = enabled;
       misc = enabled;
       nvim = enabled;
       scrcpy = disabled;

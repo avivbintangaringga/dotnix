@@ -8,8 +8,11 @@
     programs.ghostty = {
       enable = true;
       enableZshIntegration = true;
-      clearDefaultKeybinds = true;
+      clearDefaultKeybinds = false;
       settings =  {
+        config-file = [
+          "../../.cache/wal/ghostty.conf"
+        ];
         background-opacity = 0.7;
         background-blur = 0;
       };
