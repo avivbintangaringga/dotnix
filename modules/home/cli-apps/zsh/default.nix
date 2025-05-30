@@ -5,6 +5,17 @@
   };
 
   config = lib.mkIf config.setup.cli-apps.zsh.enable {
+    # home.packages = with pkgs; [
+    #   zsh-powerlevel10k     
+    # ];
+    
+    home.file = {
+      ".p10k.zsh" = {
+        source = ./p10k.zsh;
+        force = true;
+      };
+    };
+
     programs.zsh = {
       enable = true;
       enableCompletion = true;
@@ -16,7 +27,7 @@
       history.size = 10000;
 
       prezto = {
-        enable = false;
+        enable = true;
         pmodules = [
           "environment"
           "terminal"
@@ -33,11 +44,15 @@
           "autosuggestions"
           "syntax-highlighting"
         ];
+        prompt = {
+          theme = "powerlevel10k";
+        };
       };
 
       initContent = lib.mkBefore ''
         cat ~/.cache/wal/sequences
         source ~/.cache/wal/colors-tty.sh
+        source ~/.p10k.zsh
       '';
     };
   };
