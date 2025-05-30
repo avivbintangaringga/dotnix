@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }:
 {
@@ -13,11 +12,18 @@
     programs.helix = {
       enable = true;
       # package = pkgs.evil-helix;
+      themes = {
+        tokyonight-transparent = {
+          inherits = "github_dark";
+          "ui.background" = { };
+        };
+      };
       settings = {
-        theme = "base16_default";
+        theme = "tokyonight-transparent";
         editor = {
           line-number = "relative";
           undercurl = true;
+          color-modes = true;
           bufferline = "multiple";
           popup-border = "all";
           statusline = {
@@ -26,6 +32,15 @@
               insert = "INSERT";
               select = "SELECT";
             };
+            separator = "│";
+            left = [
+              "mode"
+              "spinner"
+              "version-control"
+              "file-name"
+              "read-only-indicator"
+              "file-modification-indicator"
+            ];
           };
           cursor-shape = {
             insert = "bar";

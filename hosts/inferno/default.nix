@@ -82,7 +82,7 @@ in
   };
 
   networking = {
-    hostName = "asus-a15";
+    hostName = "inferno";
   };
 
   fileSystems."/media/DATA" = {

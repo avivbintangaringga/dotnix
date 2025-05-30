@@ -58,9 +58,9 @@
     in
     {
       nixosConfigurations = {
-        asus-a15 = lib.nixosSystem {
+        inferno = lib.nixosSystem {
           modules = [
-            ./hosts/asus-a15
+            ./hosts/inferno
           ];
           specialArgs = {
             inherit inputs;
