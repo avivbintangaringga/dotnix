@@ -15,6 +15,10 @@
         ];
         background-opacity = 0.7;
         background-blur = 0;
+        font-size = 11;
+        font-family = "FiraCode Nerd Font";
+        window-padding-x = 4;
+        window-padding-y = 4;
       };
     };
   };
