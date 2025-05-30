@@ -21,6 +21,10 @@
     };
   };
 
+  programs.starship = {
+    enable = true;
+  };
+
   users.users.${userdata.username} = {
     shell = pkgs.zsh;
   };

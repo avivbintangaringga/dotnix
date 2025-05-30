@@ -16,7 +16,7 @@
       history.size = 10000;
 
       prezto = {
-        enable = true;
+        enable = false;
         pmodules = [
           "environment"
           "terminal"
