@@ -59,7 +59,7 @@ window#waybar {
 
 #clock.clock {
   min-width: 5.5em;
-  background-image: linear-gradient(90deg, @primary 0%, @secondary  100%);
+  background-image: linear-gradient(90deg, @primary 0%, @secondary 100%);
   border-radius: 20px;
   border-top-right-radius: 0px;
   font-weight: bold;
@@ -88,39 +88,84 @@ window#waybar {
 
 #groupleftbg {
   padding: 2px;
-  background-image: linear-gradient(90deg, @primary 0%, @secondary  100%);
+  background-image: linear-gradient(90deg, @primary 0%, @secondary 100%);
   border-radius: 100px;
   margin: 6px 0 0 6px
 }
 
 #groupleft {
-  padding: 0px 0px 0px 0px;
+  padding: 0px 2px 0px 0px;
   background-color: @background;
   border-radius: 100px;
 }
 
 #grouprightbg {
   padding: 2px;
-  background-image: linear-gradient(90deg, @primary 0%, @secondary  100%);
+  background-image: linear-gradient(90deg, @primary 0%, @secondary 100%);
   border-radius: 100px;
   margin: 6px 6px 0 0;
 }
 
 #groupright {
-  padding: 0px 8px 0 0;
+  padding: 0px 8px 0 8;
   background-color: @background;
   border-radius: 100px;
 }
 
 #network {
-  min-width: 9em;
+  min-width: 7em;
 }
 
+#temperature,
 #cpu,
-#memory,
-#backlight,
-#wireplumber {
+#memory {
   min-width: 4em;
+}
+
+#temperature.critical {
+  color: #ff4747;
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#backlight.icon {
+  padding: 0px 10px 0px 6px;
+}
+
+#backlight.text {
+  margin-left: 8px;
+}
+
+#wireplumber.icon {
+  padding: 0px 12px 0px 4px;
+}
+
+#pulseaudio-slider {
+  margin: 0px 8px;
+}
+
+slider {
+  min-height: 0px;
+  min-width: 0px;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+
+trough {
+  min-height: 10px;
+  min-width: 100px;
+  border-radius: 100px;
+  background-color: alpha(@primary, 0.2);
+}
+
+highlight {
+  min-width: 10px;
+  border-radius: 100px;
+  background-color: @primary;
 }
 
 #custom-notification {
@@ -141,4 +186,30 @@ tooltip {
 tooltip * {
   color: white;
   text-shadow: none;
+}
+
+#tray {
+  margin: 0px 4px;
+}
+
+#tray menu {
+  background: alpha(@background, 0.7);
+  border: 2px solid;
+  border-radius: 8px;
+}
+
+#tray menu menuitem {
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+#tray menu menuitem:hover {
+  background-color: @foreground;
+  color: @background;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }

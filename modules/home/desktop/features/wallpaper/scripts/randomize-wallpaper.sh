@@ -1,6 +1,29 @@
 #!/bin/sh
 
-echo $HOME
+QUIET=false
+WITH_WAYBAR=false
+
+ARGS=$(getopt -l "quiet:with-waybar" -o "q:w" -- "$@")
+eval set -- "$ARGS"
+
+while [ $# -ge 1 ]
+do
+  case "$1" in
+    --)
+        shift
+        break
+        ;;
+    -q|--quiet)
+        QUIET=true
+        shift
+        ;;
+    -w|--with-waybar)
+        WITH_WAYBAR=true
+        shift
+        ;;
+  esac
+  shift
+done
 
 WALLPAPER_DIR="$HOME/.wallpapers/"
 CURRENT_FILE="${WALLPAPER_DIR}/.current"
@@ -11,7 +34,7 @@ echo "Current wallpaper: $CURRENT_WALLPAPER"
 WALLPAPER=$(find "$WALLPAPER_DIR" \( -type f -o -type l \) -regex ".*/.*\.\(jpg\|jpeg\|png\|gif\)" ! -name "$CURRENT_WALLPAPER" | shuf -n 1)
 
 echo "Selected wallpaper: $WALLPAPER"
-echo $(basename $WALLPAPER) > $CURRENT_FILE
+echo "$(basename $WALLPAPER)" > $CURRENT_FILE
 
 # Regenerate colors
 # hellwal -i "$WALLPAPER" --bright-offset 0.1 --neon-mode
@@ -26,7 +49,12 @@ swaync-client -rs
 # Restart swayosd
 systemctl --user restart swayosd
 
-if [[ $1 != "--quiet" ]]
+if ! $QUIET
 then
   notify-send -i "$WALLPAPER" "Wallpaper changed"
+fi
+
+if $WITH_WAYBAR
+then
+  systemctl --user restart waybar
 fi
