@@ -1,0 +1,19 @@
+@import "config.rasi"
+
+configuration {
+  show-icons: false;
+}
+
+element-icon {
+  enabled: false;
+}
+
+listview {
+  columns: 11;
+  lines: 8;
+}
+
+element-text {
+  font: "FiraCode Nerd Font 20";
+  horizontal-align: 0.5;
+}

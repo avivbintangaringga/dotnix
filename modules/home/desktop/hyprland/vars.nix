@@ -7,7 +7,7 @@ in
   "$terminal" = "ghostty";
   "$fileManager" = "nemo";
   "$menu" = "rofi -show drun";
-  "$emojiPicker" = "rofi -modi emoji -show emoji";
+  "$emojiPicker" = "rofi -config emoji -modi emoji -emoji-format {emoji} -show";
 
   "$mainMod" = "SUPER";
 

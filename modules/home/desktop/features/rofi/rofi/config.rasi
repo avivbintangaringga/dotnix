@@ -1,0 +1,99 @@
+configuration {
+  modes: "drun,window";
+  case-sensitive: false;
+  case-smart: true;lize-match: true;
+  matching: "normal";
+  cycle: true;
+  show-icons: true;
+  lines: 10;
+  display-drun: "Application";
+  display-emoji: "Emoji";
+  drun-display-format: "{name}";
+
+  timeout {
+    delay: 0;
+	action: "kb-cancel";
+  }
+}
+
+@theme "/dev/null"
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
+* {
+  background: #00000000;
+  font: "FiraCode Nerd Font 12";
+}
+
+window {
+  background-color: #00000077;
+  border: 2px solid;
+  border-color: @active-background;
+  border-radius: 30px;
+  transparency: "real";
+  width: 40%;
+}
+
+scrollbar {
+  enabled: false;
+  handle-color: @active-background;
+  handle-rounded-corners: true;
+}
+
+inputbar {
+  margin: 10px 0px;
+  border: 2px solid;
+  border-color: @active-background;
+  border-radius: 100px;
+  padding: 0 10 0 0;
+}
+
+prompt {
+  margin: 0px;
+  background-color: @active-background;
+  padding: 10px;
+  text-color: black;
+}
+
+textbox-prompt-colon {
+  enabled: false;
+}
+
+entry {
+  vertical-align: 0.5;
+  pointer: text;
+  padding: 0 0 0 10;
+}
+
+element {
+  orientation: vertical;
+  children: [ element-icon, element-text ];
+  spacing: 16px;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+element.selected.normal {
+  background-color: @selected-normal-background;
+  border: 2px;
+  border-color: @selected-normal-background;
+  text-color: #000000;
+}
+
+element-text {
+  horizontal-align: 0.5;
+  font: "FiraCoda Nerd Font 10";
+}
+
+element-icon {
+  vertical-align: 0.5;
+  size: 3em;
+}
+
+listview {
+  lines: 4;
+  columns: 6;
+  spacing: 10px;
+  flow: horizontal;
+  fixed-columns: true;
+  fixed-lines: true;
+}
