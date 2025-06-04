@@ -6,6 +6,7 @@
 
   config = lib.mkIf config.setup.apps.gaming.all.enable {
     setup.apps.gaming = {
+      faugus-launcher.enable = true;
       heroic.enable = true;
       lutris.enable = true;
       mangohud.enable = true;
