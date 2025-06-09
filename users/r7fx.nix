@@ -28,6 +28,7 @@ in
       nemo = enabled;
       obs-studio = enabled;
       onlyoffice = enabled;
+      postman = enabled;
       spicetify = enabled;
       zed-editor = enabled;
       zen-browser = enabled;

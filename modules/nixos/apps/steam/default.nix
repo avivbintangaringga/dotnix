@@ -5,6 +5,9 @@
   };
 
   config = lib.mkIf config.setup.apps.steam.enable {
-    programs.steam.enable = true;
+    programs.steam = {
+      enable = true;
+      protontricks.enable = true;
+    };
   };
 }
