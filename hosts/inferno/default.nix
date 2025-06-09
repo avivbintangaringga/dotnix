@@ -15,7 +15,7 @@ in
 
   setup = {
     apps = {
-      aagl = enabled;
+      aagl = disabled;
       steam = enabled;
       winbox = enabled;
     };
