@@ -7,6 +7,7 @@
 {
   imports = [
     inputs.zen-browser.homeModules.beta
+    inputs.zen-nebula.homeModules.default
   ];
 
   options = {
@@ -28,6 +29,11 @@
         NoDefaultBookmarks = true;
         OfferToSaveLogins = false;
       };
+    };
+
+    zen-nebula = {
+      enable = true;
+      profile = "yiqaayu6.Default Profile";
     };
   };
 }

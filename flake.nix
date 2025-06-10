@@ -33,6 +33,8 @@
     nix-alien.url = "github:thiagokokada/nix-alien";
 
     apple-fonts.url= "github:Lyndeno/apple-fonts.nix";
+
+    zen-nebula.url = "github:JustAdumbPrsn/Nebula-A-Minimal-Theme-for-Zen-Browser";
   };
 
   outputs =
