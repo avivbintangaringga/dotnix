@@ -32,7 +32,7 @@
     };
 
     zen-nebula = {
-      enable = true;
+      enable = false;
       profile = "yiqaayu6.Default Profile";
     };
   };
