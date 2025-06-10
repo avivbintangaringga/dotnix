@@ -569,6 +569,22 @@
     },
     "nixpkgs_7": {
       "locked": {
+        "lastModified": 1749285348,
+        "narHash": "sha256-frdhQvPbmDYaScPFiCnfdh3B/Vh81Uuoo0w5TkWmmjU=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "3e3afe5174c561dee0df6f2c2b2236990146329f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_8": {
+      "locked": {
         "lastModified": 1745794561,
         "narHash": "sha256-T36rUZHUART00h3dW4sV5tv4MrXKT7aWjNfHiZz7OHg=",
         "owner": "NixOS",
@@ -755,6 +771,7 @@
         "nixvim": "nixvim",
         "nvix": "nvix",
         "spicetify-nix": "spicetify-nix",
+        "thorium-browser": "thorium-browser",
         "zen-browser": "zen-browser",
         "zen-nebula": "zen-nebula"
       }
@@ -952,6 +969,24 @@
         "type": "github"
       }
     },
+    "thorium-browser": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_7"
+      },
+      "locked": {
+        "lastModified": 1749448651,
+        "narHash": "sha256-w+CH8hra6AuJsZ9QxfRD1TYH4j0ts8/jkHMQtLlojBQ=",
+        "owner": "Rishabh5321",
+        "repo": "thorium_flake",
+        "rev": "c0dc7924536dfb68a8b64080b1e46dd4915bb574",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rishabh5321",
+        "repo": "thorium_flake",
+        "type": "github"
+      }
+    },
     "tokyodark": {
       "flake": false,
       "locked": {
@@ -992,7 +1027,7 @@
     "zen-nebula": {
       "inputs": {
         "flake-parts": "flake-parts_4",
-        "nixpkgs": "nixpkgs_7",
+        "nixpkgs": "nixpkgs_8",
         "systems": "systems_6"
       },
       "locked": {

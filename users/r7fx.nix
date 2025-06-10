@@ -30,6 +30,7 @@ in
       onlyoffice = enabled;
       postman = enabled;
       spicetify = enabled;
+      thorium-browser = enabled;
       zed-editor = enabled;
       zen-browser = enabled;
       zotero = enabled;
