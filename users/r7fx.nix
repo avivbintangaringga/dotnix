@@ -29,6 +29,7 @@ in
       obs-studio = enabled;
       onlyoffice = enabled;
       postman = enabled;
+      qbittorrent = enabled;
       spicetify = enabled;
       thorium-browser = enabled;
       zed-editor = enabled;
