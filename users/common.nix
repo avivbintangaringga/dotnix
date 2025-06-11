@@ -1,3 +1,3 @@
 {
-
+  xdg.userDirs.enable = true;
 }
