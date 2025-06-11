@@ -6,6 +6,7 @@
 
   config = lib.mkIf config.setup.apps.gaming.all.enable {
     setup.apps.gaming = {
+      bottles.enable = true;
       faugus-launcher.enable = true;
       heroic.enable = true;
       lutris.enable = true;
