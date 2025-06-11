@@ -12,6 +12,7 @@
   config = lib.mkIf config.setup.apps.misc.enable {
     home.packages = with pkgs; [
       font-manager
+      # reaper
     ];
   };
 }

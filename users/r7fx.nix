@@ -28,6 +28,7 @@ in
       nemo = enabled;
       obs-studio = enabled;
       onlyoffice = enabled;
+      peazip = enabled;
       postman = enabled;
       qbittorrent = enabled;
       spicetify = enabled;
