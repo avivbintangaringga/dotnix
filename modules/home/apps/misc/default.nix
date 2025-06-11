@@ -13,6 +13,7 @@
     home.packages = with pkgs; [
       font-manager
       # reaper
+      varia
     ];
   };
 }
