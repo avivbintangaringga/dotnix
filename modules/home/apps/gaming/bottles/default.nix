@@ -11,7 +11,9 @@
 
   config = lib.mkIf config.setup.apps.gaming.bottles.enable {
     home.packages = with pkgs; [
-      bottles
+      (bottles.override {
+        removeWarningPopup = true;
+      })
     ];
   };
 }
