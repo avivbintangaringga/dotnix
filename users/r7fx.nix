@@ -77,4 +77,12 @@ in
     };
   };
 
+  xdg = {
+    mimeApps = {
+      defaultApplications = {
+        "inode/directory" = [ "nemo.desktop" ];
+        "x-scheme-handler/discord" = [ "discord.desktop" ];
+      };
+    };
+  };
 }

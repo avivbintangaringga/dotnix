@@ -1,3 +1,6 @@
 {
-  xdg.userDirs.enable = true;
+  xdg = {
+    userDirs.enable = true;
+    mimeApps.enable = true;
+  };
 }
