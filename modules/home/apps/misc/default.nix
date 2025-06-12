@@ -14,6 +14,9 @@
       font-manager
       # reaper
       varia
+      nautilus
+      kdePackages.dolphin
+      kdePackages.dolphin-plugins
     ];
   };
 }
