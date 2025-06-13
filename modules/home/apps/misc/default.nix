@@ -17,6 +17,8 @@
       nautilus
       kdePackages.dolphin
       kdePackages.dolphin-plugins
+      lxappearance
+      nwg-look
     ];
   };
 }
