@@ -19,6 +19,7 @@
       kdePackages.dolphin-plugins
       lxappearance
       nwg-look
+      btrfs-assistant
     ];
   };
 }
