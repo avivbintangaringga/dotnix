@@ -14,12 +14,16 @@
       font-manager
       # reaper
       varia
-      nautilus
-      kdePackages.dolphin
-      kdePackages.dolphin-plugins
       lxappearance
       nwg-look
       btrfs-assistant
+
+      #testing
+      nautilus
+      kdePackages.dolphin
+      kdePackages.dolphin-plugins
+      vivaldi
+      brave
     ];
   };
 }
