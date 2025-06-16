@@ -19,9 +19,11 @@
       btrfs-assistant
 
       #testing
+      gedit
       nautilus
       kdePackages.dolphin
       kdePackages.dolphin-plugins
+      kdePackages.kate
       vivaldi
       brave
     ];
