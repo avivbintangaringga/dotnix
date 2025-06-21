@@ -34,8 +34,6 @@
 
     apple-fonts.url= "github:Lyndeno/apple-fonts.nix";
 
-    zen-nebula.url = "github:JustAdumbPrsn/Nebula-A-Minimal-Theme-for-Zen-Browser";
-
     thorium-browser.url = "github:Rishabh5321/thorium_flake";
   };
 
