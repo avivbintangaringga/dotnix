@@ -45,7 +45,7 @@ in
       helix = enabled;
       misc = enabled;
       nvim = enabled;
-      scrcpy = disabled;
+      scrcpy = enabled;
       yazi = enabled;
       python = enabled;
       zsh = enabled;
