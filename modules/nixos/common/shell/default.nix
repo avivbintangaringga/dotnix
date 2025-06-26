@@ -5,7 +5,7 @@
     shellAliases = {
       edit = "hx /home/${userdata.username}/dotnix";
       update = "nh os switch /home/${userdata.username}/dotnix --no-nom";
-      hm-update = "nh home switch /home/${userdata.username}/dotnix --no-nom";
+      hm-update = "nh home switch /home/${userdata.username}/dotnix --no-nom -b hm-bak";
       upgrade = ''
         cd /home/${userdata.username}/dotnix &&
         git add . &&

@@ -23,11 +23,14 @@
 
       file = {
         "${userdata.userpath}/.wallpapers" = {
+          enable = true;
           source = ./wallpapers;
           recursive = true;
+          force = true;
         };
 
         "${userdata.userpath}/.scripts" = {
+          enable = true;
           source = ./scripts;
           executable = true;
           recursive = true;
