@@ -2,27 +2,22 @@
 
 QUIET=false
 WITH_WAYBAR=false
+OPTSTRING=":qw"
 
-ARGS=$(getopt -l "quiet:with-waybar" -o "q:w" -- "$@")
-eval set -- "$ARGS"
-
-while [ $# -ge 1 ]
+while getopts ${OPTSTRING} opt
 do
-  case "$1" in
-    --)
-        shift
-        break
-        ;;
-    -q|--quiet)
+  case ${opt} in
+    q)
         QUIET=true
-        shift
         ;;
-    -w|--with-waybar)
+    w)
         WITH_WAYBAR=true
-        shift
+        ;;
+    ?)
+        echo "Invalid option."
+        exit 1
         ;;
   esac
-  shift
 done
 
 WALLPAPER_DIR="$HOME/.wallpapers/"
@@ -39,6 +34,8 @@ echo "$(basename $WALLPAPER)" > $CURRENT_FILE
 # Regenerate colors
 # hellwal -i "$WALLPAPER" --bright-offset 0.1 --neon-mode
 wal -n -i "$WALLPAPER" --contrast 3
+
+sleep 0.1
 
 # Apply the selected wallpaper
 swww img "$WALLPAPER" --transition-type grow --transition-fps 60 --transition-step 2 --transition-duration 1 --transition-pos top-right
