@@ -53,6 +53,8 @@ in
       gaming = enabled;
       plymouth = enabled;
       waydroid = disabled;
+      virt-manager = enabled;
+      vmware = enabled;
     };
 
     services = {
