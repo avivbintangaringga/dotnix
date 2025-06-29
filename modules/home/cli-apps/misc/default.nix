@@ -13,6 +13,8 @@
     home.packages = with pkgs; [
       wev
       cava
+
+      supergfxctl
     ];
   };
 }
