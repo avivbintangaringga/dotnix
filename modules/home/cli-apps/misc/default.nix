@@ -15,6 +15,7 @@
       cava
 
       supergfxctl
+      lsof
     ];
   };
 }

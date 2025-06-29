@@ -1,6 +1,5 @@
 {
   userdata,
-  lib,
   mylib,
   ...
 }:
@@ -23,6 +22,7 @@ in
       };
       ghostty = enabled;
       kitty = enabled;
+      looking-glass-client = enabled;
       mediaplayer = enabled;
       misc = enabled;
       nemo = enabled;
