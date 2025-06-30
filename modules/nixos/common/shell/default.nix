@@ -18,6 +18,23 @@
         git push &&
         echo "DONE!"
       '';
+      nvidia-host = ''
+        sudo virsh nodedev-reattach pci_0000_01_00_0
+        sudo rmmod vfio_pci vfio_pci_core vfio_iommu_type1
+        sudo modprobe -i nvidia
+        sudo modprobe -i nvidia_uvm
+        sudo modprobe -i nvidia_modeset
+        sudo systemctl restart nvidia-powerd
+      '';
+      nvidia-vm = ''
+        sudo systemctl stop nvidia-powerd
+        sudo rmmod nvidia_uvm
+        sudo rmmod nvidia_modeset
+        sudo rmmod nvidia
+        sudo modprobe -i vfio_pci vfio_pci_core vfio_iommu_type1
+        sudo virsh nodedev-detach pci_0000_01_00_0
+      '';
+      win11 = "virsh -c qemu:///system start win11 && looking-glass-client -F audio:micDefault=allow audio:micSHowIndicator=no audio:periodSize=512";
     };
   };
 
