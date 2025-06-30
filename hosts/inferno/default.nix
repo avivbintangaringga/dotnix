@@ -81,6 +81,25 @@ in
       };
       timeout = 1;
     };
+
+    initrd = {
+      kernelModules = [
+        "vfio_pci"
+        "vfio"
+        "vfio_iommu_type1"
+
+        # "nvidia"
+        # "nvidia_modeset"
+        # "nvidia_drm"
+        # "nvidia_uvm"
+      ];
+    };
+
+    kernelParams = [
+      "amd_iommu=on"
+      "iommu=pt"
+      "vfio-pci.ids=10de:25a2,10de:2291"
+    ];
   };
 
   networking = {

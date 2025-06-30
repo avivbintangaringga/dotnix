@@ -14,7 +14,6 @@
       wev
       cava
 
-      supergfxctl
       lsof
     ];
   };
