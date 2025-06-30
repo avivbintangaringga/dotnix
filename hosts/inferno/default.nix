@@ -1,6 +1,7 @@
 {
   mylib,
   inputs,
+  userdata,
   ...
 }:
 let
@@ -101,6 +102,11 @@ in
       "vfio-pci.ids=10de:25a2,10de:2291"
     ];
   };
+
+  systemd.tmpfiles.rules = [
+    "f /dev/shm/scream 0660 ${userdata.username} qemu-libvirtd -"
+    "f /dev/shm/looking-glass 0660 ${userdata.username} qemu-libvirtd -"
+  ];
 
   networking = {
     hostName = "inferno";
