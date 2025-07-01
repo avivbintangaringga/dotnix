@@ -2,6 +2,7 @@
   mylib,
   inputs,
   userdata,
+  pkgs,
   ...
 }:
 let
@@ -101,6 +102,31 @@ in
       "iommu=pt"
       "vfio-pci.ids=10de:25a2,10de:2291"
     ];
+  };
+
+  security = {
+    sudo = {
+      enable = true;
+      extraRules = [
+        {
+          commands = [
+            {
+              command = "${pkgs.kmod}/bin/modprobe";
+              options = [ "NOPASSWD" ];
+            }
+            {
+              command = "${pkgs.kmod}/bin/rmmod";
+              options = [ "NOPASSWD" ];
+            }
+            {
+              command = "${pkgs.systemd}/bin/systemctl";
+              options = [ "NOPASSWD" ];
+            }
+          ];
+          groups = [ "wheel" ];
+        }
+      ];
+    };
   };
 
   systemd.tmpfiles.rules = [

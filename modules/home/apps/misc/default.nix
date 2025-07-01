@@ -18,6 +18,8 @@
       nwg-look
       btrfs-assistant
 
+      dmidecode
+
       #testing
       gedit
       nautilus
