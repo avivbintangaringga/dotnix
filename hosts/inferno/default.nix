@@ -104,31 +104,6 @@ in
     ];
   };
 
-  security = {
-    sudo = {
-      enable = true;
-      extraRules = [
-        {
-          commands = [
-            {
-              command = "${pkgs.kmod}/bin/modprobe";
-              options = [ "NOPASSWD" ];
-            }
-            {
-              command = "${pkgs.kmod}/bin/rmmod";
-              options = [ "NOPASSWD" ];
-            }
-            {
-              command = "${pkgs.systemd}/bin/systemctl";
-              options = [ "NOPASSWD" ];
-            }
-          ];
-          groups = [ "wheel" ];
-        }
-      ];
-    };
-  };
-
   systemd.tmpfiles.rules = [
     "f /dev/shm/scream 0660 ${userdata.username} qemu-libvirtd -"
     "f /dev/shm/looking-glass 0660 ${userdata.username} qemu-libvirtd -"
