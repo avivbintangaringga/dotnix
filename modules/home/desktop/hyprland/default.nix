@@ -33,7 +33,10 @@
 
       settings = lib.mkMerge [
         {
-          monitor = ",1920x1080@144,auto,1";
+          monitor =  [
+            "eDP-1,1920x1080@144,auto,1"
+            "HDMI-A-1,1920x1080@60,auto,1"
+          ];
           #source = "~/.cache/hellwal/hyprland-colors.conf";
           source = "~/.cache/wal/colors-hyprland.conf";
         }
