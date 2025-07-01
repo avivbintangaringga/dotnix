@@ -34,6 +34,9 @@
         sudo modprobe -i vfio_pci vfio_pci_core vfio_iommu_type1
         sudo virsh nodedev-detach pci_0000_01_00_0
       '';
+      nvidia-status = ''
+        if lspci -nnk | grep -i nvidia -A 3 | grep -q vfio; then echo "VM Mode"; else echo "Host Mode"; fi
+      '';
       win11 = "virsh -c qemu:///system start win11 && looking-glass-client -F audio:micDefault=allow audio:micSHowIndicator=no audio:periodSize=512";
     };
   };
