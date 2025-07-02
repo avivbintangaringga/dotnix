@@ -18,6 +18,7 @@
       tree
       xxd
       usbutils
+      nfs-utils
     ];
   };
 }

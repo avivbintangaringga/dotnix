@@ -67,8 +67,9 @@ in
 
       gvfs = enabled;
       logind = enabled;
-      nfs = enabled;
+      nfs = disabled;
       pipewire = enabled;
+      samba = enabled;
       tuigreet = enabled;
       upower = enabled;
     };
