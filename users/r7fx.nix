@@ -33,6 +33,7 @@ in
       qbittorrent = enabled;
       spicetify = enabled;
       thorium-browser = enabled;
+      vscode = enabled;
       zed-editor = disabled;
       zen-browser = enabled;
       zotero = enabled;
