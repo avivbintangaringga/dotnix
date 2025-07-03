@@ -31,6 +31,7 @@ in
       peazip = enabled;
       postman = enabled;
       qbittorrent = enabled;
+      quickemu = enabled;
       spicetify = enabled;
       thorium-browser = enabled;
       vscode = enabled;
