@@ -54,7 +54,7 @@ in
     misc = {
       gaming = enabled;
       plymouth = enabled;
-      waydroid = disabled;
+      waydroid = enabled;
       virt-manager = enabled;
       vmware = enabled;
     };
