@@ -37,7 +37,10 @@
       nvidia-status = ''
         if lspci -nnk | grep -i nvidia -A 3 | grep -q vfio; then echo "VM Mode"; else echo "Host Mode"; fi
       '';
-      win11 = "virsh -c qemu:///system start win11 && looking-glass-client -F audio:micDefault=allow audio:micSHowIndicator=no audio:periodSize=512";
+      lg = "looking-glass-client -F audio:micDefault=allow audio:micSHowIndicator=no audio:periodSize=512";
+      vm = "virsh -c qemu:///system";
+      win11 = "vm start win11 && lg";
+      win10 = "vm start win10 && lg";
     };
   };
 
