@@ -99,6 +99,19 @@ window#waybar {
   border-radius: 100px;
 }
 
+#groupleft2bg {
+  padding: 2px;
+  background-image: linear-gradient(90deg, @primary 0%, @secondary 100%);
+  border-radius: 100px;
+  margin: 6px 6px 0 6px
+}
+
+#groupleft2 {
+  padding: 0px 8px;
+  background-color: @background;
+  border-radius: 100px;
+}
+
 #grouprightbg {
   padding: 2px;
   background-image: linear-gradient(90deg, @primary 0%, @secondary 100%);

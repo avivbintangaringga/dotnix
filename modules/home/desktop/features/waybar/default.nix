@@ -112,6 +112,11 @@
           "custom/revborder-right" = {
             format = " ";
           };
+          "custom/nv-mode" = {
+            exec = "nv-switch waybar";
+            on-click = "nv-switch toggle pkexec";
+            interval = 1;
+          };
           "group/groupclock" = {
             modules = [
               "clock#date"
@@ -129,6 +134,18 @@
           "group/groupleftbg" = {
             modules = [
               "group/groupleft"
+            ];
+            orientation = "horizontal";
+          };
+          "group/groupleft2" = {
+            modules = [
+              "custom/nv-mode"
+            ];
+            orientation = "horizontal";
+          };
+          "group/groupleft2bg" = {
+            modules = [
+              "group/groupleft2"
             ];
             orientation = "horizontal";
           };
@@ -195,12 +212,13 @@
           ];
           modules-left = [
             "group/groupleftbg"
-            "custom/revborder-left"
+            # "custom/revborder-left"
+            "group/groupleft2bg"
             "hyprland/window"
           ];
           modules-right = [
             "mpris"
-            "custom/revborder-right"
+            # "custom/revborder-right"
             "group/grouprightbg"
           ];
           mpris = {
