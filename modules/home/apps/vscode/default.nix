@@ -47,6 +47,11 @@
 
             formulahendry.auto-close-tag
             formulahendry.auto-rename-tag
+
+            ecmel.vscode-html-css
+            vue.volar
+            vue.vscode-typescript-vue-plugin
+
           ];
         };
       };
