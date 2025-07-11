@@ -15,6 +15,14 @@
       nvtopPackages.amd
     ];
 
+    systemd = {
+      services = {
+        "nvidia-powerd" = {
+          wantedBy = lib.mkForce [];
+        };
+      };
+    };
+
     hardware = {
       graphics.enable = true;
       nvidia = {
