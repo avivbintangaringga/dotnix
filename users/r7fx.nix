@@ -16,28 +16,28 @@ in
     apps = {
       bitwarden = enabled;
       discord = enabled;
-      firefox = enabled;
+      firefox = disabled;
       gaming = {
         all = enabled;
       };
       ghostty = enabled;
-      kitty = enabled;
+      kitty = disabled;
       looking-glass-client = enabled;
       mediaplayer = enabled;
       misc = enabled;
       nemo = enabled;
       obs-studio = enabled;
-      onlyoffice = enabled;
+      onlyoffice = disabled;
       peazip = enabled;
       postman = enabled;
       qbittorrent = enabled;
-      quickemu = enabled;
+      quickemu = disabled;
       spicetify = enabled;
       thorium-browser = enabled;
       vscode = enabled;
       zed-editor = disabled;
       zen-browser = enabled;
-      zotero = enabled;
+      zotero = disabled;
     };
 
     cli-apps = {
@@ -48,7 +48,7 @@ in
       misc = enabled;
       nvim = enabled;
       scrcpy = enabled;
-      yazi = enabled;
+      yazi = disabled;
       python = enabled;
       zsh = enabled;
       lsp = enabled;

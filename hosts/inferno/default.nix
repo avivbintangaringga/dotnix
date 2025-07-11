@@ -19,7 +19,7 @@ in
     apps = {
       aagl = disabled;
       steam = enabled;
-      winbox = enabled;
+      winbox = disabled;
     };
 
     cli-apps = {
@@ -56,7 +56,7 @@ in
       plymouth = enabled;
       waydroid = enabled;
       virt-manager = enabled;
-      vmware = enabled;
+      vmware = disabled;
     };
 
     services = {

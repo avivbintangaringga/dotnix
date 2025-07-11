@@ -27,8 +27,8 @@
       kdePackages.dolphin
       kdePackages.dolphin-plugins
       kdePackages.kate
-      vivaldi
-      brave
+      # vivaldi
+      # brave
     ];
   };
 }

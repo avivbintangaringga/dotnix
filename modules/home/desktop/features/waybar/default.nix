@@ -22,7 +22,7 @@
       };
 
       apps = {
-        kitty.enable = true;
+        ghostty.enable = true;
       };
 
       services = {
@@ -249,7 +249,7 @@
             format-linked = "󰪎  No Internet";
             format-wifi = "{icon}   {bandwidthTotalBytes}";
             interval = 1;
-            on-click = "kitty -e nmtui-connect";
+            on-click = "ghostty -e nmtui-connect";
             on-click-right = "nm-connection-editor";
             tooltip-format = "{ifname}: {ipaddr}";
           };
