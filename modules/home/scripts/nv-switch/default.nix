@@ -112,11 +112,13 @@
       modprobe -i nvidia
       modprobe -i nvidia_uvm
       modprobe -i nvidia_modeset
+      modprobe -i nvidia_drm
       systemctl restart nvidia-powerd
     '')
 
     (pkgs.writeShellScriptBin "exec_nvswitch_to_vm" ''
       systemctl stop nvidia-powerd
+      rmmod -f nvidia_drm
       rmmod nvidia_uvm
       rmmod nvidia_modeset
       rmmod nvidia
