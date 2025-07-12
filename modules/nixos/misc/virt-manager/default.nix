@@ -64,9 +64,15 @@
               }
 
               if [[ "$HOOK_NAME" == "prepare" && "$STATE_NAME" == "begin" ]]; then
-                start_hook
+                if [[ "$GUEST_NAME" == "win11" || "$GUEST_NAME" == "win10" ]]
+                then
+                  start_hook
+                fi
               elif [[ "$HOOK_NAME" == "release" && "$STATE_NAME" == "end" ]]; then
-                revert_hook
+                if [[ "$GUEST_NAME" == "win11" || "$GUEST_NAME" == "win10" ]]
+                then
+                  revert_hook
+                fi
               fi
             '';
           };

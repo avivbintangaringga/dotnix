@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./waybar.nix
+  ];
+  
   environment.systemPackages = [
     (pkgs.writeShellScriptBin "lg" ''
       looking-glass-client -F audio:micDefault=allow audio:micSHowIndicator=no audio:periodSize=512

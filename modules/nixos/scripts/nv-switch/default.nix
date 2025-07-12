@@ -44,6 +44,15 @@
       switch_to_host() {
         mode_is_not_or_exit "host"
 
+        RUNNING_VM_COUNT=$(virsh -c qemu:///system list --state-running --name | awk NF | grep "" -c)
+
+        if [[ $RUNNING_VM_COUNT -gt 0 ]]
+        then
+          echo "Cannot switch to host mode while there is running VM"
+          notify "Cannot switch to host mode while there is running VM"
+          exit 1
+        fi
+
         echo "Switching to host mode..."
         notify "Switching to host mode..."
 
@@ -61,6 +70,14 @@
 
       switch_to_vm() {
         mode_is_not_or_exit "vm"
+
+        USING_NVIDIA_COUNT=$(lsof /dev/nvidia0 | grep "" -c)
+        if [[ $USING_NVIDIA_COUNT -gt 0 ]]
+        then
+          echo "Cannot switch to VM mode while the GPU is in use"
+          notify "Cannot switch to VM mode while the GPU is in use"
+          exit 1
+        fi
 
         echo "Switching to vm mode..."
         notify "Switching to vm mode..."

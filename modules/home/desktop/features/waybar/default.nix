@@ -117,6 +117,12 @@
             on-click = "nv-switch toggle";
             interval = 1;
           };
+          "custom/vm-status" = {
+            exec = "vm_waybar_hook get";
+            hide-empty-text = true;
+            on-click = "vm_waybar_hook click";
+            interval = 2;
+          };
           "group/groupclock" = {
             modules = [
               "clock#date"
@@ -140,6 +146,7 @@
           "group/groupleft2" = {
             modules = [
               "custom/nv-mode"
+              "custom/vm-status"
             ];
             orientation = "horizontal";
           };
