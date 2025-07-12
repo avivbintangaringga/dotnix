@@ -22,8 +22,8 @@
         };
 
         custom = {
-          start = "${pkgs.libnotify}/bin/notify-send 'GameMode started'";
-          end = "${pkgs.libnotify}/bin/notify-send 'GameMode ended'";
+          start = "${pkgs.libnotify}/bin/notify-send 'GameMode started' -i ${../../../../assets/icons/game.png}";
+          end = "${pkgs.libnotify}/bin/notify-send 'GameMode ended' -i ${../../../../assets/icons/game.png}";
         };
       };
     };
