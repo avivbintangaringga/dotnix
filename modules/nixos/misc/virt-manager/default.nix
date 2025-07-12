@@ -34,6 +34,8 @@
           };
           vhostUserPackages = with pkgs; [ virtiofsd ];
         };
+        onBoot = "ignore";
+        onShutdown = "shutdown";
         hooks = {
           qemu = {
             "gpuswitch" = pkgs.writeShellScript "gpuswitch-hook" ''
