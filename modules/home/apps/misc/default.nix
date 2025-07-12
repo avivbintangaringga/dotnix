@@ -17,6 +17,7 @@
       lxappearance
       nwg-look
       btrfs-assistant
+      remmina
 
       dmidecode
 

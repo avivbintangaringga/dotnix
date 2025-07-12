@@ -21,6 +21,16 @@
       virtiofsd
     ];
 
+    # nixpkgs.overlays = [
+    #   (self: super: {
+    #     qemu_kvm = super.qemu_kvm.overrideAttrs (oldAttrs: {
+    #       postPatch = oldAttrs.postPatch + ''
+    #         sed -i 's/GUI_REFRESH_INTERVAL_DEFAULT    30/GUI_REFRESH_INTERVAL_DEFAULT    7/g' include/ui/console.h
+    #       '';
+    #     });
+    #   })
+    # ];
+
     virtualisation = {
       libvirtd = {
         enable = true;
@@ -33,6 +43,21 @@
             packages = [ pkgs.OVMFFull.fd ];
           };
           vhostUserPackages = with pkgs; [ virtiofsd ];
+          verbatimConfig = ''
+            cgroup_device_acl = [
+              "/dev/null",
+              "/dev/full",
+              "/dev/zero",
+              "/dev/random",
+              "/dev/urandom",
+              "/dev/ptmx",
+              "/dev/kvm",
+              "/dev/nvidiactl",
+              "/dev/nvidia0",
+              "/dev/nvidia-modeset",
+              "/dev/dri/renderD128"
+            ]
+          '';
         };
         onBoot = "ignore";
         onShutdown = "shutdown";
