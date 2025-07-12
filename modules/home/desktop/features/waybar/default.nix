@@ -114,7 +114,7 @@
           };
           "custom/nv-mode" = {
             exec = "nv-switch waybar";
-            on-click = "nv-switch toggle pkexec";
+            on-click = "nv-switch toggle";
             interval = 1;
           };
           "group/groupclock" = {

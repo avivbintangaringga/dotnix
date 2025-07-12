@@ -106,6 +106,34 @@ in
     ];
   };
 
+  security.sudo = {
+    enable = true;
+    extraRules = [
+      {
+        # For VFIO script
+        commands = [
+          {
+            command = "/run/current-system/sw/bin/systemctl";
+            options = [ "NOPASSWD" ];
+          }
+          {
+            command = "/run/current-system/sw/bin/rmmod";
+            options = [ "NOPASSWD" ];
+          }
+          {
+            command = "/run/current-system/sw/bin/modprobe";
+            options = [ "NOPASSWD" ];
+          }
+          {
+            command = "/run/current-system/sw/bin/virsh";
+            options = [ "NOPASSWD" ];
+          }
+        ];
+        groups = [ "wheel" ];
+      }
+    ];
+  };
+
   systemd.tmpfiles.rules = [
     "f /dev/shm/scream 0660 ${userdata.username} qemu-libvirtd -"
     "f /dev/shm/looking-glass 0660 ${userdata.username} qemu-libvirtd -"

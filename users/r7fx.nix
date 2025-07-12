@@ -86,5 +86,16 @@ in
         "x-scheme-handler/discord" = [ "discord.desktop" ];
       };
     };
+
+    desktopEntries = {
+      win11 = {
+        name = "Windows 11";
+        icon = ../assets/icons/windows11.png;
+        exec = "vm-start win11";
+        terminal = false;
+        type = "Application";
+        categories = [ "System" ];
+      };
+    };
   };
 }

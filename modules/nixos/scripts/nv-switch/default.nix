@@ -1,16 +1,17 @@
 { pkgs, ... }:
 {
-  home.packages = [
+  environment.systemPackages = [
     (pkgs.writeShellScriptBin "nv-switch" ''
-      USE_PKEXEC=false
+      QUIET=false
 
-      if [[ $2 == "pkexec" ]]
+      # Just for quickness sake lol
+      if [[ "$2" == "quiet" ]]
       then
-        USE_PKEXEC=true
+        QUIET=true
       fi
       
       notify() {
-        notify-send "$1"
+        [[ $QUIET == false ]] && notify-send "$1" -i ${../../../../assets/icons/gpu.png}
       }
 
       check_current_mode() {
@@ -46,12 +47,13 @@
         echo "Switching to host mode..."
         notify "Switching to host mode..."
 
-        if $USE_PKEXEC
-        then
-          pkexec exec_nvswitch_to_host
-        else
-          sudo exec_nvswitch_to_host
-        fi
+        sudo virsh nodedev-reattach pci_0000_01_00_0
+        sudo rmmod vfio_pci vfio_pci_core vfio_iommu_type1
+        sudo modprobe -i nvidia
+        sudo modprobe -i nvidia_uvm
+        sudo modprobe -i nvidia_modeset
+        sudo modprobe -i nvidia_drm
+        sudo systemctl restart nvidia-powerd
 
         echo "Done"
         notify "Switched to host mode"
@@ -63,12 +65,13 @@
         echo "Switching to vm mode..."
         notify "Switching to vm mode..."
 
-        if $USE_PKEXEC
-        then
-          pkexec exec_nvswitch_to_vm
-        else
-          sudo exec_nvswitch_to_vm
-        fi
+        sudo systemctl stop nvidia-powerd
+        sudo rmmod -f nvidia_drm
+        sudo rmmod nvidia_uvm
+        sudo rmmod nvidia_modeset
+        sudo rmmod nvidia
+        sudo modprobe -i vfio_pci vfio_pci_core vfio_iommu_type1
+        sudo virsh nodedev-detach pci_0000_01_00_0
 
         echo "Done"
         notify "Switched to vm mode"
@@ -104,26 +107,6 @@
           exit 1
           ;;
       esac
-    '')
-
-    (pkgs.writeShellScriptBin "exec_nvswitch_to_host" ''
-      virsh nodedev-reattach pci_0000_01_00_0
-      rmmod vfio_pci vfio_pci_core vfio_iommu_type1
-      modprobe -i nvidia
-      modprobe -i nvidia_uvm
-      modprobe -i nvidia_modeset
-      modprobe -i nvidia_drm
-      systemctl restart nvidia-powerd
-    '')
-
-    (pkgs.writeShellScriptBin "exec_nvswitch_to_vm" ''
-      systemctl stop nvidia-powerd
-      rmmod -f nvidia_drm
-      rmmod nvidia_uvm
-      rmmod nvidia_modeset
-      rmmod nvidia
-      modprobe -i vfio_pci vfio_pci_core vfio_iommu_type1
-      virsh nodedev-detach pci_0000_01_00_0
     '')
   ];
 }

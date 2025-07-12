@@ -6,5 +6,6 @@
 
   exec-once = [
     "sh ~/.scripts/randomize-wallpaper.sh -q -w"
+    "nv-switch host quiet"
   ];
 }
