@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, userdata, ... }:
 {
   environment.systemPackages = [
     (pkgs.writeShellScriptBin "nv-switch" ''
@@ -82,6 +82,7 @@
         echo "Switching to vm mode..."
         notify "Switching to vm mode..."
 
+        sudo systemctl --user --machine=${userdata.username}@ stop swaync # TEMPORARY FIX
         sudo systemctl stop nvidia-powerd
         sudo rmmod -f nvidia_drm
         sudo rmmod nvidia_uvm
@@ -89,6 +90,7 @@
         sudo rmmod nvidia
         sudo modprobe -i vfio_pci vfio_pci_core vfio_iommu_type1
         sudo virsh nodedev-detach pci_0000_01_00_0
+        sudo systemctl --user --machine=${userdata.username}@ start swaync # TEMPORARY FIX
 
         echo "Done"
         notify "Switched to vm mode"

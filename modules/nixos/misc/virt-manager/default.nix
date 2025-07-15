@@ -69,6 +69,7 @@
               readonly STATE_NAME="$3"
 
               start_hook() {
+                systemctl --user --machine=${userdata.username}@ stop swaync # TEMPORARY FIX
                 systemctl stop nvidia-powerd
                 rmmod -f nvidia_drm
                 rmmod nvidia_uvm
@@ -76,6 +77,7 @@
                 rmmod nvidia
                 modprobe -i vfio_pci vfio_pci_core vfio_iommu_type1
                 /run/current-system/sw/bin/virsh nodedev-detach pci_0000_01_00_0
+                systemctl --user --machine=${userdata.username}@ start swaync # TEMPORARY FIX
               }
 
               revert_hook() {
