@@ -56,6 +56,7 @@
           mpris = {
             image-size = 50;
             image-radius = 8;
+            autohide = true;
           };
           dnd = {
             text = "     Do not disturb";

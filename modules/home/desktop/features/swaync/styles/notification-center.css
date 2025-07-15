@@ -1,5 +1,5 @@
 * {
-  font-size: 14px;
+  font-size: 13px;
   font-family: "Roboto", "JetBrainsMono Nerd Font";
   transition: 50ms;
 }
@@ -36,6 +36,8 @@
 
 .control-center .notification-row .image {
   margin-right: 8px;
+  min-height: 80px;
+  min-width: 80px;
 }
 
 .control-center .notification-row .summary {
@@ -245,17 +247,26 @@ scale slider {
 .widget-mpris {
   margin: 16px 0 0 0;
   padding: 4px;
+  color: white;
+  text-shadow: 1px 1px #050505;
 }
 
 .widget-mpris-player {
   border-radius: 16px;
   background-color: alpha(@background-alt, 0.8);
-  margin: 0px 8px;
-  padding: 16px 16px;
+  margin: 8px 8px;
+  /* padding: 16px 16px; */
+}
+
+.widget-mpris-player > box > box:nth-child(2) {
+  margin-bottom: 12px;
 }
 
 .widget-mpris-album-art {
+  min-height: 60px;
   min-width: 60px;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .widget-mpris-title {
