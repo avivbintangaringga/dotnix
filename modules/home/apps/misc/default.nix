@@ -19,6 +19,8 @@
       btrfs-assistant
       remmina
 
+      appimage-run
+
       dmidecode
 
       #testing
