@@ -306,6 +306,26 @@
         "type": "github"
       }
     },
+    "lsfg-vk": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1753576548,
+        "narHash": "sha256-gnV9xY7BMHrao4QroJveGUexssBwXtyawmjoDqjO7zk=",
+        "owner": "pabloaul",
+        "repo": "lsfg-vk-flake",
+        "rev": "0fa0918ada267e177274af61dd1875ef1b5a0a8e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pabloaul",
+        "repo": "lsfg-vk-flake",
+        "type": "github"
+      }
+    },
     "nix-alien": {
       "inputs": {
         "flake-compat": "flake-compat_2",
@@ -621,6 +641,7 @@
         "apple-fonts": "apple-fonts",
         "hardware": "hardware",
         "home-manager": "home-manager",
+        "lsfg-vk": "lsfg-vk",
         "nix-alien": "nix-alien",
         "nixpkgs": "nixpkgs_3",
         "nixvim": "nixvim",

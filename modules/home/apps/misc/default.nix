@@ -1,5 +1,6 @@
 {
   pkgs,
+  myPkgs,
   lib,
   config,
   ...
@@ -10,7 +11,7 @@
   };
 
   config = lib.mkIf config.setup.apps.misc.enable {
-    home.packages = with pkgs; [
+    home.packages = (with pkgs; [
       font-manager
       # reaper
       varia
@@ -32,6 +33,6 @@
       kdePackages.kate
       # vivaldi
       # brave
-    ];
+    ]);
   };
 }

@@ -67,6 +67,7 @@ in
 
       gvfs = enabled;
       logind = enabled;
+      lsfg-vk = enabled;
       nfs = disabled;
       pipewire = enabled;
       samba = enabled;

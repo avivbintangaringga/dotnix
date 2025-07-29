@@ -35,11 +35,15 @@
     apple-fonts.url= "github:Lyndeno/apple-fonts.nix";
 
     thorium-browser.url = "github:Rishabh5321/thorium_flake";
+
+    lsfg-vk = {
+      url = "github:pabloaul/lsfg-vk-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     {
-      self,
       nixpkgs,
       home-manager,
       ...
