@@ -25,7 +25,6 @@
       dmidecode
 
       #testing
-      vulkan-tools
       gedit
       nautilus
       kdePackages.dolphin
