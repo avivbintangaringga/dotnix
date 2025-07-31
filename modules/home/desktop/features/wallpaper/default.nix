@@ -24,7 +24,7 @@
       file = {
         "${userdata.userpath}/.wallpapers" = {
           enable = true;
-          source = ./wallpapers;
+          source = ../../../../../assets/wallpapers;
           recursive = true;
           force = true;
         };
