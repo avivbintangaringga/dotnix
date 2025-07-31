@@ -9,14 +9,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hardware.url = "github:NixOS/nixos-hardware/master";
+    hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     aagl = {
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
@@ -28,13 +34,25 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nvix.url = "github:niksingh710/nvix";
+    nvix = {
+      url = "github:niksingh710/nvix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    nix-alien.url = "github:thiagokokada/nix-alien";
+    nix-alien = {
+      url = "github:thiagokokada/nix-alien";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    apple-fonts.url= "github:Lyndeno/apple-fonts.nix";
+    apple-fonts = {
+      url= "github:Lyndeno/apple-fonts.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    thorium-browser.url = "github:Rishabh5321/thorium_flake";
+    thorium-browser = {
+      url = "github:Rishabh5321/thorium_flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     lsfg-vk = {
       url = "github:pabloaul/lsfg-vk-flake";
