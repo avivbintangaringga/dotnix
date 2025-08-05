@@ -52,6 +52,7 @@ in
     };
 
     misc = {
+      appimage = enabled;
       gaming = enabled;
       plymouth = enabled;
       waydroid = enabled;
