@@ -50,6 +50,7 @@
       "$mainMod SHIFT, Tab, cyclenext, prev hist visible"
 
       "$mainMod, space, exec, $menu"
+      "$mainMod ALT, space, exec, $alternateMenu"
       "$mainMod, period, exec, $emojiPicker"
       "$mainMod, Tab, cyclenext, visible"
       "$mainMod, Delete, exit"
