@@ -14,7 +14,7 @@ in
 
   "$toggleNotification" = "swaync-client -t -sw";
   "$restartBar" = "systemctl --user restart waybar";
-  "$randomizeWallpaper" = "sh ${userdata.userpath}/.scripts/randomize-wallpaper.sh";
+  "$randomizeWallpaper" = "sh ${userdata.userpath}/.scripts/randomize-wallpaper.sh -a";
 
   "$screenshotFull" =
     "mkdir -p ${screenshotDir} && grimblast --notify --freeze copysave screen \"${screenshotDir}/Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png\"";

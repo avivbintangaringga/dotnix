@@ -2,7 +2,8 @@
 
 QUIET=false
 WITH_WAYBAR=false
-OPTSTRING=":qw"
+WITH_AURA=false
+OPTSTRING=":aqw"
 
 while getopts ${OPTSTRING} opt
 do
@@ -12,6 +13,9 @@ do
         ;;
     w)
         WITH_WAYBAR=true
+        ;;
+    a)
+        WITH_AURA=true
         ;;
     ?)
         echo "Invalid option."
@@ -49,6 +53,12 @@ systemctl --user restart swayosd
 if ! $QUIET
 then
   notify-send -i "$WALLPAPER" "Wallpaper changed"
+fi
+
+if $WITH_AURA
+then
+  color=$(cat $HOME/.cache/wal/colors | sed -n '5p' | cut -d '#' -f2-)
+  asusctl aura static -c $color
 fi
 
 if $WITH_WAYBAR
