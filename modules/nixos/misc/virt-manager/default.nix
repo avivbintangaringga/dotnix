@@ -5,7 +5,10 @@
   userdata,
   ...
 }:
-{
+let
+  qemupkg = pkgs.qemu_kvm;
+  ovmfpkg = pkgs.OVMFFull;
+in {
   options = {
     setup.misc.virt-manager.enable = lib.mkEnableOption "virt-manager";
   };
@@ -35,12 +38,12 @@
       libvirtd = {
         enable = true;
         qemu = {
-          package = pkgs.qemu_kvm;
+          package = qemupkg;
           runAsRoot = true;
           swtpm.enable = true;
           ovmf = {
             enable = true;
-            packages = [ pkgs.OVMFFull.fd ];
+            packages = [ ovmfpkg.fd ];
           };
           vhostUserPackages = with pkgs; [ virtiofsd ];
           verbatimConfig = ''
@@ -114,6 +117,15 @@
 
     users.users.${userdata.username} = {
       extraGroups = [ "libvirtd" ];
+    };
+
+    system.activationScripts = {
+      ovmf-symlink = {
+        text = ''
+            mkdir -p /qemu-files
+            ln -s "${qemupkg}/share/qemu/edk2-x86_64-secure-code.fd" /qemu-files/edk2-x86_64-secure-code.fd
+          '';
+      };
     };
   };
 }
