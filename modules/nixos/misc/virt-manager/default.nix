@@ -123,7 +123,8 @@ in {
       ovmf-symlink = {
         text = ''
             mkdir -p /qemu-files
-            ln -s "${qemupkg}/share/qemu/edk2-x86_64-secure-code.fd" /qemu-files/edk2-x86_64-secure-code.fd
+            ln "${qemupkg}/share/qemu/edk2-x86_64-secure-code.fd" "/qemu-files/edk2-x86_64-secure-code.fd"
+            ln "${qemupkg}/share/qemu/edk2-i386-vars.fd" "/qemu-files/edk2-i386-vars.fd"
           '';
       };
     };
