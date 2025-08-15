@@ -119,14 +119,12 @@ in {
       extraGroups = [ "libvirtd" ];
     };
 
-    system.activationScripts = {
-      ovmf-symlink = {
-        text = ''
-            mkdir -p /qemu-files
-            ln "${qemupkg}/share/qemu/edk2-x86_64-secure-code.fd" "/qemu-files/edk2-x86_64-secure-code.fd"
-            ln "${qemupkg}/share/qemu/edk2-i386-vars.fd" "/qemu-files/edk2-i386-vars.fd"
-          '';
-      };
-    };
+    # system.activationScripts = {
+    #   ovmf-symlink = {
+    #     text = ''
+    #         ln -s "${qemupkg}/share/qemu" /qemu-files
+    #       '';
+    #   };
+    # };
   };
 }
