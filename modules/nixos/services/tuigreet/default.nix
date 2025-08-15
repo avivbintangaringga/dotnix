@@ -12,14 +12,14 @@
 
   config = lib.mkIf config.setup.services.tuigreet.enable {
     environment.systemPackages = with pkgs; [
-      greetd.tuigreet
+      tuigreet
     ];
 
     services = {
       greetd =
         let
           session = "${pkgs.hyprland}/bin/Hyprland";
-          tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
+          tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
         in
         {
           enable = true;
