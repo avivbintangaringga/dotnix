@@ -12,7 +12,15 @@ in
   imports = [
     ./hardware-configuration.nix
     ./../../modules/nixos/import.nix
+    ./../../overlays/import.nix
     inputs.hardware.nixosModules.asus-fa506ic
+  ];
+
+  system.replaceDependencies.replacements = [
+    {
+      oldDependency = pkgs.mesa;
+      newDependency = pkgs.mesa-25-1-7;
+    }
   ];
 
   setup = {
