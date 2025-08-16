@@ -26,6 +26,7 @@ in
       kitty = disabled;
       looking-glass-client = enabled;
       mediaplayer = enabled;
+      moonlight = enabled;
       misc = enabled;
       nemo = enabled;
       obs-studio = enabled;
