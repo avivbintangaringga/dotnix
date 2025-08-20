@@ -19,6 +19,7 @@
       nwg-look
       btrfs-assistant
       remmina
+      bluemail
 
       dmidecode
 
