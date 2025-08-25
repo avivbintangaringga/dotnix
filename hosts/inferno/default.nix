@@ -61,6 +61,7 @@ in
 
     misc = {
       appimage = enabled;
+      docker = enabled;
       gaming = enabled;
       plymouth = enabled;
       waydroid = enabled;
