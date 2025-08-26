@@ -19,7 +19,7 @@
       pwvucontrol
       qpwgraph
       sonusmix
-      carla
+      # carla
     ];
   };
 }
