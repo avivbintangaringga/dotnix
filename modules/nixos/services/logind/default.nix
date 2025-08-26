@@ -7,8 +7,12 @@
   config = lib.mkIf config.setup.services.logind.enable {
     services = {
       logind = {
-        powerKey = "suspend";
-        lidSwitch = "suspend";
+        settings = {
+          Login = {
+            HandlePowerKey = "suspend";
+            HandleLidSwitch = "suspend";
+          };
+        };
       };
     };
   };
