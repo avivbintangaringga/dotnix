@@ -67,6 +67,7 @@ in
       waydroid = enabled;
       virt-manager = enabled;
       vmware = disabled;
+      winapps = enabled;
     };
 
     services = {
