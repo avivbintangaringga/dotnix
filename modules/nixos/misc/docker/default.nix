@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  userdata,
   pkgs,
   ...
 }:
@@ -19,6 +20,10 @@
       # autoPrune = {
       #   enable = true;
       # };
+    };
+
+    users.users.${userdata.username} = {
+      extraGroups = [ "docker" ];
     };
   };
 }
