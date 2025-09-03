@@ -27,6 +27,7 @@
       graphics.enable = true;
       nvidia = {
         modesetting.enable = true;
+        open = true;
         prime = {
           nvidiaBusId = lib.mkForce "PCI:1:0:0";
           amdgpuBusId = lib.mkForce "PCI:6:0:0";
