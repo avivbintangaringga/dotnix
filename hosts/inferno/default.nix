@@ -167,17 +167,5 @@ in
     options = [ "defaults" ];
   };
 
-  fileSystems."/media/ARCH" = {
-    device = "/dev/disk/by-uuid/a7b2e66e-5fd3-47df-97fc-468b710c0beb";
-    fsType = "btrfs";
-    options = [ "subvol=@" ];
-  };
-
-  fileSystems."/media/ARCH-HOME" = {
-    device = "/dev/disk/by-uuid/a7b2e66e-5fd3-47df-97fc-468b710c0beb";
-    fsType = "btrfs";
-    options = [ "subvol=@home" ];
-  };
-
   system.stateVersion = "24.11"; # Did you read the comment?
 }
