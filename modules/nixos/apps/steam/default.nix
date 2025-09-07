@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, config, pkgs, ... }:
 {
   options = {
     setup.apps.steam.enable = lib.mkEnableOption "Steam";
@@ -8,6 +8,10 @@
     programs.steam = {
       enable = true;
       protontricks.enable = true;
+      extraPackages = with pkgs; [
+          gamescope
+        ]
+      ;
     };
   };
 }
