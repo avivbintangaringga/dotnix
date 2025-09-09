@@ -73,7 +73,7 @@ in
     services = {
       auto-cpufreq = {
         enable = true;
-        turbo = true;
+        turbo = false;
       };
 
       gvfs = enabled;
