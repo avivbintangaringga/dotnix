@@ -23,6 +23,9 @@
 
       dmidecode
 
+      furmark
+      mprime
+
       #testing
       gedit
       nautilus
