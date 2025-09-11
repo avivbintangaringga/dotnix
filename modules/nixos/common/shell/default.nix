@@ -20,6 +20,7 @@
       '';
       win11 = "vm-start win11";
       win10 = "vm-start win10";
+      wuwatrack = ''url=$(grep -oE 'https://aki-gm-resources(-oversea)?.aki-game.(net|com)[^"]*' "$HOME/.local/share/Steam/steamapps/common/Wuthering Waves/Client/Saved/Logs/Client.log" | tail -n 1) && [ -n "$url" ] && echo "$url"'';
     };
   };
 
