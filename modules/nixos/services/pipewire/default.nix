@@ -18,7 +18,7 @@
       helvum
       pwvucontrol
       qpwgraph
-      sonusmix
+      # sonusmix
       # carla
     ];
   };
