@@ -10,8 +10,7 @@
       protontricks.enable = true;
       extraPackages = with pkgs; [
           gamescope
-        ]
-      ;
+      ];
     };
   };
 }
