@@ -41,10 +41,10 @@ in {
           package = qemupkg;
           runAsRoot = true;
           swtpm.enable = true;
-          ovmf = {
-            enable = true;
-            packages = [ ovmfpkg.fd ];
-          };
+          # ovmf = {
+          #   enable = true;
+          #   packages = [ ovmfpkg.fd ];
+          # };
           vhostUserPackages = with pkgs; [ virtiofsd ];
           verbatimConfig = ''
             cgroup_device_acl = [
