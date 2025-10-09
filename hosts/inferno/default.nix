@@ -17,10 +17,10 @@ in
   ];
 
   system.replaceDependencies.replacements = [
-    {
-      oldDependency = pkgs.mesa;
-      newDependency = pkgs.mesa-25-1-7;
-    }
+    # {
+    #   oldDependency = pkgs.mesa;
+    #   newDependency = pkgs.mesa-25-1-7;
+    # }
   ];
 
   setup = {
