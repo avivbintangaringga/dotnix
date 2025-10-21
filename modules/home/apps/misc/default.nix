@@ -1,6 +1,7 @@
 {
   pkgs,
   myPkgs,
+  inputs,
   lib,
   config,
   ...
@@ -34,6 +35,9 @@
       kdePackages.kate
       # vivaldi
       # brave
+
+
+      inputs.winboat.winboat
     ]);
   };
 }
