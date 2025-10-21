@@ -38,6 +38,7 @@
 
 
       inputs.winboat.winboat
+      freerdp
     ]);
   };
 }
