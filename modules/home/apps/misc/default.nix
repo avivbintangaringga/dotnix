@@ -18,7 +18,7 @@
       varia
       lxappearance
       nwg-look
-      btrfs-assistant
+      # btrfs-assistant
       remmina
       bluemail
 
