@@ -26,6 +26,7 @@
 
       furmark
       mprime
+      synthesia
 
       #testing
       gedit
