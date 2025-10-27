@@ -75,7 +75,7 @@ in
         enable = true;
         turbo = false;
       };
-
+      flatpak = enabled;
       gvfs = enabled;
       logind = enabled;
       lsfg-vk = enabled;
