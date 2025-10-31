@@ -82,6 +82,10 @@ in
     };
   };
 
+  gtk = {
+    gtk2.force = true;
+  };
+
   xdg = {
     mimeApps = {
       defaultApplications = {
@@ -89,6 +93,8 @@ in
         "x-scheme-handler/discord" = [ "discord.desktop" ];
       };
     };
+
+    portal.enable = true;
 
     desktopEntries = {
       win11 = {
