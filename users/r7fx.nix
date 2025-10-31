@@ -1,6 +1,7 @@
 {
   userdata,
   mylib,
+  pkgs,
   ...
 }:
 let
@@ -94,7 +95,15 @@ in
       };
     };
 
-    portal.enable = true;
+    portal = {
+      enable = true;
+      xdgOpenUsePortal = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal-hyprland
+        kdePackages.xdg-desktop-portal-kde
+      ];
+    };
 
     desktopEntries = {
       win11 = {
