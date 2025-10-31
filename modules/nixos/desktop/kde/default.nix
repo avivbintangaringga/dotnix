@@ -6,9 +6,9 @@
 
   config = lib.mkIf config.setup.desktop.kde.enable {
     services = {
-      # xserver = {
-      #   enable = true;
-      # };
+      xserver = {
+        enable = true;
+      };
       
       desktopManager = {
         plasma6 = {
