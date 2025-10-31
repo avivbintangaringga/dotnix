@@ -12,7 +12,7 @@
   config = lib.mkIf config.setup.fonts.ms.enable {
     fonts.packages = with pkgs; [
       corefonts
-      vistafonts
+      vista-fonts
     ];
 
     # LibreOffice Workaround

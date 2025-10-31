@@ -38,7 +38,7 @@
       # brave
 
 
-      inputs.winboat.winboat
+      winboat
       freerdp
     ]);
   };
