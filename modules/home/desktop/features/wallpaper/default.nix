@@ -11,12 +11,13 @@
   };
 
   config = lib.mkIf config.setup.desktop.features.wallpaper.enable {
-    services.swww = {
-      enable = true;
-    };
+    # services.swww = {
+    #   enable = false;
+    # };
 
     home = {
       packages = with pkgs; [
+        swww
         pywal16
         imagemagick
       ];

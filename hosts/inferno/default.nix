@@ -45,6 +45,7 @@ in
 
     desktop = {
       hyprland = enabled;
+      kde = enabled;
     };
 
     fonts = {

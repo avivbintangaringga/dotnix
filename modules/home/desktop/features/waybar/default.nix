@@ -32,7 +32,7 @@
 
     programs.waybar = {
       enable = true;
-      systemd.enable = true;
+      systemd.enable = false;
       style = ./style.css;
       settings = {
         topBar = {
