@@ -1,5 +1,5 @@
 {
-  myPkgs,
+  pkgs,
   lib,
   config,
   ...
@@ -10,7 +10,7 @@
   };
 
   config = lib.mkIf config.setup.apps.gaming.faugus-launcher.enable {
-    home.packages = with myPkgs; [
+    home.packages = with pkgs; [
       faugus-launcher
     ];
   };

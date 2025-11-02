@@ -1,19 +1,13 @@
-{ lib, config, inputs, ... }:
+{ lib, config, pkgs, ... }:
 {
-  imports = [
-    inputs.lsfg-vk.nixosModules.default
-  ];
-  
   options = {
     setup.services.lsfg-vk.enable = lib.mkEnableOption "LSFG-VK Frame Generation";
   };
 
   config = lib.mkIf config.setup.services.lsfg-vk.enable {
-    services = {
-      lsfg-vk = {
-        enable = true;
-        ui.enable = true;
-      };
-    };
+    environment.systemPackages = with pkgs; [
+      lsfg-vk
+      lsfg-vk-ui
+    ];
   };
 }

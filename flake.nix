@@ -16,11 +16,6 @@
       url = "github:NixOS/nixos-hardware/master";
     };
 
-    aagl = {
-      url = "github:ezKEa/aagl-gtk-on-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -55,21 +50,6 @@
       url = "github:Rishabh5321/thorium_flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    lsfg-vk = {
-      url = "github:pabloaul/lsfg-vk-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    gauntlet = {
-      url = "github:project-gauntlet/gauntlet/32bf43438c1b72a0fc53a8b0b128b5c2405f5b7b";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    winapps = {
-      url = "github:winapps-org/winapps";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -86,7 +66,6 @@
       pkgs-4c3870b = import inputs.nixpkgs-4c3870b { inherit system; };
       pkgs-ca3d8cc = import inputs.nixpkgs-ca3d8cc { inherit system; };
       myPkgs = (import ./pkgs { inherit pkgs; });
-      winapps-pkgs = inputs.winapps.packages."${system}";
       userdata = rec {
         username = "r7fx";
         userpath = "/home/" + username;
@@ -111,7 +90,6 @@
             inherit userdata;
             inherit mylib;
             inherit myPkgs;
-            inherit winapps-pkgs;
           };
         };
       };
@@ -129,7 +107,6 @@
             inherit userdata;
             inherit mylib;
             inherit myPkgs;
-            inherit winapps-pkgs;
           };
         };
       };

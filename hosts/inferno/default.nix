@@ -2,7 +2,6 @@
   mylib,
   inputs,
   userdata,
-  pkgs,
   ...
 }:
 let
@@ -25,7 +24,6 @@ in
 
   setup = {
     apps = {
-      aagl = disabled;
       steam = enabled;
       winbox = disabled;
     };
@@ -68,7 +66,6 @@ in
       waydroid = enabled;
       virt-manager = enabled;
       vmware = disabled;
-      winapps = enabled;
     };
 
     services = {
@@ -104,6 +101,7 @@ in
         "vfio_pci"
         "vfio"
         "vfio_iommu_type1"
+        "snd-seq"
 
         # "nvidia"
         # "nvidia_modeset"

@@ -22,7 +22,6 @@ in
       gaming = {
         all = enabled;
       };
-      gauntlet = disabled;
       ghostty = enabled;
       kitty = disabled;
       looking-glass-client = enabled;
