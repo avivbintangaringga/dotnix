@@ -13,7 +13,7 @@
 
   config = lib.mkIf config.setup.apps.misc.enable {
     home.packages = (with pkgs; [
-      font-manager
+      # font-manager
       # reaper
       varia
       lxappearance
@@ -22,10 +22,10 @@
       remmina
       bluemail
 
-      dmidecode
+      # dmidecode
 
-      furmark
-      mprime
+      # furmark
+      # mprime
       synthesia
 
       #testing
@@ -36,7 +36,6 @@
       kdePackages.kate
       # vivaldi
       # brave
-
 
       winboat
       freerdp

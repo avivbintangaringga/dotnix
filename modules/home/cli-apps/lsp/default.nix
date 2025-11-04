@@ -21,7 +21,7 @@
       taplo  # TOML
       bash-language-server
       docker-compose-language-service
-      docker-language-server
+      # docker-language-server
       ruff  # Python
       vue-language-server
       yaml-language-server
