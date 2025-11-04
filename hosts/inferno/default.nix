@@ -160,11 +160,5 @@ in
     options = [ "defaults" ];
   };
 
-  fileSystems."/media/WINDOWS" = {
-    device = "/dev/disk/by-uuid/567C114B7C112771";
-    fsType = "ntfs-3g";
-    options = [ "defaults" ];
-  };
-
   system.stateVersion = "24.11"; # Did you read the comment?
 }

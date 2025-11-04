@@ -23,7 +23,7 @@
       consoleLogLevel = 3;
       initrd.verbose = false;
       kernelParams = [
-        "quite"
+        "quiet"
         "splash"
         "boot.shell_on_fail"
         "udev.log_priority=3"
