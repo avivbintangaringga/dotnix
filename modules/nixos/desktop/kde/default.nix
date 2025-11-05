@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 {
   options = {
     setup.desktop.kde.enable = lib.mkEnableOption "KDE Desktop Environment";
@@ -9,7 +14,7 @@
       xserver = {
         enable = true;
       };
-      
+
       desktopManager = {
         plasma6 = {
           enable = true;

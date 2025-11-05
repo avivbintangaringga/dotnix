@@ -16,6 +16,7 @@ in
 
   setup = {
     apps = {
+      ayugram = enabled;
       bitwarden = enabled;
       discord = enabled;
       firefox = disabled;
