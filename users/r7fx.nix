@@ -38,7 +38,7 @@ in
       spicetify = enabled;
       thorium-browser = enabled;
       vscode = enabled;
-      zed-editor = disabled;
+      zed-editor = enabled;
       zen-browser = enabled;
       zotero = disabled;
     };
