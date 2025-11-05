@@ -12,6 +12,9 @@
         "github-dark-default"
         "catppuccin"
       ];
+      mutableUserTasks = true;
+      mutableUserSettings = true;
+      mutableUserKeymaps = true;
       userSettings = {
         assistant = {
           default_model = {
@@ -20,15 +23,15 @@
           };
           version = 2;
         };
-        icon_theme = "Catppuccin Macchiato";
+        # icon_theme = "Catppuccin Macchiato";
         features = {
           edit_prediction_provider = "none";
         };
-        theme = {
-          mode = "dark";
-          light = "One Light";
-          dark = "Catppuccin Macchiato";
-        };
+        # theme = {
+        #   mode = "dark";
+        #   light = "One Light";
+        #   dark = "Catppuccin Macchiato";
+        # };
         show_edit_predictions = false;
         vim_mode = true;
         cursor_blink = false;
@@ -36,7 +39,7 @@
         buffer_font_size = 16;
         current_line_highlight = "gutter";
         show_wrap_guides = true;
-        wrap_guides = [80];
+        wrap_guides = [ 80 ];
         relative_line_numbers = true;
         scrollbar = {
           axes = {
