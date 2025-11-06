@@ -11,6 +11,7 @@
 
   config = lib.mkIf config.setup.cli-apps.misc.enable {
     environment.systemPackages = with pkgs; [
+      rclone
       fastfetch
       wget
       curl

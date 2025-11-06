@@ -11,6 +11,7 @@
 
   config = lib.mkIf config.setup.cli-apps.misc.enable {
     home.packages = with pkgs; [
+      rclone
       wev
       cava
 
