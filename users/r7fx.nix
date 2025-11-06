@@ -2,6 +2,7 @@
   userdata,
   mylib,
   pkgs,
+  lib,
   ...
 }:
 let
@@ -88,14 +89,33 @@ in
   };
 
   xdg = {
+    configFile = {
+      "mimeapps.list".force = true;
+    };
+
     mimeApps = {
-      defaultApplications = {
-        "inode/directory" = [ "nemo.desktop" ];
-        "x-scheme-handler/discord" = [ "discord.desktop" ];
-        "text/html" = "zen-beta.desktop";
-        "x-scheme-handler/http" = "zen-beta.desktop";
-        "x-scheme-handler/https" = "zen-beta.desktop";
-      };
+      defaultApplications =
+        let
+          archives = [
+            "application/zip"
+            "application/vnd.rar"
+          ];
+          browser = [
+            "text/html"
+            "x-scheme-handler/http"
+            "x-scheme-handler/https"
+            "x-scheme-handler/about"
+            "x-scheme-handler/unknown"
+          ];
+        in
+        lib.mkMerge [
+          {
+            "inode/directory" = [ "nemo.desktop" ];
+            "x-scheme-handler/discord" = [ "discord.desktop" ];
+          }
+          (mylib.listToAttrsSameValue browser [ "zen-beta.desktop" ])
+          (mylib.listToAttrsSameValue archives [ "peazip.desktop" ])
+        ];
     };
 
     portal = {
