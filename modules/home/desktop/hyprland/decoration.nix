@@ -8,7 +8,7 @@
     #dim_strength = 0.5;
 
     blur = {
-      enabled = true;
+      enabled = false;
       size = 3;
       passes = 2;
       noise = 0;
