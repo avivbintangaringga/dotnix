@@ -13,6 +13,9 @@
     services = {
       xserver = {
         enable = true;
+        videoDrivers = [
+          "amdgpu"
+        ];
       };
 
       desktopManager = {

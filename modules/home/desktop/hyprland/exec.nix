@@ -7,6 +7,6 @@
   exec-once = [
     "swww-daemon"
     "sh ~/.scripts/randomize-wallpaper.sh -q -w -a"
-    "nv-switch host quiet"
+    # "nv-switch host quiet"
   ];
 }

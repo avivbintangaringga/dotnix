@@ -20,7 +20,7 @@
           enable = true;
         };
         hyprcursor = {
-          enable = true;
+          enable = config.setup.desktop.hyprland.enable;
           size = 24;
         };
       };

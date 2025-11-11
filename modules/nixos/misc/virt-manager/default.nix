@@ -7,7 +7,6 @@
 }:
 let
   qemupkg = pkgs.qemu_kvm;
-  ovmfpkg = pkgs.OVMFFull;
 in {
   options = {
     setup.misc.virt-manager.enable = lib.mkEnableOption "virt-manager";
@@ -41,11 +40,9 @@ in {
           package = qemupkg;
           runAsRoot = true;
           swtpm.enable = true;
-          # ovmf = {
-          #   enable = true;
-          #   packages = [ ovmfpkg.fd ];
-          # };
-          vhostUserPackages = with pkgs; [ virtiofsd ];
+          vhostUserPackages = with pkgs; [
+            virtiofsd
+          ];
           verbatimConfig = ''
             cgroup_device_acl = [
               "/dev/null",
@@ -72,22 +69,23 @@ in {
               readonly STATE_NAME="$3"
 
               start_hook() {
-                systemctl --user --machine=${userdata.username}@ stop swaync  # TEMPORARY FIX
-                systemctl --user --machine=${userdata.username}@ stop swayosd # TEMPORARY FIX
+                # systemctl --user --machine=${userdata.username}@ stop swaync  # TEMPORARY FIX
+                # systemctl --user --machine=${userdata.username}@ stop swayosd # TEMPORARY FIX
+                # pkill lact
                 systemctl stop nvidia-powerd
-                rmmod -f nvidia_drm
+                rmmod nvidia_drm
                 rmmod nvidia_uvm
                 rmmod nvidia_modeset
                 rmmod nvidia
-                modprobe -i vfio_pci vfio_pci_core vfio_iommu_type1
+                modprobe -i vfio_pci vfio_pci_core vfio_iommu_type1 vfio
                 /run/current-system/sw/bin/virsh nodedev-detach pci_0000_01_00_0
-                systemctl --user --machine=${userdata.username}@ start swaync  # TEMPORARY FIX
-                systemctl --user --machine=${userdata.username}@ start swayosd # TEMPORARY FIX
+                # systemctl --user --machine=${userdata.username}@ start swaync  # TEMPORARY FIX
+                # systemctl --user --machine=${userdata.username}@ start swayosd # TEMPORARY FIX
               }
 
               revert_hook() {
                 /run/current-system/sw/bin/virsh nodedev-reattach pci_0000_01_00_0
-                rmmod vfio_pci vfio_pci_core vfio_iommu_type1
+                rmmod vfio_pci vfio_pci_core vfio_iommu_type1 vfio
                 modprobe -i nvidia
                 modprobe -i nvidia_uvm
                 modprobe -i nvidia_modeset

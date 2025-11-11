@@ -25,7 +25,7 @@ in
         all = enabled;
       };
       ghostty = enabled;
-      kitty = disabled;
+      kitty = enabled;
       looking-glass-client = enabled;
       mediaplayer = enabled;
       moonlight = enabled;
@@ -60,7 +60,12 @@ in
     };
 
     desktop = {
-      hyprland = enabled;
+      hyprland = disabled;
+      niri = enabled;
+      features = {
+        noctalia-shell = disabled;
+        dankmaterialshell = enabled;
+      };
     };
 
     services = {
@@ -84,13 +89,11 @@ in
     };
   };
 
-  gtk = {
-    gtk2.force = true;
-  };
-
   xdg = {
     configFile = {
       "mimeapps.list".force = true;
+      # "gtk-3.0/settings.ini".force = true;
+      # "gtk-4.0/gtk.css".force = true;
     };
 
     mimeApps = {
@@ -122,9 +125,9 @@ in
       enable = true;
       xdgOpenUsePortal = true;
       extraPortals = with pkgs; [
-        xdg-desktop-portal-gtk
-        xdg-desktop-portal-hyprland
-        kdePackages.xdg-desktop-portal-kde
+        # xdg-desktop-portal-gtk
+        # xdg-desktop-portal-hyprland
+        # kdePackages.xdg-desktop-portal-kde
       ];
     };
 

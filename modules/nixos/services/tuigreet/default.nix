@@ -18,7 +18,8 @@
     services = {
       greetd =
         let
-          session = "${pkgs.hyprland}/bin/Hyprland";
+          # session = "${pkgs.hyprland}/bin/Hyprland";
+          session = "${pkgs.niri-unstable}/bin/niri";
           tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
         in
         {
@@ -28,8 +29,9 @@
               command = "${session}";
               user = userdata.username;
             };
+
             default_session = {
-              command = "${tuigreet} --greeting 'Welcome to NixOS!' --asterisks --remember --remember-user-session --time --cmd ${session}";
+              command = "${tuigreet} --asterisks --remember --remember-user-session --time --cmd ${session}";
               user = "greeter";
             };
           };

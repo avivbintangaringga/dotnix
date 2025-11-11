@@ -50,8 +50,8 @@
       };
 
       initContent = lib.mkBefore ''
-        cat ~/.cache/wal/sequences
-        source ~/.cache/wal/colors-tty.sh
+        # cat ~/.cache/wal/sequences
+        # source ~/.cache/wal/colors-tty.sh
         source ~/.p10k.zsh
       '';
     };

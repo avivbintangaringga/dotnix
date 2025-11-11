@@ -22,6 +22,16 @@ in
     # }
   ];
 
+  # services = {
+  #    xserver = {
+  #     enable = true;
+  #     videoDrivers = [
+  #       "amdgpu"
+  #       "nvidia"
+  #     ];
+  #   };
+  # };
+
   setup = {
     apps = {
       steam = enabled;
@@ -42,8 +52,9 @@ in
     };
 
     desktop = {
-      hyprland = enabled;
-      kde = enabled;
+      hyprland = disabled;
+      kde = disabled;
+      niri = enabled;
     };
 
     fonts = {
@@ -98,15 +109,16 @@ in
 
     initrd = {
       kernelModules = [
-        "vfio_pci"
-        "vfio"
-        "vfio_iommu_type1"
         "snd-seq"
 
-        # "nvidia"
-        # "nvidia_modeset"
-        # "nvidia_drm"
-        # "nvidia_uvm"
+        # "vfio_pci"
+        # "vfio"
+        # "vfio_iommu_type1"
+
+        "nvidia"
+        "nvidia_modeset"
+        "nvidia_drm"
+        "nvidia_uvm"
       ];
     };
 
@@ -137,6 +149,10 @@ in
           }
           {
             command = "/run/current-system/sw/bin/virsh";
+            options = [ "NOPASSWD" ];
+          }
+          {
+            command = "/run/current-system/sw/bin/pkill";
             options = [ "NOPASSWD" ];
           }
         ];
