@@ -17,6 +17,7 @@ in
 
   setup = {
     apps = {
+      android-studio = enabled;
       ayugram = enabled;
       bitwarden = enabled;
       discord = enabled;
@@ -96,6 +97,11 @@ in
       # "gtk-4.0/gtk.css".force = true;
     };
 
+    terminal-exec = {
+      enable = true;
+      package = pkgs.kitty;
+    };
+
     mimeApps = {
       defaultApplications =
         let
@@ -125,6 +131,8 @@ in
       enable = true;
       xdgOpenUsePortal = true;
       extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal-gnome
         # xdg-desktop-portal-gtk
         # xdg-desktop-portal-hyprland
         # kdePackages.xdg-desktop-portal-kde

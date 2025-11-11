@@ -19,7 +19,7 @@
       greetd =
         let
           # session = "${pkgs.hyprland}/bin/Hyprland";
-          session = "${pkgs.niri-unstable}/bin/niri";
+          session = "${pkgs.niri-unstable}/bin/niri-session";
           tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
         in
         {
