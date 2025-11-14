@@ -16,6 +16,11 @@
   };
 
   config = lib.mkIf config.setup.desktop.features.dankmaterialshell.enable {
+    home.sessionVariables = {
+      DMS_MODAL_LAYER="overlay";
+      DMS_NOTIFICATION_LAYER="overlay";
+    };
+    
     programs.dankMaterialShell = {
       enable = true;
     };

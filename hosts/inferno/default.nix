@@ -73,6 +73,7 @@ in
       appimage = enabled;
       docker = enabled;
       gaming = enabled;
+      nix-ld = enabled;
       plymouth = enabled;
       waydroid = enabled;
       virt-manager = enabled;
@@ -84,6 +85,7 @@ in
         enable = true;
         turbo = false;
       };
+      cloudflare-warp = enabled;
       flatpak = enabled;
       gvfs = enabled;
       logind = enabled;

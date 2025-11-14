@@ -119,7 +119,7 @@ in
         in
         lib.mkMerge [
           {
-            "inode/directory" = [ "nemo.desktop" ];
+            "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
             "x-scheme-handler/discord" = [ "discord.desktop" ];
           }
           (mylib.listToAttrsSameValue browser [ "zen-beta.desktop" ])
