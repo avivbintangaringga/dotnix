@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }:
 {
@@ -10,5 +11,8 @@
 
   config = lib.mkIf config.setup.cli-apps.go.enable {
     programs.go.enable = true;
+    home.packages = with pkgs;[
+      air
+    ];
   };
 }
