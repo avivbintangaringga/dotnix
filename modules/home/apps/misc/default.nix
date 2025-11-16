@@ -32,6 +32,7 @@
       #testing
       gedit
       nautilus
+      nautilus-open-any-terminal
       kdePackages.dolphin
       kdePackages.dolphin-plugins
       kdePackages.kate
