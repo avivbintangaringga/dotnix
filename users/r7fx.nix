@@ -25,7 +25,7 @@ in
       gaming = {
         all = enabled;
       };
-      ghostty = enabled;
+      ghostty = disabled;
       kitty = enabled;
       looking-glass-client = enabled;
       mediaplayer = enabled;

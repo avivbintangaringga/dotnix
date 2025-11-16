@@ -5,7 +5,7 @@
   };
 
   config = lib.mkIf config.setup.apps.nautilus.enable {
-    home.packages = with pkgs;[
+    environment.systemPackages = with pkgs;[
       nautilus
     ];
     programs.nautilus-open-any-terminal = {
