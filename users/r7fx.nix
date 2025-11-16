@@ -31,7 +31,7 @@ in
       mediaplayer = enabled;
       moonlight = enabled;
       misc = enabled;
-      nemo = enabled;
+      nemo = disabled;
       obs-studio = enabled;
       onlyoffice = disabled;
       peazip = enabled;

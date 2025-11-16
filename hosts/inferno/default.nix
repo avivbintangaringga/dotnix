@@ -34,6 +34,7 @@ in
 
   setup = {
     apps = {
+      nautilus = enabled;
       steam = enabled;
       winbox = disabled;
     };
