@@ -12,17 +12,33 @@
   config = lib.mkIf config.setup.desktop.features.gtk.enable {
     gtk = {
       enable = true;
-      # gtk2.force = true;
 
-      # iconTheme = {
-      #   package = pkgs.adwaita-icon-theme;
-      #   name = "Adwaita";
-      # };
+      gtk3 = {
+        enable = true;
+        extraCss = ''
+            @import url("dank-colors.css");
+          '';
+        theme = {
+          name = "adw-gtk3-dark";
+          package = pkgs.adw-gtk3;
+        };
+      };
 
-      # theme = {
-      #   name = "Adwaita-dark";
-      #   package = pkgs.gnome-themes-extra;
-      # };
+      gtk4 = {
+        enable = true;
+        extraCss = ''
+            @import url("dank-colors.css");
+          '';
+        theme = {
+          name = "Adwaita-dark";
+          package = pkgs.gnome-themes-extra;
+        };
+      };
+      
+      iconTheme = {
+        package = pkgs.papirus-icon-theme;
+        name = "Papirus-Dark";
+      };
     };
   };
 }
