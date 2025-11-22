@@ -37,8 +37,8 @@
       # vivaldi
       # brave
 
-      winboat
-      freerdp
+      # winboat
+      # freerdp
     ]);
   };
 }
