@@ -66,11 +66,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    dms-cli = {
-      url = "github:AvengeMedia/danklinux";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     dankmaterialshell = {
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
