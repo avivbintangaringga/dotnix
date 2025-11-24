@@ -19,7 +19,7 @@
     home.sessionVariables = {
       DMS_MODAL_LAYER="overlay";
       DMS_NOTIFICATION_LAYER="overlay";
-      QT_QPA_PLATFORMTHEME="gtk3";
+      QT_QPA_PLATFORMTHEME="gtk4";
     };
     
     programs.dankMaterialShell = {

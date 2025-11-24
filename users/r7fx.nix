@@ -33,7 +33,7 @@ in
       misc = enabled;
       nemo = disabled;
       obs-studio = enabled;
-      onlyoffice = disabled;
+      onlyoffice = enabled;
       peazip = enabled;
       postman = enabled;
       qbittorrent = enabled;

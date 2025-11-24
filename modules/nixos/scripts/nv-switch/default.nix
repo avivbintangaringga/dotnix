@@ -86,7 +86,7 @@
 
         # sudo systemctl --user --machine=${userdata.username}@ stop swaync # TEMPORARY FIX
         sudo systemctl stop nvidia-powerd
-        # sudo pkill lact # TEMP FIX
+        sudo pkill lact # TEMP FIX
         sudo rmmod -f nvidia_drm
         sudo rmmod nvidia_uvm
         sudo rmmod nvidia_modeset
