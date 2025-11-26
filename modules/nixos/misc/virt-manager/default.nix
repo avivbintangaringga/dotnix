@@ -72,6 +72,7 @@ in {
                 # systemctl --user --machine=${userdata.username}@ stop swaync  # TEMPORARY FIX
                 # systemctl --user --machine=${userdata.username}@ stop swayosd # TEMPORARY FIX
                 # pkill lact
+                systemctl stop lactd
                 systemctl stop nvidia-powerd
                 rmmod nvidia_drm
                 rmmod nvidia_uvm
@@ -91,6 +92,7 @@ in {
                 modprobe -i nvidia_modeset
                 modprobe -i nvidia_drm
                 systemctl restart nvidia-powerd
+                systemctl restart lactd
               }
 
               if [[ "$HOOK_NAME" == "prepare" && "$STATE_NAME" == "begin" ]]; then

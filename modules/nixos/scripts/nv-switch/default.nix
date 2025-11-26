@@ -65,6 +65,7 @@
         sudo modprobe -i nvidia_modeset
         sudo modprobe -i nvidia_drm
         sudo systemctl restart nvidia-powerd
+        sudo systemctl restart lactd
 
         echo "Done"
         notify "Switched to host mode"
@@ -85,8 +86,8 @@
         notify "Switching to vm mode..."
 
         # sudo systemctl --user --machine=${userdata.username}@ stop swaync # TEMPORARY FIX
+        sudo systemctl stop lactd
         sudo systemctl stop nvidia-powerd
-        sudo pkill lact # TEMP FIX
         sudo rmmod -f nvidia_drm
         sudo rmmod nvidia_uvm
         sudo rmmod nvidia_modeset
