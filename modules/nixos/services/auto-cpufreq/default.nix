@@ -1,5 +1,9 @@
-{ lib, config, ... }:
+{ lib, config, inputs, ... }:
 {
+  imports = [
+    inputs.auto-cpufreq.nixosModules.default
+  ];
+  
   options = {
     setup.services.auto-cpufreq = {
       enable = lib.mkEnableOption "Auto CPU Freq";
@@ -8,7 +12,8 @@
   };
 
   config = lib.mkIf config.setup.services.auto-cpufreq.enable {
-    services.auto-cpufreq =
+    services.tlp.enable = lib.mkForce false;
+    programs.auto-cpufreq =
       let
         cfg = config.setup.services.auto-cpufreq;
         turbo = if cfg.turbo then "auto" else "never";
