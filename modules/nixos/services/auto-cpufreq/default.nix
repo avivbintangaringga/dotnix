@@ -13,7 +13,8 @@
 
   config = lib.mkIf config.setup.services.auto-cpufreq.enable {
     services.tlp.enable = lib.mkForce false;
-    programs.auto-cpufreq =
+    services.auto-cpufreq = 
+    # programs.auto-cpufreq =
       let
         cfg = config.setup.services.auto-cpufreq;
         turbo = if cfg.turbo then "auto" else "never";
@@ -24,6 +25,7 @@
           charger = {
             inherit turbo;
             gorvernor = "performance";
+            scaling_max_freq = 3800000;
           };
           battery = {
             inherit turbo;

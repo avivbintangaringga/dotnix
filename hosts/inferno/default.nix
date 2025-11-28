@@ -85,7 +85,7 @@ in
     services = {
       auto-cpufreq = {
         enable = true;
-        turbo = false;
+        turbo = true;
       };
       cloudflare-warp = enabled;
       flatpak = enabled;
