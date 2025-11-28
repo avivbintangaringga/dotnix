@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }:
 {
@@ -13,6 +14,9 @@
       enable = true;
       settings = {
         
+      };
+      package = pkgs.looking-glass-client.override {
+        pipewireSupport = false;
       };
     };
   };
