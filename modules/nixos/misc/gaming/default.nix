@@ -12,6 +12,7 @@
   config = lib.mkIf config.setup.misc.gaming.enable {
     environment.systemPackages = with pkgs; [
       libnotify
+      goverlay
     ];
 
     programs.gamemode = {
