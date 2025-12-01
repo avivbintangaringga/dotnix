@@ -93,7 +93,7 @@ in
       logind = enabled;
       lsfg-vk = enabled;
       nfs = disabled;
-      ollama = enabled;
+      ollama = disabled;
       pipewire = enabled;
       samba = enabled;
       tuigreet = enabled;
