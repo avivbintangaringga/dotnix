@@ -5,6 +5,10 @@
   };
 
   config = lib.mkIf config.setup.apps.zed-editor.enable {
+    home.sessionVariables = {
+      "ZED_PREDICT_EDITS_URL" = "http://localhost:8765/predict_edits/v2";
+    };
+    
     programs.zed-editor = let
         theme = "Catppuccin Espresso (Blur)";
         icon-theme = "Material Icon Theme";

@@ -17,7 +17,7 @@
     # programs.auto-cpufreq =
       let
         cfg = config.setup.services.auto-cpufreq;
-        turbo = if cfg.turbo then "auto" else "never";
+        turbo = if cfg.turbo then "always" else "never";
       in
       {
         enable = true;
