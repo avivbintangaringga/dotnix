@@ -13,6 +13,7 @@
     environment.systemPackages = with pkgs; [
       nvtopPackages.nvidia
       nvtopPackages.amd
+      nvidia-container-toolkit
     ];
 
     systemd = {

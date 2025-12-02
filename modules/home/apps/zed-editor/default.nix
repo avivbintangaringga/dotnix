@@ -5,9 +5,9 @@
   };
 
   config = lib.mkIf config.setup.apps.zed-editor.enable {
-    home.sessionVariables = {
-      "ZED_PREDICT_EDITS_URL" = "http://localhost:8765/predict_edits/v2";
-    };
+    # home.sessionVariables = {
+      # "ZED_PREDICT_EDITS_URL" = "http://localhost:8765/predict_edits/v2";
+    # };
     
     programs.zed-editor = let
         theme = "Catppuccin Espresso (Blur)";
@@ -94,11 +94,12 @@
           inactive_opacity = 0.6;
         };
 
-        autosave = {
-          "after_delay" = {
-            "milliseconds" = 1000;
-          };
-        };
+        autosave = "off";
+        # autosave = {
+        #   "after_delay" = {
+        #     "milliseconds" = 1000;
+        #   };
+        # };
 
         auto_update = false;
         disable_ai = false;
@@ -115,7 +116,7 @@
         };
 
         features = {
-          "edit_prediction_provider" = "zed";
+          "edit_prediction_provider" = "supermaven";
         };
 
         indent_guides = {
