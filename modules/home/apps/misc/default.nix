@@ -27,13 +27,13 @@
 
       # furmark
       # mprime
-      synthesia
+      # synthesia
 
       #testing
       gedit
-      kdePackages.dolphin
-      kdePackages.dolphin-plugins
-      kdePackages.kate
+      # kdePackages.dolphin
+      # kdePackages.dolphin-plugins
+      # kdePackages.kate
       # vivaldi
       # brave
 
