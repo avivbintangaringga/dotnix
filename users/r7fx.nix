@@ -18,7 +18,7 @@ in
   setup = {
     apps = {
       android-studio = enabled;
-      ayugram = disabled;
+      ayugram = enabled;
       bitwarden = enabled;
       discord = enabled;
       firefox = disabled;
