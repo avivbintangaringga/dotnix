@@ -15,6 +15,7 @@
       air
       gcc
       go-jet
+      goose
     ];
   };
 }
