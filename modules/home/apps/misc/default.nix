@@ -39,6 +39,9 @@
 
       # winboat
       # freerdp
+      #
+
+      pgadmin4-desktopmode
     ]);
   };
 }
