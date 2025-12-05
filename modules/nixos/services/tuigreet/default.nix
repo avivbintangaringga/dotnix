@@ -15,6 +15,8 @@
       tuigreet
     ];
 
+    security.pam.services.greetd.enableGnomeKeyring = true;
+
     services = {
       greetd =
         let
