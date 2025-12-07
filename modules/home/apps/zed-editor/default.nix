@@ -66,6 +66,7 @@
         "phpcs"
         "powershell"
         "python-snippets"
+        "qml"
         "react-snippets"
         "react-type-kit-snippets"
         "react-typescript-snippets"
@@ -90,7 +91,7 @@
       mutableUserKeymaps = false;
       userSettings = {
         active_pane_modifiers = {
-          border_size = 2.0;
+          border_size = 1.0;
           inactive_opacity = 0.6;
         };
 
@@ -124,7 +125,7 @@
           coloring = "indent_aware";
         };
 
-        hover_popover_delay = 100;
+        hover_popover_delay = 250;
         icon_theme = {
           "mode" = "dark";
           "dark" = icon-theme;
@@ -146,8 +147,8 @@
         show_edit_predictions = true;
         vim_mode = true;
         cursor_blink = false;
-        ui_font_size = 16;
-        buffer_font_size = 16;
+        ui_font_size = 15;
+        buffer_font_size = 14;
         current_line_highlight = "gutter";
         show_wrap_guides = true;
         wrap_guides = [ 80 ];
