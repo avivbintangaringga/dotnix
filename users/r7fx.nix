@@ -67,6 +67,7 @@ in
       features = {
         noctalia-shell = disabled;
         dankmaterialshell = enabled;
+        quickshell = enabled;
       };
     };
 
