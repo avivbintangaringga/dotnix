@@ -15,14 +15,15 @@
       nil
       nixfmt-rfc-style
 
+      kdePackages.qtdeclarative
       gopls
       vscode-langservers-extracted
       typescript-language-server
-      taplo  # TOML
+      taplo # TOML
       bash-language-server
       docker-compose-language-service
       # docker-language-server
-      ruff  # Python
+      ruff # Python
       vue-language-server
       yaml-language-server
     ];

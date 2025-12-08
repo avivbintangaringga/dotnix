@@ -17,10 +17,14 @@ ShellRoot {
             screen: modelData
 
             property string currentWallpaperPath: ""
+            property string layerNamespace: "qsclock"
             property real autoClockX: screen.width / 2
             property real autoClockY: screen.height / 2
             property color dominantColor: "#FFFFFF"
             property bool isManuallyDragged: false
+
+            WlrLayershell.layer: WlrLayershell.Background
+            WlrLayershell.namespace: layerNamespace
 
             anchors {
                 top: true
@@ -34,10 +38,9 @@ ShellRoot {
             mask: Region {
                 item: content
             }
-            WlrLayershell.layer: WlrLayer.Bottom
-
+            
             Timer {
-                interval: 3000
+                interval: 1000
                 repeat: true
                 running: true
                 onTriggered: getWallpaperProc.running = true
