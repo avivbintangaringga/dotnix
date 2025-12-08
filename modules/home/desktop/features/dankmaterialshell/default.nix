@@ -20,8 +20,13 @@
       DMS_MODAL_LAYER="overlay";
       DMS_NOTIFICATION_LAYER="overlay";
       QT_QPA_PLATFORMTHEME="gtk4";
+      DMS_SCREENSHOT_EDITOR="satty";
     };
     
+    home.packages = with pkgs; [
+      satty
+    ];
+
     programs.dankMaterialShell = {
       enable = true;
     };
