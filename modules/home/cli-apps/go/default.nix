@@ -16,6 +16,7 @@
       gcc
       go-jet
       goose
+      templ
     ];
   };
 }

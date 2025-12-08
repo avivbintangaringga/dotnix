@@ -52,6 +52,7 @@ in
       go = enabled;
       helix = enabled;
       misc = enabled;
+      mise = enabled;
       nvim = enabled;
       scrcpy = enabled;
       yazi = disabled;
