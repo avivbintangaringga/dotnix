@@ -5,6 +5,9 @@
   pkgs,
   ...
 }:
+let
+  quickshell = inputs.quickshell.packages.${pkgs.system}.default;
+in
 {
   imports = [
     inputs.dankmaterialshell.homeModules.dankMaterialShell.default
@@ -29,6 +32,7 @@
 
     programs.dankMaterialShell = {
       enable = true;
+      quickshell.package = quickshell;
     };
 
     programs.dsearch.enable = true;

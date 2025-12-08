@@ -5,13 +5,16 @@
   pkgs,
   ...
 }:
+let
+  quickshell = inputs.quickshell.packages.${pkgs.system}.default;
+in
 {
   options = {
     setup.desktop.features.quickshell.enable = lib.mkEnableOption "Quickshell";
   };
 
   config = lib.mkIf config.setup.desktop.features.quickshell.enable {
-    home.packages = with pkgs; [
+    home.packages = [
       quickshell
     ];
 
