@@ -19,20 +19,9 @@
       cursor.enable = true;
       gtk.enable = true;
       wallpaper.enable = true;
-      dankmaterialshell.enable = true;
     };
 
     # services.polkit-gnome.enable = true;
-
-    home.file = {
-      ".config/niri/config.kdl" = {
-        source = ./config/config.kdl;
-      };
-
-      ".config/niri/layout.kdl" = {
-        source = ./config/layout.kdl;
-      };
-    };
 
     programs.niri = {
       enable = true;

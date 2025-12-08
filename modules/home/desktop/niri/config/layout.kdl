@@ -1,7 +1,0 @@
-layout {
-    gaps 10
-}
-
-window-rule {
-    geometry-corner-radius 8
-}
