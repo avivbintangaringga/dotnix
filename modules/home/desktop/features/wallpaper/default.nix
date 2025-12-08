@@ -18,6 +18,7 @@
     home = {
       packages = with pkgs; [
         swww
+        jq
         pywal16
         imagemagick
       ];
