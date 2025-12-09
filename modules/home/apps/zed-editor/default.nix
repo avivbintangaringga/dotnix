@@ -23,6 +23,8 @@
         "catppuccin-blur"
         "catppuccin-blur-plus"
         "catppuccin-icons"
+        "tokyo-night"
+        "one-dark-pro-enhanced"
 
         "color-hightlight"
         "alpinejs-snippets"
