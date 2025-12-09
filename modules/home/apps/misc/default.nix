@@ -22,7 +22,6 @@
       btrfs-assistant
       remmina
       bluemail
-      unigine-superposition
 
       # dmidecode
 
