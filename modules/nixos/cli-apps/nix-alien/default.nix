@@ -1,6 +1,6 @@
 { lib, config, pkgs, inputs, ... }:
 let
-  alien-pkgs = inputs.nix-alien.packages.${pkgs.system};
+  alien-pkgs = inputs.nix-alien.packages.${pkgs.stdenv.hostPlatform.system};
 in
 {
   options = {

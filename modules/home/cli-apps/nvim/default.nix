@@ -20,7 +20,7 @@ in
 
   config = lib.mkIf config.setup.cli-apps.nvim.enable {
     home.packages = [
-      inputs.nvix.packages.${pkgs.system}.default
+      inputs.nvix.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
     #programs.nixvim = {

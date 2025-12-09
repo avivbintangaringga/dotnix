@@ -6,7 +6,7 @@
   ...
 }:
 let
-  apple-fonts-pkgs = inputs.apple-fonts.packages.${pkgs.system};
+  apple-fonts-pkgs = inputs.apple-fonts.packages.${pkgs.stdenv.hostPlatform.system};
 in
 {
   options = {
