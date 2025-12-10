@@ -19,6 +19,7 @@
       gopls
       vscode-langservers-extracted
       typescript-language-server
+      tailwindcss-language-server
       taplo # TOML
       bash-language-server
       docker-compose-language-service

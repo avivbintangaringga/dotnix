@@ -17,6 +17,8 @@
 
       lsof
       gnumake
+
+      tailwindcss_4
     ];
   };
 }
