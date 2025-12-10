@@ -38,7 +38,7 @@
           "utility"
           "completion"
           "prompt"
-          "git"
+          # "git"
           "docker"
           "archive"
           "autosuggestions"
