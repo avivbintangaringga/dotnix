@@ -10,7 +10,7 @@
     # };
     
     programs.zed-editor = let
-        theme = "Catppuccin Espresso (Blur)";
+        theme = "Adaptify Darker";
         icon-theme = "Material Icon Theme";
       in {
       enable = true;
@@ -105,6 +105,7 @@
         # };
 
         auto_update = false;
+        colorize_brackets = true;
         disable_ai = false;
         
         minimap = {
@@ -137,6 +138,10 @@
         inlay_hints = {
           enabled = true;
           
+        };
+
+        project_panel = {
+          dock = "right";
         };
 
         theme = {
