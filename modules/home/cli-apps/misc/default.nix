@@ -19,6 +19,7 @@
       gnumake
 
       tailwindcss_4
+      watchman
     ];
   };
 }
