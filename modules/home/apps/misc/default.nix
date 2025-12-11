@@ -23,6 +23,8 @@
       remmina
       bluemail
 
+      gimp
+
       # dmidecode
 
       # furmark
