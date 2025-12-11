@@ -17,7 +17,7 @@
 
       kdePackages.qtdeclarative
       gopls
-      vscode-langservers-extracted
+      # vscode-langservers-extracted
       typescript-language-server
       tailwindcss-language-server
       taplo # TOML
