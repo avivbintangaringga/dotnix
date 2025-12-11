@@ -27,8 +27,8 @@
         "one-dark-pro-enhanced"
 
         "color-hightlight"
-        "alpinejs-snippets"
-        "html-snippets"
+        # "alpinejs-snippets"
+        # "html-snippets"
         "comment"
         "csharp"
         "csharp-snippets"
@@ -39,9 +39,10 @@
         "dockerfile"
         "caddyfile"
         "emoji-completions"
+        "emmet"
         "fastapi-snippets"
-        "fiber-snippets"
-        "fish"
+        # "fiber-snippets"
+        # "fish"
         "git-firefly"
         "github-actions"
         "go-snippets"
@@ -171,6 +172,62 @@
         };
         vim = {
           toggle_relative_line_numbers = true;
+        };
+
+        languages = {
+          Templ = {
+            language_servers = [
+              "templ"
+              "tailwindcss-language-server"
+              # "vscode-html-language-server"
+              "emmet-language-server"
+            ];
+          };
+
+          # HTML = {
+            # formatter = "language_server";
+          # };
+        };
+
+        lsp = {
+          tailwindcss-language-server = {
+            settings = {
+              includeLanguages = {
+                templ = "html";
+              };
+              experimental = {
+                classRegex = [
+                  "class=\"([^\"]*)\""
+                  "className=\"([^\"]*)\""
+                ];
+              };
+            };
+          };
+
+          emmet-language-server = {
+            settings = {
+              includeLanguages = {
+                templ = "html";
+              };
+            };
+          };
+
+          # vscode-html-language-server = {
+          # 
+          #   settings = {
+          #     html = {
+          #       format = {
+          #         indentInnerHtml = true;
+          #         contentUnformatted = "svg,script";
+          #         extraLiners = "div,p";
+          #       };
+          #       includeLanguages = {
+          #         "templ" = "html";
+          #         "Templ" = "html";
+          #       };
+          #     };
+          #   };
+          # };
         };
       };
     };
