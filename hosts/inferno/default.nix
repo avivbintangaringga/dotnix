@@ -2,6 +2,7 @@
   mylib,
   inputs,
   userdata,
+  pkgs,
   ...
 }:
 let
@@ -102,6 +103,7 @@ in
   };
 
   boot = {
+    kernelPackages = pkgs.linuxPackages_zen;
     loader = {
       systemd-boot = {
         enable = true;
