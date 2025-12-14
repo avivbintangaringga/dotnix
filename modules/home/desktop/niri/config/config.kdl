@@ -44,7 +44,7 @@ layout {
 
 spawn-sh-at-startup "dms run"
 spawn-sh-at-startup "sleep 3 && qs -c clock"
-spawn-sh-at-startup "vicinae server"
+spawn-sh-at-startup "USE_LAYER_SHELL=0 vicinae server"
 
 
 hotkey-overlay {
@@ -69,6 +69,18 @@ window-rule {
     match title="^Open Files$"
     match title="^Open File$"
     open-floating true
+}
+
+window-rule {
+    match title="^Vicinae Launcher$"
+    focus-ring {
+        off
+    }
+    border {
+        off
+    }
+    clip-to-geometry false
+    geometry-corner-radius 0
 }
 
 window-rule {
