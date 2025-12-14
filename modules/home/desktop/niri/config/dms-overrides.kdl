@@ -5,3 +5,7 @@ layout {
 window-rule {
     geometry-corner-radius 8
 }
+
+binds {
+    Mod+Space { spawn-sh "vicinae toggle"; }
+}

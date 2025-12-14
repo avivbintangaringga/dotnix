@@ -44,6 +44,7 @@ layout {
 
 spawn-sh-at-startup "dms run"
 spawn-sh-at-startup "sleep 3 && qs -c clock"
+spawn-sh-at-startup "vicinae server"
 
 
 hotkey-overlay {
@@ -123,6 +124,7 @@ binds {
 
     // Mod-Shift-/, which is usually the same as Mod-?,
     // shows a list of important hotkeys.
+    Alt+Space { spawn-sh "vicinae toggle"; }
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+B hotkey-overlay-title="Open browser" { spawn "zen-beta"; }
@@ -398,4 +400,4 @@ include "dms/colors.kdl"
 include "dms/layout.kdl"
 include "dms/wpblur.kdl"
 
-include "layout.kdl"
+include "dms-overrides.kdl"

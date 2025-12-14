@@ -29,8 +29,8 @@
         source = ./config/config.kdl;
       };
 
-      ".config/niri/layout.kdl" = {
-        source = ./config/layout.kdl;
+      ".config/niri/dms-overrides.kdl" = {
+        source = ./config/dms-overrides.kdl;
       };
     };
 
