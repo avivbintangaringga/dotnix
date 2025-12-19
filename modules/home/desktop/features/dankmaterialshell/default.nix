@@ -10,7 +10,7 @@ let
 in
 {
   imports = [
-    inputs.dankmaterialshell.homeModules.dankMaterialShell.default
+    inputs.dankmaterialshell.homeModules.dank-material-shell
     inputs.dsearch.homeModules.default
   ];
 
