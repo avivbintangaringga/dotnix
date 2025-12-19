@@ -27,6 +27,7 @@ in
       };
       ghostty = disabled;
       kitty = enabled;
+      libreoffice = enabled;
       looking-glass-client = enabled;
       mediaplayer = enabled;
       moonlight = enabled;

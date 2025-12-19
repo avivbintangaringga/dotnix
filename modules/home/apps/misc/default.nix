@@ -45,7 +45,7 @@
       # freerdp
       #
 
-      pgadmin4-desktopmode
+      # pgadmin4-desktopmode
     ]);
   };
 }
