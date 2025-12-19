@@ -30,7 +30,7 @@ in
       satty
     ];
 
-    programs.dankMaterialShell = {
+    programs.dank-material-shell = {
       enable = true;
       quickshell.package = quickshell;
     };
