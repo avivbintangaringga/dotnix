@@ -25,7 +25,7 @@
           charger = {
             inherit turbo;
             gorvernor = "performance";
-            scaling_max_freq = 3800000;
+            scaling_max_freq = 3700000;
           };
           battery = {
             inherit turbo;
