@@ -89,6 +89,7 @@ in
         turbo = true;
       };
       cloudflare-warp = enabled;
+      dankgreet = enabled;
       flatpak = enabled;
       gvfs = enabled;
       logind = enabled;
@@ -97,7 +98,7 @@ in
       ollama = disabled;
       pipewire = enabled;
       samba = enabled;
-      tuigreet = enabled;
+      tuigreet = disabled;
       upower = enabled;
     };
   };

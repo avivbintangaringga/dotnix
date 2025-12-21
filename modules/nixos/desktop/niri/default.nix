@@ -17,7 +17,7 @@
   config = lib.mkIf config.setup.desktop.niri.enable {
     environment.systemPackages = with pkgs; [
       xwayland-satellite
-      gnome-keyring
+      # gnome-keyring
     ];
 
     security.polkit.enable = true;

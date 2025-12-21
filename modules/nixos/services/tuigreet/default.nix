@@ -15,13 +15,13 @@
       tuigreet
     ];
 
-    security.pam.services = {
-      greetd.enableGnomeKeyring = true;
-      login.enableGnomeKeyring = true;
-    };
+    # security.pam.services = {
+      # greetd.enableGnomeKeyring = true;
+      # login.enableGnomeKeyring = true;
+    # };
 
     services = {
-      gnome.gnome-keyring.enable = true;
+      # gnome.gnome-keyring.enable = true;
       greetd =
         let
           # session = "${pkgs.hyprland}/bin/Hyprland";
@@ -31,10 +31,10 @@
         {
           enable = true;
           settings = {
-            initial_session = {
-              command = "${session}";
-              user = userdata.username;
-            };
+            # initial_session = {
+            #   command = "${session}";
+            #   user = userdata.username;
+            # };
 
             default_session = {
               command = "${tuigreet} --asterisks --remember --remember-user-session --time --cmd ${session}";
