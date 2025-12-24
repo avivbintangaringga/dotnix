@@ -56,7 +56,7 @@ in
     desktop = {
       hyprland = disabled;
       kde = disabled;
-      mango = enabled;
+      mango = disabled;
       niri = enabled;
     };
 

@@ -64,7 +64,7 @@ in
 
     desktop = {
       hyprland = disabled;
-      mango = enabled;
+      mango = disabled;
       niri = enabled;
       features = {
         noctalia-shell = disabled;
