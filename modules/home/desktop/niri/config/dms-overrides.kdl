@@ -7,7 +7,7 @@ window-rule {
 }
 
 binds {
-    Mod+Space { spawn-sh "vicinae toggle"; }
-    Mod+Period { spawn-sh "vicinae vicinae://extensions/vicinae/vicinae/search-emojis"; }
-    Mod+V { spawn-sh "vicinae vicinae://extensions/vicinae/clipboard/history"; }
+    Mod+Space repeat=false { spawn-sh "vicinae toggle"; }
+    Mod+Period repeat=false { spawn-sh "vicinae vicinae://extensions/vicinae/vicinae/search-emojis"; }
+    Mod+V repeat=false { spawn-sh "vicinae vicinae://extensions/vicinae/clipboard/history"; }
 }
