@@ -381,9 +381,9 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { spawn-sh "dms ipc call niri screenshot"; }
+    Print { screenshot; }
     Mod+Print { screenshot-screen; }
-    Mod+Shift+Print { spawn-sh "dms ipc call niri screenshotWindow"; }
+    Mod+Shift+Print { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
