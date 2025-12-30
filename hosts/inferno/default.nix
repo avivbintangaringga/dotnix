@@ -37,7 +37,7 @@ in
     apps = {
       nautilus = enabled;
       steam = enabled;
-      winbox = disabled;
+      winbox = enabled;
     };
 
     cli-apps = {
