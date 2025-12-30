@@ -8,6 +8,6 @@ window-rule {
 
 binds {
     Mod+Space repeat=false { spawn-sh "vicinae toggle"; }
-    Mod+Period repeat=false { spawn-sh "vicinae vicinae://extensions/vicinae/vicinae/search-emojis"; }
-    Mod+V repeat=false { spawn-sh "vicinae vicinae://extensions/vicinae/clipboard/history"; }
+    Mod+Period repeat=false { spawn-sh "vicinae deeplink vicinae://extensions/vicinae/vicinae/search-emojis"; }
+    Mod+V repeat=false { spawn-sh "vicinae deeplink vicinae://extensions/vicinae/clipboard/history"; }
 }
