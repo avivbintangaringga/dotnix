@@ -42,6 +42,7 @@ in
       spicetify = enabled;
       thorium-browser = enabled;
       vscode = enabled;
+      winbox = enabled;
       zed-editor = enabled;
       zen-browser = enabled;
       zotero = disabled;
