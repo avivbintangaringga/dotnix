@@ -44,7 +44,7 @@ layout {
 
 spawn-sh-at-startup "dms run"
 spawn-sh-at-startup "sleep 3 && qs -c clock"
-spawn-sh-at-startup "USE_LAYER_SHELL=0 vicinae server"
+spawn-sh-at-startup "vicinae server"
 
 
 hotkey-overlay {
