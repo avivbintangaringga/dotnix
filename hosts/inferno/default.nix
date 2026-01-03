@@ -50,7 +50,7 @@ in
       monitoring = enabled;
       nh = enabled;
       nvim = enabled;
-      nix-alien = enabled;
+      nix-alien = disabled;
     };
 
     desktop = {
