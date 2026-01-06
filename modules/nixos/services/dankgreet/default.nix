@@ -15,7 +15,7 @@
   };
 
   config = lib.mkIf config.setup.services.dankgreet.enable {
-    programs.dankMaterialShell.greeter = {
+    programs.dank-material-shell.greeter = {
       enable = true;
       compositor.name = "niri";
       configHome = userdata.userpath;
