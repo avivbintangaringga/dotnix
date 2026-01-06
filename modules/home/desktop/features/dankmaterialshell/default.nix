@@ -28,6 +28,7 @@ in
     
     home.packages = with pkgs; [
       satty
+      kdePackages.qt6ct
     ];
 
     programs.dank-material-shell = {
