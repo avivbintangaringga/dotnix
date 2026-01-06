@@ -18,6 +18,8 @@
       tree
       xxd
       usbutils
+      inetutils
+      vlan
       nfs-utils
     ];
   };
