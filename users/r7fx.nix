@@ -18,6 +18,7 @@ in
   setup = {
     apps = {
       android-studio = enabled;
+      ark = enabled;
       ayugram = enabled;
       bitwarden = enabled;
       discord = enabled;
