@@ -2,6 +2,7 @@
   lib,
   config,
   userdata,
+  pkgs,
   ...
 }:
 {
@@ -10,7 +11,9 @@
   };
 
   config = lib.mkIf config.setup.cli-apps.adb.enable {
-    programs.adb.enable = true;
+    environment.systemPackages = with pkgs; [
+      android-tools
+    ];
 
     users.users.${userdata.username} = {
       extraGroups = [ "adbuser" ];
