@@ -1,10 +1,10 @@
-layout {
-    gaps 10
-}
+// layout {
+//     gaps 10
+// }
 
-window-rule {
-    geometry-corner-radius 8
-}
+// window-rule {
+//     geometry-corner-radius 8
+// }
 
 binds {
     Mod+Space repeat=false { spawn-sh "vicinae toggle"; }
