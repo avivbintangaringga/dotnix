@@ -30,8 +30,8 @@ in
         powerBar
         songStats
       ];
-      theme = spicePkgs.themes.catppuccin;
-      colorScheme = "mocha";
+      theme = spicePkgs.themes.nightlight;
+      # colorScheme = "mocha";
     };
   };
 }
