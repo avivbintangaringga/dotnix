@@ -418,5 +418,6 @@ include "dms/cursor.kdl"
 include "dms/layout.kdl"
 include "dms/wpblur.kdl"
 include "dms/outputs.kdl"
+include "dms/windowrules.kdl"
 
 include "dms-overrides.kdl"
