@@ -13,7 +13,7 @@
     home.packages = with pkgs; [
       nixd
       nil
-      nixfmt-rfc-style
+      nixfmt
 
       kdePackages.qtdeclarative
       gopls
