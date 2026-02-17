@@ -11,7 +11,7 @@
 
   config = lib.mkIf config.setup.apps.gaming.wine.enable {
     home.packages = with pkgs; [
-      wineWowPackages.stable
+      # wineWowPackages.stable
       winetricks
       umu-launcher
       protonplus
