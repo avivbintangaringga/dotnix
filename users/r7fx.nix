@@ -78,6 +78,7 @@ in
     services = {
       blueman = enabled;
       cliphist = enabled;
+      kdeconnect = enabled;
       playerctld = enabled;
     };
   };
