@@ -35,6 +35,7 @@ in
 
   setup = {
     apps = {
+      kdeconnect = enabled;
       nautilus = enabled;
       steam = enabled;
       winbox = enabled;
