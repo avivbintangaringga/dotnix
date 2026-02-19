@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }:
 {
@@ -11,6 +12,7 @@
   config = lib.mkIf config.setup.apps.kdeconnect.enable {
     programs.kdeconnect = {
       enable = true;
+      package = pkgs.valent;
     };
 
     networking.firewall = rec {
