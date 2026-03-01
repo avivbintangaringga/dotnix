@@ -13,7 +13,7 @@
     };
 
     hardware = {
-      url = "github:NixOS/nixos-hardware/master";
+      url = "github:avivbintangaringga/nixos-hardware/fa506ic-fix";
     };
 
     spicetify-nix = {
