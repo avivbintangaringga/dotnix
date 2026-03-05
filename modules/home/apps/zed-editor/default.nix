@@ -1,12 +1,4 @@
-{ lib, config, pkgs, ... }:
-let
-  pkgsTemp = import (fetchTarball {
-    url = "https://github.com/NixOS/nixpkgs/archive/93652bcff27b6a060a461d39578af6640c74cbe0.tar.gz";
-    sha256 = "1j8adi8n1sj2957669c02m6qsk8cfyskqbxfqxggdz1bacc6840p";
-  }) {
-    inherit (pkgs) system;
-  };
-in
+{ lib, config, ... }:
 {
   options = {
     setup.apps.zed-editor.enable = lib.mkEnableOption "Zed Editor";
@@ -22,7 +14,6 @@ in
         icon-theme = "Material Icon Theme";
       in {
       enable = true;
-      package = pkgsTemp.zed-editor;
       extensions = [
         # Themes
         "adaptify"
