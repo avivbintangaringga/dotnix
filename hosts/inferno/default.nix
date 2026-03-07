@@ -80,7 +80,7 @@ in
       nix-ld = enabled;
       plymouth = enabled;
       waydroid = enabled;
-      virt-manager = enabled;
+      virt-manager = disabled;
       vmware = disabled;
     };
 
