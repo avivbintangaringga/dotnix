@@ -13,8 +13,8 @@
 
   config = lib.mkIf config.setup.services.auto-cpufreq.enable {
     services.tlp.enable = lib.mkForce false;
-    services.auto-cpufreq = 
-    # programs.auto-cpufreq =
+    # services.auto-cpufreq = 
+    programs.auto-cpufreq =
       let
         cfg = config.setup.services.auto-cpufreq;
         turbo = if cfg.turbo then "always" else "never";
