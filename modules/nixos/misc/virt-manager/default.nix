@@ -113,6 +113,13 @@ in {
       spiceUSBRedirection.enable = true;
     };
 
+    networking.firewall.interfaces = {
+      "virbr*" = {
+        allowedTCPPorts = [ 53 ];
+        allowedUDPPorts = [ 53 67 547 ];
+      };
+    };
+
     services = {
       spice-vdagentd.enable = true;
     };
