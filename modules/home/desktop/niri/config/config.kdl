@@ -45,6 +45,7 @@ layout {
 spawn-sh-at-startup "dms run"
 // spawn-sh-at-startup "sleep 3 && qs -c clock"
 spawn-sh-at-startup "vicinae server"
+spawn-sh-at-startup "niri-float-sticky -disable-auto-stick"
 
 
 hotkey-overlay {
@@ -146,6 +147,8 @@ binds {
     // shows a list of important hotkeys.
     Alt+Space { spawn-sh "vicinae toggle"; }
     Mod+Shift+Slash { show-hotkey-overlay; }
+
+    Mod+G { spawn-sh "niri-float-sticky -ipc toggle_sticky"; }
 
     Mod+B hotkey-overlay-title="Open browser" { spawn "zen-beta"; }
 

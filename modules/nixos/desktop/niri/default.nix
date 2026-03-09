@@ -4,8 +4,10 @@
   inputs,
   pkgs,
   ...
-}:
-{
+}: let
+  system = pkgs.stdenv.hostPlatform.system;
+  niri-float-sticky-pkgs = inputs.niri-float-sticky.packages.${system};
+in {
   imports = [
     inputs.niri.nixosModules.niri
   ];
@@ -15,10 +17,14 @@
   };
 
   config = lib.mkIf config.setup.desktop.niri.enable {
-    environment.systemPackages = with pkgs; [
+    environment.systemPackages = (with pkgs; [
       xwayland-satellite
       # gnome-keyring
-    ];
+    ])
+    ++
+    (with niri-float-sticky-pkgs; [
+      niri-float-sticky
+    ]);
 
     security.polkit.enable = true;
 
