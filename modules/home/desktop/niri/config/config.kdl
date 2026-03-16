@@ -140,6 +140,9 @@ binds {
     XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
     XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
     XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
+    Mod+Alt+Up           allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    Mod+Alt+Down         allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    Mod+Alt+Left         allow-when-locked=true { spawn-sh "playerctl previous"; }
     Mod+Alt+Right        allow-when-locked=true { spawn-sh "playerctl next"; }
     
     // Brightness
