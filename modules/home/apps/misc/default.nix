@@ -13,7 +13,7 @@
 
   config = lib.mkIf config.setup.apps.misc.enable {
     home.packages = (with pkgs; [
-      alacritty
+      # alacritty
       # font-manager
       # reaper
       varia

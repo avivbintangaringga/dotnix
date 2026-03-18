@@ -31,18 +31,18 @@ in
       libreoffice = enabled;
       looking-glass-client = enabled;
       mediaplayer = enabled;
-      moonlight = enabled;
+      moonlight = disabled;
       misc = enabled;
       nemo = disabled;
       obs-studio = enabled;
       onlyoffice = enabled;
       peazip = enabled;
       postman = enabled;
-      qbittorrent = enabled;
+      qbittorrent = disabled;
       quickemu = disabled;
       spicetify = enabled;
       thorium-browser = enabled;
-      vscode = enabled;
+      vscode = disabled;
       winbox = enabled;
       zed-editor = enabled;
       zen-browser = enabled;
@@ -71,7 +71,7 @@ in
       features = {
         noctalia-shell = disabled;
         dankmaterialshell = enabled;
-        quickshell = enabled;
+        quickshell = disabled;
       };
     };
 

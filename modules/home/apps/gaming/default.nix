@@ -8,13 +8,14 @@
     home.packages = with pkgs; [
       goverlay
     ];
+
     setup.apps.gaming = {
       bottles.enable = true;
       faugus-launcher.enable = true;
-      heroic.enable = true;
-      lutris.enable = true;
+      heroic.enable = false;
+      lutris.enable = false;
       mangohud.enable = true;
-      protonup-qt.enable = true;
+      protonplus.enable = false;
       wine.enable = true;
     };
   };

@@ -23,7 +23,7 @@
       tailwindcss_4
       watchman
 
-      yt-dlp
+      # yt-dlp
     ];
   };
 }
