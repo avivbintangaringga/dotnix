@@ -27,6 +27,9 @@
 
       vicinae
 
+      gpu-screen-recorder
+      gpu-screen-recorder-gtk
+
       # dmidecode
 
       # furmark
