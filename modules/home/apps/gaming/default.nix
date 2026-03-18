@@ -15,7 +15,7 @@
       heroic.enable = false;
       lutris.enable = false;
       mangohud.enable = true;
-      protonplus.enable = false;
+      protonplus.enable = true;
       wine.enable = true;
     };
   };
