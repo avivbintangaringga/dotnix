@@ -10,9 +10,9 @@ let
   inherit (mylib) enabled;
 in
 {
-  imports = [
-    inputs.nixvim.homeModules.nixvim
-  ];
+  # imports = [
+    # inputs.nixvim.homeModules.nixvim
+  # ];
 
   options = {
     setup.cli-apps.nvim.enable = lib.mkEnableOption "NVim";
