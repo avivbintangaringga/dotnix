@@ -47,7 +47,7 @@
     };
 
     thorium-browser = {
-      url = "github:Rishabh5321/thorium_flake";
+      url = "github:Rishabh5321/custom-packages-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
