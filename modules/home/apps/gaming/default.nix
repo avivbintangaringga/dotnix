@@ -10,7 +10,7 @@
     ];
 
     setup.apps.gaming = {
-      bottles.enable = true;
+      bottles.enable = false;
       faugus-launcher.enable = true;
       heroic.enable = false;
       lutris.enable = false;
