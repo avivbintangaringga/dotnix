@@ -212,5 +212,9 @@ in
         categories = [ "System" ];
       };
     };
+
+    userDirs = {
+      setSessionVariables = true;
+    };
   };
 }
