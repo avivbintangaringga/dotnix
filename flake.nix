@@ -54,6 +54,7 @@
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.niri-unstable.url = "github:niri-wm/niri/wip/branch";
     };
 
     quickshell = {
