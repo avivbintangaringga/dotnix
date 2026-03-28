@@ -4,9 +4,9 @@ let
 in
 {
   "$browser" = "zen-beta";
-  "$terminal" = "ghostty";
-  "$fileManager" = "nemo";
-  "$menu" = "rofi -show drun";
+  "$terminal" = "kitty";
+  "$fileManager" = "nautilus";
+  "$menu" = "vicinae toggle";
   "$alternateMenu" = "gauntlet open";
   "$emojiPicker" = "rofi -config emoji -modi emoji -emoji-format {emoji} -show";
 

@@ -32,21 +32,21 @@
     in
     [
       "$mainMod, b, exec, $browser"
-      "$mainMod, c, killactive"
+      "$mainMod, q, killactive"
       "$mainMod, e, exec, $fileManager"
       "$mainMod, f, fullscreen, 0"
       "$mainMod, n, exec, $toggleNotification"
       "$mainMod, p, pin, active"
-      "$mainMod, q, exec, $terminal"
+      "$mainMod, return, exec, $terminal"
       "$mainMod, s, togglespecialworkspace, magic"
       "$mainMod, t, togglesplit"
-      "$mainMod, w, exec, $randomizeWallpaper"
+      # "$mainMod, w, exec, $randomizeWallpaper"
 
-      "$mainMod SHIFT, c, forcekillactive"
+      "$mainMod SHIFT, q, forcekillactive"
       "$mainMod SHIFT, f, togglefloating"
       "$mainMod SHIFT, p, pseudo"
       "$mainMod SHIFT, s, movetoworkspace, special:magic"
-      "$mainMod SHIFT, w, exec, $restartBar"
+      # "$mainMod SHIFT, w, exec, $restartBar"
       "$mainMod SHIFT, Tab, cyclenext, prev hist visible"
 
       "$mainMod, space, exec, $menu"

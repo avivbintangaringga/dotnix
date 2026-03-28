@@ -7,15 +7,15 @@
     #dim_inactive = true;
     #dim_strength = 0.5;
 
-    blur = {
-      enabled = false;
-      size = 3;
-      passes = 2;
-      noise = 0;
-      brightness = 0.9;
-      new_optimizations = true;
-      xray = false;
-      popups = false;
-    };
+    # blur = {
+    #   enabled = false;
+    #   size = 3;
+    #   passes = 2;
+    #   noise = 0;
+    #   brightness = 0.9;
+    #   new_optimizations = true;
+    #   xray = false;
+    #   popups = false;
+    # };
   };
 }

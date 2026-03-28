@@ -5,8 +5,10 @@
   ];
 
   exec-once = [
-    "swww-daemon"
-    "sh ~/.scripts/randomize-wallpaper.sh -q -w -a"
+    # "swww-daemon"
+    # "sh ~/.scripts/randomize-wallpaper.sh -q -w -a"
     # "nv-switch host quiet"
+    "dms run"
+    "vicinae server"
   ];
 }
