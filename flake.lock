@@ -433,36 +433,6 @@
         "type": "indirect"
       }
     },
-    "nixpkgs-4c3870b": {
-      "locked": {
-        "lastModified": 1752681095,
-        "narHash": "sha256-iot9+KYdyezXsKW4zoflabU/vMBurYbBPOm2PTWNoKk=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "4c3870b23dded4e75292be48bdb03cd870fb1719",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "rev": "4c3870b23dded4e75292be48bdb03cd870fb1719",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs-ca3d8cc": {
-      "locked": {
-        "lastModified": 1753927188,
-        "narHash": "sha256-dmzlVuyqSRAQQu7loMTRekPKmquNbFU4CQBRK2xYBww=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "ca3d8cc5c4f3132f5515787507bcf91fd46cd2de",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "rev": "ca3d8cc5c4f3132f5515787507bcf91fd46cd2de",
-        "type": "indirect"
-      }
-    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1748740939,
@@ -698,8 +668,6 @@
         "niri-float-sticky": "niri-float-sticky",
         "nix-alien": "nix-alien",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-4c3870b": "nixpkgs-4c3870b",
-        "nixpkgs-ca3d8cc": "nixpkgs-ca3d8cc",
         "noctalia-shell": "noctalia-shell",
         "nvix": "nvix",
         "quickshell": "quickshell_2",

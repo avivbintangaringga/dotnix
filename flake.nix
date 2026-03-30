@@ -4,9 +4,6 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
-    nixpkgs-4c3870b.url = "nixpkgs/4c3870b23dded4e75292be48bdb03cd870fb1719";
-    nixpkgs-ca3d8cc.url = "nixpkgs/ca3d8cc5c4f3132f5515787507bcf91fd46cd2de";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,11 +22,6 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # nixvim = {
-    #   url = "github:nix-community/nixvim";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
 
     nvix = {
       url = "github:niksingh710/nvix";
@@ -109,8 +101,6 @@
       lib = nixpkgs.lib // home-manager.lib;
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
-      pkgs-4c3870b = import inputs.nixpkgs-4c3870b { inherit system; };
-      pkgs-ca3d8cc = import inputs.nixpkgs-ca3d8cc { inherit system; };
       myPkgs = (import ./pkgs { inherit pkgs; });
       userdata = rec {
         username = "r7fx";
@@ -130,8 +120,6 @@
             ./hosts/inferno
           ];
           specialArgs = {
-            inherit pkgs-4c3870b;
-            inherit pkgs-ca3d8cc;
             inherit inputs;
             inherit userdata;
             inherit mylib;
@@ -147,8 +135,6 @@
             ./users/${userdata.username}.nix
           ];
           extraSpecialArgs = {
-            inherit pkgs-4c3870b;
-            inherit pkgs-ca3d8cc;
             inherit inputs;
             inherit userdata;
             inherit mylib;
