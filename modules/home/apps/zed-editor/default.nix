@@ -120,9 +120,9 @@
           show_diagnostics = "errors";
         };
 
-        features = {
-          "edit_prediction_provider" = "supermaven";
-        };
+        # features = {
+        #   "edit_prediction_provider" = "supermaven";
+        # };
 
         indent_guides = {
           enabled = true;
@@ -172,6 +172,10 @@
         };
         vim = {
           toggle_relative_line_numbers = true;
+        };
+
+        which_key = {
+          enabled = true;
         };
 
         languages = {
