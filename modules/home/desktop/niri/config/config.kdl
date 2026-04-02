@@ -54,9 +54,10 @@ environment {
 // Blur
 
 blur {
-    passes 3
+    passes 2
     offset 3.0
-    saturation 1.5
+    saturation 1.0
+    noise 0.03
 }
 
 // ======== LAYER RULE ======== //
@@ -66,7 +67,25 @@ layer-rule {
     block-out-from "screencast"
 }
 
+layer-rule {
+    match namespace="^vicinae$"
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
 // ======== WINDOW RULE ======== //
+
+window-rule {
+    match app-id="zen-beta"
+    match app-id="^kitty$"
+
+    background-effect {
+        blur true
+        xray false
+    }
+}
 
 window-rule {
     match title="^Open Files$"
