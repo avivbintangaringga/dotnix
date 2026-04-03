@@ -71,6 +71,12 @@ layer-rule {
     match namespace="^vicinae$"
     background-effect {
         blur true
+    }
+}
+
+layer-rule {
+    match namespace=".*"
+    background-effect {
         xray false
     }
 }
