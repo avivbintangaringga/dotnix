@@ -23,6 +23,8 @@
       remmina
       bluemail
 
+      chatbox
+
       gimp
 
       vicinae
