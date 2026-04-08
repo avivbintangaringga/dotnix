@@ -216,5 +216,12 @@ in
     userDirs = {
       setSessionVariables = true;
     };
+
+    autostart = {
+      enable = true;
+      entries = [
+        "${pkgs.ferdium}/share/applications/ferdium.desktop"
+      ];
+    };
   };
 }
