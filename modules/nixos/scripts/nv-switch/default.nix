@@ -28,9 +28,9 @@
       waybar() {
         if [[ $(check_current_mode) == "vm" ]]
         then
-          echo "󰆧   VM Mode"
+          echo "VM Mode"
         else
-          echo "󰍹   Host Mode"
+          echo "Host Mode"
         fi
       }
 
