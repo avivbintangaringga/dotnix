@@ -35,10 +35,11 @@ in
 
   setup = {
     apps = {
-      kdeconnect = enabled;
+      kdeconnect = disabled;
       nautilus = enabled;
       steam = enabled;
       winbox = enabled;
+      valent = enabled;
     };
 
     cli-apps = {

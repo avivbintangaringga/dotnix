@@ -7,7 +7,6 @@
   config = lib.mkIf config.setup.services.kdeconnect.enable {
     services.kdeconnect = {
       enable = true;
-      package = pkgs.valent;
     };
   };
 }
