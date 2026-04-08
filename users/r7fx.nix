@@ -78,7 +78,7 @@ in
     services = {
       blueman = enabled;
       cliphist = enabled;
-      kdeconnect = enabled;
+      kdeconnect = disabled;
       playerctld = enabled;
     };
   };
@@ -215,6 +215,13 @@ in
 
     userDirs = {
       setSessionVariables = true;
+    };
+
+    autostart = {
+      enable = true;
+      entries = [
+        "${pkgs.ferdium}/share/applications/ferdium.desktop"
+      ];
     };
   };
 }

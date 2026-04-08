@@ -2,6 +2,7 @@
 spawn-sh-at-startup "dms run"
 spawn-sh-at-startup "vicinae server"
 spawn-sh-at-startup "niri-float-sticky -disable-auto-stick"
+spawn-sh-at-startup "valent --gapplication-service"
 
 // Config
 prefer-no-csd
@@ -128,6 +129,11 @@ window-rule {
 window-rule {
     match app-id="zen-beta"
     match app-id="dev.zed.Zed"
+    open-maximized-to-edges true
+}
+
+window-rule {
+    match app-id="Ferdium"
     open-maximized true
 }
 

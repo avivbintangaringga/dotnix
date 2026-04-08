@@ -6,13 +6,13 @@
 }:
 {
   options = {
-    setup.apps.kdeconnect.enable = lib.mkEnableOption "KDE Connect";
+    setup.apps.valent.enable = lib.mkEnableOption "Valent";
   };
 
-  config = lib.mkIf config.setup.apps.kdeconnect.enable {
-    programs.kdeconnect = {
-      enable = true;
-    };
+  config = lib.mkIf config.setup.apps.valent.enable {
+    environment.systemPackages = with pkgs; [
+      valent
+    ];
 
     networking.firewall = rec {
       allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
