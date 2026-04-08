@@ -24,6 +24,7 @@
       bluemail
 
       chatbox
+      ferdium
 
       gimp
 
