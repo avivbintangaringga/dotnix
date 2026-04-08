@@ -128,6 +128,11 @@ window-rule {
 window-rule {
     match app-id="zen-beta"
     match app-id="dev.zed.Zed"
+    open-maximized-to-edges true
+}
+
+window-rule {
+    match app-id="Ferdium"
     open-maximized true
 }
 
