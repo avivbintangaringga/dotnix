@@ -26,7 +26,7 @@ in {
       niri-float-sticky
     ]);
 
-    security.polkit.enable = true;
+    # security.polkit.enable = true;
 
     programs.niri = {
       enable = true;
