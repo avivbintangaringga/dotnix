@@ -21,6 +21,9 @@
       inetutils
       vlan
       nfs-utils
+
+      quickshell
+      accountsservice
     ];
   };
 }

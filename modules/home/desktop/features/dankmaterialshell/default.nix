@@ -29,8 +29,6 @@ in
     home.packages = with pkgs; [
       satty
       kdePackages.qt6ct
-      accountsservice
-      quickshell
     ];
 
     programs.dank-material-shell = {
