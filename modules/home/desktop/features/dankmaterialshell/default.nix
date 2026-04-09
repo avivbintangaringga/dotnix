@@ -29,6 +29,7 @@ in
     home.packages = with pkgs; [
       satty
       kdePackages.qt6ct
+      cups-pk-helper
     ];
 
     programs.dank-material-shell = {
