@@ -99,6 +99,7 @@ in
       nfs = disabled;
       ollama = disabled;
       pipewire = enabled;
+      power-profiles-daemon = enabled;
       samba = enabled;
       tuigreet = disabled;
       upower = enabled;
