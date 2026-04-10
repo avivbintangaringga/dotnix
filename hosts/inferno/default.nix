@@ -101,7 +101,7 @@ in
       ollama = disabled;
       pipewire = enabled;
       power-profiles-daemon = enabled;
-      samba = enabled;
+      samba = disabled;
       tuigreet = disabled;
       upower = enabled;
     };
