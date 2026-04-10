@@ -173,6 +173,10 @@ in
     ];
   };
 
+  hardware = {
+    enableAllFirmware = true;
+  };
+
   systemd.tmpfiles.rules = [
     "f /dev/shm/scream 0660 ${userdata.username} qemu-libvirtd -"
     "f /dev/shm/looking-glass 0660 ${userdata.username} qemu-libvirtd -"
