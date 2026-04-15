@@ -167,6 +167,10 @@ in
             command = "/run/current-system/sw/bin/pkill";
             options = [ "NOPASSWD" ];
           }
+          {
+            command = "/run/current-system/sw/bin/efibootmgr";
+            options = [ "NOPASSWD" ];
+          }
         ];
         groups = [ "wheel" ];
       }
