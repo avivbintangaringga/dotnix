@@ -56,7 +56,7 @@ in
     };
 
     desktop = {
-      hyprland = enabled;
+      hyprland = disabled;
       kde = disabled;
       mango = disabled;
       niri = enabled;
@@ -86,8 +86,9 @@ in
     };
 
     services = {
+      accounts-daemon = enabled;
       auto-cpufreq = {
-        enable = true;
+        enable = false;
         turbo = true;
       };
       cloudflare-warp = enabled;
@@ -99,7 +100,8 @@ in
       nfs = disabled;
       ollama = disabled;
       pipewire = enabled;
-      samba = enabled;
+      power-profiles-daemon = enabled;
+      samba = disabled;
       tuigreet = disabled;
       upower = enabled;
     };
@@ -165,10 +167,18 @@ in
             command = "/run/current-system/sw/bin/pkill";
             options = [ "NOPASSWD" ];
           }
+          {
+            command = "/run/current-system/sw/bin/efibootmgr";
+            options = [ "NOPASSWD" ];
+          }
         ];
         groups = [ "wheel" ];
       }
     ];
+  };
+
+  hardware = {
+    enableAllFirmware = true;
   };
 
   systemd.tmpfiles.rules = [

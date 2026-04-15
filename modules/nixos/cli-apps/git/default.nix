@@ -12,6 +12,7 @@
   config = lib.mkIf config.setup.cli-apps.git.enable {
     environment.systemPackages = with pkgs; [
       gh
+      hub
     ];
 
     programs.git = {

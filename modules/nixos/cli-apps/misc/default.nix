@@ -21,6 +21,7 @@
       inetutils
       vlan
       nfs-utils
+      efibootmgr
     ];
   };
 }

@@ -65,7 +65,7 @@ in
     };
 
     desktop = {
-      hyprland = enabled;
+      hyprland = disabled;
       mango = disabled;
       niri = enabled;
       features = {
