@@ -52,6 +52,7 @@
         "hyprlang"
         "ini"
         "java"
+        "java-eclipse-jdtls"
         "javascript-snippets"
         "just"
         "just-ls"
@@ -191,6 +192,12 @@
           # HTML = {
             # formatter = "language_server";
           # };
+          #
+
+          Java = {
+            language_servers = [ "jdtls" ];
+            formatter = "language_server";
+          };
         };
 
         lsp = {
