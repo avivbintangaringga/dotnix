@@ -23,6 +23,8 @@
       remmina
       bluemail
 
+      jetbrains.idea-oss
+      
       chatbox
       ferdium
 
