@@ -3,22 +3,34 @@
   config,
   inputs,
   userdata,
+  pkgs,
   ...
 }:
 {
-  imports = [
-    inputs.dankmaterialshell.nixosModules.greeter
-  ];
-  
   options = {
     setup.services.dankgreet.enable = lib.mkEnableOption "Dank Material Shell Greeter";
   };
 
   config = lib.mkIf config.setup.services.dankgreet.enable {
-    programs.dank-material-shell.greeter = {
-      enable = true;
-      compositor.name = "niri";
-      configHome = userdata.userpath;
+    services.displayManager = {
+      autoLogin = {
+        enable = true;
+        user = userdata.username;
+      };
+
+      dms-greeter = {
+        enable = true;
+        compositor.name = "niri";
+        configHome = userdata.userpath;
+        configFiles = [
+          "${userdata.userpath}/.config/DankMaterialShell/settings.json"
+        ];
+      };
+    };
+    
+    programs.seahorse.enable = true;
+    users.users.${userdata.username} = {
+      extraGroups = [ "greeter" ];
     };
   };
 }
