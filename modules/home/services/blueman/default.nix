@@ -6,7 +6,7 @@
 
   config = lib.mkIf config.setup.services.blueman.enable {
     services.blueman-applet = {
-      enable = true;
+      # enable = true;
     };
   };
 }
