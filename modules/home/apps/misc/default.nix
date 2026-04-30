@@ -26,6 +26,7 @@
       jetbrains.idea
 
       dbeaver-bin
+      bruno
       
       chatbox
       ferdium
