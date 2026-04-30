@@ -24,6 +24,8 @@
       bluemail
 
       jetbrains.idea
+
+      dbeaver-bin
       
       chatbox
       ferdium
