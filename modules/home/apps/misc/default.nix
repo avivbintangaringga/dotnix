@@ -27,7 +27,8 @@
 
       dbeaver-bin
       bruno
-      
+     
+      gemini-cli-bin
       chatbox
       ferdium
 
