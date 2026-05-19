@@ -196,7 +196,7 @@ in
 
   fileSystems."/media/DATA" = {
     device = "/dev/disk/by-uuid/9EF2F582F2F55F49";
-    fsType = "ntfs3";
+    fsType = "ntfs-3g";
     options = [ "defaults" ];
   };
 
