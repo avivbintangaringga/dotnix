@@ -8,6 +8,6 @@
 
 binds {
     Mod+Space repeat=false { spawn-sh "vicinae toggle"; }
-    Mod+Period repeat=false { spawn-sh "vicinae deeplink vicinae://extensions/vicinae/core/search-emojis"; }
-    Mod+V repeat=false { spawn-sh "vicinae deeplink vicinae://extensions/vicinae/clipboard/history"; }
+    Mod+Period repeat=false { spawn-sh "vicinae vicinae://launch/core/search-emojis"; }
+    Mod+V repeat=false { spawn-sh "vicinae vicinae://launch/clipboard/history"; }
 }
