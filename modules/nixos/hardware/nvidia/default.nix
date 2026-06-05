@@ -38,6 +38,10 @@
         modesetting.enable = true;
         open = false;
         prime = {
+          offload = {
+            enable = true;
+            enableOffloadCmd = true;
+          };
           nvidiaBusId = lib.mkForce "PCI:1:0:0";
           amdgpuBusId = lib.mkForce "PCI:6:0:0";
         };
@@ -46,14 +50,15 @@
           finegrained = false;
         };
         dynamicBoost = {
-          enable = true;
+          enable = false;
         };
         nvidiaPersistenced = true;
       };
     };
 
     boot.extraModprobeConfig = ''
-      options nvidia NVreg_RegistryDwords="PowerMizerEnable=0x1; PerfLevelSrc=0x2222; PowerMizerDefaultAC=0x1"
+      options nvidia NVreg_RegistryDwords="PowerMizerEnable=0x1; PerfLevelSrc=0x2222; PowerMizerLevel=0x1; PowerMizerDefaultAC=0x1"
+      options nvidia_drm modeset=1
     '';
   };
 }
