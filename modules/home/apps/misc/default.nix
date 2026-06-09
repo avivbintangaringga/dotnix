@@ -29,7 +29,7 @@
       bruno
      
       gemini-cli-bin
-      chatbox
+      # chatbox
       ferdium
 
       gimp
