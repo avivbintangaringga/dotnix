@@ -20,7 +20,7 @@ in
       android-studio = enabled;
       ark = enabled;
       ayugram = enabled;
-      bitwarden = enabled;
+      bitwarden = disabled;
       discord = enabled;
       firefox = disabled;
       gaming = {
