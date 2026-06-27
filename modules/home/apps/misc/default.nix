@@ -25,6 +25,8 @@
 
       jetbrains.idea
 
+      kdePackages.kdenlive
+
       dbeaver-bin
       bruno
      
