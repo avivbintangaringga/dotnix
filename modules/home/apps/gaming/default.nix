@@ -10,9 +10,10 @@
     ];
 
     setup.apps.gaming = {
-      bottles.enable = false;
+      bottles.enable = true;
       faugus-launcher.enable = true;
       heroic.enable = false;
+      hydra-launcher.enable = true;
       lutris.enable = false;
       mangohud.enable = true;
       protonplus.enable = true;

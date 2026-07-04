@@ -24,8 +24,14 @@
       bluemail
 
       jetbrains.idea
-      
-      chatbox
+
+      kdePackages.kdenlive
+
+      dbeaver-bin
+      bruno
+     
+      gemini-cli-bin
+      # chatbox
       ferdium
 
       gimp

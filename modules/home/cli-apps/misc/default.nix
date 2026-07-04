@@ -15,8 +15,6 @@
       wev
       cava
 
-      kanidm_1_8
-
       lsof
       gnumake
 

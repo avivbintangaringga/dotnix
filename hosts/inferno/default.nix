@@ -101,6 +101,7 @@ in
       ollama = disabled;
       pipewire = enabled;
       power-profiles-daemon = enabled;
+      printing = enabled;
       samba = disabled;
       tuigreet = disabled;
       upower = enabled;
@@ -108,7 +109,7 @@ in
   };
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       systemd-boot = {
         enable = true;

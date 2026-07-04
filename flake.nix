@@ -10,7 +10,7 @@
     };
 
     hardware = {
-      url = "github:avivbintangaringga/nixos-hardware/fa506ic-fix";
+      url = "github:nixos/nixos-hardware";
     };
 
     spicetify-nix = {
@@ -70,6 +70,11 @@
 
     dsearch = {
       url = "github:AvengeMedia/danksearch";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dankcalendar = {
+      url = "github:AvengeMedia/dankcalendar";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

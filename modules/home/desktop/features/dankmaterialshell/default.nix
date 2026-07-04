@@ -4,14 +4,10 @@
   inputs,
   pkgs,
   ...
-}:
-let
-  quickshell = inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default;
-in
-{
+}: {
   imports = [
     inputs.dankmaterialshell.homeModules.dank-material-shell
-    inputs.dsearch.homeModules.default
+    # inputs.dsearch.homeModules.default
   ];
 
   options = {
@@ -34,9 +30,8 @@ in
 
     programs.dank-material-shell = {
       enable = true;
-      quickshell.package = quickshell;
     };
 
-    programs.dsearch.enable = true;
+    # programs.dsearch.enable = true;
   };
 }
