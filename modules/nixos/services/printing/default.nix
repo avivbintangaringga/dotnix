@@ -14,6 +14,7 @@
 	        carps-cups
 	        cups-bjnp
 	        cnijfilter2
+	        gutenprint
 	      ];
       };
     };
