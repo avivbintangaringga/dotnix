@@ -1,5 +1,6 @@
 // Startup
-spawn-sh-at-startup "dms run"
+// spawn-sh-at-startup "dms run"
+spawn-sh-at-startup "noctalia"
 spawn-sh-at-startup "vicinae server"
 spawn-sh-at-startup "niri-float-sticky -disable-auto-stick"
 spawn-sh-at-startup "valent --gapplication-service"
