@@ -70,7 +70,7 @@ in
       mango = disabled;
       niri = enabled;
       features = {
-        noctalia-shell = disabled;
+        noctalia-shell = enabled;
         dankmaterialshell = enabled;
         quickshell = disabled;
       };

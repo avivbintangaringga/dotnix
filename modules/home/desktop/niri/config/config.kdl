@@ -69,6 +69,18 @@ layer-rule {
 }
 
 layer-rule {
+    match namespace="^noctalia-backdrop"
+    place-within-backdrop true
+}
+
+layer-rule {
+  match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+  background-effect {
+    xray false
+  }
+}
+
+layer-rule {
     match namespace="^vicinae$"
     background-effect {
         blur true
