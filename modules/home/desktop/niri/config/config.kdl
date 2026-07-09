@@ -66,6 +66,7 @@ blur {
 
 layer-rule {
     match namespace="dms:notification-popup"
+    match namespace="noctalia-notification"
     block-out-from "screencast"
 }
 
@@ -168,13 +169,13 @@ binds {
     Alt+Space repeat=false hotkey-overlay-title="Open menu" { spawn-sh "vicinae toggle"; }
 
     // Functions
-    Mod+Slash repeat=false hotkey-overlay-title="Show keybinds" { spawn-sh "dms ipc keybinds toggle niri"; }
+    // Mod+Slash repeat=false hotkey-overlay-title="Show keybinds" { spawn-sh "dms ipc keybinds toggle niri"; }
     Mod+G repeat=false hotkey-overlay-title="Toggle sticky floating window" { spawn-sh "niri-float-sticky -ipc toggle_sticky"; }
     Mod+O repeat=false hotkey-overlay-title="Toggle overview" { toggle-overview; }
     Mod+Q repeat=false hotkey-overlay-title="Close window" { close-window; }
     Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
-    Mod+F4 { spawn-sh "dms ipc call powermenu toggle"; }
+    // Mod+F4 { spawn-sh "dms ipc call powermenu toggle"; }
 
     // Apps
     Mod+B hotkey-overlay-title="Open browser" { spawn "zen-beta"; }
@@ -184,10 +185,14 @@ binds {
     Super+Alt+L repeat=false hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // Audio
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
-    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    // XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
+    // XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    // XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    // XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "noctalia msg volume-up 1"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "noctalia msg volume-down 1"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "noctalia msg volume-mute"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "noctalia msg mic-mute"; }
     XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
     XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
     XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
@@ -198,8 +203,10 @@ binds {
     Mod+Alt+Right        allow-when-locked=true { spawn-sh "playerctl next"; }
     
     // Brightness
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    // XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
+    // XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn-sh "noctalia msg brightness-up 10"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "noctalia msg brightness-down 10"; }
 
     // Window focus navigation (keyboard)
     Mod+Left  { focus-column-left; }
@@ -212,10 +219,10 @@ binds {
     Mod+L     { focus-column-right; }
 
     // Window focus navigation (mouse)
-    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
-    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
-    Mod+WheelScrollRight      { focus-column-right; }
-    Mod+WheelScrollLeft       { focus-column-left; }
+    Mod+WheelScrollDown            cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp              cooldown-ms=150 { focus-workspace-up; }
+    Mod+WheelScrollRight           { focus-column-right; }
+    Mod+WheelScrollLeft            { focus-column-left; }
     Mod+Shift+WheelScrollDown      { focus-column-right; }
     Mod+Shift+WheelScrollUp        { focus-column-left; }
 
@@ -230,12 +237,12 @@ binds {
     Mod+Ctrl+L     { move-column-right; }
 
     // Window move navigation (mouse)
-    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
-    Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
-    Mod+Ctrl+WheelScrollRight { move-column-right; }
-    Mod+Ctrl+WheelScrollLeft  { move-column-left; }
-    Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
-    Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
+    Mod+Ctrl+WheelScrollDown        cooldown-ms=150 { move-column-to-workspace-down; }
+    Mod+Ctrl+WheelScrollUp          cooldown-ms=150 { move-column-to-workspace-up; }
+    Mod+Ctrl+WheelScrollRight       { move-column-right; }
+    Mod+Ctrl+WheelScrollLeft        { move-column-left; }
+    Mod+Ctrl+Shift+WheelScrollDown  { move-column-right; }
+    Mod+Ctrl+Shift+WheelScrollUp    { move-column-left; }
 
     // Monitor focus navigation
     Mod+Shift+Left  { focus-monitor-left; }
@@ -328,12 +335,14 @@ debug {
     ignore-drm-device "/dev/dri/card0"
 }
 
-include "dms/alttab.kdl"
-include "dms/binds.kdl"
-include "dms/colors.kdl"
-include "dms/cursor.kdl"
-include "dms/layout.kdl"
-include "dms/wpblur.kdl"
-include "dms/outputs.kdl"
-include "dms/windowrules.kdl"
-include "dms-overrides.kdl"
+include "noctalia.kdl"
+
+// include "dms/alttab.kdl"
+// include "dms/binds.kdl"
+// include "dms/colors.kdl"
+// include "dms/cursor.kdl"
+// include "dms/layout.kdl"
+// include "dms/wpblur.kdl"
+// include "dms/outputs.kdl"
+// include "dms/windowrules.kdl"
+// include "dms-overrides.kdl"
