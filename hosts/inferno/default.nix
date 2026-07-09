@@ -92,12 +92,13 @@ in
         turbo = true;
       };
       cloudflare-warp = enabled;
-      dankgreet = enabled;
+      dankgreet = disabled;
       flatpak = enabled;
       gvfs = enabled;
       logind = enabled;
       lsfg-vk = enabled;
       nfs = disabled;
+      noctalia-greeter = enabled;
       ollama = disabled;
       pipewire = enabled;
       power-profiles-daemon = enabled;
