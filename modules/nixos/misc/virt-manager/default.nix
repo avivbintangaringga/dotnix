@@ -113,6 +113,10 @@ in {
       spiceUSBRedirection.enable = true;
     };
 
+    systemd.services = {
+      libvirt-guests.wantedBy = lib.mkForce [ ];
+    };
+
     networking.firewall.interfaces = {
       "virbr*" = {
         allowedTCPPorts = [ 53 ];

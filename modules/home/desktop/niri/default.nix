@@ -34,6 +34,10 @@
       };
     };
 
+    home.packages = with pkgs; [
+      kdePackages.qt6ct
+    ];
+
     programs.niri = {
       enable = true;
       package = pkgs.niri-unstable;

@@ -10,12 +10,18 @@
     ];
     programs.kitty = {
       enable = true;
+      enableGitIntegration = true;
       shellIntegration = {
         enableZshIntegration = true;
+        enableBashIntegration = true;
+        enableFishIntegration = true;
       };
+      # extraConfig = ''
+      #   include dank-tabs.conf
+      #   include dank-theme.conf
+      # '';
       extraConfig = ''
-        include dank-tabs.conf
-        include dank-theme.conf
+        include themes/noctalia.conf
       '';
       settings = {
         background_opacity = 0.85;

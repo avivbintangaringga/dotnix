@@ -10,13 +10,21 @@
   };
 
   config = lib.mkIf config.setup.desktop.features.gtk.enable {
+    home.packages = with pkgs; [
+      # papirus-icon-theme
+      # papirus-folders
+    ];
+    
     gtk = {
       enable = true;
 
       gtk3 = {
         enable = true;
+        # extraCss = ''
+        #     @import url("dank-colors.css");
+        #   '';
         extraCss = ''
-            @import url("dank-colors.css");
+            @import url("noctalia.css");
           '';
         theme = {
           name = "adw-gtk3-dark";
@@ -26,8 +34,11 @@
 
       gtk4 = {
         enable = true;
+        # extraCss = ''
+        #     @import url("dank-colors.css");
+        #   '';
         extraCss = ''
-            @import url("dank-colors.css");
+            @import url("noctalia.css");
           '';
         theme = {
           name = "adw-gtk3-dark";
@@ -35,10 +46,10 @@
         };
       };
       
-      iconTheme = {
-        package = pkgs.papirus-icon-theme;
-        name = "Papirus-Dark";
-      };
+      # iconTheme = {
+        # package = pkgs.papirus-icon-theme;
+        # name = "Papirus-Dark";
+      # };
     };
   };
 }

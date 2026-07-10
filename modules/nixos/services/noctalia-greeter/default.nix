@@ -22,11 +22,44 @@
         user = userdata.username;
       };
     };
+
+    services.greetd = {
+      enable = true;
+      settings = {
+        initial_session = {
+          command = "niri-session";
+          user = userdata.username;
+        };
+      };
+    };
     
     programs = {
       noctalia-greeter = {
         enable = true;
-        greeter-args = "--session niri-session";
+        greeter-args = "--session Niri";
+        settings = {
+          session = {
+            default = "Niri";
+            last = "Niri";
+          };
+
+          user = {
+            default = userdata.username;
+          };
+
+          appearance = {
+            hide_logo = true;
+          };
+
+          output = {
+            scale = 1.0;
+          };
+
+          cursor = {
+            theme = "Bibata-Modern-Classic";
+            size = 24;
+          };
+        };
       };
       
       seahorse.enable = true;

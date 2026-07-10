@@ -43,6 +43,16 @@ layout {
     }
 
     default-column-width { proportion 0.5; }
+
+    gaps 10
+
+    border {
+        width 1
+    }
+
+    focus-ring {
+        width 1
+    }
 }
 
 hotkey-overlay {
@@ -50,7 +60,7 @@ hotkey-overlay {
 }
 
 environment {
-   QT_QPA_PLATFORMTHEME "qt5ct"
+   QT_QPA_PLATFORMTHEME "qt6ct"
 }
 
 // Blur
@@ -159,6 +169,7 @@ window-rule {
 window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
+    tiled-state true
     draw-border-with-background false
 }
 
@@ -327,6 +338,11 @@ binds {
 
     // Misc
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    // Vicinae
+    Mod+Space repeat=false { spawn-sh "vicinae toggle"; }
+    Mod+Period repeat=false { spawn-sh "vicinae deeplink vicinae://launch/core/search-emojis"; }
+    Mod+V repeat=false { spawn-sh "vicinae deeplink vicinae://launch/clipboard/history"; }
 }
 
 debug {

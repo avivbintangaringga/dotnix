@@ -53,6 +53,7 @@ in
       nh = enabled;
       nvim = enabled;
       nix-alien = disabled;
+      zsh = enabled;
     };
 
     desktop = {
@@ -79,7 +80,7 @@ in
       docker = enabled;
       gaming = enabled;
       nix-ld = enabled;
-      plymouth = enabled;
+      plymouth = disabled;
       waydroid = enabled;
       virt-manager = enabled;
       vmware = disabled;
@@ -122,6 +123,7 @@ in
     };
 
     initrd = {
+      systemd.enable = true;
       kernelModules = [
         "snd-seq"
 
@@ -129,17 +131,18 @@ in
         # "vfio"
         # "vfio_iommu_type1"
 
-        "nvidia"
-        "nvidia_modeset"
-        "nvidia_drm"
-        "nvidia_uvm"
+        # "nvidia"
+        # "nvidia_modeset"
+        # "nvidia_drm"
+        # "nvidia_uvm"
       ];
+
     };
 
     kernelParams = [
-      "amd_iommu=on"
-      "iommu=pt"
-      "vfio-pci.ids=10de:25a2,10de:2291"
+      # "amd_iommu=on"
+      # "iommu=pt"
+      # "vfio-pci.ids=10de:25a2,10de:2291"
     ];
   };
 
@@ -187,6 +190,10 @@ in
     "f /dev/shm/scream 0660 ${userdata.username} qemu-libvirtd -"
     "f /dev/shm/looking-glass 0660 ${userdata.username} qemu-libvirtd -"
   ];
+
+  systemd.services = {
+    NetworkManager-wait-online.enable = false;
+  };
 
   networking = {
     hostName = "inferno";

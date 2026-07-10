@@ -12,7 +12,7 @@
   config = lib.mkIf config.setup.misc.plymouth.enable {
     boot = {
       plymouth = {
-        enable = true;
+        enable = false;
         theme = "circle_hud";
         themePackages = with pkgs; [
           (adi1090x-plymouth-themes.override {
