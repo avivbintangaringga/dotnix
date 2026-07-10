@@ -119,7 +119,7 @@ in
       efi = {
         canTouchEfiVariables = true;
       };
-      timeout = 1;
+      timeout = 0;
     };
 
     initrd = {
