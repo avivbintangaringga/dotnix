@@ -1,5 +1,6 @@
 {
   mylib,
+  lib,
   inputs,
   userdata,
   pkgs,
@@ -124,6 +125,7 @@ in
 
     initrd = {
       systemd.enable = true;
+      compressor = "zstd";
       kernelModules = [
         "snd-seq"
 
@@ -133,13 +135,15 @@ in
 
         # "nvidia"
         # "nvidia_modeset"
-        # "nvidia_drm"
         # "nvidia_uvm"
+        # "nvidia_drm"
       ];
 
     };
 
     kernelParams = [
+      "nvidia-drm.modeset=1" 
+      "8250.nr_uarts=0"
       # "amd_iommu=on"
       # "iommu=pt"
       # "vfio-pci.ids=10de:25a2,10de:2291"
@@ -184,6 +188,7 @@ in
 
   hardware = {
     enableAllFirmware = true;
+    amdgpu.initrd.enable = lib.mkForce false;
   };
 
   systemd.tmpfiles.rules = [

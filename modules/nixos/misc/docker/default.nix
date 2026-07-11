@@ -13,7 +13,7 @@
   config = lib.mkIf config.setup.misc.docker.enable {
     virtualisation.docker = {
       enable = true;
-      enableOnBoot = true;
+      enableOnBoot = false;
       rootless = {
         enable = true;
       };

@@ -114,7 +114,15 @@ in {
     };
 
     systemd.services = {
+      libvirtd = {
+        wantedBy = lib.mkForce [ ];
+        after = [ "graphical.target" ];
+      };
       libvirt-guests.wantedBy = lib.mkForce [ ];
+    };
+
+    systemd.targets = {
+      graphical.wants = [ "libvirtd.service" ];
     };
 
     networking.firewall.interfaces = {
