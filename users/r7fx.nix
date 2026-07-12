@@ -30,7 +30,7 @@ in
       ghostty = disabled;
       kitty = enabled;
       libreoffice = enabled;
-      looking-glass-client = enabled;
+      looking-glass-client = disabled;
       mediaplayer = enabled;
       moonlight = disabled;
       misc = enabled;
@@ -71,7 +71,7 @@ in
       niri = enabled;
       features = {
         noctalia-shell = enabled;
-        dankmaterialshell = enabled;
+        dankmaterialshell = disabled;
         quickshell = disabled;
       };
     };

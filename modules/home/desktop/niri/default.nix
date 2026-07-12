@@ -19,7 +19,7 @@
       cursor.enable = true;
       gtk.enable = true;
       wallpaper.enable = true;
-      dankmaterialshell.enable = true;
+      # dankmaterialshell.enable = true;
     };
 
     # services.polkit-gnome.enable = true;
@@ -29,9 +29,9 @@
         source = ./config/config.kdl;
       };
 
-      ".config/niri/dms-overrides.kdl" = {
-        source = ./config/dms-overrides.kdl;
-      };
+      # ".config/niri/dms-overrides.kdl" = {
+      #   source = ./config/dms-overrides.kdl;
+      # };
     };
 
     home.packages = with pkgs; [
