@@ -20,12 +20,12 @@
       lxappearance
       nwg-look
       btrfs-assistant
-      remmina
+      # remmina
       bluemail
 
       jetbrains.idea
 
-      kdePackages.kdenlive
+      # kdePackages.kdenlive
 
       dbeaver-bin
       bruno
@@ -38,8 +38,8 @@
 
       vicinae
 
-      gpu-screen-recorder
-      gpu-screen-recorder-gtk
+      # gpu-screen-recorder
+      # gpu-screen-recorder-gtk
 
       # dmidecode
 

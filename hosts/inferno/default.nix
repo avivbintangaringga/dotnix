@@ -93,7 +93,7 @@ in
         enable = false;
         turbo = true;
       };
-      cloudflare-warp = enabled;
+      cloudflare-warp = disabled;
       dankgreet = disabled;
       flatpak = enabled;
       gvfs = enabled;
