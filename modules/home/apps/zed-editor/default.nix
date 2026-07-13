@@ -60,6 +60,7 @@
         "kotlin"
         "less"
         "lua"
+        "luau"
         "make"
         "markdownlint"
         "material-icon-theme"
