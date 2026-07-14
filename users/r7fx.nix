@@ -22,7 +22,7 @@ in
       ayugram = enabled;
       bitwarden = disabled;
       discord = enabled;
-      dankcalendar = enabled;
+      dankcalendar = disabled;
       firefox = disabled;
       gaming = {
         all = enabled;
