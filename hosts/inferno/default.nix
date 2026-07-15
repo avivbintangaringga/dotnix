@@ -78,6 +78,7 @@ in
 
     misc = {
       appimage = enabled;
+      cpuid-fault-emulation = enabled;
       docker = enabled;
       gaming = enabled;
       nix-ld = enabled;
@@ -144,6 +145,8 @@ in
     kernelParams = [
       "nvidia-drm.modeset=1" 
       "8250.nr_uarts=0"
+
+      "clearcpuid=umip"
       # "amd_iommu=on"
       # "iommu=pt"
       # "vfio-pci.ids=10de:25a2,10de:2291"
