@@ -96,6 +96,11 @@
       url = "github:probeldev/niri-float-sticky";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    qtengine = {
+      url = "github:kossLAN/qtengine";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

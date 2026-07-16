@@ -60,7 +60,7 @@ hotkey-overlay {
 }
 
 environment {
-   QT_QPA_PLATFORMTHEME "qt6ct"
+   QT_QPA_PLATFORMTHEME "qtengine"
 }
 
 // Blur

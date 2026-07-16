@@ -62,6 +62,9 @@ in
       kde = disabled;
       mango = disabled;
       niri = enabled;
+      features = {
+        qt = enabled;
+      };
     };
 
     fonts = {
