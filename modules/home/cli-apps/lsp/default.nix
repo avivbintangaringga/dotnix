@@ -17,6 +17,9 @@
 
       kdePackages.qtdeclarative
       gopls
+      luau
+      luau-lsp
+      stylua
       # vscode-langservers-extracted
       typescript-language-server
       tailwindcss-language-server

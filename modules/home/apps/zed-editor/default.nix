@@ -199,6 +199,15 @@
             language_servers = [ "jdtls" ];
             formatter = "language_server";
           };
+
+          Luau = {
+            formatter = {
+              external = {
+                command = "stylua";
+                arguments = [ "-" ];
+              };
+            };
+          };
         };
 
         lsp = {
@@ -220,6 +229,14 @@
             settings = {
               includeLanguages = {
                 templ = "html";
+              };
+            };
+          };
+
+          luau-lsp = {
+            settings = {
+              completion = {
+                autocompleteEnd = true;
               };
             };
           };
