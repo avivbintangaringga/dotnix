@@ -18,6 +18,7 @@
     setup.desktop.features = {
       cursor.enable = true;
       gtk.enable = true;
+      qt.enable = true;
       wallpaper.enable = true;
       # dankmaterialshell.enable = true;
     };
