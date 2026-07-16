@@ -12,7 +12,8 @@
   config = lib.mkIf config.setup.desktop.features.gtk.enable {
     home.packages = with pkgs; [
       # papirus-icon-theme
-      # papirus-folders
+      papirus-folders
+      gtk3-x11
     ];
     
     gtk = {
@@ -46,10 +47,10 @@
         };
       };
       
-      # iconTheme = {
+      iconTheme = {
         # package = pkgs.papirus-icon-theme;
-        # name = "Papirus-Dark";
-      # };
+        name = "Papirus";
+      };
     };
   };
 }
