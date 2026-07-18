@@ -99,6 +99,7 @@ in
       };
       cloudflare-warp = enabled;
       dankgreet = disabled;
+      disable-cpu-boost = enabled;
       flatpak = enabled;
       gvfs = enabled;
       logind = enabled;
