@@ -200,7 +200,12 @@
             formatter = "language_server";
           };
 
+          Lua = {
+            hard_tabs = true;
+          };
+
           Luau = {
+            hard_tabs = true;
             formatter = {
               external = {
                 command = "stylua";
