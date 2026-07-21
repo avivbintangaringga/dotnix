@@ -83,6 +83,7 @@ in
       appimage = enabled;
       cpuid-fault-emulation = enabled;
       docker = enabled;
+      docs = disabled;
       gaming = enabled;
       nix-ld = enabled;
       plymouth = disabled;
