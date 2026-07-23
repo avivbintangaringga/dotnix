@@ -60,6 +60,7 @@
         "kotlin"
         "less"
         "lua"
+        "luau"
         "make"
         "markdownlint"
         "material-icon-theme"
@@ -198,6 +199,20 @@
             language_servers = [ "jdtls" ];
             formatter = "language_server";
           };
+
+          Lua = {
+            hard_tabs = true;
+          };
+
+          Luau = {
+            hard_tabs = true;
+            formatter = {
+              external = {
+                command = "stylua";
+                arguments = [ "-" ];
+              };
+            };
+          };
         };
 
         lsp = {
@@ -219,6 +234,14 @@
             settings = {
               includeLanguages = {
                 templ = "html";
+              };
+            };
+          };
+
+          luau-lsp = {
+            settings = {
+              completion = {
+                autocompleteEnd = true;
               };
             };
           };

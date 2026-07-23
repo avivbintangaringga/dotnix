@@ -5,16 +5,21 @@
   };
 
   config = lib.mkIf config.setup.cli-apps.zsh.enable {
+    # programs.starship = {
+    #   enable = true;
+
+    # };
+    
     # home.packages = with pkgs; [
     #   zsh-powerlevel10k     
     # ];
     
-    home.file = {
-      ".p10k.zsh" = {
-        source = ./p10k.zsh;
-        force = true;
-      };
-    };
+    # home.file = {
+    #   ".p10k.zsh" = {
+    #     source = ./p10k.zsh;
+    #     force = true;
+    #   };
+    # };
 
     programs.zsh = {
       enable = true;
@@ -23,37 +28,37 @@
       autosuggestion = {
         enable = true;
       };
+      autocd = true;
+      history.size = 100000;
 
-      history.size = 10000;
+    #   prezto = {
+    #     enable = true;
+    #     pmodules = [
+    #       "environment"
+    #       "terminal"
+    #       "editor"
+    #       "history"
+    #       "directory"
+    #       "spectrum"
+    #       "utility"
+    #       "completion"
+    #       "prompt"
+    #       # "git"
+    #       "docker"
+    #       "archive"
+    #       "autosuggestions"
+    #       "syntax-highlighting"
+    #     ];
+    #     prompt = {
+    #       theme = "powerlevel10k";
+    #     };
+    #   };
 
-      prezto = {
-        enable = true;
-        pmodules = [
-          "environment"
-          "terminal"
-          "editor"
-          "history"
-          "directory"
-          "spectrum"
-          "utility"
-          "completion"
-          "prompt"
-          # "git"
-          "docker"
-          "archive"
-          "autosuggestions"
-          "syntax-highlighting"
-        ];
-        prompt = {
-          theme = "powerlevel10k";
-        };
-      };
-
-      initContent = lib.mkBefore ''
-        # cat ~/.cache/wal/sequences
-        # source ~/.cache/wal/colors-tty.sh
-        source ~/.p10k.zsh
-      '';
+    #   initContent = lib.mkBefore ''
+    #     # cat ~/.cache/wal/sequences
+    #     # source ~/.cache/wal/colors-tty.sh
+    #     source ~/.p10k.zsh
+    #   '';
     };
   };
 }

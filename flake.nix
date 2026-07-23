@@ -54,7 +54,11 @@
     };
 
     noctalia-shell = {
-      url = "github:noctalia-dev/noctalia-shell";
+      url = "github:noctalia-dev/noctalia/cachix";
+    };
+
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -93,12 +97,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-    };
-
-    import-tree = {
-      url = "github:vic/import-tree";
+    qtengine = {
+      url = "github:kossLAN/qtengine";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

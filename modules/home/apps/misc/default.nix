@@ -20,26 +20,27 @@
       lxappearance
       nwg-look
       btrfs-assistant
-      remmina
+      # remmina
       bluemail
 
       jetbrains.idea
 
-      kdePackages.kdenlive
+      # kdePackages.kdenlive
 
       dbeaver-bin
       bruno
      
-      gemini-cli-bin
+      # gemini-cli-bin
       # chatbox
       ferdium
+      resources
 
       gimp
 
       vicinae
 
-      gpu-screen-recorder
-      gpu-screen-recorder-gtk
+      # gpu-screen-recorder
+      # gpu-screen-recorder-gtk
 
       # dmidecode
 

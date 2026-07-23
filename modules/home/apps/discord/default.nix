@@ -11,9 +11,9 @@
 
   config = lib.mkIf config.setup.apps.discord.enable {
     home.packages = with pkgs; [
-      discord
+      # discord
       # betterdiscordctl
-      # vesktop
+      vesktop
     ];
   };
 }

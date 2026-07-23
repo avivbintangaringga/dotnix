@@ -13,15 +13,15 @@
     environment.systemPackages = with pkgs; [
       nvtopPackages.nvidia
       nvtopPackages.amd
-      nvidia-container-toolkit
+      # nvidia-container-toolkit
     ];
 
     hardware = {
       graphics.enable = true;
 
-      nvidia-container-toolkit = {
-        enable = true;
-      };
+      # nvidia-container-toolkit = {
+      #   enable = true;
+      # };
 
       nvidia = {
         powerManagement = {

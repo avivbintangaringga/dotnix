@@ -22,7 +22,7 @@ in
       ayugram = enabled;
       bitwarden = disabled;
       discord = enabled;
-      dankcalendar = enabled;
+      dankcalendar = disabled;
       firefox = disabled;
       gaming = {
         all = enabled;
@@ -30,7 +30,7 @@ in
       ghostty = disabled;
       kitty = enabled;
       libreoffice = enabled;
-      looking-glass-client = enabled;
+      looking-glass-client = disabled;
       mediaplayer = enabled;
       moonlight = disabled;
       misc = enabled;
@@ -70,8 +70,8 @@ in
       mango = disabled;
       niri = enabled;
       features = {
-        noctalia-shell = disabled;
-        dankmaterialshell = enabled;
+        noctalia-shell = enabled;
+        dankmaterialshell = disabled;
         quickshell = disabled;
       };
     };
