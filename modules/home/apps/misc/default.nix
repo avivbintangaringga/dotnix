@@ -30,9 +30,10 @@
       dbeaver-bin
       bruno
      
-      gemini-cli-bin
+      # gemini-cli-bin
       # chatbox
       ferdium
+      resources
 
       gimp
 
