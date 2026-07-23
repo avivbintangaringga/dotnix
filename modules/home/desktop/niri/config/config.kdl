@@ -181,6 +181,7 @@ binds {
 
     // Functions
     // Mod+Slash repeat=false hotkey-overlay-title="Show keybinds" { spawn-sh "dms ipc keybinds toggle niri"; }
+    Mod+Slash repeat=false hotkey-overlay-title="Show keybinds" { spawn-sh "noctalia msg panel-toggle kenn/keybind-cheatsheet:cheatsheet"; }
     Mod+G repeat=false hotkey-overlay-title="Toggle sticky floating window" { spawn-sh "niri-float-sticky -ipc toggle_sticky"; }
     Mod+O repeat=false hotkey-overlay-title="Toggle overview" { toggle-overview; }
     Mod+Q repeat=false hotkey-overlay-title="Close window" { close-window; }
@@ -200,8 +201,8 @@ binds {
     // XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
     // XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     // XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "noctalia msg volume-up 2"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "noctalia msg volume-down 2"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "noctalia msg volume-up 3"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "noctalia msg volume-down 3"; }
     XF86AudioMute        allow-when-locked=true { spawn-sh "noctalia msg volume-mute"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "noctalia msg mic-mute"; }
     XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
