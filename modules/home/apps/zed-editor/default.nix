@@ -8,7 +8,7 @@
     # home.sessionVariables = {
       # "ZED_PREDICT_EDITS_URL" = "http://localhost:8765/predict_edits/v2";
     # };
-    
+
     programs.zed-editor = let
         theme = "Adaptify Darker";
         icon-theme = "Material Icon Theme";
@@ -110,7 +110,7 @@
         auto_update = false;
         colorize_brackets = true;
         disable_ai = false;
-        
+
         minimap = {
           show = "always";
           current_line_highlight = "all";
@@ -140,7 +140,7 @@
 
         inlay_hints = {
           enabled = false;
-          
+
         };
 
         project_panel = {
@@ -153,7 +153,7 @@
           "light" = theme;
         };
 
-        
+
         show_edit_predictions = true;
         vim_mode = true;
         cursor_blink = false;
@@ -162,7 +162,7 @@
         current_line_highlight = "gutter";
         show_wrap_guides = true;
         wrap_guides = [ 80 ];
-        relative_line_numbers = true;
+        relative_line_numbers = "wrapped";
         scrollbar = {
           axes = {
             horizontal = false;
@@ -247,7 +247,7 @@
           };
 
           # vscode-html-language-server = {
-          # 
+          #
           #   settings = {
           #     html = {
           #       format = {
