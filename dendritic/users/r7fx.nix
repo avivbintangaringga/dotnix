@@ -12,11 +12,5 @@
     ]) ++ (with den.aspects; [
       sl
     ]);
-
-    homeManager = { pkgs, ... }:{
-      home.packages = with pkgs; [
-        mihomo
-      ];
-    };
   };
 }

@@ -13,7 +13,6 @@ in
   imports = [
     ./../../modules/nixos/import.nix
     ./../../overlays/import.nix
-    inputs.hardware.nixosModules.asus-fa506ic
   ];
 
   system.replaceDependencies.replacements = [
@@ -116,110 +115,4 @@ in
     };
   };
 
-  boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
-    loader = {
-      systemd-boot = {
-        enable = true;
-      };
-      efi = {
-        canTouchEfiVariables = true;
-      };
-      timeout = 0;
-    };
-
-    initrd = {
-      systemd.enable = true;
-      compressor = "zstd";
-      kernelModules = [
-        "snd-seq"
-
-        # "vfio_pci"
-        # "vfio"
-        # "vfio_iommu_type1"
-
-        # "nvidia"
-        # "nvidia_modeset"
-        # "nvidia_uvm"
-        # "nvidia_drm"
-      ];
-
-    };
-
-    kernelParams = [
-      "nvidia-drm.modeset=1"
-      "8250.nr_uarts=0"
-
-      "clearcpuid=umip"
-      # "amd_iommu=on"
-      # "iommu=pt"
-      # "vfio-pci.ids=10de:25a2,10de:2291"
-    ];
-  };
-
-  security.sudo = {
-    enable = true;
-    extraRules = [
-      {
-        # For VFIO script
-        commands = [
-          {
-            command = "/run/current-system/sw/bin/systemctl";
-            options = [ "NOPASSWD" ];
-          }
-          {
-            command = "/run/current-system/sw/bin/rmmod";
-            options = [ "NOPASSWD" ];
-          }
-          {
-            command = "/run/current-system/sw/bin/modprobe";
-            options = [ "NOPASSWD" ];
-          }
-          {
-            command = "/run/current-system/sw/bin/virsh";
-            options = [ "NOPASSWD" ];
-          }
-          {
-            command = "/run/current-system/sw/bin/pkill";
-            options = [ "NOPASSWD" ];
-          }
-          {
-            command = "/run/current-system/sw/bin/efibootmgr";
-            options = [ "NOPASSWD" ];
-          }
-        ];
-        groups = [ "wheel" ];
-      }
-    ];
-  };
-
-  hardware = {
-    enableAllFirmware = true;
-    amdgpu.initrd.enable = lib.mkForce false;
-  };
-
-  systemd.tmpfiles.rules = [
-    "f /dev/shm/scream 0660 ${userdata.username} qemu-libvirtd -"
-    "f /dev/shm/looking-glass 0660 ${userdata.username} qemu-libvirtd -"
-  ];
-
-  systemd.services = {
-    NetworkManager-wait-online.enable = false;
-  };
-
-  networking = {
-    hostName = "inferno";
-  };
-
-  users.users.${userdata.username} = {
-    extraGroups = [ "networkmanager" ];
-  };
-
-  fileSystems."/media/DATA" = {
-    device = "/dev/disk/by-uuid/9EF2F582F2F55F49";
-    fsType = "ntfs-3g";
-    options = [ "defaults" ];
-  };
-
-  system.stateVersion = "24.11"; # Did you read the comment?
 }

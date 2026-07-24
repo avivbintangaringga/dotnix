@@ -29,7 +29,5 @@ let
 
 in
 {
-  imports = [
-    ./../common/import.nix
-  ] ++ getDefaultNix ./.;
+  imports = getDefaultNix ./.;
 }
