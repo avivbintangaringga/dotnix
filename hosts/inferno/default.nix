@@ -33,11 +33,6 @@ in
   # };
 
   setup = {
-    apps = {
-      steam = enabled;
-      winbox = enabled;
-    };
-
     cli-apps = {
       adb = enabled;
       archive-tools = enabled;

@@ -17,6 +17,8 @@
       sudo
       valent
       nautilus
+      steam
+      winbox
     ]);
 
     nixos = { pkgs, lib, ... }: {
