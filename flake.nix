@@ -4,6 +4,9 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
+    den.url = "github:denful/den";
+    import-tree.url = "github:denful/import-tree";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -125,12 +128,20 @@
           inherit email;
         };
       };
+      den = (inputs.nixpkgs.lib.evalModules {
+        modules = [ (inputs.import-tree ./dendritic) ];
+        specialArgs.inputs = inputs;
+      }).config;
+
+      inherit (den.den.hosts.x86_64-linux) inferno;
+      inherit (den.den.homes.x86_64-linux) r7fx;
     in
     {
       nixosConfigurations = {
         inferno = lib.nixosSystem {
           modules = [
             ./hosts/inferno
+            inferno.mainModule
           ];
           specialArgs = {
             inherit inputs;
@@ -146,6 +157,7 @@
           inherit pkgs;
           modules = [
             ./users/${userdata.username}.nix
+            r7fx.mainModule
           ];
           extraSpecialArgs = {
             inherit inputs;

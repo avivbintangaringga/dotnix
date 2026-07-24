@@ -11,7 +11,6 @@ let
 in
 {
   imports = [
-    ./hardware-configuration.nix
     ./../../modules/nixos/import.nix
     ./../../overlays/import.nix
     inputs.hardware.nixosModules.asus-fa506ic
@@ -148,7 +147,7 @@ in
     };
 
     kernelParams = [
-      "nvidia-drm.modeset=1" 
+      "nvidia-drm.modeset=1"
       "8250.nr_uarts=0"
 
       "clearcpuid=umip"
