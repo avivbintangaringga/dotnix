@@ -15,6 +15,12 @@
       hostname
     ]) ++ (with den.aspects; [
       sudo
+
+      # Hardware
+      bluetooth
+      nvidia
+
+
     ]);
 
     nixos = { pkgs, lib, ... }: {

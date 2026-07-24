@@ -64,11 +64,6 @@ in
       nerd = enabled;
     };
 
-    hardware = {
-      bluetooth = enabled;
-      nvidia = enabled;
-    };
-
     misc = {
       appimage = enabled;
       cpuid-fault-emulation = enabled;
