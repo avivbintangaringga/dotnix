@@ -15,8 +15,8 @@
       hostname
     ]) ++ (with den.aspects; [
       sudo
+      valent
     ]);
-
 
     nixos = { pkgs, lib, ... }: {
       imports = [

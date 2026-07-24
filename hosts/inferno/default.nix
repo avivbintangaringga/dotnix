@@ -34,11 +34,9 @@ in
 
   setup = {
     apps = {
-      kdeconnect = disabled;
       nautilus = enabled;
       steam = enabled;
       winbox = enabled;
-      valent = enabled;
     };
 
     cli-apps = {
