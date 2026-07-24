@@ -14,6 +14,7 @@
       nautilus
       steam
       winbox
+      cloudflare-warp
     ]);
   };
 }

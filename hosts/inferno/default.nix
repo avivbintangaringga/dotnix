@@ -83,7 +83,6 @@ in
         enable = false;
         turbo = true;
       };
-      cloudflare-warp = enabled;
       dankgreet = disabled;
       disable-cpu-boost = enabled;
       flatpak = enabled;
