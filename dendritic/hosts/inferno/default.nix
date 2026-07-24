@@ -16,6 +16,7 @@
     ]) ++ (with den.aspects; [
       sudo
       valent
+      nautilus
     ]);
 
     nixos = { pkgs, lib, ... }: {
