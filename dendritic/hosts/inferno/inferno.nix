@@ -15,10 +15,6 @@
       hostname
     ]) ++ (with den.aspects; [
       sudo
-      valent
-      nautilus
-      steam
-      winbox
     ]);
 
     nixos = { pkgs, lib, ... }: {

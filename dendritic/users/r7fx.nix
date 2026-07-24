@@ -10,7 +10,10 @@
       define-user
       primary-user
     ]) ++ (with den.aspects; [
-      sl
+      valent
+      nautilus
+      steam
+      winbox
     ]);
   };
 }
