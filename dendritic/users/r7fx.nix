@@ -3,7 +3,13 @@
   ...
 }:
 {
-  den.homes.x86_64-linux.r7fx = { };
+  den.homes.x86_64-linux.r7fx = {
+    fullName = "R7FX";
+    git = {
+      userName = "avivbintangaringga";
+      email = "avivbintangaringga90@gmail.com";
+    };
+  };
 
   den.aspects.r7fx = {
     includes = (with den.batteries; [

@@ -14,6 +14,20 @@
       nh
     ];
 
+    homeManager = { pkgs, ...}: {
+      home.packages = with pkgs; [
+        rclone
+        wev
+        cava
+
+        lsof
+        gnumake
+
+        tailwindcss_4
+        watchman
+      ];
+    };
+
     nixos = { pkgs, ...}: {
       environment.systemPackages = with pkgs; [
         fastfetch
