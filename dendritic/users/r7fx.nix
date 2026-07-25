@@ -19,6 +19,7 @@
       vfio
       docker
       lsfg-vk
+      flatpak
     ]);
   };
 }

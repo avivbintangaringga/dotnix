@@ -83,7 +83,6 @@ in
       };
       dankgreet = disabled;
       disable-cpu-boost = enabled;
-      flatpak = enabled;
       gvfs = enabled;
       logind = enabled;
       nfs = disabled;
