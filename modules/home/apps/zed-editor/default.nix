@@ -109,7 +109,26 @@
 
         auto_update = false;
         colorize_brackets = true;
+
         disable_ai = false;
+        show_edit_predictions = true;
+        edit_predictions = {
+          mode = "eager";
+        };
+        language_models = {
+          openai_compatible = {
+            "LLM7" = {
+              api_url = "https://api.llm7.io/v1";
+              available_models = [
+                {
+                  name = "codestral-latest";
+                  display_name = "Codestral Latest (LLM7)";
+                  max_tokens = 1000000;
+                }
+              ];
+            };
+          };
+        };
 
         minimap = {
           show = "always";
@@ -153,8 +172,6 @@
           "light" = theme;
         };
 
-
-        show_edit_predictions = true;
         vim_mode = true;
         cursor_blink = false;
         ui_font_size = 15;
