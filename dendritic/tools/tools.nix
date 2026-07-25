@@ -8,6 +8,7 @@
     includes = with den.aspects; [
       adb
       archive
+      git
       monitoring
     ];
   };

@@ -11,6 +11,16 @@
     nixos = {
       programs.zsh = {
         enable = true;
+        enableCompletion = true;
+        enableBashCompletion = true;
+        histSize = 100000;
+        autosuggestions = {
+          enable = true;
+        };
+        syntaxHighlighting = {
+          enable = true;
+        };
+
         shellAliases = {
           edit = "hx /home/${user.userName}/dotnix";
           update = "nh os switch /home/${user.userName}/dotnix --no-nom --ask --show-trace";
@@ -46,6 +56,9 @@
 
       programs.starship = {
         enable = true;
+        presets = [
+          "tokyo-night"
+        ];
       };
     };
   };

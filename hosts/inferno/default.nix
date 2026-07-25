@@ -16,14 +16,12 @@ in
 
   setup = {
     cli-apps = {
-      git = enabled;
       helix = enabled;
       home-manager = enabled;
       misc = enabled;
       nh = enabled;
       nvim = enabled;
       nix-alien = disabled;
-      zsh = enabled;
     };
   };
 }
