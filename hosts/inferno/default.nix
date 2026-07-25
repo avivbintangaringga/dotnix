@@ -16,13 +16,10 @@ in
 
   setup = {
     cli-apps = {
-      adb = enabled;
-      archive-tools = enabled;
       git = enabled;
       helix = enabled;
       home-manager = enabled;
       misc = enabled;
-      monitoring = enabled;
       nh = enabled;
       nvim = enabled;
       nix-alien = disabled;

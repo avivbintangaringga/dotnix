@@ -25,6 +25,7 @@
 
       desktop
       gaming
+      tools
 
       docker
       kvm
