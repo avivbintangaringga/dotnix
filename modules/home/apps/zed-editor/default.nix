@@ -113,7 +113,7 @@
         disable_ai = false;
         show_edit_predictions = true;
         edit_predictions = {
-          mode = "eager";
+          mode = "subtle";
         };
         language_models = {
           openai_compatible = {
