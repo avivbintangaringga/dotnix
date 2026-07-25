@@ -65,14 +65,6 @@ in
       lsp = enabled;
     };
 
-    desktop = {
-      hyprland = disabled;
-      mango = disabled;
-      features = {
-        dankmaterialshell = disabled;
-      };
-    };
-
     services = {
       blueman = enabled;
       cliphist = enabled;

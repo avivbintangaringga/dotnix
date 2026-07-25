@@ -15,23 +15,6 @@ in
     ./../../overlays/import.nix
   ];
 
-  system.replaceDependencies.replacements = [
-    # {
-    #   oldDependency = pkgs.mesa;
-    #   newDependency = pkgs.mesa-25-1-7;
-    # }
-  ];
-
-  # services = {
-  #    xserver = {
-  #     enable = true;
-  #     videoDrivers = [
-  #       "amdgpu"
-  #       "nvidia"
-  #     ];
-  #   };
-  # };
-
   setup = {
     cli-apps = {
       adb = enabled;
@@ -45,12 +28,6 @@ in
       nvim = enabled;
       nix-alien = disabled;
       zsh = enabled;
-    };
-
-    desktop = {
-      hyprland = disabled;
-      kde = disabled;
-      mango = disabled;
     };
 
     misc = {
