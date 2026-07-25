@@ -1,0 +1,134 @@
+{
+  den,
+  ...
+}:
+{
+  den.aspects.kvm = { user, ... }: {
+    includes = with den.aspects; [
+      vfio
+    ];
+
+    nixos = { lib, pkgs, ... }:
+    let
+      qemupkg = pkgs.qemu_kvm;
+    in
+    {
+      environment.systemPackages = with pkgs; [
+        virt-manager
+        virt-viewer
+        spice
+        spice-gtk
+        spice-protocol
+        adwaita-icon-theme
+        virtiofsd
+      ];
+
+      virtualisation = {
+        libvirtd = {
+          enable = true;
+          qemu = {
+            package = qemupkg;
+            runAsRoot = true;
+            swtpm.enable = true;
+            vhostUserPackages = with pkgs; [
+              virtiofsd
+            ];
+            verbatimConfig = ''
+              cgroup_device_acl = [
+                "/dev/null",
+                "/dev/full",
+                "/dev/zero",
+                "/dev/random",
+                "/dev/urandom",
+                "/dev/ptmx",
+                "/dev/kvm",
+                "/dev/nvidiactl",
+                "/dev/nvidia0",
+                "/dev/nvidia-modeset",
+                "/dev/dri/renderD128"
+              ]
+            '';
+          };
+          onBoot = "ignore";
+          onShutdown = "shutdown";
+          hooks = {
+            qemu = {
+              "gpuswitch" = pkgs.writeShellScript "gpuswitch-hook" ''
+                readonly GUEST_NAME="$1"
+                readonly HOOK_NAME="$2"
+                readonly STATE_NAME="$3"
+
+                start_hook() {
+                  # systemctl --user --machine=${user.userName}@ stop swaync  # TEMPORARY FIX
+                  # systemctl --user --machine=${user.userName}@ stop swayosd # TEMPORARY FIX
+                  # pkill lact
+                  systemctl stop lactd
+                  systemctl stop nvidia-powerd
+                  rmmod nvidia_drm
+                  rmmod nvidia_uvm
+                  rmmod nvidia_modeset
+                  rmmod nvidia
+                  modprobe -i vfio_pci vfio_pci_core vfio_iommu_type1 vfio
+                  /run/current-system/sw/bin/virsh nodedev-detach pci_0000_01_00_0
+                  # systemctl --user --machine=${user.userName}@ start swaync  # TEMPORARY FIX
+                  # systemctl --user --machine=${user.userName}@ start swayosd # TEMPORARY FIX
+                }
+
+                revert_hook() {
+                  /run/current-system/sw/bin/virsh nodedev-reattach pci_0000_01_00_0
+                  rmmod vfio_pci vfio_pci_core vfio_iommu_type1 vfio
+                  modprobe -i nvidia
+                  modprobe -i nvidia_uvm
+                  modprobe -i nvidia_modeset
+                  modprobe -i nvidia_drm
+                  systemctl restart nvidia-powerd
+                  systemctl restart lactd
+                }
+
+                if [[ "$HOOK_NAME" == "prepare" && "$STATE_NAME" == "begin" ]]; then
+                  if [[ "$GUEST_NAME" == "win11" || "$GUEST_NAME" == "win10" ]]
+                  then
+                    start_hook
+                  fi
+                elif [[ "$HOOK_NAME" == "release" && "$STATE_NAME" == "end" ]]; then
+                  if [[ "$GUEST_NAME" == "win11" || "$GUEST_NAME" == "win10" ]]
+                  then
+                    revert_hook
+                  fi
+                fi
+              '';
+            };
+          };
+        };
+        spiceUSBRedirection.enable = true;
+      };
+
+      systemd.services = {
+        libvirtd = {
+          wantedBy = lib.mkForce [ ];
+          after = [ "graphical.target" ];
+        };
+        libvirt-guests.wantedBy = lib.mkForce [ ];
+      };
+
+      systemd.targets = {
+        graphical.wants = [ "libvirtd.service" ];
+      };
+
+      networking.firewall.interfaces = {
+        "virbr*" = {
+          allowedTCPPorts = [ 53 ];
+          allowedUDPPorts = [ 53 67 547 ];
+        };
+      };
+
+      services = {
+        spice-vdagentd.enable = true;
+      };
+
+      users.users.${user.userName} = {
+        extraGroups = [ "libvirtd" ];
+      };
+    };
+  };
+}

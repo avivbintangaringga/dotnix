@@ -16,8 +16,6 @@
       winbox
       cloudflare-warp
 
-      vfio
-      docker
       lsfg-vk
       flatpak
 
@@ -27,6 +25,8 @@
 
       desktop
 
+      docker
+      kvm
       waydroid
     ]);
 

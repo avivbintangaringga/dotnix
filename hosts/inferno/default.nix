@@ -31,7 +31,6 @@ in
 
     misc = {
       gaming = enabled;
-      virt-manager = enabled;
     };
   };
 
