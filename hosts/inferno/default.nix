@@ -65,7 +65,6 @@ in
     };
 
     misc = {
-      appimage = enabled;
       cpuid-fault-emulation = enabled;
       docs = disabled;
       gaming = enabled;
@@ -77,9 +76,6 @@ in
     };
 
     services = {
-      dankgreet = disabled;
-      disable-cpu-boost = enabled;
-      gvfs = enabled;
       logind = enabled;
       nfs = disabled;
       noctalia-greeter = enabled;

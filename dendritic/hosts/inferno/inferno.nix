@@ -20,8 +20,10 @@
       # Hardware
       bluetooth
       nvidia
+      disable-cpu-boost
 
       appimage
+      gvfs
     ]);
 
     nixos = { pkgs, lib, ... }: {
