@@ -10,6 +10,7 @@
       boot
       networkmanager
       timezone
+      fonts
     ];
   };
 }

@@ -33,7 +33,7 @@
 
     nixos = { pkgs, lib, ... }: {
       imports = [
-        ./_hardware-configuration.nix
+        ./_hardware.nix
         inputs.hardware.nixosModules.asus-fa506ic
       ];
 

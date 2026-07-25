@@ -57,13 +57,6 @@ in
       };
     };
 
-    fonts = {
-      basic = enabled;
-      ms = enabled;
-      apple = disabled;
-      nerd = enabled;
-    };
-
     misc = {
       cpuid-fault-emulation = enabled;
       docs = disabled;
