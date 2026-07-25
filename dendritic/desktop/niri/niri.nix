@@ -13,11 +13,14 @@
         inputs.niri.homeModules.niri
       ];
 
+      nixpkgs.overlays = [
+        inputs.niri.overlays.niri
+      ];
+
       home.file = {
         ".config/niri/config.kdl" = {
           source = ./config.kdl;
         };
-
       };
 
       programs.niri = {
@@ -34,6 +37,10 @@
     in {
       imports = [
         inputs.niri.nixosModules.niri
+      ];
+
+      nixpkgs.overlays = [
+        inputs.niri.overlays.niri
       ];
 
       environment.systemPackages = (with pkgs; [

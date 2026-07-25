@@ -12,7 +12,6 @@ in
   imports = [
     ./common.nix
     ./../modules/home/import.nix
-    ./../overlays/import.nix
   ];
 
   setup = {

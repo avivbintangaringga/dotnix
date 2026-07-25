@@ -12,7 +12,6 @@ in
 {
   imports = [
     ./../../modules/nixos/import.nix
-    ./../../overlays/import.nix
   ];
 
   setup = {
