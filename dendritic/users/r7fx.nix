@@ -26,6 +26,7 @@
       desktop
       gaming
       tools
+      editors.minimal
 
       docker
       kvm

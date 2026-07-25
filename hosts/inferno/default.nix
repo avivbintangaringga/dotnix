@@ -13,12 +13,4 @@ in
   imports = [
     ./../../modules/nixos/import.nix
   ];
-
-  setup = {
-    cli-apps = {
-      helix = enabled;
-      nvim = enabled;
-      nix-alien = disabled;
-    };
-  };
 }

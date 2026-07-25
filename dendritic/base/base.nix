@@ -13,7 +13,6 @@
       networkmanager
       timezone
       fonts
-      nix-ld
     ];
   };
 }

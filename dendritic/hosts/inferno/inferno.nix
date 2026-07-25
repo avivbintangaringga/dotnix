@@ -24,6 +24,8 @@
       cpuid-fault-emulation
 
       appimage
+      nix-ld
+      # nix-alien
       gvfs
       logind
       pipewire
