@@ -11,5 +11,21 @@
       git
       monitoring
     ];
+
+    nixos = { pkgs, ...}: {
+      environment.systemPackages = with pkgs; [
+        fastfetch
+        wget
+        curl
+        killall
+        tree
+        xxd
+        usbutils
+        inetutils
+        vlan
+        nfs-utils
+        efibootmgr
+      ];
+    };
   };
 }

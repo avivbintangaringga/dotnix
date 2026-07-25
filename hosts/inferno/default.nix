@@ -18,7 +18,6 @@ in
     cli-apps = {
       helix = enabled;
       home-manager = enabled;
-      misc = enabled;
       nh = enabled;
       nvim = enabled;
       nix-alien = disabled;
