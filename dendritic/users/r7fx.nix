@@ -31,6 +31,9 @@
       docker
       kvm
       waydroid
+
+      cliphist
+      playerctld
     ]);
 
     nixos = { user, ... }: {

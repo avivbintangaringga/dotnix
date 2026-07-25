@@ -1,5 +1,11 @@
 {
   den.aspects.kdeconnect = {
+    homeManager = {
+      services.kdeconnect = {
+        enable = true;
+      };
+    };
+
     nixos = {
       programs.kdeconnect = {
         enable = true;

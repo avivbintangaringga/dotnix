@@ -63,13 +63,6 @@ in
       zsh = enabled;
       lsp = enabled;
     };
-
-    services = {
-      blueman = enabled;
-      cliphist = enabled;
-      kdeconnect = disabled;
-      playerctld = enabled;
-    };
   };
 
   home = {
