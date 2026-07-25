@@ -74,12 +74,6 @@ in
       virt-manager = enabled;
       vmware = disabled;
     };
-
-    services = {
-      samba = disabled;
-      tuigreet = disabled;
-      upower = enabled;
-    };
   };
 
 }

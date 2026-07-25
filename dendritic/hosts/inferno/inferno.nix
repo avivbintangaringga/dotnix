@@ -28,6 +28,7 @@
       pipewire
       printing
       power-profiles-daemon
+      upower
     ]);
 
     nixos = { pkgs, lib, ... }: {
