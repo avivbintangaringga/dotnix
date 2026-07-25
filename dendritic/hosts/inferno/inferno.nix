@@ -10,7 +10,7 @@
     users.r7fx = {};
   };
 
-  den.aspects.inferno = { host, ... }: {
+  den.aspects.inferno = {
     includes = (with den.batteries; [
       hostname
     ]) ++ (with den.aspects; [
@@ -20,7 +20,7 @@
       bluetooth
       nvidia
 
-
+      appimage
     ]);
 
     nixos = { pkgs, lib, ... }: {
@@ -69,12 +69,6 @@
           # "vfio-pci.ids=10de:25a2,10de:2291"
         ];
       };
-
-      # TODO: change r7fx to dynamic
-      systemd.tmpfiles.rules = [
-        "f /dev/shm/scream 0660 r7fx qemu-libvirtd -"
-        "f /dev/shm/looking-glass 0660 r7fx qemu-libvirtd -"
-      ];
 
       hardware = {
         enableAllFirmware = true;

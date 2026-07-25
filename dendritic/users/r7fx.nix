@@ -15,6 +15,9 @@
       steam
       winbox
       cloudflare-warp
+
+      vfio
+      docker
     ]);
   };
 }
