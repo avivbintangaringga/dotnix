@@ -17,8 +17,6 @@ in
   setup = {
     cli-apps = {
       helix = enabled;
-      home-manager = enabled;
-      nh = enabled;
       nvim = enabled;
       nix-alien = disabled;
     };

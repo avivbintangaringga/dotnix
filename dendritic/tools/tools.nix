@@ -9,7 +9,9 @@
       adb
       archive
       git
+      home-manager
       monitoring
+      nh
     ];
 
     nixos = { pkgs, ...}: {
