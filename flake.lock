@@ -749,6 +749,25 @@
         "type": "github"
       }
     },
+    "noctalia": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1784944609,
+        "narHash": "sha256-+TlclUP7Q2ylQ8Uh9M35U1ftuGdp++/QfnX9I3V3VeI=",
+        "owner": "noctalia-dev",
+        "repo": "noctalia",
+        "rev": "8fc7fac1fd637f0027ce1b3cc9544d053cfd8f2c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "ref": "cachix",
+        "repo": "noctalia",
+        "type": "github"
+      }
+    },
     "noctalia-greeter": {
       "inputs": {
         "nixpkgs": [
@@ -766,25 +785,6 @@
       "original": {
         "owner": "noctalia-dev",
         "repo": "noctalia-greeter",
-        "type": "github"
-      }
-    },
-    "noctalia-shell": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_3"
-      },
-      "locked": {
-        "lastModified": 1784898990,
-        "narHash": "sha256-9zYefJeiqtoUaV46gBjUDpEBSS0GRHmJPut14gqTRuo=",
-        "owner": "noctalia-dev",
-        "repo": "noctalia",
-        "rev": "653866426d71ba4a66003b15f2395495018a9a40",
-        "type": "github"
-      },
-      "original": {
-        "owner": "noctalia-dev",
-        "ref": "cachix",
-        "repo": "noctalia",
         "type": "github"
       }
     },
@@ -883,8 +883,8 @@
         "niri-float-sticky": "niri-float-sticky",
         "nix-alien": "nix-alien",
         "nixpkgs": "nixpkgs_2",
+        "noctalia": "noctalia",
         "noctalia-greeter": "noctalia-greeter",
-        "noctalia-shell": "noctalia-shell",
         "nvix": "nvix",
         "qtengine": "qtengine",
         "quickshell": "quickshell",

@@ -7,7 +7,6 @@
 }:
 {
   imports = [
-    inputs.noctalia-shell.homeModules.default
   ];
 
   options = {
@@ -21,9 +20,5 @@
     #   kdePackages.qt6ct
     # ];
 
-    programs.noctalia = {
-      enable = true;
-    #   settings = { };
-    };
   };
 }

@@ -20,6 +20,8 @@
       docker
       lsfg-vk
       flatpak
+
+      noctalia
     ]);
   };
 }
