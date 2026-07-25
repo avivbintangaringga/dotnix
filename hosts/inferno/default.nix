@@ -77,10 +77,6 @@ in
     };
 
     services = {
-      auto-cpufreq = {
-        enable = false;
-        turbo = true;
-      };
       dankgreet = disabled;
       disable-cpu-boost = enabled;
       gvfs = enabled;
