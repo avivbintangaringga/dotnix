@@ -21,6 +21,7 @@
       bluetooth
       nvidia
       disable-cpu-boost
+      cpuid-fault-emulation
 
       appimage
       gvfs

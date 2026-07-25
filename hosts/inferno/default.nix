@@ -31,14 +31,11 @@ in
     };
 
     misc = {
-      cpuid-fault-emulation = enabled;
-      docs = disabled;
       gaming = enabled;
       nix-ld = enabled;
       plymouth = disabled;
       waydroid = enabled;
       virt-manager = enabled;
-      vmware = disabled;
     };
   };
 
