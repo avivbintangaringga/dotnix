@@ -28,10 +28,5 @@ in
       nix-alien = disabled;
       zsh = enabled;
     };
-
-    misc = {
-      gaming = enabled;
-    };
   };
-
 }

@@ -24,6 +24,7 @@
       scripts.vm
 
       desktop
+      gaming
 
       docker
       kvm
