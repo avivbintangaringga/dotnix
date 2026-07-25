@@ -31,9 +31,6 @@ in
 
     misc = {
       gaming = enabled;
-      nix-ld = enabled;
-      plymouth = disabled;
-      waydroid = enabled;
       virt-manager = enabled;
     };
   };

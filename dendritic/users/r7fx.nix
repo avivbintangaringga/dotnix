@@ -26,6 +26,8 @@
       scripts.vm
 
       desktop
+
+      waydroid
     ]);
 
     nixos = { user, ... }: {

@@ -3,6 +3,7 @@
   ...
 }:
 {
+  # TODO: SPLIT
   den.aspects.base = {
     includes = with den.aspects; [
       flakes
@@ -12,6 +13,7 @@
       networkmanager
       timezone
       fonts
+      nix-ld
     ];
   };
 }
