@@ -51,7 +51,6 @@ in
 
     cli-apps = {
       bun = enabled;
-      git = enabled;
       go = enabled;
       helix = enabled;
       mise = enabled;
