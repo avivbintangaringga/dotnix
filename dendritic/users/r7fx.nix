@@ -18,6 +18,7 @@
 
       vfio
       docker
+      lsfg-vk
     ]);
   };
 }

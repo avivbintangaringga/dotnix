@@ -86,7 +86,6 @@ in
       flatpak = enabled;
       gvfs = enabled;
       logind = enabled;
-      lsfg-vk = enabled;
       nfs = disabled;
       noctalia-greeter = enabled;
       ollama = disabled;
