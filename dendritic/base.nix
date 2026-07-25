@@ -9,6 +9,7 @@
       accounts-daemon
       boot
       networkmanager
+      timezone
     ];
   };
 }

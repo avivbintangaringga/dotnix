@@ -21,9 +21,14 @@
       lsfg-vk
       flatpak
 
-      noctalia
-
       zsh
+      noctalia
     ]);
+
+    nixos = { user, ... }: {
+      users.users.${user.userName} = {
+        initialPassword = "123";
+      };
+    };
   };
 }

@@ -3,8 +3,8 @@
   ...
 }:
 {
-  den.aspects.noctalia-greeter = {
-    nixos = { user, ... }: {
+  den.aspects.noctalia-greeter = { user, ... }: {
+    nixos = {
       imports = [
         inputs.noctalia-greeter.nixosModules.default
       ];
