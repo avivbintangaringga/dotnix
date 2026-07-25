@@ -24,6 +24,10 @@
 
       appimage
       gvfs
+      logind
+      pipewire
+      printing
+      power-profiles-daemon
     ]);
 
     nixos = { pkgs, lib, ... }: {

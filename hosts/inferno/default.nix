@@ -76,12 +76,6 @@ in
     };
 
     services = {
-      logind = enabled;
-      nfs = disabled;
-      ollama = disabled;
-      pipewire = enabled;
-      power-profiles-daemon = enabled;
-      printing = enabled;
       samba = disabled;
       tuigreet = disabled;
       upower = enabled;
