@@ -77,7 +77,6 @@ in
     };
 
     services = {
-      accounts-daemon = enabled;
       auto-cpufreq = {
         enable = false;
         turbo = true;

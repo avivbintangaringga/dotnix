@@ -14,6 +14,7 @@
     includes = (with den.batteries; [
       hostname
     ]) ++ (with den.aspects; [
+      base
       sudo
 
       # Hardware

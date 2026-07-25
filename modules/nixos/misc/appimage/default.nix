@@ -9,9 +9,5 @@
   };
 
   config = lib.mkIf config.setup.misc.appimage.enable {
-    programs.appimage = {
-      enable = true;
-      binfmt = true;
-    };
   };
 }
