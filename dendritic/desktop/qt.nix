@@ -1,6 +1,10 @@
 {
+  inputs,
+  ...
+}:
+{
   den.aspects.qt = {
-    nixos = { inputs, pkgs, user, ... }: {
+    nixos = { pkgs, user, ... }: {
       imports = [
         inputs.qtengine.nixosModules.default
       ];

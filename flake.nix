@@ -126,29 +126,15 @@
       den = (inputs.nixpkgs.lib.evalModules {
         modules = [ (inputs.import-tree ./dendritic) ];
         specialArgs = {
-          inherit inputs;
+          inputs = inputs;
           flake-root = ./.;
         };
       }).config;
 
-      inherit (den.den.hosts.x86_64-linux) inferno;
       inherit (den.den.homes.x86_64-linux) r7fx;
     in
     {
-      nixosConfigurations = {
-        inferno = lib.nixosSystem {
-          modules = [
-            ./hosts/inferno
-            inferno.mainModule
-          ];
-          specialArgs = {
-            inherit inputs;
-            inherit userdata;
-            inherit mylib;
-            inherit myPkgs;
-          };
-        };
-      };
+      inherit (den.flake) nixosConfigurations;
 
       homeConfigurations = {
         ${userdata.username} = lib.homeManagerConfiguration {

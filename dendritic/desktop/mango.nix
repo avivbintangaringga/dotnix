@@ -1,5 +1,6 @@
 {
   den,
+  inputs,
   ...
 }:
 {
@@ -8,7 +9,7 @@
       dankmaterialshell
     ];
 
-    homeManager = { inputs, ... }: {
+    homeManager = {
       imports = [
         inputs.mango.hmModules.mango
       ];
@@ -102,7 +103,7 @@
       };
     };
 
-    nixos = { inputs, ... }: {
+    nixos = {
       imports = [
         inputs.mango.nixosModules.mango
       ];

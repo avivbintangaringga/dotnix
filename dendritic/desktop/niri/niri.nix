@@ -1,5 +1,6 @@
 {
   den,
+  inputs,
   ...
 }:
 {
@@ -8,7 +9,7 @@
       noctalia
     ];
 
-    homeManager = { inputs, pkgs, ... }: {
+    homeManager = { pkgs, ... }: {
       imports = [
         inputs.niri.homeModules.niri
       ];
@@ -31,7 +32,7 @@
       };
     };
 
-    nixos = { inputs, pkgs, ... }: let
+    nixos = { pkgs, ... }: let
       system = pkgs.stdenv.hostPlatform.system;
       niri-float-sticky-pkgs = inputs.niri-float-sticky.packages.${system};
     in {

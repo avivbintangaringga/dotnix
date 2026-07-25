@@ -1,5 +1,6 @@
 {
   den,
+  inputs,
   ...
 }:
 {
@@ -8,7 +9,7 @@
       nix-ld
     ];
 
-    nixos = { inputs, pkgs, ... }:
+    nixos = { pkgs, ... }:
     let
       alien-pkgs = inputs.nix-alien.packages.${pkgs.stdenv.hostPlatform.system};
     in

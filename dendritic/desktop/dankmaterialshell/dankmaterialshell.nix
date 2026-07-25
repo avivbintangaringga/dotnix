@@ -1,5 +1,6 @@
 {
   den,
+  inputs,
   ...
 }:
 {
@@ -8,7 +9,7 @@
       dankgreet
     ];
 
-    homeManager = { inputs, pkgs, ... }: {
+    homeManager = { pkgs, ... }: {
       imports = [
         inputs.dankmaterialshell.homeModules.dank-material-shell
       ];
