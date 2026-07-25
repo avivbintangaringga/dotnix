@@ -78,7 +78,6 @@ in
     services = {
       logind = enabled;
       nfs = disabled;
-      noctalia-greeter = enabled;
       ollama = disabled;
       pipewire = enabled;
       power-profiles-daemon = enabled;
