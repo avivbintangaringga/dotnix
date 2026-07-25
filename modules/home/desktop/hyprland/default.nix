@@ -16,7 +16,6 @@
 
     setup = {
       desktop.features = {
-        cursor.enable = lib.mkDefault true;
         # gtk.enable = lib.mkDefault true;
         hyprpolkitagent.enable = lib.mkDefault true;
         # rofi.enable = lib.mkDefault true;

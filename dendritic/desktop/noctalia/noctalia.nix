@@ -17,6 +17,20 @@
       programs.noctalia = {
         enable = true;
       };
+
+      gtk = {
+        gtk3 = {
+          extraCss = ''
+              @import url("noctalia.css");
+            '';
+        };
+
+        gtk4 = {
+          extraCss = ''
+              @import url("noctalia.css");
+            '';
+        };
+      };
     };
 
     nixos = {

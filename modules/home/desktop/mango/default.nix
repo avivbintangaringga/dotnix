@@ -16,11 +16,11 @@ in {
   };
 
   config = lib.mkIf config.setup.desktop.mango.enable {
-    setup.desktop.features = {
-      cursor.enable = true;
-      gtk.enable = true;
-      wallpaper.enable = true;
-    };
+    # setup.desktop.features = {
+    #   cursor.enable = true;
+    #   gtk.enable = true;
+    #   wallpaper.enable = true;
+    # };
 
     wayland.windowManager.mango = {
       enable = true;
@@ -70,7 +70,7 @@ in {
           # Trackpad settings
           trackpad_natural_scrolling=1
           disable_while_typing=1
-          
+
 
           blur=1
           blur_layer=0
@@ -90,13 +90,13 @@ in {
           layer_animation_type_open=fade
           layer_animatoin_type_close=fade
 
-          
+
           hotarea_size=10
           enable_hotarea=1
           overviewgappi=8
           overviewgappo=16
-          
-          
+
+
           # Scroller settings
           edge_scroller_pointer_focus=0
         '';

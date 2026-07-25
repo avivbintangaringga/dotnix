@@ -68,10 +68,8 @@ in
     desktop = {
       hyprland = disabled;
       mango = disabled;
-      niri = enabled;
       features = {
         dankmaterialshell = disabled;
-        quickshell = disabled;
       };
     };
 

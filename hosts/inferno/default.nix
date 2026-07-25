@@ -51,10 +51,6 @@ in
       hyprland = disabled;
       kde = disabled;
       mango = disabled;
-      niri = enabled;
-      features = {
-        qt = enabled;
-      };
     };
 
     misc = {

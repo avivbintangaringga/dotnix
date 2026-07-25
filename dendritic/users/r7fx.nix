@@ -22,9 +22,10 @@
       flatpak
 
       zsh
-      noctalia
       scripts.nv-switch
       scripts.vm
+
+      desktop
     ]);
 
     nixos = { user, ... }: {
