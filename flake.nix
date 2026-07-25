@@ -125,7 +125,10 @@
       };
       den = (inputs.nixpkgs.lib.evalModules {
         modules = [ (inputs.import-tree ./dendritic) ];
-        specialArgs.inputs = inputs;
+        specialArgs = {
+          inherit inputs;
+          flake-root = ./.;
+        };
       }).config;
 
       inherit (den.den.hosts.x86_64-linux) inferno;

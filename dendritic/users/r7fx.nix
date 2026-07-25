@@ -23,6 +23,8 @@
 
       zsh
       noctalia
+      scripts.nv-switch
+      scripts.vm
     ]);
 
     nixos = { user, ... }: {
