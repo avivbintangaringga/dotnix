@@ -16,7 +16,6 @@ in
 
   setup = {
     apps = {
-      ark = enabled;
       ayugram = enabled;
       bitwarden = disabled;
       discord = enabled;
@@ -24,14 +23,11 @@ in
         all = enabled;
       };
       kitty = enabled;
-      libreoffice = enabled;
       looking-glass-client = disabled;
       mediaplayer = enabled;
       moonlight = disabled;
       misc = enabled;
       obs-studio = enabled;
-      onlyoffice = enabled;
-      peazip = enabled;
       postman = enabled;
       qbittorrent = disabled;
       spicetify = enabled;

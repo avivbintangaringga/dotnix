@@ -33,6 +33,7 @@
 
       desktop
       gaming
+      office
       tools
       editors.minimal
       editors.ide
