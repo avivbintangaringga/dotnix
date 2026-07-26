@@ -11,6 +11,7 @@
       git
       home-manager
       monitoring
+      mise
       nh
     ];
 

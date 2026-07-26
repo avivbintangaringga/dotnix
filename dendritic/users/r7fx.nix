@@ -43,6 +43,8 @@
 
       cliphist
       playerctld
+
+      programming
     ]);
 
     nixos = { user, ... }: {

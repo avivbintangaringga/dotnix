@@ -43,12 +43,7 @@ in
     };
 
     cli-apps = {
-      bun = enabled;
-      go = enabled;
-      mise = enabled;
       scrcpy = enabled;
-      python = enabled;
-      lsp = enabled;
     };
   };
 
