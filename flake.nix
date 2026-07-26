@@ -101,55 +101,17 @@
     };
   };
 
-  outputs =
-    {
-      nixpkgs,
-      home-manager,
-      ...
-    }@inputs:
+  outputs = inputs:
     let
-      mylib = (import ./lib);
-      lib = nixpkgs.lib // home-manager.lib;
-      system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
-      myPkgs = (import ./pkgs { inherit pkgs; });
-      userdata = rec {
-        username = "r7fx";
-        userpath = "/home/" + username;
-        fullname = "R7FX";
-        email = "avivbintangaringga90@gmail.com";
-        git = {
-          username = "avivbintangaringga";
-          inherit email;
-        };
-      };
       den = (inputs.nixpkgs.lib.evalModules {
-        modules = [ (inputs.import-tree ./dendritic) ];
+        modules = [ (inputs.import-tree ./modules) ];
         specialArgs = {
           inputs = inputs;
           flake-root = ./.;
         };
       }).config;
-
-      inherit (den.den.homes.x86_64-linux) r7fx;
     in
     {
-      inherit (den.flake) nixosConfigurations;
-
-      homeConfigurations = {
-        ${userdata.username} = lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [
-            ./users/${userdata.username}.nix
-            r7fx.mainModule
-          ];
-          extraSpecialArgs = {
-            inherit inputs;
-            inherit userdata;
-            inherit mylib;
-            inherit myPkgs;
-          };
-        };
-      };
+      inherit (den.flake) nixosConfigurations homeConfigurations;
     };
 }
