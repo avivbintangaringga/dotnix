@@ -102,16 +102,11 @@
   };
 
   outputs = inputs:
-    let
-      den = (inputs.nixpkgs.lib.evalModules {
-        modules = [ (inputs.import-tree ./modules) ];
-        specialArgs = {
-          inputs = inputs;
-          flake-root = ./.;
-        };
-      }).config;
-    in
-    {
-      inherit (den.flake) nixosConfigurations homeConfigurations;
-    };
+    (inputs.nixpkgs.lib.evalModules {
+      modules = [ (inputs.import-tree ./modules) ];
+      specialArgs = {
+        inherit inputs;
+        flake-root = ./.;
+      };
+    }).config.flake;
 }
