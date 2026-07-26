@@ -9,6 +9,7 @@
       gtk
       wallpaper
       cursor
+      xdg
 
       niri
     ];

@@ -10,18 +10,6 @@ let
 in
 {
   xdg = {
-    userDirs.enable = true;
-    mimeApps.enable = true;
-
-    configFile = {
-      "mimeapps.list".force = true;
-    };
-
-    terminal-exec = {
-      enable = true;
-      package = pkgs.kitty;
-    };
-
     mimeApps = {
       defaultApplications =
         let
@@ -87,13 +75,6 @@ in
           ];
         in
         lib.mkMerge [
-          {
-            "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
-            "x-scheme-handler/discord" = [ "discord.desktop" ];
-            "x-scheme-handler/terminal" = [ "kitty.desktop" ];
-            "application/x-*script" = [ "org.gnome.gedit.desktop" ];
-            "text/plain" = [ "org.gnome.gedit.desktop" ];
-          }
           (mylib.listToAttrsSameValue browser [ "zen-beta.desktop" "thorium-browser.desktop" ])
           (mylib.listToAttrsSameValue archives [ "peazip.desktop" ])
           (mylib.listToAttrsSameValue images [ "org.kde.gwenview.desktop" "gimp.desktop" ])
@@ -102,39 +83,5 @@ in
         ];
     };
 
-    portal = {
-      enable = true;
-      xdgOpenUsePortal = true;
-      extraPortals = with pkgs; [
-        # xdg-desktop-portal-gtk
-        xdg-desktop-portal-gnome
-        # xdg-desktop-portal-wlr
-        # xdg-desktop-portal-gtk
-        # xdg-desktop-portal-hyprland
-        # kdePackages.xdg-desktop-portal-kde
-      ];
-    };
-
-    desktopEntries = {
-      win11 = {
-        name = "Windows 11";
-        icon = ../assets/icons/windows11.png;
-        exec = "vm-start win11";
-        terminal = false;
-        type = "Application";
-        categories = [ "System" ];
-      };
-    };
-
-    userDirs = {
-      setSessionVariables = true;
-    };
-
-    autostart = {
-      enable = true;
-      entries = [
-        "${pkgs.ferdium}/share/applications/ferdium.desktop"
-      ];
-    };
   };
 }

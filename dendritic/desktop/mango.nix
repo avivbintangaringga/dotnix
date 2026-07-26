@@ -9,9 +9,13 @@
       dankmaterialshell
     ];
 
-    homeManager = {
+    homeManager = { pkgs, ... }: {
       imports = [
         inputs.mango.hmModules.mango
+      ];
+
+      xdg.portal.extraPortals = with pkgs; [
+        xdg-desktop-portal-wlr
       ];
 
       wayland.windowManager.mango = let

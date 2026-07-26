@@ -1,6 +1,13 @@
 {
   den.aspects.kitty = {
-    homeManager = {
+    homeManager = { pkgs, ... }: {
+      xdg = {
+        terminal-exec.package = pkgs.kitty;
+        mimeApps.defaultApplications = {
+          "x-scheme-handler/terminal" = [ "kitty.desktop" ];
+        };
+      };
+
       programs.kitty = {
         enable = true;
         enableGitIntegration = true;

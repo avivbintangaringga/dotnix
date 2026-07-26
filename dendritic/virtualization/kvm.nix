@@ -1,14 +1,32 @@
 {
   den,
+  flake-root,
   ...
 }:
 {
-  den.aspects.kvm = { user, ... }: {
+  den.aspects.kvm = {
     includes = with den.aspects; [
+      looking-glass
+      scripts.vm
       vfio
     ];
 
-    nixos = { lib, pkgs, ... }:
+    homeManager = {
+      xdg = {
+        desktopEntries = {
+          win11 = {
+            name = "Windows 11";
+            icon = flake-root + "/assets/icons/windows11.png";
+            exec = "vm-start win11";
+            terminal = false;
+            type = "Application";
+            categories = [ "System" ];
+          };
+        };
+      };
+    };
+
+    nixos = { user, lib, pkgs, ... }:
     let
       qemupkg = pkgs.qemu_kvm;
     in

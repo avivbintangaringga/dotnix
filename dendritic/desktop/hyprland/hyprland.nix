@@ -1,5 +1,13 @@
 {
+  den,
+  ...
+}:
+{
   den.aspects.hyprland = {
+    includes = with den.aspects; [
+      dankmaterialshell
+    ];
+
     homeManager = { home, lib, pkgs, ... }: {
       home = {
         packages = with pkgs; [
@@ -13,6 +21,10 @@
           };
         };
       };
+
+      xdg.portal.extraPortals = with pkgs; [
+        xdg-desktop-portal-gnome
+      ];
 
       services.hyprpolkitagent = {
         enable = true;

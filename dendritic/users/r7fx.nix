@@ -50,6 +50,7 @@
       programming
 
       discord
+      ferdium
       spotify
       telegram
 
