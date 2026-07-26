@@ -52,6 +52,7 @@
       url = "github:niksingh710/nvix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    pedantix.url = "github:swarsel/pedantix";
     qtengine = {
       url = "github:kossLAN/qtengine";
       inputs.nixpkgs.follows = "nixpkgs";
