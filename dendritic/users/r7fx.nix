@@ -20,11 +20,9 @@
 
       valent
       nautilus
-      steam
       winbox
       cloudflare-warp
 
-      lsfg-vk
       flatpak
 
       zsh
