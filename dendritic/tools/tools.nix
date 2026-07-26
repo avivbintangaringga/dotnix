@@ -16,6 +16,7 @@
     ];
 
     homeManager = { pkgs, ...}: {
+      # TODO: SPLIT
       home.packages = with pkgs; [
         rclone
         wev
@@ -26,6 +27,8 @@
 
         tailwindcss_4
         watchman
+
+        scrcpy
       ];
     };
 

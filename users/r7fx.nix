@@ -41,10 +41,6 @@ in
       zed-editor = enabled;
       zen-browser = enabled;
     };
-
-    cli-apps = {
-      scrcpy = enabled;
-    };
   };
 
   xdg = {
