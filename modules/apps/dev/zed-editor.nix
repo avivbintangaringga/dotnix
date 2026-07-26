@@ -202,6 +202,15 @@
                 };
               };
             };
+
+            Nix = {
+              format_on_save = "on";
+              formatter = {
+                external = {
+                  command = "pedantix";
+                };
+              };
+            };
           };
 
           lsp = {
