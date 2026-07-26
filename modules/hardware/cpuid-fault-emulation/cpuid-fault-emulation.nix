@@ -3,6 +3,7 @@
     nixos = { config, ... }: {
       boot = {
         kernelModules = [ "cpuid_fault_emulation" ];
+        kernelParams = [ "clearcpuid=umip" ];
 
         extraModulePackages = [
           (config.boot.kernelPackages.callPackage ./_package/package.nix {})
