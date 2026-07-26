@@ -11,7 +11,6 @@ in
 {
   imports = [
     ./common.nix
-    ./../modules/home/import.nix
   ];
 
   xdg = {
