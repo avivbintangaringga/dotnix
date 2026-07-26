@@ -1,5 +1,6 @@
 {
   inputs,
+  myLib,
   ...
 }: {
   den.aspects.zen-browser = {
@@ -7,6 +8,9 @@
       imports = [
         inputs.zen-browser.homeModules.beta
       ];
+
+      xdg.mimeApps.defaultApplications =
+        myLib.listToAttrsSameValue myLib.mimeTypes.browser [ "zen-beta.desktop" ];
 
       programs.zen-browser = {
         enable = true;

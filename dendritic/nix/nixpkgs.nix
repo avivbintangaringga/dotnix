@@ -1,5 +1,7 @@
 {
-  den.default = let
+  den.default =
+  let
+    # TODO: USE BATTERIES
     nixpkgs = {
       config = {
         android_sdk = {
