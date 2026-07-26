@@ -16,9 +16,6 @@ in
 
   setup = {
     apps = {
-      gaming = {
-        all = enabled;
-      };
       misc = enabled;
     };
   };
