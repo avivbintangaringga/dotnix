@@ -45,19 +45,11 @@ in
     cli-apps = {
       bun = enabled;
       go = enabled;
-      helix = enabled;
       mise = enabled;
-      nvim = enabled;
       scrcpy = enabled;
       python = enabled;
       lsp = enabled;
     };
-  };
-
-  home = {
-    username = userdata.username;
-    homeDirectory = userdata.userpath;
-    stateVersion = "24.11";
   };
 
   xdg = {

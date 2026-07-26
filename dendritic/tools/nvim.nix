@@ -1,5 +1,15 @@
 {
+  inputs,
+  ...
+}:
+{
   den.aspects.nvim = {
+    homeManager = { pkgs, ... }: {
+      home.packages = [
+        inputs.nvix.packages.${pkgs.stdenv.hostPlatform.system}.bare
+      ];
+    };
+
     nixos = {
       programs.neovim = {
         enable = true;
