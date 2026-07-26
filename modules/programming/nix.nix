@@ -24,11 +24,44 @@
         settings = {
           preset = "nixos-module";
           args = {
-            first = [ "self" "den" "dotnix" "inputs" "host" "home" "user" "config" "lib" "myLib" "pkgs" "options" "modulesPath" "utils" ];
+            first = [
+              "self"
+              "den"
+              "dotnix"
+              "inputs"
+
+              "host"
+              "user"
+              "home"
+
+              "config"
+              "lib"
+              "myLib"
+              "pkgs"
+              "options"
+              "modulesPath"
+              "utils"
+            ];
             last = [ "<defaulted>" "..." ];
           };
           attrs = {
-            first = [ "flake-file" "includes" "imports" "options" "config" "enable" "package" "homeManager" "nixos" ];
+            first = [
+              "flake-file"
+              "includes"
+              "homeManager"
+              "nixos"
+
+              "imports"
+              "home"
+              "environment"
+
+              "options"
+              "config"
+              "enable"
+              "package"
+              "url"
+              "inputs"
+            ];
             last = [ "meta" ];
             merge = true;
             flatten = true;
