@@ -27,8 +27,6 @@ in
       obs-studio = enabled;
       postman = enabled;
       qbittorrent = disabled;
-      thorium-browser = enabled;
-      zen-browser = enabled;
     };
   };
 

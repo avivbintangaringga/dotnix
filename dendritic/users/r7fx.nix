@@ -32,6 +32,7 @@
       scripts.vm
 
       desktop
+      browsers
       gaming
       office
       media-player
