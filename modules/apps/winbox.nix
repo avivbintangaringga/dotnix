@@ -1,5 +1,5 @@
 {
-  flake-root,
+  self,
   ...
 }:
 {
@@ -8,7 +8,7 @@
       xdg.desktopEntries.winbox = {
         name = "WinBox";
         exec = "${pkgs.winbox4}/bin/WinBox";
-        icon = flake-root + "/assets/icons/winbox.png";
+        icon = self + "/assets/icons/winbox.png";
         type = "Application";
         terminal = false;
       };

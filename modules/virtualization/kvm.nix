@@ -1,6 +1,6 @@
 {
   dotnix,
-  flake-root,
+  self,
   ...
 }:
 {
@@ -15,7 +15,7 @@
         desktopEntries = {
           win11 = {
             name = "Windows 11";
-            icon = flake-root + "/assets/icons/windows11.png";
+            icon = self + "/assets/icons/windows11.png";
             exec = "vm-start win11";
             terminal = false;
             type = "Application";
@@ -52,10 +52,10 @@
 
           VM=$1
 
-          notify-send "Starting vm: $VM..." -i ${flake-root + "/assets/icons/vm.png"}
+          notify-send "Starting vm: $VM..." -i ${self + "/assets/icons/vm.png"}
           virsh -c qemu:///system start $VM
 
-          notify-send "Starting Looking Glass Client..." -i ${flake-root + "/assets/icons/lg.png"}
+          notify-send "Starting Looking Glass Client..." -i ${self + "/assets/icons/lg.png"}
           lg
         '')
 

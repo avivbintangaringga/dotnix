@@ -1,5 +1,5 @@
 {
-  flake-root,
+  self,
   ...
 }:
 {
@@ -18,7 +18,7 @@
           fi
 
           notify() {
-            [[ $QUIET == false ]] && notify-send "$1" -i ${flake-root + "/assets/icons/gpu.png"}
+            [[ $QUIET == false ]] && notify-send "$1" -i ${self + "/assets/icons/gpu.png"}
           }
 
           check_current_mode() {

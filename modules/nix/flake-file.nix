@@ -8,7 +8,6 @@
     inputs = {
       flake-file.url = "github:denful/flake-file";
     };
-    outputs = "inputs: import ./outputs.nix inputs";
   };
 
   imports = [
