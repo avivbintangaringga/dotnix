@@ -16,21 +16,17 @@ in
 
   setup = {
     apps = {
-      ayugram = enabled;
       bitwarden = disabled;
-      discord = enabled;
       gaming = {
         all = enabled;
       };
       kitty = enabled;
       looking-glass-client = disabled;
-      mediaplayer = enabled;
       moonlight = disabled;
       misc = enabled;
       obs-studio = enabled;
       postman = enabled;
       qbittorrent = disabled;
-      spicetify = enabled;
       thorium-browser = enabled;
       vscode = disabled;
       winbox = enabled;

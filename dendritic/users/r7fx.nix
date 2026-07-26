@@ -34,6 +34,7 @@
       desktop
       gaming
       office
+      media-player
       tools
       editors.minimal
       editors.ide
@@ -46,6 +47,10 @@
       playerctld
 
       programming
+
+      discord
+      spotify
+      telegram
     ]);
 
     nixos = { user, ... }: {
