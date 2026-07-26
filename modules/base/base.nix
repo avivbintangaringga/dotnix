@@ -13,6 +13,7 @@
       networkmanager
       timezone
       fonts
+      sudo
     ];
   };
 }
