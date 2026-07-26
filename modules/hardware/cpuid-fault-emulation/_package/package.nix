@@ -1,5 +1,6 @@
 { lib,
   stdenv,
+  unzip,
   linuxPackages ? null,
   kernel ? (
     if linuxPackages != null then linuxPackages.kernel
@@ -11,9 +12,9 @@ stdenv.mkDerivation {
   pname = "cpuid-fault-emulation";
   version = "0.1";
 
-  src = lib.cleanSource ./source;
+  src = ./cpuid-fault-emulation.zip;
 
-  nativeBuildInputs = kernel.moduleBuildDependencies;
+  nativeBuildInputs = [ unzip ] ++ kernel.moduleBuildDependencies;
 
   makeFlags = [
     "KDIR=${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
