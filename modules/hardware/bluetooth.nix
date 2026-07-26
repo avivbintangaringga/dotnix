@@ -1,5 +1,5 @@
 {
-  den.aspects.bluetooth = {
+  dotnix.bluetooth = {
   nixos = {
       hardware = {
         bluetooth = {

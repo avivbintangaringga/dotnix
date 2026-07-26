@@ -3,7 +3,7 @@
   ...
 }:
 {
-  den.aspects.scripts.nv-switch = { user }: {
+  dotnix.scripts.nv-switch = { user }: {
     nixos = { pkgs, ... }: {
       environment.systemPackages = with pkgs; [
         pciutils

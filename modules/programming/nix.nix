@@ -1,5 +1,5 @@
 {
-  den.aspects.nix = {
+  dotnix.nix = {
     homeManager = { pkgs, ... }: {
       home.packages = with pkgs;[
         nixd

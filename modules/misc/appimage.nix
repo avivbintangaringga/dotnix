@@ -1,5 +1,5 @@
 {
-  den.aspects.appimage = {
+  dotnix.appimage = {
     nixos = {
       programs.appimage = {
         enable = true;

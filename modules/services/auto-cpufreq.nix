@@ -8,7 +8,7 @@
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  den.aspects.auto-cpufreq = {
+  dotnix.auto-cpufreq = {
     nixos = {
       imports = [
         inputs.auto-cpufreq.nixosModules.default

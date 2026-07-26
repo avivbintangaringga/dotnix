@@ -1,5 +1,5 @@
 {
-  den.aspects.go = {
+  dotnix.go = {
     homeManager = { pkgs, ... }: {
       programs.go.enable = true;
       home.packages = with pkgs;[

@@ -1,10 +1,10 @@
 {
-  den,
+  dotnix,
   ...
 }:
 {
-  den.aspects.desktop = {
-    includes = with den.aspects; [
+  dotnix.desktop = {
+    includes = with dotnix; [
       qt
       gtk
       wallpaper

@@ -1,5 +1,5 @@
 {
-  den.aspects.image-editors = {
+  dotnix.image-editors = {
     homeManager = { pkgs, ... }: {
       home.packages = with pkgs; [
         gimp

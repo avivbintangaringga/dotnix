@@ -1,5 +1,5 @@
 {
-  den,
+  dotnix,
   inputs,
   ...
 }:
@@ -9,8 +9,8 @@
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  den.aspects.mango = {
-    includes = with den.aspects; [
+  dotnix.mango = {
+    includes = with dotnix; [
       dankmaterialshell
     ];
 

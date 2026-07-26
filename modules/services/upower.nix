@@ -1,5 +1,5 @@
 {
-  den.aspects.upower = {
+  dotnix.upower = {
     nixos = {
       services = {
         upower = {

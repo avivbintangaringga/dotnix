@@ -4,7 +4,7 @@
   ...
 }:
 {
-  den.aspects.archive = {
+  dotnix.archive = {
     homeManager = { pkgs, ... }: {
       home.packages = with pkgs; [
         kdePackages.ark

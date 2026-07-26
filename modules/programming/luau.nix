@@ -1,5 +1,5 @@
 {
-  den.aspects.luau = {
+  dotnix.luau = {
     homeManager = { pkgs, ... }: {
       home.packages = with pkgs;[
         luau

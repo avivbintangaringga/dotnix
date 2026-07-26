@@ -1,5 +1,5 @@
 {
-  den.aspects.gvfs = {
+  dotnix.gvfs = {
     nixos = {
       services.gvfs = {
         enable = true;

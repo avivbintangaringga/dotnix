@@ -1,5 +1,5 @@
 {
-  den.aspects.hydra = {
+  dotnix.hydra = {
     homeManager = { pkgs, ... }: {
       home.packages = with pkgs; [
         hydralauncher

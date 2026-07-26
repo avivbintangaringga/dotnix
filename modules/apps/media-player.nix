@@ -4,7 +4,7 @@
   ...
 }:
 {
-  den.aspects.media-player = {
+  dotnix.media-player = {
     homeManager = { pkgs, ... }: {
       home.packages = with pkgs; [
         kdePackages.gwenview

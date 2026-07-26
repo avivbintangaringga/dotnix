@@ -1,5 +1,5 @@
 {
-  den.aspects.monitoring = {
+  dotnix.monitoring = {
     nixos = { pkgs, ... }: {
       environment.systemPackages = with pkgs; [
         btop

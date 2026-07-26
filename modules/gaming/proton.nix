@@ -1,5 +1,5 @@
 {
-  den.aspects.proton = {
+  dotnix.proton = {
     homeManager = { pkgs, ... }: {
       home.packages = with pkgs; [
         protonplus

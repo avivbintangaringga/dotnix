@@ -1,5 +1,5 @@
 {
-  den,
+  dotnix,
   inputs,
   ...
 }:
@@ -16,8 +16,8 @@
     };
   };
 
-  den.aspects.niri = {
-    includes = with den.aspects; [
+  dotnix.niri = {
+    includes = with dotnix; [
       noctalia
       vicinae
     ];

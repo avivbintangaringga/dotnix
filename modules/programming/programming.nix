@@ -1,10 +1,10 @@
 {
-  den,
+  dotnix,
   ...
 }:
 {
-  den.aspects.programming = {
-    includes = with den.aspects; [
+  dotnix.programming = {
+    includes = with dotnix; [
       go
       js
       lsp

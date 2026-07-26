@@ -1,5 +1,5 @@
 {
-  den.aspects.zed-editor = {
+  dotnix.zed-editor = {
     homeManager = {
       programs.zed-editor = let
           theme = "Adaptify Darker";

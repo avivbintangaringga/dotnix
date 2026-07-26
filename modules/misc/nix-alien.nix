@@ -1,5 +1,5 @@
 {
-  den,
+  dotnix,
   inputs,
   ...
 }:
@@ -9,8 +9,8 @@
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  den.aspects.nix-alien = {
-    includes = with den.aspects; [
+  dotnix.nix-alien = {
+    includes = with dotnix; [
       nix-ld
     ];
 

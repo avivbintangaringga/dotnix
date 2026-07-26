@@ -1,5 +1,5 @@
 {
-  den.aspects.mise = {
+  dotnix.mise = {
     homeManager = {
       programs.mise = {
         enable = true;

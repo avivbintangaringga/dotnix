@@ -1,5 +1,5 @@
 {
-  den.aspects.discord = {
+  dotnix.discord = {
     homeManager = { pkgs, ... }: {
       home.packages = with pkgs; [
         vesktop

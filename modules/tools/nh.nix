@@ -1,5 +1,5 @@
 {
-  den.aspects.nh = {
+  dotnix.nh = {
     nixos = {
       programs.nh = {
         enable = true;

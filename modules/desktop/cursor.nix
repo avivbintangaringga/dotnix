@@ -1,5 +1,5 @@
 {
-  den.aspects.cursor = {
+  dotnix.cursor = {
     homeManager = { pkgs, ... }: {
       home.pointerCursor = {
         enable = true;

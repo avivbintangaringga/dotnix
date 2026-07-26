@@ -1,5 +1,5 @@
 {
-  den.aspects.steam = {
+  dotnix.steam = {
     nixos = { pkgs, ... }: {
       programs.steam = {
         enable = true;

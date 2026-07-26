@@ -1,5 +1,5 @@
 {
-  den.aspects.flatpak = {
+  dotnix.flatpak = {
     nixos = {
       services = {
         flatpak = {

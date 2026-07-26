@@ -1,5 +1,5 @@
 {
-  den.aspects.gtk = {
+  dotnix.gtk = {
     homeManager = { pkgs, ... }: {
       home.packages = with pkgs; [
         papirus-folders

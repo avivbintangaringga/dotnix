@@ -1,5 +1,5 @@
 {
-  den.aspects.obs-studio = {
+  dotnix.obs-studio = {
     homeManager = { pkgs, ... }: {
       programs.obs-studio = {
         enable = true;

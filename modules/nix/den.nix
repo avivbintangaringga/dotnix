@@ -12,6 +12,7 @@ in
 
   imports = [
     (inputs.den.flakeModules.dendritic or {})
+    (inputs.den.namespace "dotnix" true)
   ];
 
   den.default.nixos.system.stateVersion = stateVersion;

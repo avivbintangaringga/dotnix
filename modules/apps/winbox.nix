@@ -3,7 +3,7 @@
   ...
 }:
 {
-  den.aspects.winbox = {
+  dotnix.winbox = {
     homeManager = { pkgs, ...}: {
       xdg.desktopEntries.winbox = {
         name = "WinBox";

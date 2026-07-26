@@ -1,5 +1,5 @@
 {
-  den.aspects.samba = {
+  dotnix.samba = {
     nixos = { user, ... }: {
       fileSystems = {
         "/SAMBA-SHARE/DATA" = {

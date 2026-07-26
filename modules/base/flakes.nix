@@ -1,5 +1,5 @@
 {
-  den.aspects.flakes = {
+  dotnix.flakes = {
     nixos = {
       nix.settings = {
         experimental-features = [

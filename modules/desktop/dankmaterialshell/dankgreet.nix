@@ -1,5 +1,5 @@
 {
-  den.aspects.dankgreet = { user }: {
+  dotnix.dankgreet = { user }: {
     nixos = {
       services.displayManager = {
         autoLogin = {

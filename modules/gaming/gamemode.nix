@@ -3,7 +3,7 @@
   ...
 }:
 {
-  den.aspects.gamemode = {
+  dotnix.gamemode = {
     nixos = { pkgs, ... }: {
       programs.gamemode = {
         enable = true;

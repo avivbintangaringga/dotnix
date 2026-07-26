@@ -1,5 +1,5 @@
 {
-  den.aspects.timezone = {
+  dotnix.timezone = {
     nixos = {
       time.timeZone = "Asia/Jakarta";
     };

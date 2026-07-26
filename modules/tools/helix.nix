@@ -1,5 +1,5 @@
 {
-  den.aspects.helix = {
+  dotnix.helix = {
     homeManager = {
       programs.helix = {
         enable = true;

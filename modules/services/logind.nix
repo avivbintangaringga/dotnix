@@ -1,5 +1,5 @@
 {
-  den.aspects.logind = {
+  dotnix.logind = {
     nixos = {
       services.logind = {
         settings = {

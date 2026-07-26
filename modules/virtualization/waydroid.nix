@@ -1,5 +1,5 @@
 {
-  den.aspects.waydroid = {
+  dotnix.waydroid = {
     nixos = { pkgs, ... }: {
       virtualisation.waydroid.enable = true;
       networking.nftables.enable = true;

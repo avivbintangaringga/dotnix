@@ -1,5 +1,5 @@
 {
-  den.aspects.nautilus = {
+  dotnix.nautilus = {
     homeManager = {
       xdg.mimeApps.defaultApplications = {
         "inode/directory" = [ "org.gnome.Nautilus.desktop" ];

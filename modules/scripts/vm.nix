@@ -3,7 +3,7 @@
   ...
 }:
 {
-  den.aspects.scripts.vm = {
+  dotnix.scripts.vm = {
     nixos = { pkgs, ... }: {
       environment.systemPackages = [
         (pkgs.writeShellScriptBin "lg" ''

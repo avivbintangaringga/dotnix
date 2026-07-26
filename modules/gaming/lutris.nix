@@ -1,5 +1,5 @@
 {
-  den.aspects.lutris = {
+  dotnix.lutris = {
     homeManager = {
       programs.lutris.enable = true;
     };

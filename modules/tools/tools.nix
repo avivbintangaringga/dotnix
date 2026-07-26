@@ -1,11 +1,11 @@
 {
-  den,
+  dotnix,
   ...
 }:
 {
   # TODO: SPLIT
-  den.aspects.tools = {
-    includes = with den.aspects; [
+  dotnix.tools = {
+    includes = with dotnix; [
       adb
       archive
       git

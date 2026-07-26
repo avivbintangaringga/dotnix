@@ -1,5 +1,5 @@
 {
-  den.aspects.plymouth = { pkgs, ... }: {
+  dotnix.plymouth = { pkgs, ... }: {
     nixos = {
       boot = {
         plymouth = {

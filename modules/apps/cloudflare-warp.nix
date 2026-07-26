@@ -1,5 +1,5 @@
 {
-  den.aspects.cloudflare-warp = {
+  dotnix.cloudflare-warp = {
     nixos = {
       services = {
         cloudflare-warp.enable = true;

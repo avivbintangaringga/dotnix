@@ -1,5 +1,5 @@
 {
-  den.aspects.nvidia = {
+  dotnix.nvidia = {
     nixos = { pkgs, ... }: {
       environment.systemPackages = with pkgs; [
         nvtopPackages.nvidia

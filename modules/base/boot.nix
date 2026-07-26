@@ -1,5 +1,5 @@
 {
-  den.aspects.boot = {
+  dotnix.boot = {
     boot = {
       supportedFilesystems = [ "ntfs" ];
     };

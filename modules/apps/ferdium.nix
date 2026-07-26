@@ -1,5 +1,5 @@
 {
-  den.aspects.ferdium = {
+  dotnix.ferdium = {
     homeManager = { pkgs, ... }: {
       home.packages = with pkgs; [
         ferdium

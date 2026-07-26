@@ -1,10 +1,10 @@
 {
-  den,
+  dotnix,
   ...
 }:
 {
-  den.aspects.office = {
-    includes = with den.aspects; [
+  dotnix.office = {
+    includes = with dotnix; [
       bluemail
     ];
 

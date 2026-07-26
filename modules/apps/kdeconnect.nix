@@ -1,5 +1,5 @@
 {
-  den.aspects.kdeconnect = {
+  dotnix.kdeconnect = {
     homeManager = {
       services.kdeconnect = {
         enable = true;

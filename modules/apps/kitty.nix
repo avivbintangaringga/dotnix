@@ -1,5 +1,5 @@
 {
-  den.aspects.kitty = {
+  dotnix.kitty = {
     homeManager = { pkgs, ... }: {
       xdg = {
         terminal-exec.package = pkgs.kitty;

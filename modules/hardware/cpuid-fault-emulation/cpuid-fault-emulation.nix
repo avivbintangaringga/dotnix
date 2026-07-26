@@ -1,5 +1,5 @@
 {
-  den.aspects.cpuid-fault-emulation = {
+  dotnix.cpuid-fault-emulation = {
     nixos = { config, ... }: {
       boot = {
         kernelModules = [ "cpuid_fault_emulation" ];

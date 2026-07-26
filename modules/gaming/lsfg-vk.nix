@@ -1,5 +1,5 @@
 {
-  den.aspects.lsfg-vk = {
+  dotnix.lsfg-vk = {
     nixos = { pkgs, ... }: {
       environment.systemPackages = with pkgs; [
         lsfg-vk

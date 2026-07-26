@@ -1,5 +1,5 @@
 {
-  den.aspects.xdg = {
+  dotnix.xdg = {
     homeManager = {
       xdg = {
         configFile = {

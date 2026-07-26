@@ -1,5 +1,5 @@
 {
-  den.aspects.git = {
+  dotnix.git = {
     homeManager = { home, ... }: {
       programs.git = {
         enable = true;

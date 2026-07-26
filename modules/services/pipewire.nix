@@ -1,5 +1,5 @@
 {
-  den.aspects.pipewire = {
+  dotnix.pipewire = {
     nixos = { pkgs, ... }: {
       services = {
         pipewire = {

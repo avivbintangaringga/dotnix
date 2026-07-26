@@ -1,5 +1,5 @@
 {
-  den.aspects.cliphist = {
+  dotnix.cliphist = {
     homeManager = {
       services.cliphist = {
         enable = true;

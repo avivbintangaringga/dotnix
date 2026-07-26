@@ -1,5 +1,5 @@
 {
-  den.aspects.docker = { user, ... }: {
+  dotnix.docker = { user, ... }: {
     nixos = {
       virtualisation.docker = {
         enable = true;

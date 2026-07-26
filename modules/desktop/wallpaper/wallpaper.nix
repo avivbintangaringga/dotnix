@@ -3,7 +3,7 @@
   ...
 }:
 {
-  den.aspects.wallpaper = {
+  dotnix.wallpaper = {
     homeManager = { pkgs, home, ... }: {
       # TODO: make script into writeShellScript
       home = {

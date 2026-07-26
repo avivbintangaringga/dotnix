@@ -8,7 +8,7 @@
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  den.aspects.thorium = {
+  dotnix.thorium = {
     homeManager = { pkgs, ... }:
     let
       thorium-pkgs = inputs.thorium-browser.packages.${pkgs.stdenv.hostPlatform.system};

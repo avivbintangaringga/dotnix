@@ -1,5 +1,6 @@
 {
   den,
+  dotnix,
   ...
 }:
 {
@@ -15,7 +16,7 @@
     includes = (with den.batteries; [
       define-user
       primary-user
-    ]) ++ (with den.aspects; [
+    ]) ++ (with dotnix; [
       base
 
       valent

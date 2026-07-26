@@ -8,7 +8,7 @@
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  den.aspects.nvim = {
+  dotnix.nvim = {
     homeManager = { pkgs, ... }: {
       home.packages = [
         inputs.nvix.packages.${pkgs.stdenv.hostPlatform.system}.bare

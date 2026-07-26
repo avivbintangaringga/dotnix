@@ -1,10 +1,10 @@
 {
-  den,
+  dotnix,
   ...
 }:
 {
-  den.aspects.browsers = {
-    includes = with den.aspects; [
+  dotnix.browsers = {
+    includes = with dotnix; [
       thorium
       zen-browser
     ];

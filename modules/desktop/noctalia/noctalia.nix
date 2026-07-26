@@ -1,6 +1,6 @@
 {
   inputs,
-  den,
+  dotnix,
   ...
 }:
 {
@@ -8,8 +8,8 @@
     url = "github:noctalia-dev/noctalia/cachix";
   };
 
-  den.aspects.noctalia = {
-    includes = with den.aspects; [
+  dotnix.noctalia = {
+    includes = with dotnix; [
       noctalia-greeter
     ];
 

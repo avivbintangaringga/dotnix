@@ -1,5 +1,5 @@
 {
-  den.aspects.looking-glass = {
+  dotnix.looking-glass = {
     homeManager = { pkgs, ... }: {
       programs.looking-glass-client = {
         enable = true;

@@ -1,5 +1,5 @@
 {
-  den.aspects.nix-ld = {
+  dotnix.nix-ld = {
     nixos = { options, pkgs, ... }: {
       programs.nix-ld = {
         enable = true;

@@ -1,5 +1,5 @@
 {
-  den.aspects.lsp = {
+  dotnix.lsp = {
     homeManager = { pkgs, ... }: {
       home.packages = with pkgs; [
         tailwindcss-language-server

@@ -3,7 +3,7 @@
   ...
 }:
 {
-  den.aspects.zsh = {
+  dotnix.zsh = {
     includes = with den.batteries; [
       (user-shell "zsh")
     ];

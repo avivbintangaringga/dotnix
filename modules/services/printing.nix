@@ -1,5 +1,5 @@
 {
-  den.aspects.printing = {
+  dotnix.printing = {
     nixos = { pkgs, ... }: {
       services = {
         printing = {

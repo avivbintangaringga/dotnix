@@ -1,5 +1,5 @@
 {
-  den.aspects.valent = {
+  dotnix.valent = {
     nixos = { pkgs, ... }: {
       environment.systemPackages = with pkgs; [
         valent

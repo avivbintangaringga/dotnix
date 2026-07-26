@@ -1,10 +1,10 @@
 {
-  den,
+  dotnix,
   ...
 }:
 {
-  den.aspects.downloaders = {
-    includes = with den.aspects; [
+  dotnix.downloaders = {
+    includes = with dotnix; [
       qbittorrent
     ];
 

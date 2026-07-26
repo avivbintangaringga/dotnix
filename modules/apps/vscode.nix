@@ -1,5 +1,5 @@
 {
-  den.aspects.vscode = {
+  dotnix.vscode = {
     homeManager = { pkgs, home, ... }: {
       programs.vscode = {
         enable = true;

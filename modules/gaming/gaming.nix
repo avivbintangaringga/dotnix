@@ -1,10 +1,10 @@
 {
-  den,
+  dotnix,
   ...
 }:
 {
-  den.aspects.gaming = {
-    includes = with den.aspects; [
+  dotnix.gaming = {
+    includes = with dotnix; [
       faugus
       gamemode
       gamescope

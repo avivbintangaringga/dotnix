@@ -1,39 +1,39 @@
 {
-  den,
+  dotnix,
   ...
 }:
 {
-  den.aspects.code-editors = {
-    includes = with den.aspects; [
+  dotnix.code-editors = {
+    includes = with dotnix; [
       code-editors.full
     ];
 
     provides = {
-      cli.includes = with den.aspects; [
+      cli.includes = with dotnix; [
         helix
         nvim
       ];
 
-      gui.includes = with den.aspects; [
+      gui.includes = with dotnix; [
         gedit
         zed-editor
       ];
 
-      gui-extra.includes = with den.aspects; [
+      gui-extra.includes = with dotnix; [
         vscode
       ];
 
-      ide.includes = with den.aspects; [
+      ide.includes = with dotnix; [
         android-studio
         intellij-idea
       ];
 
-      minimal.includes = with den.aspects.code-editors; [
+      minimal.includes = with dotnix.code-editors; [
         cli
         gui
       ];
 
-      full.includes = with den.aspects.code-editors; [
+      full.includes = with dotnix.code-editors; [
         cli
         gui
         gui-extra

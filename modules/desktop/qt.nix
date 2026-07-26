@@ -8,7 +8,7 @@
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  den.aspects.qt = {
+  dotnix.qt = {
     nixos = { pkgs, user, ... }: {
       imports = [
         inputs.qtengine.nixosModules.default

@@ -1,5 +1,5 @@
 {
-  den.aspects.disable-docs = {
+  dotnix.disable-docs = {
     nixos = {
       documentation = {
         enable = false;

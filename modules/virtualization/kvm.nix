@@ -1,11 +1,11 @@
 {
-  den,
+  dotnix,
   flake-root,
   ...
 }:
 {
-  den.aspects.kvm = {
-    includes = with den.aspects; [
+  dotnix.kvm = {
+    includes = with dotnix; [
       looking-glass
       scripts.vm
       vfio

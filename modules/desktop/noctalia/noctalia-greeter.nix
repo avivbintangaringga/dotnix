@@ -8,7 +8,7 @@
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  den.aspects.noctalia-greeter = { user, ... }: {
+  dotnix.noctalia-greeter = { user, ... }: {
     nixos = {
       imports = [
         inputs.noctalia-greeter.nixosModules.default

@@ -1,5 +1,5 @@
 {
-  den.aspects.disable-cpu-boost = {
+  dotnix.disable-cpu-boost = {
     nixos = { pkgs, ... }: {
       systemd.services = {
         disable-cpu-boost = {

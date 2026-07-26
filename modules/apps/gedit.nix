@@ -1,5 +1,5 @@
 {
-  den.aspects.gedit = {
+  dotnix.gedit = {
     homeManager = { pkgs, ... }: {
       home.packages = with pkgs; [
         gedit

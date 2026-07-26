@@ -1,5 +1,5 @@
 {
-  den.aspects.kde = {
+  dotnix.kde = {
     nixos = { pkgs, lib, ... }: {
       services = {
         xserver = {

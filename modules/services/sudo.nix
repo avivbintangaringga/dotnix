@@ -1,5 +1,5 @@
 {
-  den.aspects.sudo = {
+  dotnix.sudo = {
     nixos = {
       security.sudo = {
         enable = true;

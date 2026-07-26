@@ -1,5 +1,5 @@
 {
-  den.aspects.accounts-daemon = {
+  dotnix.accounts-daemon = {
     nixos = {
       services = {
         accounts-daemon = {

@@ -1,5 +1,5 @@
 {
-  den.aspects.bottles = {
+  dotnix.bottles = {
     homeManager = { pkgs, ... }: {
       home.packages = with pkgs; [
         (bottles.override {

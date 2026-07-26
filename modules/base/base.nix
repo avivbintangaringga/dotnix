@@ -1,11 +1,11 @@
 {
-  den,
+  dotnix,
   ...
 }:
 {
   # TODO: SPLIT
-  den.aspects.base = {
-    includes = with den.aspects; [
+  dotnix.base = {
+    includes = with dotnix; [
       flakes
       disable-docs
       accounts-daemon

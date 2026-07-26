@@ -1,10 +1,10 @@
 {
-  den,
+  dotnix,
   ...
 }:
 {
-  den.aspects.hyprland = {
-    includes = with den.aspects; [
+  dotnix.hyprland = {
+    includes = with dotnix; [
       dankmaterialshell
     ];
 

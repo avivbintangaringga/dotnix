@@ -1,5 +1,5 @@
 {
-  den.aspects.lact = {
+  dotnix.lact = {
     nixos = {
       services.lact.enable = true;
     };

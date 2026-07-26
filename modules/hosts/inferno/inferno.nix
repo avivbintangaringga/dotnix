@@ -1,5 +1,6 @@
 {
   inputs,
+  dotnix,
   den,
   ...
 }:
@@ -13,7 +14,7 @@
   den.aspects.inferno = {
     includes = (with den.batteries; [
       hostname
-    ]) ++ (with den.aspects; [
+    ]) ++ (with dotnix; [
       base
       sudo
 

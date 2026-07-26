@@ -1,5 +1,5 @@
 {
-  den.aspects.fonts = {
+  dotnix.fonts = {
     homeManager = {
       fonts.fontconfig = {
         enable = true;

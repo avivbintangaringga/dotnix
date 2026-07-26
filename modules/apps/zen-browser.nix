@@ -8,7 +8,7 @@
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  den.aspects.zen-browser = {
+  dotnix.zen-browser = {
     homeManager = {
       imports = [
         inputs.zen-browser.homeModules.beta
