@@ -28,9 +28,6 @@ in
       postman = enabled;
       qbittorrent = disabled;
       thorium-browser = enabled;
-      vscode = disabled;
-      winbox = enabled;
-      zed-editor = enabled;
       zen-browser = enabled;
     };
   };

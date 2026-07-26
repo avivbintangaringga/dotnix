@@ -12,10 +12,11 @@
 
       gui.includes = with den.aspects; [
         gedit
+        zed-editor
       ];
 
       gui-extra.includes = with den.aspects; [
-
+        vscode
       ];
 
       ide.includes = with den.aspects; [
