@@ -9,15 +9,12 @@ let
   inherit (mylib) enabled disabled;
 in
 {
-  imports = [
-    ./common.nix
-  ];
-
   xdg = {
+    userDirs.enable = true;
+    mimeApps.enable = true;
+
     configFile = {
       "mimeapps.list".force = true;
-      # "gtk-3.0/settings.ini".force = true;
-      # "gtk-4.0/gtk.css".force = true;
     };
 
     terminal-exec = {
