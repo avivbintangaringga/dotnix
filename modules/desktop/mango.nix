@@ -4,6 +4,11 @@
   ...
 }:
 {
+  flake-file.inputs.mango = {
+    url = "github:DreamMaoMao/mango";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
   den.aspects.mango = {
     includes = with den.aspects; [
       dankmaterialshell

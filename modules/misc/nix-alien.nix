@@ -4,6 +4,11 @@
   ...
 }:
 {
+  flake-file.inputs.nix-alien = {
+    url = "github:thiagokokada/nix-alien";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
   den.aspects.nix-alien = {
     includes = with den.aspects; [
       nix-ld

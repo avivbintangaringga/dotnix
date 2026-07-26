@@ -4,6 +4,11 @@
   ...
 }:
 {
+  flake-file.inputs.dankmaterialshell = {
+    url = "github:AvengeMedia/DankMaterialShell";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
   den.aspects.dankmaterialshell = {
     includes = with den.aspects; [
       dankgreet

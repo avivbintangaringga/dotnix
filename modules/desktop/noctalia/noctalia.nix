@@ -4,6 +4,10 @@
   ...
 }:
 {
+  flake-file.inputs.noctalia = {
+    url = "github:noctalia-dev/noctalia/cachix";
+  };
+
   den.aspects.noctalia = {
     includes = with den.aspects; [
       noctalia-greeter

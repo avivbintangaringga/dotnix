@@ -4,6 +4,18 @@
   ...
 }:
 {
+  flake-file.inputs = {
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    niri-float-sticky = {
+      url = "github:probeldev/niri-float-sticky";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
   den.aspects.niri = {
     includes = with den.aspects; [
       noctalia

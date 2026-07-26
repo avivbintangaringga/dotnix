@@ -3,6 +3,11 @@
   ...
 }:
 {
+  flake-file.inputs.nvix = {
+    url = "github:niksingh710/nvix";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
   den.aspects.nvim = {
     homeManager = { pkgs, ... }: {
       home.packages = [

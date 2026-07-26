@@ -3,6 +3,11 @@
  ...
 }:
 {
+  flake-file.inputs.thorium-browser = {
+    url = "github:Rishabh5321/custom-packages-flake";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
   den.aspects.thorium = {
     homeManager = { pkgs, ... }:
     let

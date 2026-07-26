@@ -3,6 +3,11 @@
   ...
 }:
 {
+  flake-file.inputs.qtengine = {
+    url = "github:kossLAN/qtengine";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
   den.aspects.qt = {
     nixos = { pkgs, user, ... }: {
       imports = [

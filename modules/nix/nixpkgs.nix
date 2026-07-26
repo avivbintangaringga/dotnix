@@ -1,4 +1,6 @@
 {
+  flake-file.inputs.nixpkgs.url = "nixpkgs/nixos-unstable";
+
   den.default =
   let
     # TODO: USE BATTERIES
