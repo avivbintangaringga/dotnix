@@ -16,17 +16,10 @@ in
 
   setup = {
     apps = {
-      bitwarden = disabled;
       gaming = {
         all = enabled;
       };
-      kitty = enabled;
-      looking-glass-client = disabled;
-      moonlight = disabled;
       misc = enabled;
-      obs-studio = enabled;
-      postman = enabled;
-      qbittorrent = disabled;
     };
   };
 

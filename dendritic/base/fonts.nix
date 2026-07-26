@@ -25,6 +25,7 @@
 
         font-awesome
       ]) ++ (with pkgs.nerd-fonts; [
+        dejavu-sans-mono
         jetbrains-mono
         fira-mono
         fira-code

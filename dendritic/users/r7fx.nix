@@ -52,6 +52,9 @@
       discord
       spotify
       telegram
+
+      kitty
+      obs-studio
     ]);
 
     nixos = { user, ... }: {
