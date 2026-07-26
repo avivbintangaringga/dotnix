@@ -11,11 +11,16 @@
       ];
 
       gui.includes = with den.aspects; [
-
+        gedit
       ];
 
       gui-extra.includes = with den.aspects; [
 
+      ];
+
+      ide.includes = with den.aspects; [
+        android-studio
+        intellij-idea
       ];
 
       minimal.includes = with den.aspects.editors; [
@@ -27,6 +32,7 @@
         cli
         gui
         gui-extra
+        ide
       ];
     };
   };

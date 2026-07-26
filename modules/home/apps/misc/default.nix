@@ -13,54 +13,19 @@
 
   config = lib.mkIf config.setup.apps.misc.enable {
     home.packages = (with pkgs; [
-      # alacritty
-      # font-manager
-      # reaper
       varia
-      lxappearance
-      nwg-look
       btrfs-assistant
-      # remmina
       bluemail
-
-      jetbrains.idea
-
-      # kdePackages.kdenlive
 
       dbeaver-bin
       bruno
-     
-      # gemini-cli-bin
-      # chatbox
+
       ferdium
       resources
 
       gimp
 
       vicinae
-
-      # gpu-screen-recorder
-      # gpu-screen-recorder-gtk
-
-      # dmidecode
-
-      # furmark
-      # mprime
-      # synthesia
-
-      #testing
-      gedit
-      # kdePackages.dolphin
-      # kdePackages.dolphin-plugins
-      # kdePackages.kate
-      # vivaldi
-      # brave
-
-      # winboat
-      # freerdp
-      #
-
-      # pgadmin4-desktopmode
     ]);
   };
 }

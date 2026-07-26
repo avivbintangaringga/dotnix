@@ -16,6 +16,8 @@
       define-user
       primary-user
     ]) ++ (with den.aspects; [
+      base
+
       valent
       nautilus
       steam
@@ -33,6 +35,7 @@
       gaming
       tools
       editors.minimal
+      editors.ide
 
       docker
       kvm

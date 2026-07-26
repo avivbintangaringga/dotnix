@@ -3,12 +3,25 @@
   ...
 }:
 {
-  den.aspects.zsh = { user, ... }: {
+  den.aspects.zsh = {
     includes = with den.batteries; [
       (user-shell "zsh")
     ];
 
-    nixos = {
+    homeManager = {
+      programs.zsh = {
+        enable = true;
+        enableCompletion = true;
+        syntaxHighlighting.enable = true;
+        autosuggestion = {
+          enable = true;
+        };
+        autocd = true;
+        history.size = 100000;
+      };
+    };
+
+    nixos = { user, ... }: {
       programs.zsh = {
         enable = true;
         enableCompletion = true;

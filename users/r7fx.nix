@@ -16,37 +16,30 @@ in
 
   setup = {
     apps = {
-      android-studio = enabled;
       ark = enabled;
       ayugram = enabled;
       bitwarden = disabled;
       discord = enabled;
-      dankcalendar = disabled;
-      firefox = disabled;
       gaming = {
         all = enabled;
       };
-      ghostty = disabled;
       kitty = enabled;
       libreoffice = enabled;
       looking-glass-client = disabled;
       mediaplayer = enabled;
       moonlight = disabled;
       misc = enabled;
-      nemo = disabled;
       obs-studio = enabled;
       onlyoffice = enabled;
       peazip = enabled;
       postman = enabled;
       qbittorrent = disabled;
-      quickemu = disabled;
       spicetify = enabled;
       thorium-browser = enabled;
       vscode = disabled;
       winbox = enabled;
       zed-editor = enabled;
       zen-browser = enabled;
-      zotero = disabled;
     };
 
     cli-apps = {
@@ -56,9 +49,7 @@ in
       mise = enabled;
       nvim = enabled;
       scrcpy = enabled;
-      yazi = disabled;
       python = enabled;
-      zsh = enabled;
       lsp = enabled;
     };
   };
@@ -67,14 +58,6 @@ in
     username = userdata.username;
     homeDirectory = userdata.userpath;
     stateVersion = "24.11";
-  };
-
-  fonts.fontconfig = {
-    enable = true;
-    defaultFonts = {
-      monospace = [ "Fira Mono" ];
-      emoji = [ "Noto Color Emoji" ];
-    };
   };
 
   xdg = {

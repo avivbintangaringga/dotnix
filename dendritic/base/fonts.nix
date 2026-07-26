@@ -1,5 +1,15 @@
 {
   den.aspects.fonts = {
+    homeManager = {
+      fonts.fontconfig = {
+        enable = true;
+        defaultFonts = {
+          monospace = [ "Fira Mono" ];
+          emoji = [ "Noto Color Emoji" ];
+        };
+      };
+    };
+
     nixos = { pkgs, ... }: {
       fonts.packages = (with pkgs; [
         noto-fonts

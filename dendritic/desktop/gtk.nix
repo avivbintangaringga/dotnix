@@ -3,7 +3,7 @@
     homeManager = { pkgs, ... }: {
       home.packages = with pkgs; [
         papirus-folders
-        gtk3-x11
+        nwg-look
       ];
 
       gtk = {

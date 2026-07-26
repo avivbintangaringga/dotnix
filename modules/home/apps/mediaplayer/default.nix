@@ -11,7 +11,6 @@
 
   config = lib.mkIf config.setup.apps.mediaplayer.enable {
     home.packages = with pkgs; [
-      # oculante
       kdePackages.gwenview
       vlc
     ];
