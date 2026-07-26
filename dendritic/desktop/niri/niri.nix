@@ -7,6 +7,7 @@
   den.aspects.niri = {
     includes = with den.aspects; [
       noctalia
+      vicinae
     ];
 
     homeManager = { pkgs, ... }: {

@@ -22,6 +22,8 @@
         wev
         cava
 
+        btrfs-assistant
+
         lsof
         gnumake
 

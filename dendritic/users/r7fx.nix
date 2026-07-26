@@ -31,12 +31,14 @@
 
       desktop
       browsers
+      code-editors.minimal
+      code-editors.ide
+      downloaders
+      image-editors
       gaming
       office
       media-player
       tools
-      editors.minimal
-      editors.ide
 
       docker
       kvm
@@ -53,6 +55,9 @@
 
       kitty
       obs-studio
+
+      bruno
+      dbeaver
     ]);
 
     nixos = { user, ... }: {

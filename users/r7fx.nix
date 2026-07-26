@@ -14,12 +14,6 @@ in
     ./../modules/home/import.nix
   ];
 
-  setup = {
-    apps = {
-      misc = enabled;
-    };
-  };
-
   xdg = {
     configFile = {
       "mimeapps.list".force = true;

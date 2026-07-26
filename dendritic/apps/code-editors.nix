@@ -3,7 +3,11 @@
   ...
 }:
 {
-  den.aspects.editors = {
+  den.aspects.code-editors = {
+    includes = with den.aspects; [
+      code-editors.full
+    ];
+
     provides = {
       cli.includes = with den.aspects; [
         helix
@@ -24,12 +28,12 @@
         intellij-idea
       ];
 
-      minimal.includes = with den.aspects.editors; [
+      minimal.includes = with den.aspects.code-editors; [
         cli
         gui
       ];
 
-      full.includes = with den.aspects.editors; [
+      full.includes = with den.aspects.code-editors; [
         cli
         gui
         gui-extra

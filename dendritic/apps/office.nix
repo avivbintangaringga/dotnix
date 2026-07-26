@@ -1,5 +1,13 @@
 {
+  den,
+  ...
+}:
+{
   den.aspects.office = {
+    includes = with den.aspects; [
+      bluemail
+    ];
+
     homeManager = { pkgs, ... }: {
       home = {
         sessionVariables = {

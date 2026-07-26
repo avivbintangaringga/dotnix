@@ -6,6 +6,7 @@
         htop
         btdu
         powertop
+        resources
         speedtest-cli
       ];
     };
