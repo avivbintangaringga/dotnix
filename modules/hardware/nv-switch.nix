@@ -3,7 +3,7 @@
   ...
 }:
 {
-  dotnix.scripts.nv-switch = { user }: {
+  dotnix.nv-switch = { user }: {
     nixos = { pkgs, ... }: {
       environment.systemPackages = with pkgs; [
         pciutils

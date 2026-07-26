@@ -28,6 +28,13 @@
           satty
           kdePackages.qt6ct
           cups-pk-helper
+          jq
+
+          (writeShellScriptBin "dms-wallpaper-hook" ''
+              sleep 2
+              primary="$(jq -r ".colors.dark.primary" $HOME/.cache/DankMaterialShell/dms-colors.json | cut -d "#" -f2-)"
+              asusctl aura effect static --colour $primary
+          '')
         ];
 
         sessionVariables = {

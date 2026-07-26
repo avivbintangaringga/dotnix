@@ -27,8 +27,8 @@
       flatpak
 
       zsh
-      scripts.nv-switch
-      scripts.vm
+
+      nv-switch
 
       desktop
       browsers
