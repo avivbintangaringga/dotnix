@@ -1,6 +1,7 @@
 {
   _module.args.myLib = {
-    listToAttrsSameValue = list: value:
+    listToAttrsSameValue =
+      list: value:
       builtins.listToAttrs (
         map (name: {
           name = name;
@@ -24,6 +25,21 @@
         "application/vnd.android.package-archive"
         "application/x-redhat-package-manager"
         "application/x-zstd"
+      ];
+      audios = [
+        "audio/mpeg"
+        "audio/mp4"
+        "audio/ogg"
+        "audio/wav"
+        "audio/x-wav"
+        "audio/flac"
+        "audio/x-flac"
+        "audio/aac"
+        "audio/webm"
+        "audio/x-matroska"
+        "audio/midi"
+        "audio/x-midi"
+        "audio/opus"
       ];
       browser = [
         "text/html"
@@ -53,21 +69,6 @@
         "video/ogg"
         "video/mp2t"
         "video/3gpp"
-      ];
-      audios = [
-        "audio/mpeg"
-        "audio/mp4"
-        "audio/ogg"
-        "audio/wav"
-        "audio/x-wav"
-        "audio/flac"
-        "audio/x-flac"
-        "audio/aac"
-        "audio/webm"
-        "audio/x-matroska"
-        "audio/midi"
-        "audio/x-midi"
-        "audio/opus"
       ];
     };
   };

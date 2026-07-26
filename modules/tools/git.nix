@@ -1,22 +1,23 @@
 {
   dotnix.git = {
     homeManager = { home, ... }: {
-      programs.git = {
-        enable = true;
-        settings = {
-          user = {
-            name = home.git.userName;
-            email = home.git.email;
-          };
-          init.defaultBranch = "main";
+      programs = {
+        gh = {
+          enable = true;
+          gitCredentialHelper.enable = true;
         };
+        git = {
+          enable = true;
+          settings = {
+            init.defaultBranch = "main";
+            user = {
+              email = home.git.email;
+              name = home.git.userName;
+            };
+          };
 
-        signing.format = "openpgp";
-      };
-
-      programs.gh = {
-        enable = true;
-        gitCredentialHelper.enable = true;
+          signing.format = "openpgp";
+        };
       };
     };
 

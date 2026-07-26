@@ -9,9 +9,9 @@
         file = {
           "/home/${home.userName}/.wallpapers" = {
             enable = true;
-            source = self + "/assets/wallpapers";
-            recursive = true;
             force = true;
+            recursive = true;
+            source = self + "/assets/wallpapers";
           };
         };
       };

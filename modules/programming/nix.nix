@@ -3,9 +3,7 @@
   ...
 }:
 {
-  flake-file.inputs.pedantix = {
-    url = "github:swarsel/pedantix";
-  };
+  flake-file.inputs.pedantix.url = "github:swarsel/pedantix";
 
   dotnix.nix = {
     homeManager = { pkgs, ... }: {
@@ -13,7 +11,7 @@
         inputs.pedantix.homeManagerModules.default
       ];
 
-      home.packages = with pkgs;[
+      home.packages = with pkgs; [
         nixd
         nil
         nixfmt
@@ -22,7 +20,6 @@
       programs.pedantix = {
         enable = true;
         settings = {
-          preset = "nixos-module";
           args = {
             first = [
               "self"
@@ -42,30 +39,35 @@
               "modulesPath"
               "utils"
             ];
-            last = [ "<defaulted>" "..." ];
+            last = [
+              "<defaulted>"
+              "..."
+            ];
           };
           attrs = {
             first = [
-              "flake-file"
-              "includes"
-              "homeManager"
-              "nixos"
-
-              "imports"
-              "home"
-              "environment"
+              "url"
+              "inputs"
 
               "options"
               "config"
               "enable"
               "package"
-              "url"
-              "inputs"
+
+              "flake-file"
+              "includes"
+
+              "homeManager"
+              "nixos"
+              "imports"
+              "home"
+              "environment"
+
             ];
             last = [ "meta" ];
             merge = true;
-            flatten = true;
           };
+          preset = "nixos-module";
         };
       };
     };

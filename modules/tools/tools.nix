@@ -15,7 +15,7 @@
       nh
     ];
 
-    homeManager = { pkgs, ...}: {
+    homeManager = { pkgs, ... }: {
       # TODO: SPLIT
       home.packages = with pkgs; [
         rclone
@@ -34,7 +34,7 @@
       ];
     };
 
-    nixos = { pkgs, ...}: {
+    nixos = { pkgs, ... }: {
       environment.systemPackages = with pkgs; [
         fastfetch
         wget

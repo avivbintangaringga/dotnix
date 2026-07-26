@@ -1,12 +1,12 @@
 {
   dotnix.waydroid = {
     nixos = { pkgs, ... }: {
-      virtualisation.waydroid.enable = true;
-      networking.nftables.enable = true;
-      environment.systemPackages = with pkgs;[
+      environment.systemPackages = with pkgs; [
         waydroid-helper
         fakeroot
       ];
+      networking.nftables.enable = true;
+      virtualisation.waydroid.enable = true;
     };
   };
 }

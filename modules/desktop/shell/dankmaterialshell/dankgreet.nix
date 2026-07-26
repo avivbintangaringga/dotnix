@@ -1,6 +1,7 @@
 {
   dotnix.dankgreet = { user }: {
     nixos = {
+      programs.seahorse.enable = true;
       services.displayManager = {
         autoLogin = {
           enable = true;
@@ -11,15 +12,12 @@
           enable = true;
           # TODO: Make this dynamic
           compositor.name = "niri";
-          configHome = "/home/${user.userName}";
           configFiles = [
             "/home/${user.userName}/.config/DankMaterialShell/settings.json"
           ];
+          configHome = "/home/${user.userName}";
         };
       };
-
-      programs.seahorse.enable = true;
-
       users.users.${user.userName} = {
         extraGroups = [ "greeter" ];
       };

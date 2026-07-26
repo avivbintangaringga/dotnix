@@ -26,55 +26,50 @@
       imports = [
         inputs.niri.homeModules.niri
       ];
-
-      nixpkgs.overlays = [
-        inputs.niri.overlays.niri
-      ];
-
       home.file = {
         ".config/niri/config.kdl" = {
           source = ./config.kdl;
         };
       };
-
-      xdg.portal.extraPortals = with pkgs; [
-        xdg-desktop-portal-gnome
-      ];
-
-      programs.niri = {
-        enable = true;
-        package = pkgs.niri-unstable;
-        config = null;
-        settings = null;
-      };
-    };
-
-    nixos = { pkgs, ... }: let
-      system = pkgs.stdenv.hostPlatform.system;
-      niri-float-sticky-pkgs = inputs.niri-float-sticky.packages.${system};
-    in {
-      imports = [
-        inputs.niri.nixosModules.niri
-      ];
-
       nixpkgs.overlays = [
         inputs.niri.overlays.niri
       ];
-
-      environment.systemPackages = (with pkgs; [
-        xwayland-satellite
-      ])
-      ++
-      (with niri-float-sticky-pkgs; [
-        niri-float-sticky
-      ]);
-
       programs.niri = {
+        config = null;
         enable = true;
         package = pkgs.niri-unstable;
+        settings = null;
       };
-
-      systemd.user.services.niri-flake-polkit.enable = false;
+      xdg.portal.extraPortals = with pkgs; [
+        xdg-desktop-portal-gnome
+      ];
     };
+
+    nixos =
+      { pkgs, ... }:
+      let
+        system = pkgs.stdenv.hostPlatform.system;
+        niri-float-sticky-pkgs = inputs.niri-float-sticky.packages.${system};
+      in
+      {
+        imports = [
+          inputs.niri.nixosModules.niri
+        ];
+        environment.systemPackages =
+          (with pkgs; [
+            xwayland-satellite
+          ])
+          ++ (with niri-float-sticky-pkgs; [
+            niri-float-sticky
+          ]);
+        nixpkgs.overlays = [
+          inputs.niri.overlays.niri
+        ];
+        programs.niri = {
+          enable = true;
+          package = pkgs.niri-unstable;
+        };
+        systemd.user.services.niri-flake-polkit.enable = false;
+      };
   };
 }

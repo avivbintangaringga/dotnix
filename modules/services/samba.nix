@@ -3,38 +3,36 @@
     nixos = { user, ... }: {
       fileSystems = {
         "/SAMBA-SHARE/DATA" = {
-          device = "/media/DATA";
           options = [ "bind" ];
+          device = "/media/DATA";
         };
       };
-
+      networking.firewall = {
+        enable = true;
+      };
       services = {
         samba = {
           enable = true;
           openFirewall = true;
           settings = {
             global = {
-              "workgroup" = "WORKGROUP";
-              "security" = "user";
-              "max log size" = "1000";
-              "server role" = "standalone server";
               "map to guest" = "Bad Password";
+              "max log size" = "1000";
+              "security" = "user";
+              "server role" = "standalone server";
+              "workgroup" = "WORKGROUP";
             };
             "vm-win11" = {
-              "path" = "/SAMBA-SHARE";
-              "writable" = "yes";
               "browsable" = "yes";
-              "guest ok" = "no";
               "create mask" = "0644";
               "directory mask" = "0755";
               "force user" = "${user.userName}";
+              "guest ok" = "no";
+              "path" = "/SAMBA-SHARE";
+              "writable" = "yes";
             };
           };
         };
-      };
-
-      networking.firewall = {
-        enable = true;
       };
     };
   };

@@ -1,21 +1,6 @@
 {
   dotnix.kde = {
-    nixos = { pkgs, lib, ... }: {
-      services = {
-        xserver = {
-          enable = true;
-          videoDrivers = [
-            "amdgpu"
-          ];
-        };
-
-        desktopManager = {
-          plasma6 = {
-            enable = true;
-          };
-        };
-      };
-
+    nixos = { lib, pkgs, ... }: {
       environment = {
         plasma6.excludePackages = with pkgs.kdePackages; [
           khelpcenter
@@ -25,8 +10,20 @@
           pciutils
         ];
       };
-
-      services.power-profiles-daemon.enable = lib.mkForce false;
+      services = {
+        desktopManager = {
+          plasma6 = {
+            enable = true;
+          };
+        };
+        power-profiles-daemon.enable = lib.mkForce false;
+        xserver = {
+          enable = true;
+          videoDrivers = [
+            "amdgpu"
+          ];
+        };
+      };
     };
   };
 }

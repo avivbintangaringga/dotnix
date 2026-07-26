@@ -13,31 +13,26 @@
         helix
         nvim
       ];
-
-      gui.includes = with dotnix; [
-        gedit
-        zed-editor
-      ];
-
-      gui-extra.includes = with dotnix; [
-        vscode
-      ];
-
-      ide.includes = with dotnix; [
-        android-studio
-        intellij-idea
-      ];
-
-      minimal.includes = with dotnix.code-editors; [
-        cli
-        gui
-      ];
-
       full.includes = with dotnix.code-editors; [
         cli
         gui
         gui-extra
         ide
+      ];
+      gui.includes = with dotnix; [
+        gedit
+        zed-editor
+      ];
+      gui-extra.includes = with dotnix; [
+        vscode
+      ];
+      ide.includes = with dotnix; [
+        android-studio
+        intellij-idea
+      ];
+      minimal.includes = with dotnix.code-editors; [
+        cli
+        gui
       ];
     };
   };

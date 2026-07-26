@@ -9,12 +9,11 @@
       hardware = {
         graphics.enable = true;
         nvidia = {
+          nvidiaPersistenced = true;
           powerManagement = {
             enable = true;
             finegrained = false;
           };
-
-          nvidiaPersistenced = true;
         };
       };
     };

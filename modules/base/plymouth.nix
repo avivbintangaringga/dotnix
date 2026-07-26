@@ -2,15 +2,6 @@
   dotnix.plymouth = { pkgs, ... }: {
     nixos = {
       boot = {
-        plymouth = {
-          enable = false;
-          theme = "circle_hud";
-          themePackages = with pkgs; [
-            (adi1090x-plymouth-themes.override {
-              selected_themes = [ "circle_hud" ];
-            })
-          ];
-        };
         consoleLogLevel = 3;
         initrd.verbose = false;
         kernelParams = [
@@ -20,6 +11,15 @@
           "udev.log_priority=3"
           "rd.systemd.show_status=auto"
         ];
+        plymouth = {
+          enable = false;
+          theme = "circle_hud";
+          themePackages = with pkgs; [
+            (adi1090x-plymouth-themes.override {
+              selected_themes = [ "circle_hud" ];
+            })
+          ];
+        };
       };
     };
   };

@@ -1,21 +1,9 @@
 {
   dotnix.kitty = {
     homeManager = { pkgs, ... }: {
-      xdg = {
-        terminal-exec.package = pkgs.kitty;
-        mimeApps.defaultApplications = {
-          "x-scheme-handler/terminal" = [ "kitty.desktop" ];
-        };
-      };
-
       programs.kitty = {
         enable = true;
         enableGitIntegration = true;
-        shellIntegration = {
-          enableZshIntegration = true;
-          enableBashIntegration = true;
-          enableFishIntegration = true;
-        };
         # extraConfig = ''
         #   include dank-tabs.conf
         #   include dank-theme.conf
@@ -28,6 +16,17 @@
           confirm_os_window_close = -1;
           enable_audio_bell = "no";
         };
+        shellIntegration = {
+          enableBashIntegration = true;
+          enableFishIntegration = true;
+          enableZshIntegration = true;
+        };
+      };
+      xdg = {
+        mimeApps.defaultApplications = {
+          "x-scheme-handler/terminal" = [ "kitty.desktop" ];
+        };
+        terminal-exec.package = pkgs.kitty;
       };
     };
   };

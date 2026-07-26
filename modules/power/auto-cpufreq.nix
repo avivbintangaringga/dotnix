@@ -22,17 +22,17 @@
         {
           enable = true;
           settings = {
+            battery = {
+              inherit turbo;
+              energy_per_bias = "balance_power";
+              governor = "powersave";
+              platform_profile = "quiet";
+              scaling_max_freq = 1500000;
+            };
             charger = {
               inherit turbo;
               gorvernor = "performance";
               scaling_max_freq = 3700000;
-            };
-            battery = {
-              inherit turbo;
-              governor = "powersave";
-              scaling_max_freq = 1500000;
-              platform_profile = "quiet";
-              energy_per_bias = "balance_power";
             };
           };
         };

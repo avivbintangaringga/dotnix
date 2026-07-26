@@ -1,6 +1,6 @@
 {
   dotnix.adb = {
-    nixos = { pkgs, user, ... }: {
+    nixos = { user, pkgs, ... }: {
       environment.systemPackages = with pkgs; [
         android-tools
       ];

@@ -1,8 +1,7 @@
 {
   dotnix.go = {
     homeManager = { pkgs, ... }: {
-      programs.go.enable = true;
-      home.packages = with pkgs;[
+      home.packages = with pkgs; [
         air
         gcc
         go-jet
@@ -10,6 +9,7 @@
         gopls
         templ
       ];
+      programs.go.enable = true;
     };
   };
 }

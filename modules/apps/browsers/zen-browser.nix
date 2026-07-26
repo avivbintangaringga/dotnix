@@ -2,7 +2,8 @@
   inputs,
   myLib,
   ...
-}: {
+}:
+{
   flake-file.inputs.zen-browser = {
     url = "github:0xc000022070/zen-browser-flake";
     inputs.nixpkgs.follows = "nixpkgs";
@@ -13,10 +14,6 @@
       imports = [
         inputs.zen-browser.homeModules.beta
       ];
-
-      xdg.mimeApps.defaultApplications =
-        myLib.listToAttrsSameValue myLib.mimeTypes.browser [ "zen-beta.desktop" ];
-
       programs.zen-browser = {
         enable = true;
         policies = {
@@ -32,6 +29,9 @@
           OfferToSaveLogins = false;
         };
       };
+      xdg.mimeApps.defaultApplications = myLib.listToAttrsSameValue myLib.mimeTypes.browser [
+        "zen-beta.desktop"
+      ];
     };
   };
 }

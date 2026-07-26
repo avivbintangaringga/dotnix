@@ -9,7 +9,7 @@
   };
 
   dotnix.qt = {
-    nixos = { pkgs, user, ... }: {
+    nixos = { user, pkgs, ... }: {
       imports = [
         inputs.qtengine.nixosModules.default
       ];
@@ -19,13 +19,13 @@
       ];
 
       programs.qtengine = {
-        enable = true;
         config = {
           theme = {
             colorScheme = "/home/${user.userName}/.local/share/color-schemes/noctalia.colors";
             iconTheme = "Papirus";
           };
         };
+        enable = true;
       };
     };
   };

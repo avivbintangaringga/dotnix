@@ -1,6 +1,6 @@
 {
-  dotnix,
   self,
+  dotnix,
   ...
 }:
 {
@@ -14,205 +14,211 @@
       xdg = {
         desktopEntries = {
           win11 = {
-            name = "Windows 11";
-            icon = self + "/assets/icons/windows11.png";
+            categories = [ "System" ];
             exec = "vm-start win11";
+            icon = self + "/assets/icons/windows11.png";
+            name = "Windows 11";
             terminal = false;
             type = "Application";
-            categories = [ "System" ];
           };
         };
       };
     };
 
-    nixos = { user, lib, pkgs, ... }:
-    let
-      qemupkg = pkgs.qemu_kvm;
-    in
-    {
-      environment.systemPackages = with pkgs; [
-        virt-manager
-        virt-viewer
-        spice
-        spice-gtk
-        spice-protocol
-        adwaita-icon-theme
-        virtiofsd
+    nixos =
+      {
+        user,
+        lib,
+        pkgs,
+        ...
+      }:
+      let
+        qemupkg = pkgs.qemu_kvm;
+      in
+      {
+        environment.systemPackages = with pkgs; [
+          virt-manager
+          virt-viewer
+          spice
+          spice-gtk
+          spice-protocol
+          adwaita-icon-theme
+          virtiofsd
 
-        (pkgs.writeShellScriptBin "lg" ''
-          looking-glass-client -F audio:micDefault=allow audio:micSHowIndicator=no audio:periodSize=512
-        '')
+          (pkgs.writeShellScriptBin "lg" ''
+            looking-glass-client -F audio:micDefault=allow audio:micSHowIndicator=no audio:periodSize=512
+          '')
 
-        (pkgs.writeShellScriptBin "vm-start" ''
-          if [[ -z $1 ]]
-          then
-            echo "VM Name is required!"
-            exit 1
-          fi
-
-          VM=$1
-
-          notify-send "Starting vm: $VM..." -i ${self + "/assets/icons/vm.png"}
-          virsh -c qemu:///system start $VM
-
-          notify-send "Starting Looking Glass Client..." -i ${self + "/assets/icons/lg.png"}
-          lg
-        '')
-
-        (pkgs.writeShellScriptBin "vm_waybar_hook" ''
-          ACTION=$1
-
-          get() {
-            VM_LIST=$(virsh -c qemu:///system list --state-running --name | awk NF)
-            RUNNING_VM_COUNT=$(echo -n "$VM_LIST" | grep "" -c)
-            FIRST_RUNNING_VM=$(echo -n "$VM_LIST" | head -1)
-
-            if [[ $RUNNING_VM_COUNT -ge 1 ]]
+          (pkgs.writeShellScriptBin "vm-start" ''
+            if [[ -z $1 ]]
             then
-              if [[ $RUNNING_VM_COUNT -eq 1 ]]
-              then
-                echo "  |  $FIRST_RUNNING_VM"
-              else
-                echo "  |  $RUNNING_VM_COUNT VMs"
-              fi
-            fi
-          }
-
-          click() {
-            RUNNING_VM_COUNT=$(virsh -c qemu:///system list --state-running --name | awk NF | grep "" -c)
-
-            if [[ $RUNNING_VM_COUNT -ge 1 ]]
-            then
-              if [[ $RUNNING_VM_COUNT -eq 1 ]]
-              then
-                lg
-              else
-                virt-manager
-              fi
-            fi
-          }
-
-          case $ACTION in
-            "get")
-              get
-                ;;
-            "click")
-              click
-                ;;
-            *)
-              echo "Unknown action!"
+              echo "VM Name is required!"
               exit 1
-                ;;
-          esac
-        '')
-      ];
+            fi
 
-      virtualisation = {
-        libvirtd = {
-          enable = true;
-          qemu = {
-            package = qemupkg;
-            runAsRoot = true;
-            swtpm.enable = true;
-            vhostUserPackages = with pkgs; [
-              virtiofsd
-            ];
-            verbatimConfig = ''
-              cgroup_device_acl = [
-                "/dev/null",
-                "/dev/full",
-                "/dev/zero",
-                "/dev/random",
-                "/dev/urandom",
-                "/dev/ptmx",
-                "/dev/kvm",
-                "/dev/nvidiactl",
-                "/dev/nvidia0",
-                "/dev/nvidia-modeset",
-                "/dev/dri/renderD128"
-              ]
-            '';
-          };
-          onBoot = "ignore";
-          onShutdown = "shutdown";
-          hooks = {
-            qemu = {
-              "gpuswitch" = pkgs.writeShellScript "gpuswitch-hook" ''
-                readonly GUEST_NAME="$1"
-                readonly HOOK_NAME="$2"
-                readonly STATE_NAME="$3"
+            VM=$1
 
-                start_hook() {
-                  # systemctl --user --machine=${user.userName}@ stop swaync  # TEMPORARY FIX
-                  # systemctl --user --machine=${user.userName}@ stop swayosd # TEMPORARY FIX
-                  # pkill lact
-                  systemctl stop lactd
-                  systemctl stop nvidia-powerd
-                  rmmod nvidia_drm
-                  rmmod nvidia_uvm
-                  rmmod nvidia_modeset
-                  rmmod nvidia
-                  modprobe -i vfio_pci vfio_pci_core vfio_iommu_type1 vfio
-                  /run/current-system/sw/bin/virsh nodedev-detach pci_0000_01_00_0
-                  # systemctl --user --machine=${user.userName}@ start swaync  # TEMPORARY FIX
-                  # systemctl --user --machine=${user.userName}@ start swayosd # TEMPORARY FIX
-                }
+            notify-send "Starting vm: $VM..." -i ${self + "/assets/icons/vm.png"}
+            virsh -c qemu:///system start $VM
 
-                revert_hook() {
-                  /run/current-system/sw/bin/virsh nodedev-reattach pci_0000_01_00_0
-                  rmmod vfio_pci vfio_pci_core vfio_iommu_type1 vfio
-                  modprobe -i nvidia
-                  modprobe -i nvidia_uvm
-                  modprobe -i nvidia_modeset
-                  modprobe -i nvidia_drm
-                  systemctl restart nvidia-powerd
-                  systemctl restart lactd
-                }
+            notify-send "Starting Looking Glass Client..." -i ${self + "/assets/icons/lg.png"}
+            lg
+          '')
 
-                if [[ "$HOOK_NAME" == "prepare" && "$STATE_NAME" == "begin" ]]; then
-                  if [[ "$GUEST_NAME" == "win11" || "$GUEST_NAME" == "win10" ]]
-                  then
-                    start_hook
-                  fi
-                elif [[ "$HOOK_NAME" == "release" && "$STATE_NAME" == "end" ]]; then
-                  if [[ "$GUEST_NAME" == "win11" || "$GUEST_NAME" == "win10" ]]
-                  then
-                    revert_hook
-                  fi
+          (pkgs.writeShellScriptBin "vm_waybar_hook" ''
+            ACTION=$1
+
+            get() {
+              VM_LIST=$(virsh -c qemu:///system list --state-running --name | awk NF)
+              RUNNING_VM_COUNT=$(echo -n "$VM_LIST" | grep "" -c)
+              FIRST_RUNNING_VM=$(echo -n "$VM_LIST" | head -1)
+
+              if [[ $RUNNING_VM_COUNT -ge 1 ]]
+              then
+                if [[ $RUNNING_VM_COUNT -eq 1 ]]
+                then
+                  echo "  |  $FIRST_RUNNING_VM"
+                else
+                  echo "  |  $RUNNING_VM_COUNT VMs"
                 fi
-              '';
+              fi
+            }
+
+            click() {
+              RUNNING_VM_COUNT=$(virsh -c qemu:///system list --state-running --name | awk NF | grep "" -c)
+
+              if [[ $RUNNING_VM_COUNT -ge 1 ]]
+              then
+                if [[ $RUNNING_VM_COUNT -eq 1 ]]
+                then
+                  lg
+                else
+                  virt-manager
+                fi
+              fi
+            }
+
+            case $ACTION in
+              "get")
+                get
+                  ;;
+              "click")
+                click
+                  ;;
+              *)
+                echo "Unknown action!"
+                exit 1
+                  ;;
+            esac
+          '')
+        ];
+        networking.firewall.interfaces = {
+          "virbr*" = {
+            allowedTCPPorts = [ 53 ];
+            allowedUDPPorts = [
+              53
+              67
+              547
+            ];
+          };
+        };
+        services = {
+          spice-vdagentd.enable = true;
+        };
+        systemd = {
+          services = {
+            libvirt-guests.wantedBy = lib.mkForce [ ];
+            libvirtd = {
+              after = [ "graphical.target" ];
+              wantedBy = lib.mkForce [ ];
             };
           };
+          targets = {
+            graphical.wants = [ "libvirtd.service" ];
+          };
         };
-        spiceUSBRedirection.enable = true;
-      };
-
-      systemd.services = {
-        libvirtd = {
-          wantedBy = lib.mkForce [ ];
-          after = [ "graphical.target" ];
+        users.users.${user.userName} = {
+          extraGroups = [ "libvirtd" ];
         };
-        libvirt-guests.wantedBy = lib.mkForce [ ];
-      };
+        virtualisation = {
+          libvirtd = {
+            enable = true;
+            hooks = {
+              qemu = {
+                "gpuswitch" = pkgs.writeShellScript "gpuswitch-hook" ''
+                  readonly GUEST_NAME="$1"
+                  readonly HOOK_NAME="$2"
+                  readonly STATE_NAME="$3"
 
-      systemd.targets = {
-        graphical.wants = [ "libvirtd.service" ];
-      };
+                  start_hook() {
+                    # systemctl --user --machine=${user.userName}@ stop swaync  # TEMPORARY FIX
+                    # systemctl --user --machine=${user.userName}@ stop swayosd # TEMPORARY FIX
+                    # pkill lact
+                    systemctl stop lactd
+                    systemctl stop nvidia-powerd
+                    rmmod nvidia_drm
+                    rmmod nvidia_uvm
+                    rmmod nvidia_modeset
+                    rmmod nvidia
+                    modprobe -i vfio_pci vfio_pci_core vfio_iommu_type1 vfio
+                    /run/current-system/sw/bin/virsh nodedev-detach pci_0000_01_00_0
+                    # systemctl --user --machine=${user.userName}@ start swaync  # TEMPORARY FIX
+                    # systemctl --user --machine=${user.userName}@ start swayosd # TEMPORARY FIX
+                  }
 
-      networking.firewall.interfaces = {
-        "virbr*" = {
-          allowedTCPPorts = [ 53 ];
-          allowedUDPPorts = [ 53 67 547 ];
+                  revert_hook() {
+                    /run/current-system/sw/bin/virsh nodedev-reattach pci_0000_01_00_0
+                    rmmod vfio_pci vfio_pci_core vfio_iommu_type1 vfio
+                    modprobe -i nvidia
+                    modprobe -i nvidia_uvm
+                    modprobe -i nvidia_modeset
+                    modprobe -i nvidia_drm
+                    systemctl restart nvidia-powerd
+                    systemctl restart lactd
+                  }
+
+                  if [[ "$HOOK_NAME" == "prepare" && "$STATE_NAME" == "begin" ]]; then
+                    if [[ "$GUEST_NAME" == "win11" || "$GUEST_NAME" == "win10" ]]
+                    then
+                      start_hook
+                    fi
+                  elif [[ "$HOOK_NAME" == "release" && "$STATE_NAME" == "end" ]]; then
+                    if [[ "$GUEST_NAME" == "win11" || "$GUEST_NAME" == "win10" ]]
+                    then
+                      revert_hook
+                    fi
+                  fi
+                '';
+              };
+            };
+            onBoot = "ignore";
+            onShutdown = "shutdown";
+            qemu = {
+              package = qemupkg;
+              runAsRoot = true;
+              swtpm.enable = true;
+              verbatimConfig = ''
+                cgroup_device_acl = [
+                  "/dev/null",
+                  "/dev/full",
+                  "/dev/zero",
+                  "/dev/random",
+                  "/dev/urandom",
+                  "/dev/ptmx",
+                  "/dev/kvm",
+                  "/dev/nvidiactl",
+                  "/dev/nvidia0",
+                  "/dev/nvidia-modeset",
+                  "/dev/dri/renderD128"
+                ]
+              '';
+              vhostUserPackages = with pkgs; [
+                virtiofsd
+              ];
+            };
+          };
+          spiceUSBRedirection.enable = true;
         };
       };
-
-      services = {
-        spice-vdagentd.enable = true;
-      };
-
-      users.users.${user.userName} = {
-        extraGroups = [ "libvirtd" ];
-      };
-    };
   };
 }

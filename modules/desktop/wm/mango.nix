@@ -18,16 +18,19 @@
       imports = [
         inputs.mango.hmModules.mango
       ];
+      wayland.windowManager.mango =
+        let
+          mod = "SUPER";
+        in
+        {
+          enable = true;
+          autostart_sh = ''
+            dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots
+            /usr/lib/xdg-desktop-portal-wlr &
 
-      xdg.portal.extraPortals = with pkgs; [
-        xdg-desktop-portal-wlr
-      ];
-
-      wayland.windowManager.mango = let
-        mod = "SUPER";
-      in {
-        enable = true;
-        settings = ''
+            dms run
+          '';
+          settings = ''
             bind=${mod},e,spawn,nautilus
             bind=${mod},b,spawn,zen-beta
             bind=${mod},space,spawn,dms ipc call spotlight toggle
@@ -103,13 +106,10 @@
             # Scroller settings
             edge_scroller_pointer_focus=0
           '';
-        autostart_sh = ''
-            dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots
-            /usr/lib/xdg-desktop-portal-wlr &
-
-            dms run
-          '';
-      };
+        };
+      xdg.portal.extraPortals = with pkgs; [
+        xdg-desktop-portal-wlr
+      ];
     };
 
     nixos = {

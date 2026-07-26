@@ -5,20 +5,16 @@
         configFile = {
           "mimeapps.list".force = true;
         };
-
+        mimeApps = {
+          enable = true;
+        };
         portal = {
           enable = true;
           xdgOpenUsePortal = true;
         };
-
-        mimeApps = {
-          enable = true;
-        };
-
         terminal-exec = {
           enable = true;
         };
-
         userDirs = {
           enable = true;
           setSessionVariables = true;

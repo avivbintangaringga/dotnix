@@ -1,23 +1,10 @@
 {
   dotnix.vscode = {
-    homeManager = { pkgs, home, ... }: {
+    homeManager = { home, pkgs, ... }: {
       programs.vscode = {
         enable = true;
         profiles = {
           "${home.userName}" = {
-            userSettings = {
-              files = {
-                autoSave = "afterDelay";
-                autoSaveDelay = 1000;
-              };
-              terminal = {
-                integrated = {
-                  fontFamily = "FiraCode Nerd Font";
-                  fontLigatures.enabled = true;
-                  gpuAcceleration = "auto";
-                };
-              };
-            };
             extensions = with pkgs.vscode-extensions; [
               ms-python.python
               ms-python.vscode-pylance
@@ -45,6 +32,19 @@
               vue.volar
               vue.vscode-typescript-vue-plugin
             ];
+            userSettings = {
+              files = {
+                autoSave = "afterDelay";
+                autoSaveDelay = 1000;
+              };
+              terminal = {
+                integrated = {
+                  fontFamily = "FiraCode Nerd Font";
+                  fontLigatures.enabled = true;
+                  gpuAcceleration = "auto";
+                };
+              };
+            };
           };
         };
       };

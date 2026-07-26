@@ -1,6 +1,6 @@
 {
   dotnix.bluetooth = {
-  nixos = {
+    nixos = {
       hardware = {
         bluetooth = {
           enable = true;

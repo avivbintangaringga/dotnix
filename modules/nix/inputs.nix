@@ -1,15 +1,11 @@
 {
   flake-file.inputs = {
-    import-tree.url = "github:denful/import-tree";
     flake-parts.url = "github:hercules-ci/flake-parts";
-
+    hardware.url = "github:nixos/nixos-hardware";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    hardware = {
-      url = "github:nixos/nixos-hardware";
-    };
+    import-tree.url = "github:denful/import-tree";
   };
 }

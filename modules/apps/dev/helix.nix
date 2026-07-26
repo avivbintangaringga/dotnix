@@ -3,27 +3,28 @@
     homeManager = {
       programs.helix = {
         enable = true;
-        themes = {
-          tokyonight-transparent = {
-            inherits = "github_dark";
-            "ui.background" = { };
-          };
-        };
         settings = {
-          theme = "tokyonight-transparent";
           editor = {
-            line-number = "relative";
-            undercurl = true;
-            color-modes = true;
             bufferline = "multiple";
+            color-modes = true;
+            cursor-shape = {
+              insert = "bar";
+            };
+            indent-guides = {
+              character = "▏";
+              render = true;
+              skip-levels = 0;
+            };
+            inline-diagnostics = {
+              cursor-line = "warning";
+              other-lines = "error";
+            };
+            line-number = "relative";
             popup-border = "all";
+            soft-wrap = {
+              enable = true;
+            };
             statusline = {
-              mode = {
-                normal = "NORMAL";
-                insert = "INSERT";
-                select = "SELECT";
-              };
-              separator = "│";
               left = [
                 "mode"
                 "spinner"
@@ -32,27 +33,29 @@
                 "read-only-indicator"
                 "file-modification-indicator"
               ];
+              mode = {
+                insert = "INSERT";
+                normal = "NORMAL";
+                select = "SELECT";
+              };
+              separator = "│";
             };
-            cursor-shape = {
-              insert = "bar";
-            };
-            indent-guides = {
-              render = true;
-              character = "▏";
-              skip-levels = 0;
-            };
-            inline-diagnostics = {
-              cursor-line = "warning";
-              other-lines = "error";
-            };
-            soft-wrap = {
-              enable = true;
-            };
+            undercurl = true;
           };
           keys = {
             normal = {
-             esc = [ "collapse_selection" "keep_primary_selection" ] ;
+              esc = [
+                "collapse_selection"
+                "keep_primary_selection"
+              ];
             };
+          };
+          theme = "tokyonight-transparent";
+        };
+        themes = {
+          tokyonight-transparent = {
+            inherits = "github_dark";
+            "ui.background" = { };
           };
         };
       };

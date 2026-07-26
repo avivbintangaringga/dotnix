@@ -1,6 +1,6 @@
 {
-  myLib,
   lib,
+  myLib,
   ...
 }:
 {

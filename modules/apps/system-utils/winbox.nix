@@ -4,21 +4,21 @@
 }:
 {
   dotnix.winbox = {
-    homeManager = { pkgs, ...}: {
+    homeManager = { pkgs, ... }: {
       xdg.desktopEntries.winbox = {
-        name = "WinBox";
         exec = "${pkgs.winbox4}/bin/WinBox";
         icon = self + "/assets/icons/winbox.png";
-        type = "Application";
+        name = "WinBox";
         terminal = false;
+        type = "Application";
       };
     };
 
     nixos = { pkgs, ... }: {
       programs.winbox = {
         enable = true;
-        openFirewall = true;
         package = pkgs.winbox4;
+        openFirewall = true;
       };
     };
   };

@@ -1,6 +1,6 @@
 {
-  inputs,
   dotnix,
+  inputs,
   ...
 }:
 {
@@ -17,23 +17,21 @@
       imports = [
         inputs.noctalia.homeModules.default
       ];
-
-      programs.noctalia = {
-        enable = true;
-      };
-
       gtk = {
         gtk3 = {
           extraCss = ''
-              @import url("noctalia.css");
-            '';
+            @import url("noctalia.css");
+          '';
         };
 
         gtk4 = {
           extraCss = ''
-              @import url("noctalia.css");
-            '';
+            @import url("noctalia.css");
+          '';
         };
+      };
+      programs.noctalia = {
+        enable = true;
       };
     };
 
