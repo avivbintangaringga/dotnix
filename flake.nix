@@ -20,6 +20,7 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
+    git-hooks.url = "github:cachix/git-hooks.nix";
     hardware.url = "github:nixos/nixos-hardware";
 
     home-manager = {
