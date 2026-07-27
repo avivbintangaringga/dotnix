@@ -32,7 +32,7 @@
           upower
         ]);
 
-      nixos = { lib, pkgs, ... }: {
+      nixos = { pkgs, ... }: {
         imports = [
           ./_hardware.nix
           inputs.hardware.nixosModules.asus-fa506ic
