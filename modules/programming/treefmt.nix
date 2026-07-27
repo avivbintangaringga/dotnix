@@ -121,6 +121,10 @@
         templ.enable = true;
       };
       projectRootFile = "flake.nix";
+      settings.formatter.stylua.includes = [
+        "*.lua"
+        "*.luau"
+      ];
     };
   };
 }
