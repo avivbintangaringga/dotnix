@@ -12,7 +12,7 @@
     homeManager = { home, pkgs, ... }: {
       home.packages = with pkgs; [
         (
-          if home ? flakePath && home.flakePath != null then
+          if home.flakePath != null then
             (writeShellApplication {
               name = "upgrade";
               runtimeInputs = [
@@ -49,8 +49,11 @@
                     esac
                 done
 
+                git config user.email ${home.git.email}
+                git config user.email ${home.git.userName}
+
                 $SUDO nh os switch ${home.flakePath} --no-nom --show-trace --update $NH_ASK $NH_SUDO $NH_COMMIT
-                nh home switch ${home.flakePath} --no-nom -b hm-bak --show-trace --update $NH_ASK $NH_SUDO $NH_COMMIT
+                nh home switch ${home.flakePath} --no-nom -b hm-bak --show-trace --update $NH_ASK $NH_COMMIT
               '';
             })
           else
