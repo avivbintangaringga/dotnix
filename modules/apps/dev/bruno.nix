@@ -1,9 +1,7 @@
 {
-  dotnix.bruno = {
-    homeManager = { pkgs, ... }: {
-      home.packages = with pkgs; [
-        bruno
-      ];
-    };
+  dotnix.bruno.homeManager = { pkgs, ... }: {
+    home.packages = with pkgs; [
+      bruno
+    ];
   };
 }
