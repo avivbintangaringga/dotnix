@@ -149,7 +149,7 @@
                 formatter = {
                   external = {
                     arguments = [
-                      "--stdin-filepath $ZED_FILE"
+                      "-"
                     ];
                     command = "pedantix";
                   };

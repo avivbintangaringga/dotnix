@@ -65,6 +65,7 @@
       url = "github:Rishabh5321/custom-packages-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    treefmt.url = "github:numtide/treefmt-nix";
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
