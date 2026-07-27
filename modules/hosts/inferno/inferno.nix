@@ -19,7 +19,7 @@
           bluetooth
           nvidia
           disable-cpu-boost
-          cpuid-fault-emulation
+          # cpuid-fault-emulation
 
           appimage
           nix-ld
@@ -47,10 +47,10 @@
               # "vfio"
               # "vfio_iommu_type1"
 
-              # "nvidia"
-              # "nvidia_modeset"
-              # "nvidia_uvm"
-              # "nvidia_drm"
+              "nvidia"
+              "nvidia_modeset"
+              "nvidia_uvm"
+              "nvidia_drm"
             ];
             systemd.enable = true;
 
@@ -60,8 +60,8 @@
             "nvidia-drm.modeset=1"
             "8250.nr_uarts=0"
 
-            # "amd_iommu=on"
-            # "iommu=pt"
+            "amd_iommu=on"
+            "iommu=pt"
             # "vfio-pci.ids=10de:25a2,10de:2291"
           ];
           loader = {
@@ -80,7 +80,6 @@
           fsType = "ntfs-3g";
         };
         hardware = {
-          amdgpu.initrd.enable = lib.mkForce false;
           enableAllFirmware = true;
         };
         security.sudo = {
