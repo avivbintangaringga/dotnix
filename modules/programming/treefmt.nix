@@ -4,8 +4,8 @@
 }:
 {
   flake-file.inputs = {
-    treefmt.url = "github:numtide/treefmt-nix";
     pedantix.url = "github:swarsel/pedantix";
+    treefmt.url = "github:numtide/treefmt-nix";
   };
 
   imports = [
@@ -14,8 +14,6 @@
   ];
 
   perSystem = _: {
-    treefmt = {
-      programs.pedantix.enable = true;
-    };
+    treefmt.programs.pedantix.enable = true;
   };
 }

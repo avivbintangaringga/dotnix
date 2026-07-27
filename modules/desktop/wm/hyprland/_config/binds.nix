@@ -1,8 +1,4 @@
 {
-  binds = {
-    hide_special_on_workspace_change = true;
-  };
-
   bind =
     let
       workspaces = [
@@ -19,14 +15,14 @@
       ];
 
       directions = rec {
+        down = j;
         h = "l";
         j = "d";
         k = "u";
         l = "r";
         left = h;
-        down = j;
-        up = k;
         right = l;
+        up = k;
       };
 
     in
@@ -78,22 +74,17 @@
     ++ (map (n: "$mainMod, ${n}, workspace, ${n}") workspaces)
     ++ (map (n: "$mainMod SHIFT, ${n}, movetoworkspace, ${n}") workspaces);
 
-  bindm = [
-    "$mainMod, mouse:272, movewindow"
-    "$mainMod, mouse:273, resizewindow"
-  ];
-
   bindel =
     let
       resizeparams = rec {
+        down = j;
         h = "-10 0";
         j = "0 10";
         k = "0 -10";
         l = "10 0";
         left = h;
-        down = j;
-        up = k;
         right = l;
+        up = k;
       };
     in
     [
@@ -116,7 +107,14 @@
       builtins.mapAttrs (key: rp: "$mainMod SHIFT, ${key}, moveactive, ${rp}") resizeparams
     ));
 
+  bindm = [
+    "$mainMod, mouse:272, movewindow"
+    "$mainMod, mouse:273, resizewindow"
+  ];
+
   bindr = [
     "CAPS, Caps_Lock, exec, swayosd-client --caps-lock"
   ];
+
+  binds.hide_special_on_workspace_change = true;
 }

@@ -1,10 +1,8 @@
 {
-  dotnix.python = {
-    homeManager = { pkgs, ... }: {
-      programs.uv.enable = true;
-      home.packages = with pkgs; [
-        ruff
-      ];
-    };
+  dotnix.python.homeManager = { pkgs, ... }: {
+    home.packages = with pkgs; [
+      ruff
+    ];
+    programs.uv.enable = true;
   };
 }

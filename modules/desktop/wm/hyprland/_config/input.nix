@@ -1,10 +1,10 @@
 {
   input = {
-    kb_layout = "us";
     follow_mouse = 1;
-    sensitivity = 0;
-    repeat_rate = 35;
+    kb_layout = "us";
     repeat_delay = 300;
+    repeat_rate = 35;
+    sensitivity = 0;
     touchpad = {
       disable_while_typing = true;
       natural_scroll = true;
