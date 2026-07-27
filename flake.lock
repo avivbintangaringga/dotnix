@@ -291,6 +291,22 @@
       }
     },
     "git-hooks": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1784288435,
+        "narHash": "sha256-ReRHaLgr/uVqdD8afFSn+myXIfpHeOhP0yYe0TJqAA8=",
+        "owner": "cachix",
+        "repo": "git-hooks.nix",
+        "rev": "43b3c1ab9d40fb1dbb008f451988a91e375825e9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cachix",
+        "repo": "git-hooks.nix",
+        "type": "github"
+      }
+    },
+    "git-hooks-nix": {
       "inputs": {
         "flake-compat": "flake-compat_2",
         "nixpkgs": "nixpkgs"
@@ -309,7 +325,7 @@
         "type": "github"
       }
     },
-    "git-hooks-nix": {
+    "git-hooks-nix_2": {
       "inputs": {
         "flake-compat": "flake-compat_4",
         "nixpkgs": [
@@ -323,22 +339,6 @@
         "owner": "cachix",
         "repo": "git-hooks.nix",
         "rev": "bca82caa46d5ec0f5d422c61fb1e30bc51313cbe",
-        "type": "github"
-      },
-      "original": {
-        "owner": "cachix",
-        "repo": "git-hooks.nix",
-        "type": "github"
-      }
-    },
-    "git-hooks_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1784288435,
-        "narHash": "sha256-ReRHaLgr/uVqdD8afFSn+myXIfpHeOhP0yYe0TJqAA8=",
-        "owner": "cachix",
-        "repo": "git-hooks.nix",
-        "rev": "43b3c1ab9d40fb1dbb008f451988a91e375825e9",
         "type": "github"
       },
       "original": {
@@ -814,7 +814,7 @@
     "nvix": {
       "inputs": {
         "flake-parts": "flake-parts_3",
-        "git-hooks": "git-hooks_2",
+        "git-hooks": "git-hooks",
         "nix-wire": "nix-wire",
         "nixpkgs": [
           "nixpkgs"
@@ -840,7 +840,7 @@
     "pedantix": {
       "inputs": {
         "flake-parts": "flake-parts_5",
-        "git-hooks-nix": "git-hooks-nix",
+        "git-hooks-nix": "git-hooks-nix_2",
         "nixpkgs": "nixpkgs_7",
         "treefmt-nix": "treefmt-nix_2"
       },
@@ -885,7 +885,7 @@
         "den": "den",
         "flake-file": "flake-file",
         "flake-parts": "flake-parts",
-        "git-hooks": "git-hooks",
+        "git-hooks-nix": "git-hooks-nix",
         "hardware": "hardware",
         "home-manager": "home-manager",
         "import-tree": "import-tree",
