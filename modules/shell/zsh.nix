@@ -9,7 +9,55 @@
       (user-shell "zsh")
     ];
 
-    homeManager = { home, ... }: {
+    homeManager = { home, pkgs, ... }: {
+      home.packages = with pkgs; [
+        (
+          if home ? flakePath && home.flakePath != null then
+            (writeShellApplication {
+              name = "upgrade";
+              runtimeInputs = [
+                coreutils
+                nh
+                git
+              ];
+              text = ''
+                SUDO="sudo"
+                NH_ASK="--ask"
+                NH_SUDO="--bypass-root-check"
+                NH_COMMIT="--commit-lock-file"
+
+                while [ $# -gt 0 ]
+                do
+                    case "$1" in
+                        --no-ask)
+                          NH_ASK=""
+                          shift
+                          ;;
+                        --no-commit)
+                          NH_COMMIT=""
+                          shift
+                          ;;
+                         --no-sudo)
+                            SUDO=""
+                            NH_SUDO=""
+                            shift
+                            ;;
+                        --)
+                          shift
+                          break
+                          ;;
+                    esac
+                done
+
+                $SUDO nh os switch ${home.flakePath} --no-nom --show-trace --update $NH_ASK $NH_SUDO $NH_COMMIT
+                nh home switch ${home.flakePath} --no-nom -b hm-bak --show-trace --update $NH_ASK $NH_SUDO $NH_COMMIT
+              '';
+            })
+          else
+            null
+        )
+      ];
+
       programs.zsh = {
         enable = true;
         autocd = true;
