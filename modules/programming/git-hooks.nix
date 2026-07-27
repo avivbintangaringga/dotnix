@@ -3,15 +3,11 @@
   ...
 }:
 {
-  flake-file.inputs = {
-    git-hooks.url = "github:cachix/git-hooks.nix";
-  };
+  flake-file.inputs.git-hooks-nix.url = "github:cachix/git-hooks.nix";
 
   imports = [
-    inputs.git-hooks.flakeModule
+    inputs.git-hooks-nix.flakeModule
   ];
 
-  perSystem = {
-    pre-commit.settings.hooks.treefmt.enable = true;
-  };
+  perSystem.pre-commit.settings.hooks.treefmt.enable = true;
 }
