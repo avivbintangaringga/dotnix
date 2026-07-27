@@ -62,6 +62,7 @@
       };
     };
     homes.x86_64-linux.r7fx = {
+      flakePath = "/home/r7fx/dotnix";
       fullName = "R7FX";
       git = {
         email = "avivbintangaringga90@gmail.com";

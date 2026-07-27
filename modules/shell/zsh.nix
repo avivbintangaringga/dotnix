@@ -1,5 +1,6 @@
 {
   den,
+  dotnix,
   ...
 }:
 {
@@ -8,16 +9,47 @@
       (user-shell "zsh")
     ];
 
-    homeManager.programs.zsh = {
-      enable = true;
-      autocd = true;
-      autosuggestion.enable = true;
-      enableCompletion = true;
-      history.size = 100000;
-      syntaxHighlighting.enable = true;
+    homeManager = { home, ... }: {
+      programs.zsh = {
+        enable = true;
+        autocd = true;
+        autosuggestion.enable = true;
+        enableCompletion = true;
+        history.size = 100000;
+        shellAliases =
+          { }
+          // (
+            if home ? flakePath && home.flakePath != null then
+              {
+                edit = "hx ${home.flakePath}";
+                hm-update = "nh home switch ${home.flakePath} --no-nom -b hm-bak --ask --show-trace";
+                update = "nh os switch ${home.flakePath} --no-nom --ask --show-trace";
+              }
+            else
+              { }
+          )
+          // (
+            if dotnix ? gaming then
+              {
+                wuwatrack = ''url=$(grep -oE 'https://aki-gm-resources(-oversea)?.aki-game.(net|com)[^"]*' "$HOME/.local/share/Steam/steamapps/common/Wuthering Waves/Client/Saved/Logs/Client.log" | tail -n 1) && [ -n "$url" ] && echo "$url"'';
+              }
+            else
+              { }
+          )
+          // (
+            if dotnix ? kvm then
+              {
+                win10 = "vm-start win10";
+                win11 = "vm-start win11";
+              }
+            else
+              { }
+          );
+        syntaxHighlighting.enable = true;
+      };
     };
 
-    nixos = { user, ... }: {
+    nixos = { ... }: {
       programs = {
         starship = {
           enable = true;
@@ -31,36 +63,25 @@
           enableBashCompletion = true;
           enableCompletion = true;
           histSize = 100000;
-          shellAliases = {
-            edit = "hx /home/${user.userName}/dotnix";
-            # Git
-            ga = "git add";
-            gb = "git branch";
-            gc = "git commit -m";
-            gca = "git commit -am";
-            gco = "git checkout";
-            gd = "git diff";
-            gp = "git push";
-            grl = "git reflog";
-            gs = "git status";
-            hm-update = "nh home switch /home/${user.userName}/dotnix --no-nom -b hm-bak --ask --show-trace";
-            update = "nh os switch /home/${user.userName}/dotnix --no-nom --ask --show-trace";
-            upgrade = ''
-              cd /home/${user.userName}/dotnix &&
-              git add . &&
-              git commit -m "before upgrade" &&
-              git push &&
-              nix flake update &&
-              update &&
-              hm-update &&
-              git commit -am "after upgrade" &&
-              git push &&
-              echo "DONE!"
-            '';
-            win10 = "vm-start win10";
-            win11 = "vm-start win11";
-            wuwatrack = ''url=$(grep -oE 'https://aki-gm-resources(-oversea)?.aki-game.(net|com)[^"]*' "$HOME/.local/share/Steam/steamapps/common/Wuthering Waves/Client/Saved/Logs/Client.log" | tail -n 1) && [ -n "$url" ] && echo "$url"'';
-          };
+          shellAliases =
+            { }
+            // (
+              if dotnix ? git then
+                {
+                  ga = "git add";
+                  gb = "git branch";
+                  gc = "git commit -m";
+                  gca = "git commit -am";
+                  gco = "git checkout";
+                  gd = "git diff";
+                  gm = "git merge";
+                  gp = "git push";
+                  grl = "git reflog";
+                  gs = "git status";
+                }
+              else
+                { }
+            );
           syntaxHighlighting.enable = true;
         };
       };

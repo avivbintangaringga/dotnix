@@ -1,12 +1,16 @@
 {
   den.schema.home = { lib, ... }: {
     options = {
+      flakePath = lib.mkOption {
+        default = null;
+        description = "Nix flake config path";
+        type = lib.types.nullOr lib.types.str;
+      };
       fullName = lib.mkOption {
         default = "";
         description = "Full name";
         type = lib.types.str;
       };
-
       git = {
         email = lib.mkOption {
           default = "";
