@@ -1,14 +1,6 @@
 {
-  dotnix.logind = {
-    nixos = {
-      services.logind = {
-        settings = {
-          Login = {
-            HandleLidSwitch = "suspend";
-            HandlePowerKey = "suspend";
-          };
-        };
-      };
-    };
+  dotnix.logind.nixos.services.logind.settings.Login = {
+    HandleLidSwitch = "suspend";
+    HandlePowerKey = "suspend";
   };
 }

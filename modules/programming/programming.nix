@@ -3,14 +3,12 @@
   ...
 }:
 {
-  dotnix.programming = {
-    includes = with dotnix; [
-      go
-      js
-      lsp
-      luau
-      nix
-      python
-    ];
-  };
+  dotnix.programming.includes = with dotnix; [
+    go
+    js
+    lsp
+    luau
+    nix
+    python
+  ];
 }

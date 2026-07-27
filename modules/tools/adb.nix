@@ -1,13 +1,9 @@
 {
-  dotnix.adb = {
-    nixos = { user, pkgs, ... }: {
-      environment.systemPackages = with pkgs; [
-        android-tools
-      ];
+  dotnix.adb.nixos = { user, pkgs, ... }: {
+    environment.systemPackages = with pkgs; [
+      android-tools
+    ];
 
-      users.users.${user.userName} = {
-        extraGroups = [ "adbuser" ];
-      };
-    };
+    users.users.${user.userName}.extraGroups = [ "adbuser" ];
   };
 }

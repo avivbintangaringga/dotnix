@@ -8,17 +8,13 @@
       (user-shell "zsh")
     ];
 
-    homeManager = {
-      programs.zsh = {
-        enable = true;
-        autocd = true;
-        autosuggestion = {
-          enable = true;
-        };
-        enableCompletion = true;
-        history.size = 100000;
-        syntaxHighlighting.enable = true;
-      };
+    homeManager.programs.zsh = {
+      enable = true;
+      autocd = true;
+      autosuggestion.enable = true;
+      enableCompletion = true;
+      history.size = 100000;
+      syntaxHighlighting.enable = true;
     };
 
     nixos = { user, ... }: {
@@ -31,9 +27,7 @@
         };
         zsh = {
           enable = true;
-          autosuggestions = {
-            enable = true;
-          };
+          autosuggestions.enable = true;
           enableBashCompletion = true;
           enableCompletion = true;
           histSize = 100000;
@@ -67,9 +61,7 @@
             win11 = "vm-start win11";
             wuwatrack = ''url=$(grep -oE 'https://aki-gm-resources(-oversea)?.aki-game.(net|com)[^"]*' "$HOME/.local/share/Steam/steamapps/common/Wuthering Waves/Client/Saved/Logs/Client.log" | tail -n 1) && [ -n "$url" ] && echo "$url"'';
           };
-          syntaxHighlighting = {
-            enable = true;
-          };
+          syntaxHighlighting.enable = true;
         };
       };
     };

@@ -117,9 +117,7 @@
         inputs.mango.nixosModules.mango
       ];
 
-      programs.mango = {
-        enable = true;
-      };
+      programs.mango.enable = true;
     };
   };
 }

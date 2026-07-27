@@ -1,9 +1,7 @@
 {
-  dotnix.qbittorrent = {
-    homeManager = { pkgs, ... }: {
-      home.packages = with pkgs; [
-        qbittorrent-enhanced
-      ];
-    };
+  dotnix.qbittorrent.homeManager = { pkgs, ... }: {
+    home.packages = with pkgs; [
+      qbittorrent-enhanced
+    ];
   };
 }

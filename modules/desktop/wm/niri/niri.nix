@@ -26,20 +26,16 @@
       imports = [
         inputs.niri.homeModules.niri
       ];
-      home.file = {
-        ".config/niri/config.kdl" = {
-          source = ./config.kdl;
-        };
-      };
-      nixpkgs.overlays = [
-        inputs.niri.overlays.niri
-      ];
+      home.file.".config/niri/config.kdl".source = ./config.kdl;
       programs.niri = {
         config = null;
         enable = true;
         package = pkgs.niri-unstable;
         settings = null;
       };
+      nixpkgs.overlays = [
+        inputs.niri.overlays.niri
+      ];
       xdg.portal.extraPortals = with pkgs; [
         xdg-desktop-portal-gnome
       ];
@@ -62,13 +58,13 @@
           ++ (with niri-float-sticky-pkgs; [
             niri-float-sticky
           ]);
-        nixpkgs.overlays = [
-          inputs.niri.overlays.niri
-        ];
         programs.niri = {
           enable = true;
           package = pkgs.niri-unstable;
         };
+        nixpkgs.overlays = [
+          inputs.niri.overlays.niri
+        ];
         systemd.user.services.niri-flake-polkit.enable = false;
       };
   };

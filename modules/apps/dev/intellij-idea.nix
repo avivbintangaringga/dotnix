@@ -1,9 +1,7 @@
 {
-  dotnix.intellij-idea = {
-    homeManager = { pkgs, ... }: {
-      home.packages = with pkgs; [
-        jetbrains.idea
-      ];
-    };
+  dotnix.intellij-idea.homeManager = { pkgs, ... }: {
+    home.packages = with pkgs; [
+      jetbrains.idea
+    ];
   };
 }

@@ -1,9 +1,7 @@
 {
-  dotnix.hydra = {
-    homeManager = { pkgs, ... }: {
-      home.packages = with pkgs; [
-        hydralauncher
-      ];
-    };
+  dotnix.hydra.homeManager = { pkgs, ... }: {
+    home.packages = with pkgs; [
+      hydralauncher
+    ];
   };
 }

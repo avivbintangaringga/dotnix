@@ -1,10 +1,6 @@
 {
-  dotnix.appimage = {
-    nixos = {
-      programs.appimage = {
-        enable = true;
-        binfmt = true;
-      };
-    };
+  dotnix.appimage.nixos.programs.appimage = {
+    enable = true;
+    binfmt = true;
   };
 }

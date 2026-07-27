@@ -1,9 +1,3 @@
 {
-  dotnix.playerctld = {
-    homeManager = {
-      services.playerctld = {
-        enable = true;
-      };
-    };
-  };
+  dotnix.playerctld.homeManager.services.playerctld.enable = true;
 }

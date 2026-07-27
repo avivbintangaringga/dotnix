@@ -6,6 +6,7 @@
 }:
 {
   imports = [ inputs.den.flakeModule ];
+
   den = {
     aspects.inferno = {
       includes =
@@ -65,12 +66,8 @@
             # "vfio-pci.ids=10de:25a2,10de:2291"
           ];
           loader = {
-            efi = {
-              canTouchEfiVariables = true;
-            };
-            systemd-boot = {
-              enable = true;
-            };
+            efi.canTouchEfiVariables = true;
+            systemd-boot.enable = true;
             timeout = 0;
           };
         };
@@ -79,50 +76,42 @@
           device = "/dev/disk/by-uuid/9EF2F582F2F55F49";
           fsType = "ntfs-3g";
         };
-        hardware = {
-          enableAllFirmware = true;
-        };
-        security.sudo = {
-          extraRules = [
-            {
-              # For VFIO script
-              commands = [
-                {
-                  options = [ "NOPASSWD" ];
-                  command = "/run/current-system/sw/bin/systemctl";
-                }
-                {
-                  options = [ "NOPASSWD" ];
-                  command = "/run/current-system/sw/bin/rmmod";
-                }
-                {
-                  options = [ "NOPASSWD" ];
-                  command = "/run/current-system/sw/bin/modprobe";
-                }
-                {
-                  options = [ "NOPASSWD" ];
-                  command = "/run/current-system/sw/bin/virsh";
-                }
-                {
-                  options = [ "NOPASSWD" ];
-                  command = "/run/current-system/sw/bin/pkill";
-                }
-                {
-                  options = [ "NOPASSWD" ];
-                  command = "/run/current-system/sw/bin/efibootmgr";
-                }
-              ];
-              groups = [ "wheel" ];
-            }
-          ];
-        };
-        systemd.services = {
-          NetworkManager-wait-online.enable = false;
-        };
+        hardware.enableAllFirmware = true;
+        security.sudo.extraRules = [
+          {
+            # For VFIO script
+            commands = [
+              {
+                options = [ "NOPASSWD" ];
+                command = "/run/current-system/sw/bin/systemctl";
+              }
+              {
+                options = [ "NOPASSWD" ];
+                command = "/run/current-system/sw/bin/rmmod";
+              }
+              {
+                options = [ "NOPASSWD" ];
+                command = "/run/current-system/sw/bin/modprobe";
+              }
+              {
+                options = [ "NOPASSWD" ];
+                command = "/run/current-system/sw/bin/virsh";
+              }
+              {
+                options = [ "NOPASSWD" ];
+                command = "/run/current-system/sw/bin/pkill";
+              }
+              {
+                options = [ "NOPASSWD" ];
+                command = "/run/current-system/sw/bin/efibootmgr";
+              }
+            ];
+            groups = [ "wheel" ];
+          }
+        ];
+        systemd.services.NetworkManager-wait-online.enable = false;
       };
     };
-    hosts.x86_64-linux.inferno = {
-      users.r7fx = { };
-    };
+    hosts.x86_64-linux.inferno.users.r7fx = { };
   };
 }

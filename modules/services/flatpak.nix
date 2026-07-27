@@ -1,11 +1,3 @@
 {
-  dotnix.flatpak = {
-    nixos = {
-      services = {
-        flatpak = {
-          enable = true;
-        };
-      };
-    };
-  };
+  dotnix.flatpak.nixos.services.flatpak.enable = true;
 }

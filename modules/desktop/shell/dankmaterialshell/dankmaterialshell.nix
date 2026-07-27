@@ -19,11 +19,7 @@
         inputs.dankmaterialshell.homeModules.dank-material-shell
       ];
       home = {
-        file = {
-          ".config/niri/dms-overrides.kdl" = {
-            source = ./niri/dms-overrides.kdl;
-          };
-        };
+        file.".config/niri/dms-overrides.kdl".source = ./niri/dms-overrides.kdl;
         packages = with pkgs; [
           satty
           kdePackages.qt6ct
@@ -43,21 +39,15 @@
           QT_QPA_PLATFORMTHEME = "gtk4";
         };
       };
+      programs.dank-material-shell.enable = true;
       gtk = {
-        gtk3 = {
-          extraCss = ''
-            @import url("dank-colors.css");
-          '';
-        };
+        gtk3.extraCss = ''
+          @import url("dank-colors.css");
+        '';
 
-        gtk4 = {
-          extraCss = ''
-            @import url("dank-colors.css");
-          '';
-        };
-      };
-      programs.dank-material-shell = {
-        enable = true;
+        gtk4.extraCss = ''
+          @import url("dank-colors.css");
+        '';
       };
     };
   };

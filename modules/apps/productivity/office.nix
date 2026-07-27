@@ -13,14 +13,10 @@
         packages = with pkgs; [
           libreoffice-qt6-fresh
         ];
-        sessionVariables = {
-          SAL_USE_VCLPLUGIN = "kf6";
-        };
+        sessionVariables.SAL_USE_VCLPLUGIN = "kf6";
       };
 
-      programs.onlyoffice = {
-        enable = true;
-      };
+      programs.onlyoffice.enable = true;
     };
   };
 }

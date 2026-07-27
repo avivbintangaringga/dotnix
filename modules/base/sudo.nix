@@ -1,9 +1,3 @@
 {
-  dotnix.sudo = {
-    nixos = {
-      security.sudo = {
-        enable = true;
-      };
-    };
-  };
+  dotnix.sudo.nixos.security.sudo.enable = true;
 }

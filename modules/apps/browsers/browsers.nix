@@ -3,10 +3,8 @@
   ...
 }:
 {
-  dotnix.browsers = {
-    includes = with dotnix; [
-      thorium
-      zen-browser
-    ];
-  };
+  dotnix.browsers.includes = with dotnix; [
+    thorium
+    zen-browser
+  ];
 }

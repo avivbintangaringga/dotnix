@@ -1,9 +1,3 @@
 {
-  dotnix.gvfs = {
-    nixos = {
-      services.gvfs = {
-        enable = true;
-      };
-    };
-  };
+  dotnix.gvfs.nixos.services.gvfs.enable = true;
 }

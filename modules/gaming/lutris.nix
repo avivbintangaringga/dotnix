@@ -1,7 +1,3 @@
 {
-  dotnix.lutris = {
-    homeManager = {
-      programs.lutris.enable = true;
-    };
-  };
+  dotnix.lutris.homeManager.programs.lutris.enable = true;
 }

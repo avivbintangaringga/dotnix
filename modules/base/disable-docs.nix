@@ -1,13 +1,9 @@
 {
-  dotnix.disable-docs = {
-    nixos = {
-      documentation = {
-        enable = false;
-        nixos.enable = false;
-        dev.enable = false;
-        info.enable = false;
-        man.enable = false;
-      };
-    };
+  dotnix.disable-docs.nixos.documentation = {
+    nixos.enable = false;
+    enable = false;
+    dev.enable = false;
+    info.enable = false;
+    man.enable = false;
   };
 }

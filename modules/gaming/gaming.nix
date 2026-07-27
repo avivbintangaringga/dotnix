@@ -3,16 +3,14 @@
   ...
 }:
 {
-  dotnix.gaming = {
-    includes = with dotnix; [
-      faugus
-      gamemode
-      gamescope
-      lact
-      lsfg-vk
-      mangohud
-      proton
-      steam
-    ];
-  };
+  dotnix.gaming.includes = with dotnix; [
+    faugus
+    gamemode
+    gamescope
+    lact
+    lsfg-vk
+    mangohud
+    proton
+    steam
+  ];
 }

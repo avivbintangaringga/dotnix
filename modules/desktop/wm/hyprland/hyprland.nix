@@ -21,16 +21,12 @@
             grimblast
           ];
 
-          pointerCursor = {
-            hyprcursor = {
-              enable = true;
-              size = 24;
-            };
+          pointerCursor.hyprcursor = {
+            enable = true;
+            size = 24;
           };
         };
-        services.hyprpolkitagent = {
-          enable = true;
-        };
+        services.hyprpolkitagent.enable = true;
         wayland.windowManager.hyprland = {
           enable = true;
           settings = lib.mkMerge [
@@ -63,9 +59,7 @@
 
     nixos = {
       programs.hyprland.enable = true;
-      services = {
-        libinput.enable = true;
-      };
+      services.libinput.enable = true;
     };
   };
 }

@@ -1,9 +1,7 @@
 {
-  dotnix.heroic = {
-    homeManager = { pkgs, ... }: {
-      home.packages = with pkgs; [
-        heroic
-      ];
-    };
+  dotnix.heroic.homeManager = { pkgs, ... }: {
+    home.packages = with pkgs; [
+      heroic
+    ];
   };
 }

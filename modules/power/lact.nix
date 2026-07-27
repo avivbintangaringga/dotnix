@@ -1,7 +1,3 @@
 {
-  dotnix.lact = {
-    nixos = {
-      services.lact.enable = true;
-    };
-  };
+  dotnix.lact.nixos.services.lact.enable = true;
 }

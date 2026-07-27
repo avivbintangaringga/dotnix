@@ -18,48 +18,36 @@
           enable = true;
           greeter-args = "--session Niri";
           settings = {
-            appearance = {
-              hide_logo = true;
-            };
+            appearance.hide_logo = true;
             cursor = {
               size = 24;
               theme = "Bibata-Modern-Classic";
             };
-            output = {
-              scale = 1.0;
-            };
+            output.scale = 1.0;
             session = {
               default = "Niri";
               last = "Niri";
             };
-            user = {
-              default = user.userName;
-            };
+            user.default = user.userName;
           };
         };
 
         seahorse.enable = true;
       };
       services = {
-        displayManager = {
-          autoLogin = {
-            enable = true;
-            user = user.userName;
-          };
+        displayManager.autoLogin = {
+          enable = true;
+          user = user.userName;
         };
         greetd = {
           enable = true;
-          settings = {
-            initial_session = {
-              command = "niri-session";
-              user = user.userName;
-            };
+          settings.initial_session = {
+            command = "niri-session";
+            user = user.userName;
           };
         };
       };
-      users.users.${user.userName} = {
-        extraGroups = [ "greeter" ];
-      };
+      users.users.${user.userName}.extraGroups = [ "greeter" ];
     };
   };
 }

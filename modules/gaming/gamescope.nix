@@ -1,9 +1,3 @@
 {
-  dotnix.gamescope = {
-    nixos = {
-      programs.gamescope = {
-        enable = true;
-      };
-    };
-  };
+  dotnix.gamescope.nixos.programs.gamescope.enable = true;
 }

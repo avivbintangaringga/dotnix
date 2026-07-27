@@ -1,9 +1,3 @@
 {
-  dotnix.nh = {
-    nixos = {
-      programs.nh = {
-        enable = true;
-      };
-    };
-  };
+  dotnix.nh.nixos.programs.nh.enable = true;
 }

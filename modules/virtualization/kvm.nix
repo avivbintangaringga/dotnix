@@ -10,19 +10,13 @@
       vfio
     ];
 
-    homeManager = {
-      xdg = {
-        desktopEntries = {
-          win11 = {
-            categories = [ "System" ];
-            exec = "vm-start win11";
-            icon = self + "/assets/icons/windows11.png";
-            name = "Windows 11";
-            terminal = false;
-            type = "Application";
-          };
-        };
-      };
+    homeManager.xdg.desktopEntries.win11 = {
+      categories = [ "System" ];
+      exec = "vm-start win11";
+      icon = self + "/assets/icons/windows11.png";
+      name = "Windows 11";
+      terminal = false;
+      type = "Application";
     };
 
     nixos =
@@ -112,18 +106,14 @@
             esac
           '')
         ];
-        networking.firewall.interfaces = {
-          "virbr*" = {
-            allowedTCPPorts = [ 53 ];
-            allowedUDPPorts = [
-              53
-              67
-              547
-            ];
-          };
-        };
-        services = {
-          spice-vdagentd.enable = true;
+        services.spice-vdagentd.enable = true;
+        networking.firewall.interfaces."virbr*" = {
+          allowedTCPPorts = [ 53 ];
+          allowedUDPPorts = [
+            53
+            67
+            547
+          ];
         };
         systemd = {
           services = {
@@ -133,64 +123,56 @@
               wantedBy = lib.mkForce [ ];
             };
           };
-          targets = {
-            graphical.wants = [ "libvirtd.service" ];
-          };
+          targets.graphical.wants = [ "libvirtd.service" ];
         };
-        users.users.${user.userName} = {
-          extraGroups = [ "libvirtd" ];
-        };
+        users.users.${user.userName}.extraGroups = [ "libvirtd" ];
         virtualisation = {
           libvirtd = {
             enable = true;
-            hooks = {
-              qemu = {
-                "gpuswitch" = pkgs.writeShellScript "gpuswitch-hook" ''
-                  readonly GUEST_NAME="$1"
-                  readonly HOOK_NAME="$2"
-                  readonly STATE_NAME="$3"
+            hooks.qemu."gpuswitch" = pkgs.writeShellScript "gpuswitch-hook" ''
+              readonly GUEST_NAME="$1"
+              readonly HOOK_NAME="$2"
+              readonly STATE_NAME="$3"
 
-                  start_hook() {
-                    # systemctl --user --machine=${user.userName}@ stop swaync  # TEMPORARY FIX
-                    # systemctl --user --machine=${user.userName}@ stop swayosd # TEMPORARY FIX
-                    # pkill lact
-                    systemctl stop lactd
-                    systemctl stop nvidia-powerd
-                    rmmod nvidia_drm
-                    rmmod nvidia_uvm
-                    rmmod nvidia_modeset
-                    rmmod nvidia
-                    modprobe -i vfio_pci vfio_pci_core vfio_iommu_type1 vfio
-                    /run/current-system/sw/bin/virsh nodedev-detach pci_0000_01_00_0
-                    # systemctl --user --machine=${user.userName}@ start swaync  # TEMPORARY FIX
-                    # systemctl --user --machine=${user.userName}@ start swayosd # TEMPORARY FIX
-                  }
+              start_hook() {
+                # systemctl --user --machine=${user.userName}@ stop swaync  # TEMPORARY FIX
+                # systemctl --user --machine=${user.userName}@ stop swayosd # TEMPORARY FIX
+                # pkill lact
+                systemctl stop lactd
+                systemctl stop nvidia-powerd
+                rmmod nvidia_drm
+                rmmod nvidia_uvm
+                rmmod nvidia_modeset
+                rmmod nvidia
+                modprobe -i vfio_pci vfio_pci_core vfio_iommu_type1 vfio
+                /run/current-system/sw/bin/virsh nodedev-detach pci_0000_01_00_0
+                # systemctl --user --machine=${user.userName}@ start swaync  # TEMPORARY FIX
+                # systemctl --user --machine=${user.userName}@ start swayosd # TEMPORARY FIX
+              }
 
-                  revert_hook() {
-                    /run/current-system/sw/bin/virsh nodedev-reattach pci_0000_01_00_0
-                    rmmod vfio_pci vfio_pci_core vfio_iommu_type1 vfio
-                    modprobe -i nvidia
-                    modprobe -i nvidia_uvm
-                    modprobe -i nvidia_modeset
-                    modprobe -i nvidia_drm
-                    systemctl restart nvidia-powerd
-                    systemctl restart lactd
-                  }
+              revert_hook() {
+                /run/current-system/sw/bin/virsh nodedev-reattach pci_0000_01_00_0
+                rmmod vfio_pci vfio_pci_core vfio_iommu_type1 vfio
+                modprobe -i nvidia
+                modprobe -i nvidia_uvm
+                modprobe -i nvidia_modeset
+                modprobe -i nvidia_drm
+                systemctl restart nvidia-powerd
+                systemctl restart lactd
+              }
 
-                  if [[ "$HOOK_NAME" == "prepare" && "$STATE_NAME" == "begin" ]]; then
-                    if [[ "$GUEST_NAME" == "win11" || "$GUEST_NAME" == "win10" ]]
-                    then
-                      start_hook
-                    fi
-                  elif [[ "$HOOK_NAME" == "release" && "$STATE_NAME" == "end" ]]; then
-                    if [[ "$GUEST_NAME" == "win11" || "$GUEST_NAME" == "win10" ]]
-                    then
-                      revert_hook
-                    fi
-                  fi
-                '';
-              };
-            };
+              if [[ "$HOOK_NAME" == "prepare" && "$STATE_NAME" == "begin" ]]; then
+                if [[ "$GUEST_NAME" == "win11" || "$GUEST_NAME" == "win10" ]]
+                then
+                  start_hook
+                fi
+              elif [[ "$HOOK_NAME" == "release" && "$STATE_NAME" == "end" ]]; then
+                if [[ "$GUEST_NAME" == "win11" || "$GUEST_NAME" == "win10" ]]
+                then
+                  revert_hook
+                fi
+              fi
+            '';
             onBoot = "ignore";
             onShutdown = "shutdown";
             qemu = {

@@ -1,11 +1,3 @@
 {
-  dotnix.accounts-daemon = {
-    nixos = {
-      services = {
-        accounts-daemon = {
-          enable = true;
-        };
-      };
-    };
-  };
+  dotnix.accounts-daemon.nixos.services.accounts-daemon.enable = true;
 }

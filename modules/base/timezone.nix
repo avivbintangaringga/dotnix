@@ -1,7 +1,3 @@
 {
-  dotnix.timezone = {
-    nixos = {
-      time.timeZone = "Asia/Jakarta";
-    };
-  };
+  dotnix.timezone.nixos.time.timeZone = "Asia/Jakarta";
 }

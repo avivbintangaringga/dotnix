@@ -12,14 +12,6 @@
 }:
 
 stdenv.mkDerivation {
-  pname = "cpuid-fault-emulation";
-  version = "0.1";
-  src = ./cpuid-fault-emulation.zip;
-  nativeBuildInputs = [ unzip ] ++ kernel.moduleBuildDependencies;
-  makeFlags = [
-    "KDIR=${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
-    "KERNEL=${kernel.modDirVersion}"
-  ];
   buildPhase = ''
     runHook preBuild
     make $makeFlags
@@ -32,6 +24,14 @@ stdenv.mkDerivation {
     cp cpuid_fault_emulation.ko $installDir/
     runHook postInstall
   '';
+  makeFlags = [
+    "KDIR=${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
+    "KERNEL=${kernel.modDirVersion}"
+  ];
+  nativeBuildInputs = [ unzip ] ++ kernel.moduleBuildDependencies;
+  pname = "cpuid-fault-emulation";
+  src = ./cpuid-fault-emulation.zip;
+  version = "0.1";
   meta = with lib; {
     description = "AMD-V based emulation of Intel-style CPUID faulting";
     license = licenses.gpl2Only;

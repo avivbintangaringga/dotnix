@@ -1,12 +1,10 @@
 {
   dotnix.fonts = {
-    homeManager = {
-      fonts.fontconfig = {
-        enable = true;
-        defaultFonts = {
-          emoji = [ "Noto Color Emoji" ];
-          monospace = [ "Fira Mono" ];
-        };
+    homeManager.fonts.fontconfig = {
+      enable = true;
+      defaultFonts = {
+        emoji = [ "Noto Color Emoji" ];
+        monospace = [ "Fira Mono" ];
       };
     };
 

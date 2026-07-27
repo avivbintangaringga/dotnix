@@ -1,7 +1,3 @@
 {
-  dotnix.boot = {
-    boot = {
-      supportedFilesystems = [ "ntfs" ];
-    };
-  };
+  dotnix.boot.boot.supportedFilesystems = [ "ntfs" ];
 }

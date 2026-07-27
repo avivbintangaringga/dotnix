@@ -1,9 +1,3 @@
 {
-  dotnix.upower = {
-    nixos = {
-      services.upower = {
-        enable = true;
-      };
-    };
-  };
+  dotnix.upower.nixos.services.upower.enable = true;
 }

@@ -58,9 +58,7 @@
         ]);
 
       nixos = { user, ... }: {
-        users.users.${user.userName} = {
-          initialPassword = "123";
-        };
+        users.users.${user.userName}.initialPassword = "123";
       };
     };
     homes.x86_64-linux.r7fx = {

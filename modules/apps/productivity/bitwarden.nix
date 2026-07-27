@@ -1,9 +1,7 @@
 {
-  dotnix.bitwarden = {
-    homeManager = { pkgs, ... }: {
-      home.packages = with pkgs; [
-        bitwarden-desktop
-      ];
-    };
+  dotnix.bitwarden.homeManager = { pkgs, ... }: {
+    home.packages = with pkgs; [
+      bitwarden-desktop
+    ];
   };
 }

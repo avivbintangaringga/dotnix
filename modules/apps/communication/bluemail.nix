@@ -1,9 +1,7 @@
 {
-  dotnix.bluemail = {
-    homeManager = { pkgs, ... }: {
-      home.packages = with pkgs; [
-        bluemail
-      ];
-    };
+  dotnix.bluemail.homeManager = { pkgs, ... }: {
+    home.packages = with pkgs; [
+      bluemail
+    ];
   };
 }

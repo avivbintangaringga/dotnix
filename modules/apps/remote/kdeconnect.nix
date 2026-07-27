@@ -1,12 +1,9 @@
 {
   dotnix.kdeconnect = {
-    homeManager = {
-      services.kdeconnect = {
-        enable = true;
-      };
-    };
+    homeManager.services.kdeconnect.enable = true;
 
     nixos = {
+      programs.kdeconnect.enable = true;
       networking.firewall = rec {
         allowedTCPPortRanges = [
           {
@@ -15,9 +12,6 @@
           }
         ];
         allowedUDPPortRanges = allowedTCPPortRanges;
-      };
-      programs.kdeconnect = {
-        enable = true;
       };
     };
   };

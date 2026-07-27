@@ -8,9 +8,7 @@
         config = {
           allowUnfree = true;
           allowUnfreePredicate = (_: true);
-          android_sdk = {
-            accept_license = true;
-          };
+          android_sdk.accept_license = true;
           permittedInsecurePackages = [
             "electron-39.8.10"
             "electron-40.10.5"

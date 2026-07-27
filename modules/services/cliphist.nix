@@ -1,9 +1,3 @@
 {
-  dotnix.cliphist = {
-    homeManager = {
-      services.cliphist = {
-        enable = true;
-      };
-    };
-  };
+  dotnix.cliphist.homeManager.services.cliphist.enable = true;
 }

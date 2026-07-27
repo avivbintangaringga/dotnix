@@ -18,9 +18,7 @@
           configHome = "/home/${user.userName}";
         };
       };
-      users.users.${user.userName} = {
-        extraGroups = [ "greeter" ];
-      };
+      users.users.${user.userName}.extraGroups = [ "greeter" ];
     };
   };
 }
