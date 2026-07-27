@@ -17,6 +17,11 @@
     treefmt = {
       programs = {
         deadnix.enable = true;
+        dockerfmt.enable = true;
+        gofumpt.enable = true;
+        just.enable = true;
+        kdlfmt.enable = true;
+        ktfmt.enable = true;
         pedantix = {
           enable = true;
           settings = {
@@ -99,6 +104,21 @@
             top-level-blank-lines = 1;
           };
         };
+        prettier = {
+          enable = true;
+          settings = {
+            printWidth = 100;
+            semi = false;
+            singleQuote = true;
+            tabWidth = 2;
+            trailingComma = "all";
+          };
+        };
+        ruff-format.enable = true;
+        shfmt.enable = true;
+        stylua.enable = true;
+        taplo.enable = true;
+        templ.enable = true;
       };
       projectRootFile = "flake.nix";
     };
