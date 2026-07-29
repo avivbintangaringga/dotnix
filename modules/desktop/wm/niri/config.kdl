@@ -28,6 +28,7 @@ input {
 layout {
     center-focused-column "on-overflow"
     always-center-single-column
+    empty-workspace-above-first
     preset-column-widths {
         proportion 0.66667
         proportion 0.5
