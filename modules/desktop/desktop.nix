@@ -11,6 +11,6 @@
     xdg
 
     niri
-    mango
+    # mango
   ];
 }
