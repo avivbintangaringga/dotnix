@@ -11,7 +11,8 @@
 
   dotnix.mango = {
     includes = with dotnix; [
-      dankmaterialshell
+      noctalia
+      vicinae
     ];
 
     homeManager = { pkgs, ... }: {
@@ -21,91 +22,119 @@
       wayland.windowManager.mango =
         let
           mod = "SUPER";
+          axisMove = {
+            down = "up";
+            left = "right";
+            right = "left";
+            up = "down";
+          };
+          directions = rec {
+            down = j;
+            h = "left";
+            j = "down";
+            k = "up";
+            l = "right";
+            left = h;
+            right = l;
+            up = k;
+          };
         in
         {
           enable = true;
           autostart_sh = ''
-            dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots
             /usr/lib/xdg-desktop-portal-wlr &
 
-            dms run
+            noctalia &
+            vicinae server &
           '';
-          settings = ''
-            bind=${mod},e,spawn,nautilus
-            bind=${mod},b,spawn,zen-beta
-            bind=${mod},space,spawn,dms ipc call spotlight toggle
-            bind=${mod},Return,spawn,kitty
-
-            bind=${mod},q,killclient
-            bind=${mod},s,switch_layout
-            bind=${mod},r,reload_config
-            bind=${mod},f,togglemaximizescreen
-            bind=${mod}+SHIFT,f,togglefullscreen
-
-            bind=${mod},Left,focusdir,left
-            bind=${mod},Down,focusdir,down
-            bind=${mod},Up,focusdir,up
-            bind=${mod},Right,focusdir,right
-            bind=${mod},h,focusdir,left
-            bind=${mod},j,focusdir,down
-            bind=${mod},k,focusdir,up
-            bind=${mod},l,focusdir,right
-
-            bind=${mod},Tab,focusstack,next
-            bind=${mod}+SHIFT,Tab,focusstack,prev
-            bind=ALT,Tab,toggleoverview
-
-            gesturebind=none,left,3,focusdir,right
-            gesturebind=none,down,3,focusdir,up
-            gesturebind=none,up,3,focusdir,down
-            gesturebind=none,right,3,focusdir,left
-
-            mousebind=NONE,btn_left,toggleoverview,-1
-            mousebind=NONE,btn_right,killclient,0
-            mousebind=${mod},btn_left,moveresize,curmove
-            mousebind=${mod},btn_right,moveresize,curresize
-
-            axisbind=${mod},UP,focusstack,prev
-            axisbind=${mod},DOWN,focusstack,next
-
-            # Keyboard settings
-            repeat_delay=300
-            repeat_rate=30
-            numlockon=1
-
-            # Trackpad settings
-            trackpad_natural_scrolling=1
-            disable_while_typing=1
-
-
-            blur=1
-            blur_layer=0
-            blur_optimized=0
-
-            border_radius=8
-            borderpx=2
-            gappih=8
-            gappoh=8
-            gappiv=8
-            gappov=8
-
-            animations=1
-            animation_type_open=fade
-            animation_type_close=fade
-            layer_animations=0
-            layer_animation_type_open=fade
-            layer_animatoin_type_close=fade
-
-
-            hotarea_size=10
-            enable_hotarea=1
-            overviewgappi=8
-            overviewgappo=16
-
-
+          settings = {
+            animation_type_close = "fade";
+            animation_type_open = "fade";
+            animations = 1;
+            axisbind = [
+              "${mod},UP,focusstack,prev"
+              "${mod},DOWN,focusstack,next"
+            ];
+            bind = [
+              "${mod},e,spawn,nautilus"
+              "${mod},b,spawn,zen-beta"
+              "${mod},space,spawn,vicinae toggle"
+              "${mod},Return,spawn,kitty"
+              "${mod},q,killclient"
+              "${mod}+SHIFT,q,killclient,force"
+              "${mod},s,switch_layout"
+              "${mod},r,reload_config"
+              "${mod},f,togglemaximizescreen"
+              "${mod}+SHIFT,f,togglefullscreen"
+              # "${mod},Left,focusdir,left"
+              # "${mod},Down,focusdir,down"
+              # "${mod},Up,focusdir,up"
+              # "${mod},Right,focusdir,right"
+              # "${mod},h,focusdir,left"
+              # "${mod},j,focusdir,down"
+              # "${mod},k,focusdir,up"
+              # "${mod},l,focusdir,right"
+              "${mod},Tab,focusstack,next"
+              "${mod}+SHIFT,Tab,focusstack,prev"
+              "ALT,Tab,toggleoverview"
+              "${mod},o,toggleoverlay"
+              "${mod}+CTRL,f,togglefloating"
+            ]
+            ++ (builtins.attrValues (
+              builtins.mapAttrs (key: dir: "${mod},${key},focus_window_or_workspace,${dir}") directions
+            ))
+            ++ (builtins.attrValues (
+              builtins.mapAttrs (key: dir: "${mod}+SHIFT,${key},exchange_client,${dir}") directions
+            ));
+            blur = 1;
+            blur_layer = 0;
+            blur_optimized = 0;
+            border_radius = 8;
+            borderpx = 2;
+            disable_while_typing = 1;
             # Scroller settings
-            edge_scroller_pointer_focus=0
-          '';
+            edge_scroller_pointer_focus = 0;
+            enable_hotarea = 1;
+            exec-once = [
+
+            ];
+            gappih = 8;
+            gappiv = 8;
+            gappoh = 8;
+            gappov = 8;
+            gesturebind = (
+              builtins.attrValues (
+                builtins.mapAttrs (move: dir: "none,${move},3,focus_window_or_workspace,${dir}") axisMove
+              )
+            );
+            hotarea_corner = 0;
+            hotarea_size = 10;
+            layer_animation_type_close = "fade";
+            layer_animation_type_open = "fade";
+            layer_animations = 0;
+            mousebind = [
+              "${mod},btn_left,moveresize,curmove"
+              "${mod},btn_right,moveresize,curresize"
+            ];
+            numlockon = 1;
+            ov_no_resize = 1;
+            overviewgappi = 8;
+            overviewgappo = 8;
+            repeat_delay = 300;
+            repeat_rate = 30;
+            tag_animation_direction = 0;
+            trackpad_natural_scrolling = 1;
+          }
+          // (
+            if inputs ? noctalia then
+              {
+                source-optional = [
+                  "./noctalia.conf"
+                ];
+              }
+            else
+              { }
+          );
         };
       xdg.portal.extraPortals = with pkgs; [
         xdg-desktop-portal-wlr
