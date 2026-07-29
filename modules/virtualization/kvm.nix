@@ -8,6 +8,7 @@
     includes = with dotnix; [
       looking-glass
       vfio
+      kvmfr
     ];
 
     homeManager.xdg.desktopEntries.win11 = {
@@ -125,7 +126,10 @@
           };
           targets.graphical.wants = [ "libvirtd.service" ];
         };
-        users.users.${user.userName}.extraGroups = [ "libvirtd" ];
+        users.users.${user.userName}.extraGroups = [
+          "libvirtd"
+          "kvm"
+        ];
         virtualisation = {
           libvirtd = {
             enable = true;
@@ -180,6 +184,7 @@
               runAsRoot = true;
               swtpm.enable = true;
               verbatimConfig = ''
+                namespaces = []
                 cgroup_device_acl = [
                   "/dev/null",
                   "/dev/full",
@@ -188,6 +193,11 @@
                   "/dev/urandom",
                   "/dev/ptmx",
                   "/dev/kvm",
+                  "/dev/kqemu",
+                  "/dev/rtc",
+                  "/dev/hpet",
+                  "/dev/vfio/vfio",
+                  "/dev/kvmfr0",
                   "/dev/nvidiactl",
                   "/dev/nvidia0",
                   "/dev/nvidia-modeset",
