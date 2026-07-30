@@ -25,6 +25,7 @@
                 NH_ASK="--ask"
                 NH_SUDO="--bypass-root-check"
                 NH_COMMIT="--commit-lock-file"
+                TOKEN=$(sudo -u ${home.userName} gh auth token)
 
                 while [ $# -gt 0 ]
                 do
@@ -54,8 +55,8 @@
                 git config user.email ${home.git.email}
                 git config user.email ${home.git.userName}
 
-                $SUDO nh os switch . --no-nom --show-trace --update $NH_ASK $NH_SUDO $NH_COMMIT
-                nh home switch . --no-nom -b hm-bak --show-trace --update $NH_ASK $NH_COMMIT
+                $SUDO nh os switch . --no-nom --show-trace --update $NH_ASK $NH_SUDO $NH_COMMIT -- --option access-tokens "github.com=$TOKEN"
+                nh home switch . --no-nom -b hm-bak --show-trace --update $NH_ASK $NH_COMMIT -- --option access-tokens "github.com=$TOKEN"
               '';
             })
           else
