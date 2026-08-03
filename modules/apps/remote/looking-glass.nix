@@ -20,12 +20,12 @@
             ]);
           src = prev.fetchFromGitHub {
             fetchSubmodules = true;
-            hash = "sha256-IDNxJrMMMvZk/PTKcPXXLrFRrLujwE/apfwHfLPjh1k=";
+            hash = "sha256-Z6S4QiOjn/bJYLSaXQ9N+tOGts1K2ouubVymZdZe324=";
             owner = "gnif";
             repo = "LookingGlass";
-            rev = "5196c5503ae87cc4f0decd17aa556973fc4a7308";
+            rev = "3035fa628280d669d847c395bb3f47bdbee3f933";
           };
-          version = "5196c550";
+          version = "3035fa6";
         });
       })
     ];
