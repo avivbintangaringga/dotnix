@@ -12,5 +12,6 @@
     mangohud
     proton
     steam
+    sunshine
   ];
 }
