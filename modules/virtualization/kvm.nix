@@ -108,7 +108,6 @@
           '')
         ];
         services.spice-vdagentd.enable = true;
-        boot.kernelParams = [ "hugepages=4100" ];
         networking.firewall.interfaces."virbr*" = {
           allowedTCPPorts = [ 53 ];
           allowedUDPPorts = [
