@@ -13,5 +13,6 @@
     timezone
     fonts
     sudo
+    zram
   ];
 }
