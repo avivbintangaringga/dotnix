@@ -29,6 +29,7 @@
       ide.includes = with dotnix; [
         android-studio
         intellij-idea
+        netbeans
       ];
       minimal.includes = with dotnix.code-editors; [
         cli
