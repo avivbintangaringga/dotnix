@@ -6,9 +6,7 @@
       capSysAdmin = true;
       openFirewall = true;
     };
-
-    users.users.${user.userName}.extraGroups = [ "uinput" ];
-
     hardware.uinput.enable = true;
+    users.users.${user.userName}.extraGroups = [ "uinput" ];
   };
 }
