@@ -90,6 +90,7 @@ layer-rule {
 window-rule {
     match app-id="zen-beta"
     match app-id="^kitty$"
+    match app-id="dev.noctalia.Noctalia"
     background-effect {
         blur true
         xray false
@@ -129,6 +130,7 @@ window-rule {
 }
 window-rule {
     match app-id="zen-beta"
+    match app-id="Thorium-browser"
     match app-id="dev.zed.Zed"
     open-maximized-to-edges true
 }
