@@ -35,12 +35,7 @@
     };
 
     niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    niri-float-sticky = {
-      url = "github:probeldev/niri-float-sticky";
+      url = "github:epireyn/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

@@ -4,16 +4,9 @@
   ...
 }:
 {
-  flake-file.inputs = {
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    niri-float-sticky = {
-      url = "github:probeldev/niri-float-sticky";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+  flake-file.inputs.niri = {
+    url = "github:epireyn/niri-flake";
+    inputs.nixpkgs.follows = "nixpkgs";
   };
 
   dotnix.niri = {
@@ -28,10 +21,8 @@
       ];
       home.file.".config/niri/config.kdl".source = ./config.kdl;
       programs.niri = {
-        config = null;
         enable = true;
         package = pkgs.niri-unstable;
-        settings = null;
       };
       nixpkgs.overlays = [
         inputs.niri.overlays.niri
@@ -41,31 +32,22 @@
       ];
     };
 
-    nixos =
-      { pkgs, ... }:
-      let
-        system = pkgs.stdenv.hostPlatform.system;
-        niri-float-sticky-pkgs = inputs.niri-float-sticky.packages.${system};
-      in
-      {
-        imports = [
-          inputs.niri.nixosModules.niri
-        ];
-        environment.systemPackages =
-          (with pkgs; [
-            xwayland-satellite
-          ])
-          ++ (with niri-float-sticky-pkgs; [
-            niri-float-sticky
-          ]);
-        programs.niri = {
-          enable = true;
-          package = pkgs.niri-unstable;
-        };
-        nixpkgs.overlays = [
-          inputs.niri.overlays.niri
-        ];
-        systemd.user.services.niri-flake-polkit.enable = false;
+    nixos = { pkgs, ... }: {
+      imports = [
+        inputs.niri.nixosModules.niri
+      ];
+      environment.systemPackages = with pkgs; [
+        xwayland-satellite
+        nirius
+      ];
+      programs.niri = {
+        enable = true;
+        package = pkgs.niri-unstable;
       };
+      nixpkgs.overlays = [
+        inputs.niri.overlays.niri
+      ];
+      systemd.user.services.niri-flake-polkit.enable = false;
+    };
   };
 }

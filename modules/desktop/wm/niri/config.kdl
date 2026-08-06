@@ -1,8 +1,7 @@
 // Startup
-// spawn-sh-at-startup "dms run"
-spawn-sh-at-startup "noctalia"
+spawn-at-startup "niriusd"
+spawn-at-startup "noctalia"
 spawn-sh-at-startup "vicinae server"
-// spawn-sh-at-startup "niri-float-sticky -disable-auto-stick"
 spawn-sh-at-startup "valent --gapplication-service"
 // Config
 prefer-no-csd
@@ -154,12 +153,11 @@ binds {
         spawn-sh "vicinae toggle"
     }
     // Functions
-    // Mod+Slash repeat=false hotkey-overlay-title="Show keybinds" { spawn-sh "dms ipc keybinds toggle niri"; }
     Mod+Slash repeat=false hotkey-overlay-title="Show keybinds" {
         spawn-sh "noctalia msg panel-toggle kenn/keybind-cheatsheet:cheatsheet"
     }
     Mod+G repeat=false hotkey-overlay-title="Toggle sticky floating window" {
-        spawn-sh "niri-float-sticky -ipc toggle_sticky"
+        spawn-sh "nirius toggle-follow-mode"
     }
     Mod+O repeat=false hotkey-overlay-title="Toggle overview" {
         toggle-overview
@@ -191,10 +189,6 @@ binds {
         spawn "swaylock"
     }
     // Audio
-    // XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
-    // XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
-    // XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    // XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
     XF86AudioRaiseVolume allow-when-locked=true {
         spawn-sh "noctalia msg volume-up 3"
     }
@@ -232,8 +226,6 @@ binds {
         spawn-sh "playerctl next"
     }
     // Brightness
-    // XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    // XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
     XF86MonBrightnessUp allow-when-locked=true {
         spawn-sh "noctalia msg brightness-up 10"
     }
