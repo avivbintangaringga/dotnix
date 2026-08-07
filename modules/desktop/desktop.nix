@@ -10,6 +10,7 @@
     cursor
     xdg
 
+    gnome
     niri
     # mango
   ];
