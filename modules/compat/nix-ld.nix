@@ -14,16 +14,22 @@
           gtk3
           pango
           cairo
-          libX11
-          libXcomposite
-          libXdamage
-          libXext
-          libXfixes
-          libXrandr
+          libx11
+          libxcomposite
+          libxdamage
+          libxext
+          libxtst
+          libxrender
+          libxi
+          libxfixes
+          libxrandr
           libxcb
           libdrm
+          freetype
+          fontconfig
           mesa
           alsa-lib
+          zlib
           libGL
           udev
           libgbm
