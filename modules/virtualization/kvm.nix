@@ -44,21 +44,28 @@
             looking-glass-client -F audio:micDefault=allow audio:micSHowIndicator=no audio:periodSize=512
           '')
 
-          (pkgs.writeShellScriptBin "vm-start" ''
-            if [[ -z $1 ]]
-            then
-              echo "VM Name is required!"
-              exit 1
-            fi
+          (pkgs.writeShellApplication {
+            bashOptions = [ ];
+            name = "vm-start";
+            runtimeInputs = [
+              libnotify
+            ];
+            text = ''
+              if [[ -z ''$1 ]]
+              then
+                echo "VM Name is required!"
+                exit 1
+              fi
 
-            VM=$1
+              VM=''$1
 
-            notify-send "Starting vm: $VM..." -i ${self + "/assets/icons/vm.png"}
-            virsh -c qemu:///system start $VM
+              notify-send "Starting vm: ''$VM..." -i ${self + "/assets/icons/vm.png"}
+              virsh -c qemu:///system start "''$VM"
 
-            notify-send "Starting Looking Glass Client..." -i ${self + "/assets/icons/lg.png"}
-            lg
-          '')
+              notify-send "Starting Looking Glass Client..." -i ${self + "/assets/icons/lg.png"}
+              lg
+            '';
+          })
 
           (pkgs.writeShellScriptBin "vm_waybar_hook" ''
             ACTION=$1
