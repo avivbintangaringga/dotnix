@@ -9,11 +9,11 @@
         pciutils
 
         (writeShellApplication {
+          bashOptions = [ ];
           name = "nv-switch";
           runtimeInputs = [
             libnotify
           ];
-          bashOptions = [ ];
           text = ''
             QUIET=false
 
