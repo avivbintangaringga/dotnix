@@ -58,12 +58,13 @@
           };
           kernelPackages = pkgs.linuxPackages_latest;
           kernelParams = [
-            "nvidia-drm.modeset=1"
+            # "nvidia-drm.modeset=1"
             "8250.nr_uarts=0"
 
             "amd_iommu=on"
             "iommu=pt"
-            # "vfio-pci.ids=10de:25a2,10de:2291"
+            "vfio-pci.ids=10de:25a2,10de:2291"
+            # "rd.driver.pre=vfio-pci"
           ];
           loader = {
             efi.canTouchEfiVariables = true;

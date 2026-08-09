@@ -139,9 +139,6 @@
               readonly STATE_NAME="$3"
 
               start_hook() {
-                # systemctl --user --machine=${user.userName}@ stop swaync  # TEMPORARY FIX
-                # systemctl --user --machine=${user.userName}@ stop swayosd # TEMPORARY FIX
-                # pkill lact
                 systemctl stop lactd
                 systemctl stop nvidia-powerd
                 rmmod nvidia_drm
@@ -150,8 +147,6 @@
                 rmmod nvidia
                 modprobe -i vfio_pci vfio_pci_core vfio_iommu_type1 vfio
                 /run/current-system/sw/bin/virsh nodedev-detach pci_0000_01_00_0
-                # systemctl --user --machine=${user.userName}@ start swaync  # TEMPORARY FIX
-                # systemctl --user --machine=${user.userName}@ start swayosd # TEMPORARY FIX
               }
 
               revert_hook() {
@@ -166,12 +161,12 @@
               }
 
               if [[ "$HOOK_NAME" == "prepare" && "$STATE_NAME" == "begin" ]]; then
-                if [[ "$GUEST_NAME" == "win11" || "$GUEST_NAME" == "win10" ]]
+                if [[ "$GUEST_NAME" == "tiny11" || "$GUEST_NAME" == "win10" ]]
                 then
                   start_hook
                 fi
               elif [[ "$HOOK_NAME" == "release" && "$STATE_NAME" == "end" ]]; then
-                if [[ "$GUEST_NAME" == "win11" || "$GUEST_NAME" == "win10" ]]
+                if [[ "$GUEST_NAME" == "tiny11" || "$GUEST_NAME" == "win10" ]]
                 then
                   revert_hook
                 fi

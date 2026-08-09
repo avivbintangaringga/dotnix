@@ -13,7 +13,7 @@
     hardware = {
       graphics.enable = true;
       nvidia = {
-        nvidiaPersistenced = true;
+        nvidiaPersistenced = false;
         powerManagement = {
           enable = true;
           finegrained = false;
