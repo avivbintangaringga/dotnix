@@ -94,7 +94,7 @@
             if dotnix ? kvm then
               {
                 win10 = "vm-start win10";
-                win11 = "vm-start win11";
+                win11 = "vm-start tiny11";
               }
             else
               { }

@@ -13,7 +13,7 @@
 
     homeManager.xdg.desktopEntries.win11 = {
       categories = [ "System" ];
-      exec = "vm-start win11";
+      exec = "vm-start tiny11";
       icon = self + "/assets/icons/windows11.png";
       name = "Windows 11";
       terminal = false;
