@@ -13,5 +13,6 @@
     proton
     steam
     sunshine
+    moonlight
   ];
 }
