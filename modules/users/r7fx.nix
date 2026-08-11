@@ -14,6 +14,7 @@
         ++ (with dotnix; [
           base
 
+          localsend
           valent
           nautilus
           winbox
