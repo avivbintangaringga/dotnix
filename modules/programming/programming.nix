@@ -11,5 +11,6 @@
     nix
     php
     python
+    rust
   ];
 }

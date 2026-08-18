@@ -807,10 +807,31 @@
         "nvix": "nvix",
         "pedantix": "pedantix",
         "qtengine": "qtengine",
+        "rust-overlay": "rust-overlay",
         "spicetify-nix": "spicetify-nix",
         "thorium-browser": "thorium-browser",
         "treefmt": "treefmt",
         "zen-browser": "zen-browser"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787022047,
+        "narHash": "sha256-wNlYM/obKOkkRELrOfto1JT5CRANR6hB/RjOELp223U=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "b32685dd7c5a965aa8273adb7ddaf7f5b40d0faa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
       }
     },
     "scenefx": {
