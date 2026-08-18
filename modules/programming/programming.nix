@@ -9,6 +9,7 @@
     lsp
     luau
     nix
+    php
     python
   ];
 }
