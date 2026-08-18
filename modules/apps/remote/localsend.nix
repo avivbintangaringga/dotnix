@@ -1,10 +1,6 @@
 {
-  dotnix.localsend = {
-    nixos = {
-      programs.localsend = {
-        enable = true;
-        openFirewall = true;
-      };
-    };
+  dotnix.localsend.nixos.programs.localsend = {
+    enable = true;
+    openFirewall = true;
   };
 }
