@@ -46,6 +46,7 @@
         "just-ls"
         "kdl"
         "kotlin"
+        "laravel"
         "less"
         "lua"
         "luau"
