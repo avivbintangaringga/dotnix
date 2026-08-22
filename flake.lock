@@ -811,6 +811,8 @@
         "spicetify-nix": "spicetify-nix",
         "thorium-browser": "thorium-browser",
         "treefmt": "treefmt",
+        "umbriel": "umbriel",
+        "xdg-desktop-portal-umbriel": "xdg-desktop-portal-umbriel",
         "zen-browser": "zen-browser"
       }
     },
@@ -855,6 +857,23 @@
         "owner": "wlrfx",
         "repo": "scenefx",
         "type": "github"
+      }
+    },
+    "scenefx_2": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1787367884,
+        "narHash": "sha256-CanY5gX81OUvTNpafLc9Bkdk26Xrlq99rkrQQd98EKM=",
+        "ref": "umbriel",
+        "rev": "a7ceecd5336edd3ac7245e65ab2ee1b12dfa97ca",
+        "revCount": 319,
+        "type": "git",
+        "url": "https://github.com/noctalia-dev/scenefx"
+      },
+      "original": {
+        "ref": "umbriel",
+        "type": "git",
+        "url": "https://github.com/noctalia-dev/scenefx"
       }
     },
     "spicetify-nix": {
@@ -1013,6 +1032,47 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "umbriel": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "scenefx": "scenefx_2"
+      },
+      "locked": {
+        "lastModified": 1787375707,
+        "narHash": "sha256-Dj+Jj+XzqJr1yUGpTrjC/kbrNF4xFphxNsrdmBU2/dc=",
+        "owner": "noctalia-dev",
+        "repo": "umbriel",
+        "rev": "a9cdfc789313a53c2fcbdd55aa3362e97bcc8f65",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "umbriel",
+        "type": "github"
+      }
+    },
+    "xdg-desktop-portal-umbriel": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787324663,
+        "narHash": "sha256-/2bD6z4CNZZu7dVz/DPoin/CH921902FZOUe7f1q1hg=",
+        "owner": "noctalia-dev",
+        "repo": "xdg-desktop-portal-umbriel",
+        "rev": "90171b7aafa3d94594b7ae3ba68428730cde1f45",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "xdg-desktop-portal-umbriel",
         "type": "github"
       }
     },

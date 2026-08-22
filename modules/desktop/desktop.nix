@@ -12,6 +12,7 @@
 
     gnome
     niri
+    umbriel
     # mango
   ];
 }
