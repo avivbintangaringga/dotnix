@@ -11,7 +11,7 @@
     homeManager = { pkgs, ... }: {
       home = {
         packages = with pkgs; [
-          libreoffice-qt6-fresh
+          libreoffice-qt-stable
         ];
         sessionVariables.SAL_USE_VCLPLUGIN = "kf6";
       };
