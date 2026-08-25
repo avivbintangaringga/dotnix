@@ -110,7 +110,7 @@
   flake-file.inputs = {
     umbriel = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:noctalia-dev/umbriel";
+      url = "git+https://github.com/noctalia-dev/umbriel?submodules=1";
     };
     xdg-desktop-portal-umbriel = {
       inputs.nixpkgs.follows = "nixpkgs";

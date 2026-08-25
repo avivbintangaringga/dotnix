@@ -67,7 +67,7 @@
     };
     treefmt.url = "github:numtide/treefmt-nix";
     umbriel = {
-      url = "github:noctalia-dev/umbriel";
+      url = "git+https://github.com/noctalia-dev/umbriel?submodules=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     xdg-desktop-portal-umbriel = {
