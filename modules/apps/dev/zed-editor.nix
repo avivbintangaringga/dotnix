@@ -18,6 +18,7 @@
         "tokyo-night"
         "one-dark-pro-enhanced"
 
+        "blade"
         "color-hightlight"
         "comment"
         "csharp"
