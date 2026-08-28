@@ -16,6 +16,7 @@
 
           localsend
           valent
+          anydesk
           nautilus
           winbox
           cloudflare-warp
