@@ -17,8 +17,12 @@
       programs.umbriel = {
         enable = true;
         settings = {
+          animation = {
+            curve = "easeout";
+            duration_ms = 200;
+            enabled = true;
+          };
           appearance = {
-            animation_ms = 250;
             blur = {
               enabled = true;
               noise = 0.02;
@@ -72,12 +76,22 @@
             "Mod+Return" = "spawn:kitty";
             "Mod+Space" = "spawn:vicinae toggle";
           };
+          layer_rule = [
+            {
+              blur = true;
+              blur_ignore_alpha = 0.5;
+              blur_optimized = false;
+              match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$";
+            }
+          ];
           layout = {
             gap = 8;
             mode = "scrolling";
             scrolling = {
+              center_focused = true;
               center_underfull_strip = true;
               default_width_fraction = 0.5;
+              expand_single_column = true;
             };
             width_presets = [
               0.333
@@ -86,8 +100,25 @@
               1.0
             ];
           };
+          window_rule = [
+            {
+              blur = true;
+              blur_optimized = true;
+            }
+            {
+              default_floating = true;
+              default_maximize = false;
+              default_position = {
+                anchor = "bottom_right";
+                x = 20;
+                y = 20;
+              };
+              match.title = "^(Picture-in-Picture|Picture in picture)$";
+            }
+          ];
           workspaces = {
             back_and_forth = false;
+            empty_above = true;
           };
         };
       };
