@@ -46,6 +46,7 @@
               "valent --gapplication-service"
             ];
             focus_on_activate = true;
+            honor_restored_maximize = true;
             mod_key = "Super";
             show_cheatsheet = false;
             xwayland = true;
@@ -83,6 +84,12 @@
               blur_optimized = false;
               match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$";
             }
+            {
+              blur = true;
+              blur_ignore_alpha = 0.5;
+              blur_optimized = false;
+              match.namespace = "^vicinae$";
+            }
           ];
           layout = {
             gap = 8;
@@ -114,6 +121,14 @@
                 y = 20;
               };
               match.title = "^(Picture-in-Picture|Picture in picture)$";
+            }
+            {
+              default_floating = true;
+              default_size = [
+                800
+                600
+              ];
+              match.app_id = "^dev.noctalia.UmbrielSharePicker$";
             }
           ];
           workspaces = {
