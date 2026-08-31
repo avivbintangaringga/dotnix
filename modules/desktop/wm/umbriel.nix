@@ -115,6 +115,7 @@
             {
               default_floating = true;
               default_maximize = false;
+              default_pinned = true;
               default_position = {
                 anchor = "bottom_right";
                 x = 20;
