@@ -73,9 +73,42 @@
             };
           };
           keybinds = {
+            "Alt+Space" = "spawn:vicinae toggle";
+            "Mod+B" = "spawn:zen-beta";
+            "Mod+Ctrl+Down" = "window-move-or-workspace-down";
+            "Mod+Ctrl+F" = "window-toggle-maximize-to-edges";
+            "Mod+Ctrl+H" = "window-move-or-output-left";
+            "Mod+Ctrl+J" = "window-move-or-workspace-down";
+            "Mod+Ctrl+K" = "window-move-or-workspace-up";
+            "Mod+Ctrl+L" = "window-move-or-output-right";
+            "Mod+Ctrl+Left" = "window-move-or-output-left";
+            "Mod+Ctrl+Right" = "window-move-or-output-right";
+            "Mod+Ctrl+Up" = "window-move-or-workspace-up";
+            "Mod+Ctrl+V" = "window-toggle-floating";
+            "Mod+Down" = "window-focus-or-workspace-down";
+            "Mod+E" = "spawn:nautilus";
+            "Mod+F" = "window-toggle-maximize";
+            "Mod+H" = "window-focus-or-output-left";
+            "Mod+J" = "window-focus-or-workspace-down";
+            "Mod+K" = "window-focus-or-workspace-up";
+            "Mod+L" = "window-focus-or-output-right";
+            "Mod+Left" = "window-focus-or-output-left";
+            "Mod+O" = "overview-toggle";
+            "Mod+P" = "window-toggle-pinned";
+            "Mod+Period" = "spawn:vicinae deeplink vicinae://launch/core/search-emojis";
             "Mod+Q" = "window-close";
+            "Mod+R" = "window-cycle-width";
             "Mod+Return" = "spawn:kitty";
+            "Mod+Right" = "window-focus-or-output-right";
+            "Mod+Shift+F" = "window-toggle-fullscreen";
+            "Mod+Shift+R" = "window-cycle-height";
+            "Mod+Shift+V" = "window-focus-switch-floating";
+            # TODO: AUDIO binds
             "Mod+Space" = "spawn:vicinae toggle";
+            "Mod+Up" = "window-focus-or-workspace-up";
+            "Mod+V" = "spawn:vicinae deeplink vicinae://launch/clipboard/history";
+            "Mod+Z" = "spawn:zeditor";
+            # TODO: Screenshot
           };
           layer_rule = [
             {
