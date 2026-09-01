@@ -1,10 +1,16 @@
 {
+  dotnix,
   inputs,
   ...
 }:
 {
   dotnix.umbriel = {
-    homeManager = {
+    includes = with dotnix; [
+      noctalia
+      vicinae
+    ];
+    
+    homeManager = { pkgs, ... }: {
       imports = [
         inputs.umbriel.homeModules.default
       ];
@@ -12,6 +18,11 @@
       nixpkgs.overlays = [
         inputs.umbriel.overlays.default
         inputs.xdg-desktop-portal-umbriel.overlays.default
+      ];
+
+      xdg.portal.extraPortals = with pkgs; [
+        xdg-desktop-portal-umbriel
+        xdg-desktop-portal-gtk
       ];
 
       programs.umbriel = {
