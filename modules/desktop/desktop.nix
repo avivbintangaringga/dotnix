@@ -10,8 +10,8 @@
     cursor
     xdg
 
-    gnome
-    niri
+    # gnome
+    # niri
     umbriel
     # mango
   ];
