@@ -11,7 +11,7 @@
     xdg
 
     # gnome
-    # niri
+    niri
     umbriel
     # mango
   ];

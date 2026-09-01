@@ -138,7 +138,7 @@
             gap = 8;
             mode = "scrolling";
             scrolling = {
-              center_focused = true;
+              center_focused = false;
               center_underfull_strip = true;
               default_width_fraction = 0.5;
               expand_single_column = true;
