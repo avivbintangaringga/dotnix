@@ -53,7 +53,6 @@
             autostart = [
               "noctalia"
               "vicinae server"
-              "niriusd"
               "valent --gapplication-service"
             ];
             focus_on_activate = true;
