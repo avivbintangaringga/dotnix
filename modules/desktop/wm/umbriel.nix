@@ -26,7 +26,7 @@
             blur = {
               enabled = true;
               noise = 0.02;
-              optimized = true;
+              optimized = false;
               passes = 2;
               radius = 3;
               saturation = 1.0;
@@ -143,7 +143,7 @@
           window_rule = [
             {
               blur = true;
-              blur_optimized = true;
+              blur_optimized = false;
             }
             {
               default_floating = true;
