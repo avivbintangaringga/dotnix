@@ -42,7 +42,7 @@
               radius = 3;
               saturation = 1.0;
             };
-            border_width = 1;
+            border_width = 2;
             corner_radius = 8;
             prefer_no_csd = true;
           };
