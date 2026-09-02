@@ -73,6 +73,14 @@
         shellAliases =
           { }
           // (
+            if dotnix ? kitty then
+              {
+                ssh = "kitty +kitten ssh";
+              }
+            else
+              { }
+          )
+          // (
             if home ? flakePath && home.flakePath != null then
               {
                 edit = "hx ${home.flakePath}";
