@@ -22,7 +22,7 @@
 
       xdg.portal.extraPortals = with pkgs; [
         xdg-desktop-portal-umbriel
-        # xdg-desktop-portal-gtk
+        xdg-desktop-portal-gtk
       ];
 
       programs.umbriel = {
@@ -127,12 +127,12 @@
               blur_optimized = false;
               match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$";
             }
-            # {
-            #   blur = true;
-            #   blur_ignore_alpha = 0.5;
-            #   blur_optimized = false;
-            #   match.namespace = "^vicinae$";
-            # }
+            {
+              blur = true;
+              blur_ignore_alpha = 0.5;
+              blur_optimized = false;
+              match.namespace = "^vicinae$";
+            }
           ];
           layout = {
             gap = 8;
