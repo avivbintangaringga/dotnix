@@ -32,6 +32,18 @@
             curve = "easeout";
             duration_ms = 200;
             enabled = true;
+            windows_in = {
+              style = "zoom";
+              duration_ms = 130;
+            };
+            windows_out = {
+              style = "slide";
+              duration_ms = 130;
+            };
+            scratchpad = {
+              enabled = true;
+              blur = true;
+            };
           };
           appearance = {
             blur = {
@@ -110,11 +122,14 @@
             "Mod+R" = "window-cycle-width";
             "Mod+Return" = "spawn:kitty";
             "Mod+Right" = "window-focus-or-output-right";
+            "Mod+S" = "scratchpad-toggle";
+            "Mod+Shift+S" = "window-toggle-scratchpad";
             "Mod+Shift+F" = "window-toggle-fullscreen";
             "Mod+Shift+R" = "window-cycle-height";
             "Mod+Shift+V" = "window-focus-switch-floating";
             # TODO: AUDIO binds
             "Mod+Space" = "spawn:vicinae toggle";
+            "Mod+Tab" = "scratchpad-focus-next";
             "Mod+Up" = "window-focus-or-workspace-up";
             "Mod+V" = "spawn:vicinae deeplink vicinae://launch/clipboard/history";
             "Mod+Z" = "spawn:zeditor";
@@ -154,6 +169,26 @@
             {
               blur = true;
               blur_optimized = false;
+            }
+            {
+              default_maximize_to_edges = true;
+              match.app_id = "^zen-beta$";
+            }
+            {
+              default_maximize_to_edges = true;
+              match.app_id = "^Thorium-browser$";
+            }
+            {
+              default_maximize_to_edges = true;
+              match.app_id = "^dev.zed.Zed$";
+            }
+            {
+              default_maximize_to_edges = true;
+              match.app_id = "^Ferdium$";
+            }
+            {
+              default_fullscreen = true;
+              match.title = "^Wuthering Waves  $";
             }
             {
               default_floating = true;
