@@ -16,7 +16,7 @@
       programs = {
         noctalia-greeter = {
           enable = true;
-          greeter-args = "--session niri-session";
+          greeter-args = "--session start-umbriel";
           settings = {
             appearance.hide_logo = true;
             cursor = {
@@ -41,7 +41,7 @@
         greetd = {
           enable = true;
           settings.initial_session = {
-            command = "niri-session";
+            command = "start-umbriel";
             user = user.userName;
           };
         };
