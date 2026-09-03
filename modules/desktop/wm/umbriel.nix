@@ -165,6 +165,9 @@
               1.0
             ];
           };
+          overview = {
+            workspace_wallpaper = true;
+          };
           window_rule = [
             {
               blur = true;
