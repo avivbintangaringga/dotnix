@@ -195,12 +195,15 @@
             }
             {
               default_floating = true;
-              default_maximize = false;
               default_pinned = true;
+              default_maximize = false;
+              default_maximize_to_edges = false;
+              default_width = 0.2;
+              default_height = 0.2;
               default_position = {
                 anchor = "bottom_right";
-                x = 20;
-                y = 20;
+                x = 30;
+                y = 30;
               };
               match.title = "^(Picture-in-Picture|Picture in picture)$";
             }
