@@ -26,7 +26,7 @@
             };
             windows_in = {
               duration_ms = 130;
-              style = "zoom";
+              style = "slide";
             };
             windows_out = {
               duration_ms = 130;
