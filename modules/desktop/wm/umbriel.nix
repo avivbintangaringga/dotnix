@@ -18,18 +18,18 @@
         settings = {
           animation = {
             curve = "easeout";
-            duration_ms = 200;
+            duration_ms = 250;
             enabled = true;
             scratchpad = {
               blur = true;
               enabled = true;
             };
             windows_in = {
-              duration_ms = 130;
+              duration_ms = 150;
               style = "slide";
             };
             windows_out = {
-              duration_ms = 130;
+              duration_ms = 150;
               style = "slide";
             };
           };
