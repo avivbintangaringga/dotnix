@@ -84,6 +84,22 @@
           };
           keybinds = {
             "Alt+Space" = "spawn:vicinae toggle";
+            "Mod+Alt+Down" = {
+              action = "spawn:playerctl play-pause";
+              allow_when_locked = true;
+            };
+            "Mod+Alt+Left" = {
+              action = "spawn:playerctl previous";
+              allow_when_locked = true;
+            };
+            "Mod+Alt+Right" = {
+              action = "spawn:playerctl next";
+              allow_when_locked = true;
+            };
+            "Mod+Alt+Up" = {
+              action = "spawn:playerctl play-pause";
+              allow_when_locked = true;
+            };
             "Mod+B" = "spawn:zen-beta";
             "Mod+Ctrl+Down" = "window-move-or-workspace-down";
             "Mod+Ctrl+F" = "window-toggle-maximize-to-edges";
@@ -121,7 +137,6 @@
             "Mod+Shift+V" = "window-focus-switch-floating";
             "Mod+Shift+WheelDown" = "window-focus-or-output-right";
             "Mod+Shift+WheelUp" = "window-focus-or-output-left";
-            # TODO: AUDIO binds
             "Mod+Space" = "spawn:vicinae toggle";
             "Mod+Tab" = "scratchpad-focus-next";
             "Mod+Up" = "window-focus-or-workspace-up";
@@ -129,6 +144,46 @@
             "Mod+WheelDown" = "window-focus-or-workspace-down";
             "Mod+WheelUp" = "window-focus-or-workspace-up";
             "Mod+Z" = "spawn:zeditor";
+            "XF86AudioLowerVolume" = {
+              action = "spawn:noctalia msg volume-down 3";
+              allow_when_locked = true;
+            };
+            "XF86AudioMicMute" = {
+              action = "spawn:noctalia msg mic-mute";
+              allow_when_locked = true;
+            };
+            "XF86AudioMute" = {
+              action = "spawn:noctalia msg volume-mute";
+              allow_when_locked = true;
+            };
+            "XF86AudioNext" = {
+              action = "spawn:playerctl next";
+              allow_when_locked = true;
+            };
+            "XF86AudioPlay" = {
+              action = "spawn:playerctl play-pause";
+              allow_when_locked = true;
+            };
+            "XF86AudioPrev" = {
+              action = "spawn:playerctl previous";
+              allow_when_locked = true;
+            };
+            "XF86AudioRaiseVolume" = {
+              action = "spawn:noctalia msg volume-up 3";
+              allow_when_locked = true;
+            };
+            "XF86AudioStop" = {
+              action = "spawn:playerctl stop";
+              allow_when_locked = true;
+            };
+            "XF86MonBrightnessDown" = {
+              action = "spawn:noctalia msg brightness-down 10";
+              allow_when_locked = true;
+            };
+            "XF86MonBrightnessUp" = {
+              action = "spawn:noctalia msg brightness-up 10";
+              allow_when_locked = true;
+            };
             # TODO: Screenshot
           };
           layer_rule = [
