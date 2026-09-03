@@ -53,7 +53,7 @@
                 cd "${home.flakePath}"
 
                 git config user.email ${home.git.email}
-                git config user.email ${home.git.userName}
+                git config user.name ${home.git.userName}
 
                 $SUDO nh os switch . --no-nom --show-trace --update $NH_ASK $NH_SUDO $NH_COMMIT -- --option access-tokens "github.com=$TOKEN"
                 nh home switch . --no-nom -b hm-bak --show-trace --update $NH_ASK $NH_COMMIT -- --option access-tokens "github.com=$TOKEN"
