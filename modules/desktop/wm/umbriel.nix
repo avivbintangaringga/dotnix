@@ -126,6 +126,7 @@
             "Mod+O" = "overview-toggle";
             "Mod+P" = "window-toggle-pinned";
             "Mod+Period" = "spawn:vicinae deeplink vicinae://launch/core/search-emojis";
+            "Mod+Print" = "spawn:screenshot-full";
             "Mod+Q" = "window-close";
             "Mod+R" = "window-cycle-width";
             "Mod+Return" = "spawn:kitty";
@@ -144,6 +145,7 @@
             "Mod+WheelDown" = "window-focus-or-workspace-down";
             "Mod+WheelUp" = "window-focus-or-workspace-up";
             "Mod+Z" = "spawn:zeditor";
+            "Print" = "spawn:screenshot-area";
             "XF86AudioLowerVolume" = {
               action = "spawn:noctalia msg volume-down 3";
               allow_when_locked = true;
@@ -184,7 +186,6 @@
               action = "spawn:noctalia msg brightness-up 10";
               allow_when_locked = true;
             };
-            # TODO: Screenshot
           };
           layer_rule = [
             {
@@ -261,7 +262,6 @@
             {
               default_floating = true;
               default_height = 0.75;
-              default_width = 0.25;
               default_maximize = false;
               default_maximize_to_edges = false;
               default_position = {
@@ -269,6 +269,7 @@
                 x = 30;
                 y = 30;
               };
+              default_width = 0.25;
               match.title = "Extension: ";
             }
             {
@@ -294,6 +295,7 @@
     includes = with dotnix; [
       noctalia
       vicinae
+      screenshot
     ];
     nixos = { pkgs, ... }: {
       environment.systemPackages = with pkgs; [
