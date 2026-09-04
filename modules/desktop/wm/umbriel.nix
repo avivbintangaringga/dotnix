@@ -260,6 +260,19 @@
             }
             {
               default_floating = true;
+              default_height = 0.75;
+              default_width = 0.25;
+              default_maximize = false;
+              default_maximize_to_edges = false;
+              default_position = {
+                anchor = "top_right";
+                x = 30;
+                y = 30;
+              };
+              match.title = "Extension: ";
+            }
+            {
+              default_floating = true;
               default_size = [
                 800
                 600
