@@ -7,9 +7,13 @@
           runtimeInputs = [
             grim
             wl-clipboard
+            libnotify
           ];
           text = ''
-            grim -t png - | tee ~/Screenshots/Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png | wl-copy -t image/png
+            FILENAME="Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png"
+            FILE="$HOME/Screenshots/$FILENAME"
+            grim -t png - | tee "$FILE" | wl-copy -t image/png
+            notify-send "Screenshot saved as $FILENAME"
           '';
         })
         (writeShellApplication {
@@ -20,7 +24,7 @@
             satty
           ];
           text = ''
-            grim -g "$(slurp)" -t ppm - | satty --filename - --fullscreen --output-filename ~/Screenshots/Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png
+            grim -g "$(slurp)" -t ppm - | satty --filename - --output-filename "$HOME/Screenshots/Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png"
           '';
         })
       ];
