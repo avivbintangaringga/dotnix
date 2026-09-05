@@ -69,7 +69,7 @@
             };
           };
           include.files = [
-            "noctalia.toml"
+            # "noctalia.toml"
           ];
           input = {
             keyboard = {
