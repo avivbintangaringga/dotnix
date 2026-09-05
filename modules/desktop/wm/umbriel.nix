@@ -15,6 +15,7 @@
       ];
       programs.umbriel = {
         enable = true;
+        validateConfig = false;
         settings = {
           animation = {
             curve = "easeout";
@@ -69,7 +70,7 @@
             };
           };
           include.files = [
-            # "noctalia.toml"
+            "noctalia.toml"
           ];
           input = {
             keyboard = {
