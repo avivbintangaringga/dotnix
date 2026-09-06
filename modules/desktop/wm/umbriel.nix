@@ -15,7 +15,6 @@
       ];
       programs.umbriel = {
         enable = true;
-        validateConfig = false;
         settings = {
           animation = {
             curve = "easeout";
