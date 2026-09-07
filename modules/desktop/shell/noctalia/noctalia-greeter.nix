@@ -24,9 +24,7 @@
               theme = "Bibata-Modern-Classic";
             };
             output.scale = 1.0;
-            session = {
-              default = "Umbriel";
-            };
+            session.default = "Umbriel";
             user.default = user.userName;
           };
         };

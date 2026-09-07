@@ -5,6 +5,15 @@
 {
   # TODO: SPLIT
   dotnix.tools = {
+    includes = with dotnix; [
+      adb
+      archive
+      git
+      home-manager
+      monitoring
+      mise
+      nh
+    ];
     homeManager = { pkgs, ... }: {
       # TODO: SPLIT
       home.packages = with pkgs; [
@@ -27,15 +36,6 @@
         mpv
       ];
     };
-    includes = with dotnix; [
-      adb
-      archive
-      git
-      home-manager
-      monitoring
-      mise
-      nh
-    ];
     nixos = { pkgs, ... }: {
       environment.systemPackages = with pkgs; [
         fastfetch

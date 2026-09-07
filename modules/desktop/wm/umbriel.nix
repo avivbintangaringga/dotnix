@@ -4,18 +4,32 @@
   ...
 }:
 {
+  flake-file.inputs = {
+    umbriel = {
+      url = "git+https://github.com/noctalia-dev/umbriel?submodules=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    xdg-desktop-portal-umbriel = {
+      url = "github:noctalia-dev/xdg-desktop-portal-umbriel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
   dotnix.umbriel = {
+    includes = with dotnix; [
+      noctalia
+      vicinae
+      screenshot
+    ];
     homeManager = { pkgs, ... }: {
       imports = [
         inputs.umbriel.homeModules.default
       ];
-      nixpkgs.overlays = [
-        inputs.umbriel.overlays.default
-        inputs.xdg-desktop-portal-umbriel.overlays.default
-      ];
       programs.umbriel = {
         enable = true;
         settings = {
+          environment.QT_QPA_PLATFORMTHEME = "qtengine";
           animation = {
             curve = "easeout";
             duration_ms = 250;
@@ -46,9 +60,6 @@
             corner_radius = 8;
             prefer_no_csd = true;
           };
-          environment = {
-            QT_QPA_PLATFORMTHEME = "qtengine";
-          };
           general = {
             autostart = [
               "noctalia"
@@ -61,12 +72,10 @@
             show_cheatsheet = false;
             xwayland = true;
           };
-          hot_corners = {
-            top_left = {
-              action = "overview-toggle";
-              delay_ms = 0;
-              enabled = true;
-            };
+          hot_corners.top_left = {
+            action = "overview-toggle";
+            delay_ms = 0;
+            enabled = true;
           };
           include.optional.files = [
             "noctalia.toml"
@@ -223,9 +232,7 @@
               1.0
             ];
           };
-          overview = {
-            workspace_wallpaper = true;
-          };
+          overview.workspace_wallpaper = true;
           window_rule = [
             {
               blur = true;
@@ -293,38 +300,27 @@
           };
         };
       };
+      nixpkgs.overlays = [
+        inputs.umbriel.overlays.default
+        inputs.xdg-desktop-portal-umbriel.overlays.default
+      ];
       xdg.portal.extraPortals = with pkgs; [
         xdg-desktop-portal-umbriel
         xdg-desktop-portal-gtk
       ];
     };
-    includes = with dotnix; [
-      noctalia
-      vicinae
-      screenshot
-    ];
     nixos = { pkgs, ... }: {
-      environment.systemPackages = with pkgs; [
-        xdg-desktop-portal-umbriel
-      ];
       imports = [
         inputs.umbriel.nixosModules.default
       ];
+      environment.systemPackages = with pkgs; [
+        xdg-desktop-portal-umbriel
+      ];
+      programs.umbriel.enable = true;
       nixpkgs.overlays = [
         inputs.umbriel.overlays.default
         inputs.xdg-desktop-portal-umbriel.overlays.default
       ];
-      programs.umbriel.enable = true;
-    };
-  };
-  flake-file.inputs = {
-    umbriel = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = "git+https://github.com/noctalia-dev/umbriel?submodules=1";
-    };
-    xdg-desktop-portal-umbriel = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:noctalia-dev/xdg-desktop-portal-umbriel";
     };
   };
 }
