@@ -68,7 +68,7 @@
               enabled = true;
             };
           };
-          include.files = [
+          include.optional.files = [
             "noctalia.toml"
           ];
           input = {
@@ -142,8 +142,14 @@
             "Mod+Tab" = "scratchpad-focus-next";
             "Mod+Up" = "window-focus-or-workspace-up";
             "Mod+V" = "spawn:vicinae deeplink vicinae://launch/clipboard/history";
-            "Mod+WheelDown" = "window-focus-or-workspace-down";
-            "Mod+WheelUp" = "window-focus-or-workspace-up";
+            "Mod+WheelDown" = {
+              action = "window-focus-or-workspace-down";
+              cooldown_ms = 150;
+            };
+            "Mod+WheelUp" = {
+              action = "window-focus-or-workspace-up";
+              cooldown_ms = 150;
+            };
             "Mod+Z" = "spawn:zeditor";
             "Print" = "spawn:screenshot-area";
             "XF86AudioLowerVolume" = {
