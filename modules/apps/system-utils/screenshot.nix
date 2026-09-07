@@ -20,11 +20,15 @@
           name = "screenshot-area";
           runtimeInputs = [
             grim
+            wl-clipboard
+            libnotify
             slurp
-            satty
           ];
           text = ''
-            grim -g "$(slurp)" -t ppm - | satty --filename - --output-filename "$HOME/Screenshots/Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png"
+            FILENAME="Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png"
+            FILE="$HOME/Screenshots/$FILENAME"
+            grim -g "$(slurp)" -t png - | tee "$FILE" | wl-copy -t image/png
+            notify-send "Screenshot saved as $FILENAME"
           '';
         })
       ];
