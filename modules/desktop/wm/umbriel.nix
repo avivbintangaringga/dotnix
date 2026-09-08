@@ -60,6 +60,11 @@
             corner_radius = 8;
             prefer_no_csd = true;
           };
+          drm = {
+            ignored_pci_addresses = [
+              "0000:01:00.0"
+            ];
+          };
           general = {
             autostart = [
               "noctalia"
