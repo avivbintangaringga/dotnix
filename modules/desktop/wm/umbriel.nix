@@ -225,10 +225,9 @@
             gap = 8;
             mode = "scrolling";
             scrolling = {
-              center_focused = false;
+              center_focused = "on_overflow";
               center_underfull_strip = true;
               default_width_fraction = 0.5;
-              expand_single_column = true;
             };
             width_presets = [
               0.333
@@ -242,6 +241,10 @@
             {
               blur = true;
               blur_optimized = false;
+            }
+            {
+              default_maximize = true;
+              match.is_alone = true;
             }
             {
               default_maximize_to_edges = true;
