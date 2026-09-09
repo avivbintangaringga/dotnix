@@ -5,10 +5,6 @@
 }:
 {
   dotnix.zsh = {
-    includes = with den.batteries; [
-      (user-shell "zsh")
-    ];
-
     homeManager = { home, pkgs, ... }: {
       home.packages = with pkgs; [
         (
@@ -65,9 +61,9 @@
       ];
 
       programs.zsh = {
-        enable = true;
         autocd = true;
         autosuggestion.enable = true;
+        enable = true;
         enableCompletion = true;
         history.size = 100000;
         shellAliases =
@@ -110,7 +106,13 @@
         syntaxHighlighting.enable = true;
       };
     };
-
+    includes =
+      (with den.batteries; [
+        (user-shell "zsh")
+      ])
+      ++ (with dotnix; [
+        nix-your-shell
+      ]);
     nixos = { ... }: {
       programs = {
         starship = {
@@ -120,8 +122,8 @@
           ];
         };
         zsh = {
-          enable = true;
           autosuggestions.enable = true;
+          enable = true;
           enableBashCompletion = true;
           enableCompletion = true;
           histSize = 100000;
