@@ -20,6 +20,7 @@
           nautilus
           winbox
           cloudflare-warp
+          nix-index
 
           flatpak
 
