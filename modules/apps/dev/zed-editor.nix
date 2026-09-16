@@ -145,6 +145,12 @@
             "tailwindcss-language-server"
             "emmet-language-server"
           ];
+          PHP.language_servers = [
+            "phpactor"
+            "!intelephense"
+            "!phpantom"
+            "!phptools"
+          ];
         };
         lsp = {
           emmet-language-server.settings.includeLanguages.templ = "html";
@@ -153,8 +159,15 @@
             experimental.classRegex = [
               "class=\"([^\"]*)\""
               "className=\"([^\"]*)\""
+              "class='([^']*)'"
+              "class=\\\"([^\\\"]*)\\\""
+              "@class\\(\\[([^\\]]*)\\]\\)"
             ];
-            includeLanguages.templ = "html";
+            includeLanguages = {
+              php = "html";
+              blade = "html";
+              templ = "html";
+            };
           };
         };
         minimap = {
