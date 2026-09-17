@@ -50,6 +50,7 @@
 
                 git config user.email ${home.git.email}
                 git config user.name ${home.git.userName}
+                echo "INFO: Using github user ${home.git.userName} with auth token ending in ...${TOKEN: -4}"
 
                 $SUDO nh os switch . --no-nom --show-trace --update $NH_ASK $NH_SUDO $NH_COMMIT -- --option access-tokens "github.com=$TOKEN"
                 nh home switch . --no-nom -b hm-bak --show-trace --update $NH_ASK $NH_COMMIT -- --option access-tokens "github.com=$TOKEN"
