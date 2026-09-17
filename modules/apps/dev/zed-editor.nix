@@ -151,6 +151,12 @@
             "!phpantom"
             "!phptools"
           ];
+          Blade.language_servers = [
+            "phpactor"
+            "!intelephense"
+            "!phpantom"
+            "!phptools"
+          ];
         };
         lsp = {
           emmet-language-server.settings.includeLanguages.templ = "html";
