@@ -4,32 +4,18 @@
   ...
 }:
 {
-  flake-file.inputs = {
-    umbriel = {
-      url = "git+https://github.com/noctalia-dev/umbriel?submodules=1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    xdg-desktop-portal-umbriel = {
-      url = "github:noctalia-dev/xdg-desktop-portal-umbriel";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
-
   dotnix.umbriel = {
-    includes = with dotnix; [
-      noctalia
-      vicinae
-      screenshot
-    ];
     homeManager = { pkgs, ... }: {
       imports = [
         inputs.umbriel.homeModules.default
       ];
+      nixpkgs.overlays = [
+        inputs.umbriel.overlays.default
+        inputs.xdg-desktop-portal-umbriel.overlays.default
+      ];
       programs.umbriel = {
         enable = true;
         settings = {
-          environment.QT_QPA_PLATFORMTHEME = "qtengine";
           animation = {
             curve = "easeout";
             duration_ms = 250;
@@ -65,6 +51,7 @@
               "0000:01:00.0"
             ];
           };
+          environment.QT_QPA_PLATFORMTHEME = "qtengine";
           general = {
             autostart = [
               "noctalia"
@@ -142,12 +129,12 @@
             "Mod+Period" = "spawn:vicinae deeplink vicinae://launch/core/search-emojis";
             "Mod+Print" = "spawn:screenshot-full";
             "Mod+Q" = "window-close";
-            "Mod+R" = "window-cycle-width";
+            "Mod+R" = "window-cycle-primary-extent";
             "Mod+Return" = "spawn:kitty";
             "Mod+Right" = "window-focus-or-output-right";
             "Mod+S" = "scratchpad-toggle";
             "Mod+Shift+F" = "window-toggle-fullscreen";
-            "Mod+Shift+R" = "window-cycle-height";
+            "Mod+Shift+R" = "window-cycle-secondary-extent";
             "Mod+Shift+S" = "window-toggle-scratchpad";
             "Mod+Shift+V" = "window-focus-switch-floating";
             "Mod+Shift+WheelDown" = "window-focus-or-output-right";
@@ -222,19 +209,19 @@
             }
           ];
           layout = {
-            gap = 8;
-            mode = "scrolling";
-            scrolling = {
-              center_focused = "on_overflow";
-              center_underfull_strip = true;
-              default_width_fraction = 0.5;
-            };
-            width_presets = [
+            extent_presets = [
               0.333
               0.5
               0.667
               1.0
             ];
+            gap = 8;
+            mode = "scrolling";
+            scrolling = {
+              center_focused = "on_overflow";
+              center_underfull_strip = true;
+              default_extent_fraction = 0.5;
+            };
           };
           overview.workspace_wallpaper = true;
           window_rule = [
@@ -268,7 +255,10 @@
             }
             {
               default_floating = true;
-              default_height = 0.2;
+              default_floating_size = {
+                height = 0.2;
+                width = 0.2;
+              };
               default_maximize = false;
               default_maximize_to_edges = false;
               default_pinned = true;
@@ -277,12 +267,14 @@
                 x = 30;
                 y = 30;
               };
-              default_width = 0.2;
               match.title = "^(Picture-in-Picture|Picture in picture)$";
             }
             {
               default_floating = true;
-              default_height = 0.75;
+              default_floating_size = {
+                height = 0.75;
+                width = 0.25;
+              };
               default_maximize = false;
               default_maximize_to_edges = false;
               default_position = {
@@ -290,15 +282,14 @@
                 x = 30;
                 y = 30;
               };
-              default_width = 0.25;
               match.title = "Extension: ";
             }
             {
               default_floating = true;
-              default_size = [
-                800
-                600
-              ];
+              default_floating_size_px = {
+                height = 800;
+                width = 600;
+              };
               match.app_id = "^dev.noctalia.UmbrielSharePicker$";
             }
           ];
@@ -308,27 +299,39 @@
           };
         };
       };
-      nixpkgs.overlays = [
-        inputs.umbriel.overlays.default
-        inputs.xdg-desktop-portal-umbriel.overlays.default
-      ];
       xdg.portal.extraPortals = with pkgs; [
         xdg-desktop-portal-umbriel
         xdg-desktop-portal-gtk
       ];
     };
+    includes = with dotnix; [
+      noctalia
+      vicinae
+      screenshot
+    ];
     nixos = { pkgs, ... }: {
-      imports = [
-        inputs.umbriel.nixosModules.default
-      ];
       environment.systemPackages = with pkgs; [
         xdg-desktop-portal-umbriel
       ];
-      programs.umbriel.enable = true;
+      imports = [
+        inputs.umbriel.nixosModules.default
+      ];
       nixpkgs.overlays = [
         inputs.umbriel.overlays.default
         inputs.xdg-desktop-portal-umbriel.overlays.default
       ];
+      programs.umbriel.enable = true;
+    };
+  };
+  flake-file.inputs = {
+    umbriel = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "git+https://github.com/noctalia-dev/umbriel?submodules=1";
+    };
+
+    xdg-desktop-portal-umbriel = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:noctalia-dev/xdg-desktop-portal-umbriel";
     };
   };
 }
