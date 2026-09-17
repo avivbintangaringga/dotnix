@@ -14,6 +14,7 @@
     };
   };
   flake-file.inputs.snappy-switcher = {
+    inputs.nixpkgs.follows = "nixpkgs";
     url = "github:OpalAayan/snappy-switcher";
   };
 }
