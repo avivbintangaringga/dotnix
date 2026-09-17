@@ -21,6 +21,7 @@
           winbox
           cloudflare-warp
           nix-index
+          snappy-switcher
 
           flatpak
 
