@@ -214,9 +214,9 @@
             }
             {
               blur = true;
-              blur_ignore_alpha = 0.5;
+              blur_ignore_alpha = 0.01;
               blur_optimized = false;
-              match.namespace = "^snappy-switcher$";
+              match.namespace = "snappy-switcher";
             }
           ];
           layout = {
