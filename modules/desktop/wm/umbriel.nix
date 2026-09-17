@@ -57,6 +57,7 @@
               "noctalia"
               "vicinae server"
               "valent --gapplication-service"
+              "snappy-switcher --daemon"
             ];
             focus_on_activate = true;
             honor_restored_maximize = true;
@@ -85,6 +86,10 @@
           };
           keybinds = {
             "Alt+Space" = "spawn:vicinae toggle";
+            "Alt+Tab" = {
+              action = "spawn:snappy-switcher next --mod alt";
+              repeat = false;
+            };
             "Mod+Alt+Down" = {
               action = "spawn:playerctl play-pause";
               allow_when_locked = true;
@@ -206,6 +211,12 @@
               blur_ignore_alpha = 0.5;
               blur_optimized = false;
               match.namespace = "^vicinae$";
+            }
+            {
+              blur = true;
+              blur_ignore_alpha = 0.5;
+              blur_optimized = false;
+              match.namespace = "^snappy-switcher$";
             }
           ];
           layout = {
