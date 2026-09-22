@@ -21,6 +21,7 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
     hardware.url = "github:nixos/nixos-hardware";
+    hermes-agent.url = "github:NousResearch/hermes-agent";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

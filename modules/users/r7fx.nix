@@ -22,13 +22,9 @@
           cloudflare-warp
           nix-index
           snappy-switcher
-
           flatpak
-
           zsh
-
           nv-switch
-
           desktop
           browsers
           code-editors.minimal
@@ -47,6 +43,7 @@
           cliphist
           playerctld
 
+          hermes-agent
           programming
 
           discord
