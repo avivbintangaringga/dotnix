@@ -24,7 +24,6 @@
           adblock
           hidePodcasts
           shuffle
-          betterGenres
           sectionMarker
           fullAppDisplay
           powerBar
