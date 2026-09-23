@@ -43,7 +43,9 @@
           cliphist
           playerctld
 
+          ai-usagebar
           hermes-agent
+
           programming
 
           discord
