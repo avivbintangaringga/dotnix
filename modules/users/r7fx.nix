@@ -43,8 +43,7 @@
           cliphist
           playerctld
 
-          ai-usagebar
-          hermes-agent
+          ai
 
           programming
 
