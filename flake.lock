@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1790737317,
-        "narHash": "sha256-CeE5OGsrVU+gDduST4/qX5ovRQWdI693q1g0O0XHVJs=",
+        "lastModified": 1790793952,
+        "narHash": "sha256-jhgQt+hLjn9Rsbz7Y5BJPKCayChZwJzPg7TnTgqdq8c=",
         "owner": "akitaonrails",
         "repo": "ai-usagebar",
-        "rev": "39f429ef66ff5fc1fb6561c70a9d739b908d8dbf",
+        "rev": "9f7537bf4cd3be4a25e4029d2369f3f1ca1b0555",
         "type": "github"
       },
       "original": {
@@ -63,11 +63,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790741705,
-        "narHash": "sha256-PcKzyloAknS2zmaPrkD9XhYBDpAvOmc/yo/1C68rXJU=",
+        "lastModified": 1790805375,
+        "narHash": "sha256-xKrKws3LyrT8UWIwGEZQjjSR8FjT6DSS1Q/XSVprwBw=",
         "owner": "AvengeMedia",
         "repo": "DankMaterialShell",
-        "rev": "73759d575210e8a4eb99b308283046b650df2ac3",
+        "rev": "d84037066e822942be310dad5383397b6c667774",
         "type": "github"
       },
       "original": {
@@ -380,11 +380,11 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1790778879,
-        "narHash": "sha256-SPFtunKGh89Hr7GLkxkLK7XsFFxi4+WoKIq7a2XNeDQ=",
+        "lastModified": 1790808133,
+        "narHash": "sha256-+xAoUpxinegmuUg71r/Hkt/o20D/ug6VklxoD3rv/2w=",
         "owner": "NousResearch",
         "repo": "hermes-agent",
-        "rev": "47676981f55de91231fdeef2f0eec47e7c209e78",
+        "rev": "12e4d3e2dd5281adf289f70e5d6c7f33427d6982",
         "type": "github"
       },
       "original": {
@@ -421,11 +421,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790779675,
-        "narHash": "sha256-wswYlVaovcex/IMSqGrN/GLlvHN29bgoIXMBoMyLmTI=",
+        "lastModified": 1790802803,
+        "narHash": "sha256-pna6bbbXEqnAWb3GuioIEKu+yFxSVFR0UX+2QjxI6eg=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "b75a0703c9ef757386ec3807a55106c2ca64f770",
+        "rev": "e4122ec2a3cf7fede335e5c9975639d1e84dc04d",
         "type": "github"
       },
       "original": {
@@ -1214,11 +1214,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790773056,
-        "narHash": "sha256-Ig/WQRkSJmI+1oJUBcTmEKALTKM9wERP4TyZzfpSVyA=",
+        "lastModified": 1790805780,
+        "narHash": "sha256-/mCbWoe/S7HA6mNDRJwpcktle+JAEw0XcVQM3L02Dhs=",
         "owner": "Rishabh5321",
         "repo": "custom-packages-flake",
-        "rev": "563f34d73d173d5ba7b862849cde87db0481f358",
+        "rev": "e8ffed322c0ba80ff2efeb65959a6a4a3239b0a6",
         "type": "github"
       },
       "original": {
