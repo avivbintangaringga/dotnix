@@ -12,8 +12,8 @@
     ];
 
     homeManager = {
-      imports = [
-        inputs.noctalia.homeModules.default
+      nixpkgs.overlays = [
+        inputs.noctalia.overlays.default
       ];
       programs.noctalia.enable = true;
       gtk = {
