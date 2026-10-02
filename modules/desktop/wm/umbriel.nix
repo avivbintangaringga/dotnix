@@ -87,7 +87,7 @@
           keybinds = {
             "Alt+Space" = "spawn:vicinae toggle";
             "Alt+Tab" = {
-              action = "spawn:noctalia msg window-switcher";
+              action = "spawn:noctalia msg window-switcher hold";
               repeat = false;
             };
             "Mod+Alt+Down" = {
