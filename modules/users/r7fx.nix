@@ -14,6 +14,7 @@
         ++ (with dotnix; [
           base
 
+          limusic
           localsend
           valent
           anydesk
