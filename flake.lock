@@ -841,11 +841,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1790967847,
-        "narHash": "sha256-zjTq+MSL+B7GpRx/gEpj3y+OqonsdZBuA1OGrBQdlXw=",
+        "lastModified": 1791338722,
+        "narHash": "sha256-IPNpSRXvRCQTLPmhaZ4lob3F0WnljzfDQ0xa81JfwiE=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "63685992f8cfef008de338ff769c8f44df3bcdaa",
+        "rev": "7784c94414acf415234ae24dcf36593073dcfd43",
         "type": "github"
       },
       "original": {
@@ -862,11 +862,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790518002,
-        "narHash": "sha256-agpHRmhsUL4ZNFseCNilGSiC/cc0S2tC1ZvC5rXmgtY=",
+        "lastModified": 1791310429,
+        "narHash": "sha256-7BYSaTLXJNC+MKrB/zq4JmrmxdUedGtJ6Av6+w0aIPU=",
         "owner": "noctalia-dev",
         "repo": "noctalia-greeter",
-        "rev": "44337ecba043749c29de6f3d563315b91987a908",
+        "rev": "6c0704bc4ec34aaba8624609d775b75ede784b9f",
         "type": "github"
       },
       "original": {
@@ -1292,19 +1292,18 @@
         "xdg-desktop-portal-umbriel": "xdg-desktop-portal-umbriel"
       },
       "locked": {
-        "lastModified": 1791123453,
-        "narHash": "sha256-2NMYTlv+NoEA1y6Gz6ZXrFkkrqexiGIe1Pz4SSGpFiU=",
-        "ref": "refs/heads/main",
-        "rev": "ea0386af6d3ea8ab2aeda5fc0761cbfb4aa99885",
-        "revCount": 1161,
-        "submodules": true,
-        "type": "git",
-        "url": "https://github.com/noctalia-dev/umbriel"
+        "lastModified": 1791342558,
+        "narHash": "sha256-pkCxKNOKbsxuYdZiz4OZnhA0nchJ1DSuqQqUT3b4MJc=",
+        "owner": "noctalia-dev",
+        "repo": "umbriel",
+        "rev": "3e4e519f0908146df57fb7016b47dc2959a1e4fa",
+        "type": "github"
       },
       "original": {
-        "submodules": true,
-        "type": "git",
-        "url": "https://github.com/noctalia-dev/umbriel"
+        "owner": "noctalia-dev",
+        "ref": "cachix",
+        "repo": "umbriel",
+        "type": "github"
       }
     },
     "uv2nix": {
