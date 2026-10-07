@@ -8,7 +8,7 @@
     gamemode
     gamescope
     lact
-    lsfg-vk
+    # lsfg-vk
     mangohud
     proton
     steam
