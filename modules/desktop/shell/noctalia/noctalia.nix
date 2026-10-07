@@ -12,9 +12,6 @@
     ];
 
     homeManager = {
-      nixpkgs.overlays = [
-        inputs.noctalia.overlays.default
-      ];
       programs.noctalia.enable = true;
       gtk = {
         gtk3.extraCss = ''
@@ -25,6 +22,9 @@
           @import url("noctalia.css");
         '';
       };
+      nixpkgs.overlays = [
+        inputs.noctalia.overlays.default
+      ];
     };
 
     nixos.nix.settings = {

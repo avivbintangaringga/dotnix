@@ -4,18 +4,32 @@
   ...
 }:
 {
+  flake-file.inputs = {
+    umbriel = {
+      url = "github:noctalia-dev/umbriel/cachix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    xdg-desktop-portal-umbriel = {
+      url = "github:noctalia-dev/xdg-desktop-portal-umbriel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
   dotnix.umbriel = {
+    includes = with dotnix; [
+      noctalia
+      vicinae
+      screenshot
+    ];
     homeManager = { pkgs, ... }: {
       imports = [
         inputs.umbriel.homeModules.default
       ];
-      nixpkgs.overlays = [
-        inputs.umbriel.overlays.default
-        inputs.xdg-desktop-portal-umbriel.overlays.default
-      ];
       programs.umbriel = {
         enable = true;
         settings = {
+          environment.QT_QPA_PLATFORMTHEME = "qtengine";
           animation = {
             curve = "easeout";
             duration_ms = 250;
@@ -46,12 +60,9 @@
             corner_radius = 8;
             prefer_no_csd = true;
           };
-          drm = {
-            ignored_pci_addresses = [
-              "0000:01:00.0"
-            ];
-          };
-          environment.QT_QPA_PLATFORMTHEME = "qtengine";
+          drm.ignored_pci_addresses = [
+            "0000:01:00.0"
+          ];
           general = {
             autostart = [
               "noctalia"
@@ -310,27 +321,23 @@
           };
         };
       };
+      nixpkgs.overlays = [
+        inputs.umbriel.overlays.default
+        inputs.xdg-desktop-portal-umbriel.overlays.default
+      ];
       xdg.portal.extraPortals = with pkgs; [
         xdg-desktop-portal-umbriel
         xdg-desktop-portal-gtk
       ];
     };
-    includes = with dotnix; [
-      noctalia
-      vicinae
-      screenshot
-    ];
     nixos = { pkgs, ... }: {
-      environment.systemPackages = with pkgs; [
-        xdg-desktop-portal-umbriel
-      ];
       imports = [
         inputs.umbriel.nixosModules.default
       ];
-      nixpkgs.overlays = [
-        inputs.umbriel.overlays.default
-        inputs.xdg-desktop-portal-umbriel.overlays.default
+      environment.systemPackages = with pkgs; [
+        xdg-desktop-portal-umbriel
       ];
+      programs.umbriel.enable = true;
       nix.settings = {
         extra-substituters = [
           "https://umbriel.cachix.org"
@@ -340,18 +347,10 @@
           "umbriel.cachix.org-1:JfNq/2yg2S6D6z4Z2dVSZrZlDPQTKtexB6GAVLD98nw="
         ];
       };
-      programs.umbriel.enable = true;
-    };
-  };
-  flake-file.inputs = {
-    umbriel = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:noctalia-dev/umbriel/cachix";
-    };
-
-    xdg-desktop-portal-umbriel = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:noctalia-dev/xdg-desktop-portal-umbriel";
+      nixpkgs.overlays = [
+        inputs.umbriel.overlays.default
+        inputs.xdg-desktop-portal-umbriel.overlays.default
+      ];
     };
   };
 }

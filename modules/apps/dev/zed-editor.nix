@@ -119,6 +119,12 @@
           ];
         };
         languages = {
+          Blade.language_servers = [
+            "phpactor"
+            "!intelephense"
+            "!phpantom"
+            "!phptools"
+          ];
           Java = {
             formatter = "language_server";
             language_servers = [ "jdtls" ];
@@ -140,22 +146,16 @@
               command = "pedantix";
             };
           };
-          Templ.language_servers = [
-            "templ"
-            "tailwindcss-language-server"
-            "emmet-language-server"
-          ];
           PHP.language_servers = [
             "phpactor"
             "!intelephense"
             "!phpantom"
             "!phptools"
           ];
-          Blade.language_servers = [
-            "phpactor"
-            "!intelephense"
-            "!phpantom"
-            "!phptools"
+          Templ.language_servers = [
+            "templ"
+            "tailwindcss-language-server"
+            "emmet-language-server"
           ];
         };
         lsp = {
@@ -170,8 +170,8 @@
               "@class\\(\\[([^\\]]*)\\]\\)"
             ];
             includeLanguages = {
-              php = "html";
               blade = "html";
+              php = "html";
               templ = "html";
             };
           };

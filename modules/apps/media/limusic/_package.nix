@@ -1,10 +1,10 @@
 {
+  lib,
   autoPatchelfHook,
   dpkg,
   fetchurl,
   glib-networking,
   gtk3,
-  lib,
   libayatana-appindicator,
   librsvg,
   mpv-unwrapped,
@@ -32,13 +32,6 @@ stdenv.mkDerivation (finalAttrs: {
     ln -s $out/bin/limusic-app $out/bin/limusic
     runHook postInstall
   '';
-  meta = {
-    description = "Desktop YouTube Music client";
-    homepage = "https://github.com/SimoHypers/limusic";
-    mainProgram = "limusic-app";
-    platforms = [ "x86_64-linux" ];
-    sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
-  };
   nativeBuildInputs = [
     dpkg
     autoPatchelfHook
@@ -47,8 +40,8 @@ stdenv.mkDerivation (finalAttrs: {
   pname = "limusic";
   runtimeDependencies = [ libayatana-appindicator ];
   src = fetchurl {
-    hash = "sha256-9DQOaV3IyrFuUMjSqctknjALRUzJGitnrG8u/xOXPzk=";
     url = "https://github.com/SimoHypers/limusic/releases/download/v${finalAttrs.version}/limusic_${finalAttrs.version}_amd64.deb";
+    hash = "sha256-9DQOaV3IyrFuUMjSqctknjALRUzJGitnrG8u/xOXPzk=";
   };
   unpackPhase = ''
     runHook preUnpack
@@ -56,4 +49,11 @@ stdenv.mkDerivation (finalAttrs: {
     runHook postUnpack
   '';
   version = "1.1.0";
+  meta = {
+    description = "Desktop YouTube Music client";
+    homepage = "https://github.com/SimoHypers/limusic";
+    mainProgram = "limusic-app";
+    platforms = [ "x86_64-linux" ];
+    sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
+  };
 })
