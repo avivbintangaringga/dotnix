@@ -12,6 +12,7 @@
       programs.craftapps = {
         apps = {
           deckcraft.enable = true;
+          effectcraft.enable = true;
           filmcraft.enable = true;
           gridcraft.enable = true;
           pdfcraft.enable = true;
