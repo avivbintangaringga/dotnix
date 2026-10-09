@@ -33,6 +33,7 @@
           downloaders
           image-editors
           gaming
+          craftapps
           office
           media-player
           tools

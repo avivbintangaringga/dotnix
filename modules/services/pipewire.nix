@@ -2,6 +2,7 @@
   dotnix.pipewire.nixos = { pkgs, ... }: {
     environment.systemPackages = with pkgs; [
       pwvucontrol
+      pulseaudio
     ];
     services.pipewire = {
       enable = true;
