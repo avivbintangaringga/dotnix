@@ -12,7 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     craftapps = {
-      url = "github:olafkfreund/nix-craftapps";
+      url = "github:avivbintangaringga/nix-craftapps";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dankmaterialshell = {

@@ -27,6 +27,6 @@
   };
   flake-file.inputs.craftapps = {
     inputs.nixpkgs.follows = "nixpkgs";
-    url = "github:olafkfreund/nix-craftapps";
+    url = "github:avivbintangaringga/nix-craftapps";
   };
 }
