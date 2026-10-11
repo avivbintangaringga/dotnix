@@ -45,11 +45,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791602859,
-        "narHash": "sha256-v+6G844/pjdpCAgQaBadCWnlQjjgpGB3iQTFXI9O1kw=",
+        "lastModified": 1791727236,
+        "narHash": "sha256-HnHfygOxl0vc9JzDmbFmukZG6TfF6D4wYm9ekktzuPc=",
         "owner": "avivbintangaringga",
         "repo": "nix-craftapps",
-        "rev": "23e62376a92873d8471295a07046ddaf309c262e",
+        "rev": "dce6e24c75c9baaf7d73dd25aede098867b8f535",
         "type": "github"
       },
       "original": {
