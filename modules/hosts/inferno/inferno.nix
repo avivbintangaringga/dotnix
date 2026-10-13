@@ -65,6 +65,7 @@
             "iommu=pt"
             "vfio-pci.ids=10de:25a2,10de:2291"
             # "rd.driver.pre=vfio-pci"
+            "usbcore.autosuspend=-1"
           ];
           loader = {
             efi.canTouchEfiVariables = true;
