@@ -13,11 +13,16 @@
   gtk3,
   lib,
   libGL,
+  libx11,
+  libxext,
+  libxi,
+  libxrender,
+  libxtst,
+  libxxf86vm,
   makeDesktopItem,
   makeWrapper,
   pango,
   stdenv,
-  xorg,
   zlib,
 }:
 let
@@ -32,17 +37,15 @@ let
     gtk3
     libGL
     pango
-    xorg.libX11
-    xorg.libXext
-    xorg.libXi
-    xorg.libXrender
-    xorg.libXtst
-    xorg.libXxf86vm
+    libx11
+    libxext
+    libxi
+    libxrender
+    libxtst
+    libxxf86vm
   ];
 in
 stdenv.mkDerivation rec {
-  # needed by the bundled runtime and libskiko; the jar-embedded natives are
-  # handled via LD_LIBRARY_PATH below
   buildInputs = runtimeLibs ++ [
     stdenv.cc.cc.lib
     zlib
@@ -80,7 +83,6 @@ stdenv.mkDerivation rec {
     description = "Aesthetic YouTube Music client";
     homepage = "https://github.com/kushagrasinghx/BitChord";
     mainProgram = "bitchord";
-    # license = lib.licenses.???;  # check the repo's LICENSE
     platforms = [ "x86_64-linux" ];
     sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
   };
