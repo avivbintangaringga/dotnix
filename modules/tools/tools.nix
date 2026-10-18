@@ -30,6 +30,7 @@
         watchman
 
         scrcpy
+        nix-update
 
         jq
         yt-dlp
