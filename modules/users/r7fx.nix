@@ -14,6 +14,7 @@
         ++ (with dotnix; [
           base
 
+          bitchord
           limusic
           localsend
           valent
