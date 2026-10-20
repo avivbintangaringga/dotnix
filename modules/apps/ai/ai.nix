@@ -7,5 +7,6 @@
     ai-usagebar
     codex
     hermes-agent
+    opencode
   ];
 }
