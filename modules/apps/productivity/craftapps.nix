@@ -26,6 +26,7 @@
           wordcraft.enable = true;
         };
         enable = true;
+        linkFonts = true;
       };
     };
   };
