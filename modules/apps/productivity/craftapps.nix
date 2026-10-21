@@ -26,6 +26,16 @@
           wordcraft.enable = true;
         };
         enable = true;
+      };
+    };
+
+    nixos = {
+      imports = [
+        inputs.craftapps.nixosModules.default
+      ];
+
+      programs.craftapps = {
+        enable = true;
         linkFonts = true;
       };
     };
