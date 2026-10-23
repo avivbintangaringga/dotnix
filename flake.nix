@@ -36,6 +36,10 @@
       url = "github:DreamMaoMao/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nautilus-computer = {
+      url = "github:yannmasoch/nautilus-my-computer?dir=packaging/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     niri = {
       url = "github:epireyn/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
