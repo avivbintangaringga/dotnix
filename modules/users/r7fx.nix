@@ -16,6 +16,7 @@
 
           bitchord
           limusic
+          libredb
           localsend
           valent
           anydesk
