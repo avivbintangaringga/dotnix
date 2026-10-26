@@ -8,7 +8,7 @@
     includes = with dotnix; [
       looking-glass
       vfio
-      # kvmfr
+      kvmfr
     ];
 
     homeManager.xdg.desktopEntries.win11 = {
