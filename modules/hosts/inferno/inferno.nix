@@ -53,8 +53,6 @@
               "nvidia_uvm"
               "nvidia_drm"
             ];
-            systemd.enable = true;
-
           };
           kernelPackages = pkgs.linuxPackages_latest;
           kernelParams = [
