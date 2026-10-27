@@ -23,6 +23,7 @@
 
         btrfs-assistant
 
+        libnotify
         lsof
         gnumake
 
