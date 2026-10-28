@@ -325,10 +325,20 @@
         inputs.umbriel.overlays.default
         inputs.xdg-desktop-portal-umbriel.overlays.default
       ];
-      xdg.portal.extraPortals = with pkgs; [
-        xdg-desktop-portal-umbriel
-        xdg-desktop-portal-gtk
-      ];
+      xdg.portal = {
+        config = {
+          common = {
+            default = [
+              "umbriel"
+              "gtk"
+            ];
+          };
+        };
+        extraPortals = with pkgs; [
+          xdg-desktop-portal-umbriel
+          xdg-desktop-portal-gtk
+        ];
+      };
     };
     nixos = { pkgs, ... }: {
       imports = [
@@ -339,11 +349,11 @@
       ];
       programs.umbriel.enable = true;
       nix.settings = {
-        extra-substituters = [
+        trusted-substituters = [
           "https://umbriel.cachix.org"
         ];
 
-        extra-trusted-public-keys = [
+        trusted-public-keys = [
           "umbriel.cachix.org-1:JfNq/2yg2S6D6z4Z2dVSZrZlDPQTKtexB6GAVLD98nw="
         ];
       };
