@@ -1,5 +1,5 @@
 {
-  dotnix.nvidia.nixos = { pkgs, ... }: {
+  dotnix.nvidia.nixos = { lib, pkgs, ... }: {
     environment = {
       sessionVariables = {
         __GL_SHADER_DISK_CACHE_SIZE = 53687091200;
@@ -13,9 +13,10 @@
     hardware = {
       graphics.enable = true;
       nvidia = {
-        nvidiaPersistenced = false;
+        nvidiaPersistenced = lib.mkForce false;
+        dynamicBoost.enable = lib.mkForce false;
         powerManagement = {
-          enable = true;
+          enable = lib.mkForce true;
           finegrained = false;
         };
       };
