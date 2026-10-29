@@ -5,8 +5,6 @@
   ...
 }:
 {
-  imports = [ inputs.den.flakeModule ];
-
   den = {
     aspects.inferno = {
       includes =
@@ -26,6 +24,7 @@
           nix-ld
           # nix-alien
           gvfs
+          fuse
           logind
           pipewire
           printing
@@ -34,10 +33,6 @@
         ]);
 
       nixos = { pkgs, ... }: {
-        imports = [
-          ./_hardware.nix
-          inputs.hardware.nixosModules.asus-fa506ic
-        ];
         boot = {
           initrd = {
             compressor = "zstd";
@@ -72,38 +67,42 @@
           };
         };
         fileSystems."/media/DATA" = {
-          options = [ "defaults" ];
           device = "/dev/disk/by-uuid/9EF2F582F2F55F49";
           fsType = "ntfs-3g";
+          options = [ "defaults" ];
         };
         hardware.enableAllFirmware = true;
+        imports = [
+          ./_hardware.nix
+          inputs.hardware.nixosModules.asus-fa506ic
+        ];
         security.sudo.extraRules = [
           {
             # For VFIO script
             commands = [
               {
-                options = [ "NOPASSWD" ];
                 command = "/run/current-system/sw/bin/systemctl";
+                options = [ "NOPASSWD" ];
               }
               {
-                options = [ "NOPASSWD" ];
                 command = "/run/current-system/sw/bin/rmmod";
+                options = [ "NOPASSWD" ];
               }
               {
-                options = [ "NOPASSWD" ];
                 command = "/run/current-system/sw/bin/modprobe";
+                options = [ "NOPASSWD" ];
               }
               {
-                options = [ "NOPASSWD" ];
                 command = "/run/current-system/sw/bin/virsh";
+                options = [ "NOPASSWD" ];
               }
               {
-                options = [ "NOPASSWD" ];
                 command = "/run/current-system/sw/bin/pkill";
+                options = [ "NOPASSWD" ];
               }
               {
-                options = [ "NOPASSWD" ];
                 command = "/run/current-system/sw/bin/efibootmgr";
+                options = [ "NOPASSWD" ];
               }
             ];
             groups = [ "wheel" ];
@@ -114,4 +113,5 @@
     };
     hosts.x86_64-linux.inferno.users.r7fx = { };
   };
+  imports = [ inputs.den.flakeModule ];
 }
