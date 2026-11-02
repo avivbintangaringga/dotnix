@@ -7,7 +7,6 @@
     includes = with dotnix; [
       bluemail
     ];
-
     homeManager = { pkgs, ... }: {
       home = {
         packages = with pkgs; [
@@ -17,6 +16,7 @@
       };
 
       programs.onlyoffice.enable = true;
+      nixpkgs.config.problems.handlers."gtk+".broken = "warn";
     };
   };
 }
