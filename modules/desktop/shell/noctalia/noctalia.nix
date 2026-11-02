@@ -4,7 +4,9 @@
   ...
 }:
 {
-  flake-file.inputs.noctalia.url = "github:noctalia-dev/noctalia/cachix";
+  flake-file = {
+    inputs.noctalia.url = "github:noctalia-dev/noctalia/cachix";
+  };
 
   dotnix.noctalia = {
     includes = with dotnix; [
@@ -12,6 +14,9 @@
     ];
 
     homeManager = {
+      imports = [
+        inputs.noctalia.homeModules.default
+      ];
       programs.noctalia.enable = true;
       gtk = {
         gtk3.extraCss = ''
@@ -22,19 +27,19 @@
           @import url("noctalia.css");
         '';
       };
-      nixpkgs.overlays = [
-        inputs.noctalia.overlays.default
-      ];
     };
 
-    nixos.nix.settings = {
-      trusted-substituters = [
-        "https://noctalia.cachix.org"
+    nixos = {
+      imports = [
+        inputs.noctalia.nixosModules.default
       ];
-
-      trusted-public-keys = [
-        "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
-      ];
+      programs.noctalia = {
+        recommendedServices.enable = true;
+      };
+      nix.settings = {
+        extra-substituters = [ "https://noctalia.cachix.org" ];
+        extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
+      };
     };
   };
 }
