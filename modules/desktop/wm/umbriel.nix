@@ -96,28 +96,28 @@
             };
           };
           keybinds = {
-            "Alt+Space" = "spawn:vicinae toggle";
+            "Alt+Space" = "spawn vicinae toggle";
             "Alt+Tab" = {
-              action = "spawn:noctalia msg window-switcher hold";
+              action = "spawn noctalia msg window-switcher hold";
               repeat = false;
             };
             "Mod+Alt+Down" = {
-              action = "spawn:playerctl play-pause";
+              action = "spawn playerctl play-pause";
               allow_when_locked = true;
             };
             "Mod+Alt+Left" = {
-              action = "spawn:playerctl previous";
+              action = "spawn playerctl previous";
               allow_when_locked = true;
             };
             "Mod+Alt+Right" = {
-              action = "spawn:playerctl next";
+              action = "spawn playerctl next";
               allow_when_locked = true;
             };
             "Mod+Alt+Up" = {
-              action = "spawn:playerctl play-pause";
+              action = "spawn playerctl play-pause";
               allow_when_locked = true;
             };
-            "Mod+B" = "spawn:zen-beta";
+            "Mod+B" = "spawn zen-beta";
             "Mod+Ctrl+Down" = "window-move-or-workspace-down";
             "Mod+Ctrl+F" = "window-toggle-maximize-to-edges";
             "Mod+Ctrl+H" = "window-move-or-output-left";
@@ -133,7 +133,7 @@
             "Mod+Ctrl+WheelDown" = "window-move-or-workspace-down";
             "Mod+Ctrl+WheelUp" = "window-move-or-workspace-up";
             "Mod+Down" = "window-focus-or-workspace-down";
-            "Mod+E" = "spawn:nautilus";
+            "Mod+E" = "spawn nautilus";
             "Mod+F" = "window-toggle-maximize";
             "Mod+H" = "window-focus-or-output-left";
             "Mod+J" = "window-focus-or-workspace-down";
@@ -142,11 +142,11 @@
             "Mod+Left" = "window-focus-or-output-left";
             "Mod+O" = "overview-toggle";
             "Mod+P" = "window-toggle-pinned";
-            "Mod+Period" = "spawn:vicinae deeplink vicinae://launch/core/search-emojis";
-            "Mod+Print" = "spawn:screenshot-full";
+            "Mod+Period" = "spawn vicinae deeplink vicinae://launch/core/search-emojis";
+            "Mod+Print" = "spawn screenshot-full";
             "Mod+Q" = "window-close";
             "Mod+R" = "window-cycle-primary-extent";
-            "Mod+Return" = "spawn:kitty";
+            "Mod+Return" = "spawn kitty";
             "Mod+Right" = "window-focus-or-output-right";
             "Mod+S" = "scratchpad-toggle";
             "Mod+Shift+F" = "window-toggle-fullscreen";
@@ -155,10 +155,10 @@
             "Mod+Shift+V" = "window-focus-switch-floating";
             "Mod+Shift+WheelDown" = "window-focus-or-output-right";
             "Mod+Shift+WheelUp" = "window-focus-or-output-left";
-            "Mod+Space" = "spawn:vicinae toggle";
+            "Mod+Space" = "spawn vicinae toggle";
             "Mod+Tab" = "scratchpad-focus-next";
             "Mod+Up" = "window-focus-or-workspace-up";
-            "Mod+V" = "spawn:vicinae deeplink vicinae://launch/clipboard/history";
+            "Mod+V" = "spawn vicinae deeplink vicinae://launch/clipboard/history";
             "Mod+WheelDown" = {
               action = "window-focus-or-workspace-down";
               cooldown_ms = 150;
@@ -167,46 +167,46 @@
               action = "window-focus-or-workspace-up";
               cooldown_ms = 150;
             };
-            "Mod+Z" = "spawn:zeditor";
-            "Print" = "spawn:screenshot-area";
+            "Mod+Z" = "spawn zeditor";
+            "Print" = "spawn screenshot-area";
             "XF86AudioLowerVolume" = {
-              action = "spawn:noctalia msg volume-down 3";
+              action = "spawn noctalia msg volume-down 3";
               allow_when_locked = true;
             };
             "XF86AudioMicMute" = {
-              action = "spawn:noctalia msg mic-mute";
+              action = "spawn noctalia msg mic-mute";
               allow_when_locked = true;
             };
             "XF86AudioMute" = {
-              action = "spawn:noctalia msg volume-mute";
+              action = "spawn noctalia msg volume-mute";
               allow_when_locked = true;
             };
             "XF86AudioNext" = {
-              action = "spawn:playerctl next";
+              action = "spawn playerctl next";
               allow_when_locked = true;
             };
             "XF86AudioPlay" = {
-              action = "spawn:playerctl play-pause";
+              action = "spawn playerctl play-pause";
               allow_when_locked = true;
             };
             "XF86AudioPrev" = {
-              action = "spawn:playerctl previous";
+              action = "spawn playerctl previous";
               allow_when_locked = true;
             };
             "XF86AudioRaiseVolume" = {
-              action = "spawn:noctalia msg volume-up 3";
+              action = "spawn noctalia msg volume-up 3";
               allow_when_locked = true;
             };
             "XF86AudioStop" = {
-              action = "spawn:playerctl stop";
+              action = "spawn playerctl stop";
               allow_when_locked = true;
             };
             "XF86MonBrightnessDown" = {
-              action = "spawn:noctalia msg brightness-down 10";
+              action = "spawn noctalia msg brightness-down 10";
               allow_when_locked = true;
             };
             "XF86MonBrightnessUp" = {
-              action = "spawn:noctalia msg brightness-up 10";
+              action = "spawn noctalia msg brightness-up 10";
               allow_when_locked = true;
             };
           };
