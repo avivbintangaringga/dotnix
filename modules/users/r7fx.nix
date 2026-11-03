@@ -23,6 +23,7 @@
           nautilus
           winbox
           cloudflare-warp
+          pangolin
           nix-index
           snappy-switcher
           flatpak
