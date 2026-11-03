@@ -49,7 +49,7 @@ stdenv.mkDerivation (finalAttrs: {
   ];
   pname = "libredb-studio";
   src = fetchurl {
-    hash = "sha256-VJegFzEh3qCD0ynATkSgF1JCkw7ctTDPYmCo19XeJNU=";
+    hash = "sha256-bF3KbZiBTBN5PKuvvLP3BQFiVvZA9FdQ2GlbH+T4DPU=";
     url = "https://github.com/libredb/libredb-studio/releases/download/${finalAttrs.version}/libredb-studio-desktop_${finalAttrs.version}_amd64.deb";
   };
   unpackPhase = ''
@@ -57,5 +57,5 @@ stdenv.mkDerivation (finalAttrs: {
     dpkg-deb -x $src .
     runHook postUnpack
   '';
-  version = "1.1.0";
+  version = "1.2.0";
 })
