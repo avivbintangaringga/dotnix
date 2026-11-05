@@ -25,6 +25,7 @@
           cloudflare-warp
           pangolin
           nix-index
+          nixpkgs-multiverse
           snappy-switcher
           flatpak
           zsh

@@ -512,6 +512,21 @@
         "type": "github"
       }
     },
+    "multiverse": {
+      "locked": {
+        "lastModified": 1793812214,
+        "narHash": "sha256-F7pRFPe4tHt3RbfZC1x++HnvD2ZMqZQ0sTZas/eur80=",
+        "owner": "fzakaria",
+        "repo": "nixpkgs-multiverse",
+        "rev": "1e48e02336ab1b26061e8df8e80eaf3d749477f4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "fzakaria",
+        "repo": "nixpkgs-multiverse",
+        "type": "github"
+      }
+    },
     "nautilus-computer": {
       "inputs": {
         "flake-utils": "flake-utils_2",
@@ -1053,6 +1068,7 @@
         "home-manager": "home-manager_2",
         "import-tree": "import-tree",
         "mango": "mango",
+        "multiverse": "multiverse",
         "nautilus-computer": "nautilus-computer",
         "niri": "niri",
         "nix-alien": "nix-alien",
