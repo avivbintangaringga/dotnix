@@ -28,6 +28,7 @@
           logind
           pipewire
           printing
+          avahi
           power-profiles-daemon
           upower
         ]);
