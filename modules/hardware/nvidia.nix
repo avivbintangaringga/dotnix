@@ -13,8 +13,9 @@
     hardware = {
       graphics.enable = true;
       nvidia = {
-        nvidiaPersistenced = lib.mkForce false;
-        dynamicBoost.enable = lib.mkForce false;
+        modesetting.enable = lib.mkForce true;
+        nvidiaPersistenced = lib.mkForce true;
+        dynamicBoost.enable = lib.mkForce true;
         powerManagement = {
           enable = lib.mkForce true;
           finegrained = false;
