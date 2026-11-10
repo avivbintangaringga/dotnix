@@ -32,6 +32,7 @@
 
         ffmpeg
         qrencode
+        psmisc
         scrcpy
         nix-update
 
