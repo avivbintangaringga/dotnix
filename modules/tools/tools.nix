@@ -30,6 +30,8 @@
         tailwindcss_4
         watchman
 
+        ffmpeg
+        qrencode
         scrcpy
         nix-update
 
