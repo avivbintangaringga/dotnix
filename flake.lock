@@ -421,11 +421,11 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1794446845,
-        "narHash": "sha256-MSutlCB+64WZ5rh2R/5LX5mtMCs/9ZN5CWlytUx/6ZE=",
+        "lastModified": 1794450654,
+        "narHash": "sha256-ACjMI9aKJfFUWtj3XaZzyuHynyVq2Diz/AlKsh5CX5w=",
         "owner": "NousResearch",
         "repo": "hermes-agent",
-        "rev": "a84025ade22d2a4085f575d4353072e5b702635d",
+        "rev": "67baa9ef20dae779fe4d50342bd8d3378b4cf90d",
         "type": "github"
       },
       "original": {
@@ -520,11 +520,11 @@
         "scenefx": "scenefx"
       },
       "locked": {
-        "lastModified": 1794369467,
-        "narHash": "sha256-KAuHbnn6JMxflx2oA7J+fRZIs9qrR6CGpNqGBVgUDoE=",
+        "lastModified": 1794450794,
+        "narHash": "sha256-EVUPYJdgPEfxK4fSibMogvlefFKlyF09F2f3pZNGtwI=",
         "owner": "DreamMaoMao",
         "repo": "mango",
-        "rev": "6f1e48e22e633edcc803f91af0b55b299a71e65b",
+        "rev": "ba0c8d9859f9142d1cfcc61f39f289c545661fb9",
         "type": "github"
       },
       "original": {
