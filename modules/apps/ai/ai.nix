@@ -8,5 +8,6 @@
     # codex
     # hermes-agent
     opencode
+    rtk
   ];
 }
