@@ -83,6 +83,7 @@
           };
           include.optional.files = [
             "noctalia.toml"
+            "outputs.toml"
           ];
           input = {
             keyboard = {
