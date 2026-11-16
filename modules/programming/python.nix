@@ -9,6 +9,7 @@
         pillow
       ]))
       ruff
+      pipx
       cairo
       pkg-config
     ];
