@@ -7,12 +7,10 @@
   flake-file.inputs = {
     umbriel = {
       url = "github:noctalia-dev/umbriel/cachix";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     xdg-desktop-portal-umbriel = {
       url = "github:noctalia-dev/xdg-desktop-portal-umbriel";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
