@@ -21,6 +21,7 @@
           valent
           anydesk
           nautilus
+          luciole
           winbox
           cloudflare-warp
           pangolin
