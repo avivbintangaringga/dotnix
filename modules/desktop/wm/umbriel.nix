@@ -132,7 +132,7 @@
             "Mod+Ctrl+WheelDown" = "window-move-or-workspace-down";
             "Mod+Ctrl+WheelUp" = "window-move-or-workspace-up";
             "Mod+Down" = "window-focus-or-workspace-down";
-            "Mod+E" = "spawn nautilus";
+            "Mod+E" = "spawn luciole";
             "Mod+F" = "window-toggle-maximize";
             "Mod+H" = "window-focus-or-output-left";
             "Mod+J" = "window-focus-or-workspace-down";
