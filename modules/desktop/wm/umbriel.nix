@@ -331,6 +331,11 @@
               "umbriel"
               "gtk"
             ];
+            "org.freedesktop.impl.portal.FileChooser" = [
+              "luciole"
+              "gnome"
+              "gtk"
+            ];
           };
         };
         extraPortals = with pkgs; [
