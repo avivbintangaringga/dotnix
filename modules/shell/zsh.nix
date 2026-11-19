@@ -61,8 +61,8 @@
                 TOKEN_CUT=$(echo "$TOKEN" | rev | cut -c -4 | rev)
                 echo "INFO: Using github user ${home.git.userName} with auth token ending in ...$TOKEN_CUT"
 
-                $SUDO GH_TOKEN="$TOKEN" nh os switch . --no-nom --show-trace --update $NH_ASK $NH_SUDO $NH_COMMIT
-                GH_TOKEN="$TOKEN" nh home switch . --no-nom -b hm-bak --show-trace --update $NH_ASK $NH_COMMIT
+                $SUDO GH_TOKEN="$TOKEN" nh os switch . --no-rom --show-trace --update $NH_ASK $NH_SUDO $NH_COMMIT
+                GH_TOKEN="$TOKEN" nh home switch . --no-rom -b hm-bak --show-trace --update $NH_ASK $NH_COMMIT
               '';
             })
           else
@@ -90,8 +90,8 @@
             if home ? flakePath && home.flakePath != null then
               {
                 edit = "hx ${home.flakePath}";
-                hm-update = "nh home switch ${home.flakePath} --no-nom -b hm-bak --ask --show-trace";
-                update = "nh os switch ${home.flakePath} --no-nom --ask --show-trace";
+                hm-update = "nh home switch ${home.flakePath} --no-rom -b hm-bak --ask --show-trace";
+                update = "nh os switch ${home.flakePath} --no-rom --ask --show-trace";
               }
             else
               { }

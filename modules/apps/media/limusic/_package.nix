@@ -41,14 +41,14 @@ stdenv.mkDerivation (finalAttrs: {
   runtimeDependencies = [ libayatana-appindicator ];
   src = fetchurl {
     url = "https://github.com/SimoHypers/limusic/releases/download/v${finalAttrs.version}/limusic_${finalAttrs.version}_amd64.deb";
-    hash = "sha256-45OFJCvFTYc7zm7EDuL2iUtU6gytcmjRrOHaSAoVenc=";
+    hash = "sha256-W75jP3BSx62AfkDvcFcHkmsdHsGsNz6k69l//mmkiOM=";
   };
   unpackPhase = ''
     runHook preUnpack
     dpkg-deb -x $src .
     runHook postUnpack
   '';
-  version = "1.3.0";
+  version = "1.4.0";
   meta = {
     description = "Desktop YouTube Music client";
     homepage = "https://github.com/SimoHypers/limusic";
