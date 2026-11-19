@@ -516,11 +516,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1795044271,
-        "narHash": "sha256-tQVnaF0rGbuJOPHWU+h1McSn2W5dEpm6jgGZdhWYRbk=",
+        "lastModified": 1795052093,
+        "narHash": "sha256-j3BcMUcBRqLPLKMXDMJCO++GicyWCUgcmV41yhT9XAs=",
         "owner": "noctalia-dev",
         "repo": "luciole",
-        "rev": "dd1fc357dc069157a458f6ec6a59578e11aa7a33",
+        "rev": "e2004254d4faffb848a69a39226032259229c4c1",
         "type": "github"
       },
       "original": {
