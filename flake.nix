@@ -31,6 +31,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     import-tree.url = "github:denful/import-tree";
+    llm-agents.url = "github:numtide/llm-agents.nix";
     luciole.url = "github:noctalia-dev/luciole";
     mango = {
       url = "github:DreamMaoMao/mango";
