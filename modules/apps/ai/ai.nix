@@ -12,9 +12,10 @@
     includes = with dotnix; [
       ai-usagebar
       llm-agents
+      opencode
+      command-code
       # codex
       # hermes-agent
-      opencode
     ];
   };
 }
