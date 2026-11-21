@@ -24,6 +24,10 @@
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
+    guesthouse = {
+      url = "github:xnixy/guesthouse";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hardware.url = "github:nixos/nixos-hardware";
     home-manager = {
       url = "github:nix-community/home-manager";
