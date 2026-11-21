@@ -46,6 +46,7 @@
           docker
           kvm
           waydroid
+          guesthouse
 
           cliphist
           playerctld
