@@ -59,10 +59,7 @@
     };
     nixpkgs.url = "nixpkgs/nixos-unstable";
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
-    noctalia-greeter = {
-      url = "github:noctalia-dev/noctalia-greeter";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    noctalia-greeter.url = "github:noctalia-dev/noctalia-greeter/cachix";
     nvix = {
       url = "github:niksingh710/nvix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -90,7 +87,7 @@
     };
     treefmt.url = "github:numtide/treefmt-nix";
     umbriel.url = "github:noctalia-dev/umbriel/cachix";
-    xdg-desktop-portal-umbriel.url = "github:noctalia-dev/xdg-desktop-portal-umbriel";
+    xdg-desktop-portal-umbriel.url = "github:noctalia-dev/xdg-desktop-portal-umbriel/cachix";
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";

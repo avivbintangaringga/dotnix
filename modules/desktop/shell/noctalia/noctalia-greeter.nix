@@ -4,8 +4,7 @@
 }:
 {
   flake-file.inputs.noctalia-greeter = {
-    url = "github:noctalia-dev/noctalia-greeter";
-    inputs.nixpkgs.follows = "nixpkgs";
+    url = "github:noctalia-dev/noctalia-greeter/cachix";
   };
 
   dotnix.noctalia-greeter = { user, ... }: {
@@ -13,6 +12,10 @@
       imports = [
         inputs.noctalia-greeter.nixosModules.default
       ];
+      nix.settings = {
+        extra-substituters = [ "https://noctalia.cachix.org" ];
+        extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
+      };
       services = {
         displayManager = {
           autoLogin = {
