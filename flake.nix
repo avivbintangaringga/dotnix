@@ -25,7 +25,7 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
     guesthouse = {
-      url = "github:xnixy/guesthouse/nixos-test";
+      url = "github:xnixy/guesthouse";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hardware.url = "github:nixos/nixos-hardware";
