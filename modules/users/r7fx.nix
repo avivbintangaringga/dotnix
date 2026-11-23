@@ -47,6 +47,7 @@
           kvm
           waydroid
           guesthouse
+          # droidloom
 
           cliphist
           playerctld
