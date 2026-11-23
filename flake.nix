@@ -25,7 +25,7 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
     guesthouse = {
-      url = "github:xnixy/guesthouse";
+      url = "github:xnixy/guesthouse/mac-tsc-test";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hardware.url = "github:nixos/nixos-hardware";
