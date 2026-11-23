@@ -434,16 +434,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1795418338,
-        "narHash": "sha256-5OmR8dthHRrdGW/wMxsTf9tzI8+gVD/vCCwkvoOxHOc=",
+        "lastModified": 1795474750,
+        "narHash": "sha256-4ttYxBUR1vCgWjfg8xEPkbdBHp38YiCYWXJEZoW4oBc=",
         "owner": "xnixy",
         "repo": "guesthouse",
-        "rev": "7ebdf7bc3863bd395fab5e5888dd68b9970c53c4",
+        "rev": "c44a7d389b90afad51be4956bb5a297f0f5a6f08",
         "type": "github"
       },
       "original": {
         "owner": "xnixy",
-        "ref": "mac-tsc-test",
         "repo": "guesthouse",
         "type": "github"
       }
