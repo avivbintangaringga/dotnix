@@ -13,6 +13,7 @@
       ai-usagebar
       llm-agents
       opencode
+      openspec
       command-code
       # codex
       # hermes-agent
