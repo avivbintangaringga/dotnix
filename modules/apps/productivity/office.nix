@@ -11,6 +11,7 @@
       home = {
         packages = with pkgs; [
           libreoffice-qt-stable
+          wpsoffice-cn
         ];
         sessionVariables.SAL_USE_VCLPLUGIN = "kf6";
       };
