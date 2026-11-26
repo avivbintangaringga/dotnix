@@ -7,6 +7,7 @@
   lib,
   makeWrapper,
   openbox,
+  picom,
   resolution ? "1920x1080",
   symlinkJoin,
   util-linux,
@@ -150,7 +151,7 @@ let
     '';
   };
 
-  # Long-lived supervisor: Xwayland + openbox + bridge. Exits when the last client is gone.
+  # Long-lived supervisor: Xwayland + openbox + picom + bridge. Exits when the last client is gone.
   session = writeShellApplication {
     name = "wps-xwayland-session";
     runtimeInputs = [
@@ -158,6 +159,7 @@ let
       util-linux
       xwayland
       openbox
+      picom
       wl-clipboard
     ];
     text = ''
@@ -178,6 +180,7 @@ let
       trap 'exit 143' INT TERM
 
       # no -ac, no TCP; Xwayland picks a free display number itself
+      # (recent Xwayland is rootful by default, so no -rootful flag)
       Xwayland -nolisten tcp -geometry "${resolution}" -displayfd 3 3>"$base/displayfd" &
       xw=$!
 
@@ -192,8 +195,16 @@ let
       export DISPLAY=":$disp"
       openbox --config-file ${openboxConfig} >/dev/null 2>&1 &
 
+      # Compositing manager: gives Qt ARGB windows (rounded corners, translucent popups).
+      # xrender backend needs no GL; /dev/null config so picom ignores the user's
+      # ~/.config/picom/picom.conf and adds no shadows of its own.
+      # -b forks only after picom has registered as the compositor, so this returns
+      # as soon as it is ready (no fixed sleep) and Qt sees compositing from the start.
+      picom -b --backend xrender --config /dev/null >/dev/null 2>&1 || true
+
       ${lib.optionalString clipboardBridge ''
-        ${lib.getExe bridge} w2x "$disp" "$state" || true
+        # initial sync in the background so it can't delay WPS startup
+        ${lib.getExe bridge} w2x "$disp" "$state" &
         wl-paste --watch ${lib.getExe bridge} w2x "$disp" "$state" >/dev/null 2>&1 &
         ${lib.getExe bridge} x2w "$disp" "$state" &
       ''}
@@ -280,7 +291,7 @@ symlinkJoin {
   meta = wpsoffice-cn.meta // {
     description = "${
       wpsoffice-cn.meta.description or "WPS Office CN"
-    } (Xwayland session, Wayland clipboard sync)";
+    } (rootful Xwayland session, Wayland clipboard sync)";
     mainProgram = "wps";
   };
   name = "wpsoffice-cn-xwayland-${wpsoffice-cn.version or "wrapped"}";
