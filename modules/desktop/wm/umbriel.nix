@@ -82,6 +82,7 @@
           include.optional.files = [
             "noctalia.toml"
             "outputs.toml"
+            "noctalia-shaders.toml"
           ];
           input = {
             keyboard = {
