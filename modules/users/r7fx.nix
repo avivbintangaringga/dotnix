@@ -16,6 +16,7 @@
 
           bitchord
           limusic
+          youtube
           libredb
           localsend
           valent
