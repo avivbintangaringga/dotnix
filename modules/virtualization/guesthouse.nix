@@ -17,6 +17,6 @@
   };
   flake-file.inputs.guesthouse = {
     inputs.nixpkgs.follows = "nixpkgs";
-    url = "github:xnixy/guesthouse/test-app-windows-2";
+    url = "github:ruxnlabs/guesthouse";
   };
 }

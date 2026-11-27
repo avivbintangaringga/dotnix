@@ -434,16 +434,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1795674857,
-        "narHash": "sha256-mMOjQEYEvDvs80Nuc36zrD2J3DFwdU9C4yElrlY9Ngc=",
-        "owner": "xnixy",
+        "lastModified": 1795759408,
+        "narHash": "sha256-4t7JindOX3ImzfiyUYI4gTkFW4/BMYx1kbbP7NX9GGA=",
+        "owner": "ruxnlabs",
         "repo": "guesthouse",
-        "rev": "f026c66b57ff044ccd26999f620e12899b5314aa",
+        "rev": "9ffb77dc3c5e72c9cac05b487b0b4364466b3020",
         "type": "github"
       },
       "original": {
-        "owner": "xnixy",
-        "ref": "test-app-windows-2",
+        "owner": "ruxnlabs",
         "repo": "guesthouse",
         "type": "github"
       }
