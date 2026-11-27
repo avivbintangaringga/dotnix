@@ -2,8 +2,8 @@
   dotnix.libredb.homeManager =
     { pkgs, ... }:
     {
-      home.packages = [
-        (pkgs.callPackage ./_package.nix { })
+      home.packages = with pkgs; [
+        libredb-studio
       ];
     };
 }

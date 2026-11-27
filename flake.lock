@@ -605,11 +605,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1795747337,
-        "narHash": "sha256-5IBSBqXAtdvtkQ6q1aDNsu/VYrCIEpqMA6IBq/MtP+Q=",
+        "lastModified": 1795750450,
+        "narHash": "sha256-0bETNqYne/KAfYk28+6+TAdrm/ExxOmb+9hKZhwviuM=",
         "owner": "avivbintangaringga",
         "repo": "packages.nix",
-        "rev": "3381027d22669bb2042a47351520da9640790e95",
+        "rev": "d1189d679e37d21cb46c8e26b85c20e671c46069",
         "type": "github"
       },
       "original": {
