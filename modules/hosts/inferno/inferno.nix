@@ -68,10 +68,28 @@
             timeout = 0;
           };
         };
-        fileSystems."/media/DATA" = {
-          device = "/dev/disk/by-uuid/9EF2F582F2F55F49";
-          fsType = "ntfs-3g";
-          options = [ "defaults" ];
+        fileSystems = {
+          "/home/r7fx/VM-SHARED/Studio One" = {
+            depends = [ "/media/DATA" ];
+            device = "/media/DATA/Studio One";
+            fsType = "none";
+            options = [
+              "bind"
+              "x-gvfs-hide"
+              "nofail"
+            ];
+          };
+          "/media/DATA" = {
+            device = "/dev/disk/by-uuid/9EF2F582F2F55F49";
+            fsType = "ntfs-3g";
+            options = [
+              "defaults"
+              "nofail"
+              "x-systemd.device-timeout=5s"
+              "uid=1000"
+              "gid=100"
+            ];
+          };
         };
         hardware.enableAllFirmware = true;
         imports = [
