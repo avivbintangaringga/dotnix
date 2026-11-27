@@ -17,7 +17,7 @@
           # Hardware
           bluetooth
           nvidia
-          disable-cpu-boost
+          # disable-cpu-boost
           v4l2loopback
           # cpuid-fault-emulation
 
