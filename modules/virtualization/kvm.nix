@@ -148,6 +148,7 @@
               start_hook() {
                 systemctl stop lactd
                 systemctl stop nvidia-powerd
+                systemctl stop nvidia-persistenced
                 rmmod nvidia_drm
                 rmmod nvidia_uvm
                 rmmod nvidia_modeset
@@ -163,6 +164,7 @@
                 modprobe -i nvidia_uvm
                 modprobe -i nvidia_modeset
                 modprobe -i nvidia_drm
+                systemctl restart nvidia-persistenced
                 systemctl restart nvidia-powerd
                 systemctl restart lactd
               }

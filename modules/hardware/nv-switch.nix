@@ -75,6 +75,7 @@
               sudo modprobe -i nvidia_uvm
               sudo modprobe -i nvidia_modeset
               sudo modprobe -i nvidia_drm
+              sudo systemctl restart nvidia-persistenced
               sudo systemctl restart nvidia-powerd
               sudo systemctl restart lactd
 
@@ -99,6 +100,7 @@
               # sudo systemctl --user --machine=${user.userName}@ stop swaync # TEMPORARY FIX
               sudo systemctl stop lactd
               sudo systemctl stop nvidia-powerd
+              sudo systemctl stop nvidia-persistenced
               sudo rmmod -f nvidia_drm
               sudo rmmod nvidia_uvm
               sudo rmmod nvidia_modeset
