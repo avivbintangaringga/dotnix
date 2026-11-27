@@ -41,6 +41,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     multiverse.url = "github:fzakaria/nixpkgs-multiverse";
+    my-packages.url = "github:avivbintangaringga/packages.nix";
     nautilus-computer = {
       url = "github:yannmasoch/nautilus-my-computer?dir=packaging/nix";
       inputs.nixpkgs.follows = "nixpkgs";

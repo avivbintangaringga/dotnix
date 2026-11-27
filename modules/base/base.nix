@@ -5,6 +5,7 @@
 {
   # TODO: SPLIT
   dotnix.base.includes = with dotnix; [
+    my-packages
     flakes
     disable-docs
     accounts-daemon
