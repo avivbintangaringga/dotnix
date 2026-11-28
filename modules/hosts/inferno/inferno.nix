@@ -69,9 +69,9 @@
           };
         };
         fileSystems = {
-          "/home/r7fx/VM-SHARED/Studio One" = {
+          "/home/r7fx/VM-SHARED/DATA" = {
             depends = [ "/media/DATA" ];
-            device = "/media/DATA/Studio One";
+            device = "/media/DATA";
             fsType = "none";
             options = [
               "bind"
